@@ -1,8 +1,9 @@
 ---
 import Base from '../../layouts/Base.astro';
 import AdventureCard from '../../components/AdventureCard.astro';
+import { showDrafts } from '../../lib/drafts';
 import { getCollection } from 'astro:content';
-const all = (await getCollection('adventures', ({ data }) => !data.draft || import.meta.env.DEV))
+const all = (await getCollection('adventures', ({ data }) => !data.draft || showDrafts))
   .sort((a, b) => b.data.start.valueOf() - a.data.start.valueOf());
 const regions = [...new Set(all.map((e) => e.data.region))];
 ---

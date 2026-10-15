@@ -27,6 +27,9 @@ jobs:
           export SITE="https://${OWNER}.github.io"
           if [ "${REPO,,}" != "${OWNER}.github.io" ]; then export BASE="/${REPO}"; fi
           npm run build
+          # Alpha copy with drafts, served at <site>/alpha/
+          BASE="${BASE:-}/alpha" PUBLIC_SHOW_DRAFTS=true npx astro build --outDir dist-alpha
+          mv dist-alpha dist/alpha
       - uses: actions/upload-pages-artifact@v3
         with:
           path: dist

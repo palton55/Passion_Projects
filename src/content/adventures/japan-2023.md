@@ -19,10 +19,10 @@ stops:
   - { name: "Ikebukuro (Sunshine City)", lat: 35.7296, lng: 139.7182, date: "Day 2 · Sun Mar 12, 15:45", mode: train }
   - { name: "Tokyo Skytree", lat: 35.7104, lng: 139.8116, date: "Day 2 · Sun Mar 12, 17:40", mode: train }
   - { name: "Asakusa", lat: 35.7103, lng: 139.8005, date: "Day 2 · Sun Mar 12, 20:50", mode: train }
-  - { name: "Shibuya", lat: 35.6631, lng: 139.7012, date: "Day 3 · Mon Mar 13, 11:15", note: "Biggest single stop of the trip", mode: train }
+  - { name: "Shibuya", lat: 35.6631, lng: 139.7012, date: "Day 3 · Mon Mar 13, 11:15", note: "Most-photographed stop of the trip", mode: train }
   - { name: "Akihabara", lat: 35.6995, lng: 139.7716, date: "Day 3 · Mon Mar 13, 18:00", mode: train }
   - { name: "Shinagawa", lat: 35.631, lng: 139.7406, date: "Day 4 · Tue Mar 14, 10:25", mode: train }
-  - { name: "Shin-Yokohama", lat: 35.5084, lng: 139.6188, date: "Day 4 · Tue Mar 14, 10:50", note: "Folder labeled Yokohama", mode: train }
+  - { name: "Shin-Yokohama (Shinkansen stop, passed through)", lat: 35.5084, lng: 139.6188, date: "Day 4 · Tue Mar 14, 10:50", note: "Three photos in one minute from the stopped train; folder labeled Yokohama", mode: train }
   - { name: "Shinkansen west (Hamamatsu, Toyohashi)", lat: 34.7297, lng: 137.9049, date: "Day 4 · Tue Mar 14, 11:40", mode: train }
   - { name: "Osaka arrival (hotel area, Kitahama)", lat: 34.69, lng: 135.51, date: "Day 4 · Tue Mar 14, 14:05", note: "Approximate; rounded", mode: train }
   - { name: "Osaka Aquarium Kaiyukan", lat: 34.6546, lng: 135.4289, date: "Day 4 · Tue Mar 14, 15:15", mode: train }
@@ -32,7 +32,7 @@ stops:
   - { name: "Osaka Castle", lat: 34.6882, lng: 135.5269, date: "Day 5 · Wed Mar 15, 13:05", mode: train }
   - { name: "Shinsekai (Tsutenkaku)", lat: 34.6526, lng: 135.5065, date: "Day 5 · Wed Mar 15, 18:20", mode: train }
   - { name: "Kyoto hotel area near Gojo (base)", lat: 35.0, lng: 135.76, date: "Day 6 · Thu Mar 16, 10:00", note: "Approximate; rounded", mode: train }
-  - { name: "Fushimi Inari Taisha", lat: 34.967, lng: 135.7799, date: "Day 6 · Thu Mar 16, 10:45", note: "Most-photographed stop of the trip", mode: train }
+  - { name: "Fushimi Inari Taisha", lat: 34.967, lng: 135.7799, date: "Day 6 · Thu Mar 16, 10:45", mode: train }
   - { name: "Kawaramachi / Shijo", lat: 35.0038, lng: 135.7691, date: "Day 6 · Thu Mar 16, 13:50", mode: train }
   - { name: "Kiyomizu-dera", lat: 34.995, lng: 135.7826, date: "Day 6 · Thu Mar 16, 14:30", mode: train }
   - { name: "Kyoto Station", lat: 34.9861, lng: 135.7592, date: "Day 6 · Thu Mar 16, 16:00", mode: train }

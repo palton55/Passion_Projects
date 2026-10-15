@@ -7,8 +7,7 @@ region: Japan
 collection: Japan 2023
 companions: [Shaggy]
 draft: true              # stays a draft until the story and the Mar 18 stop are filled in
-# Route from photo GPS (trips/japan-2023/stops.geojson). Lines are straight hops between stops, not the real rail lines.
-# Day 8 travel mode (car or train) still to confirm.
+# Route from photo GPS (trips/japan-2023/stops.geojson). Rail lines are assumed Shinkansen / limited express through main stations.
 stops:
   - { name: "Haneda Airport (arrival)", lat: 35.5449, lng: 139.7675, date: "Day 1 · Sat Mar 11, 21:30", mode: train }
   - { name: "Hotel area near Asakusabashi (base, Tokyo)", lat: 35.7, lng: 139.79, date: "Day 1 · Sat Mar 11, 22:30", note: "Approximate; rounded", mode: train }
@@ -50,6 +49,22 @@ stops:
   - { name: "Tsuruga homestay (night)", lat: 35.645, lng: 136.075, date: "Day 8 · Sat Mar 18, 22:45", note: "Private home: shown at town center only", mode: train }
   - { name: "Shibuya (last day)", lat: 35.6591, lng: 139.7011, date: "Day 9 · Sun Mar 19, 15:25", mode: train }
   - { name: "Haneda Airport (departure)", lat: 35.549, lng: 139.7761, date: "Day 9 · Sun Mar 19, 23:10", mode: train }
+legs:
+  - name: "Tokaido Shinkansen (Day 4)"
+    mode: shinkansen
+    coords: [[35.6285, 139.7388], [35.5066, 139.6175], [35.2564, 139.1553], [35.1038, 139.0779], [35.1263, 138.911], [35.1424, 138.6633], [34.9716, 138.389], [34.7693, 138.0147], [34.7038, 137.735], [34.7629, 137.382], [34.959, 137.079], [35.1709, 136.8815], [35.3157, 136.6857], [35.3146, 136.29], [34.9858, 135.7588], [34.7335, 135.5002]]
+  - name: "Tokaido Shinkansen (Day 6)"
+    mode: shinkansen
+    coords: [[34.7335, 135.5002], [34.9858, 135.7588]]
+  - name: "Limited express Thunderbird (Kosei Line) (Day 7)"
+    mode: express
+    coords: [[34.9858, 135.7588], [34.993, 135.816], [35.1169, 135.9214], [35.29, 136.01], [35.4137, 136.0303], [35.5015, 136.0858], [35.5256, 136.1589], [35.5872, 136.1328], [35.6455, 136.0756]]
+  - name: "Limited express Shirasagi (Hokuriku Line) (Day 9)"
+    mode: express
+    coords: [[35.6455, 136.0756], [35.5872, 136.1328], [35.5256, 136.1589], [35.5257, 136.2012], [35.506, 136.2275], [35.477, 136.239], [35.4371, 136.253], [35.3779, 136.2643], [35.3146, 136.29]]
+  - name: "Tokaido Shinkansen (Day 9)"
+    mode: shinkansen
+    coords: [[35.3146, 136.29], [35.3157, 136.6857], [35.1709, 136.8815], [34.959, 137.079], [34.7629, 137.382], [34.7038, 137.735], [34.7693, 138.0147], [34.9716, 138.389], [35.1424, 138.6633], [35.1263, 138.911], [35.1038, 139.0779], [35.2564, 139.1553], [35.5066, 139.6175], [35.6285, 139.7388]]
 photos: []
 ---
 

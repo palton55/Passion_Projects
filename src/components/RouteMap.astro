@@ -14,7 +14,7 @@ const legend = [
   import L from 'leaflet';
   import 'leaflet/dist/leaflet.css';
   const styles: Record<string, L.PolylineOptions> = {
-    drive: { color: '#c2410c', weight: 4 },
+    drive: { color: '#7c3aed', weight: 4 },
     shinkansen: { color: '#dc2626', weight: 5 },
     express: { color: '#2563eb', weight: 4 },
     local: { color: '#16a34a', weight: 3 },
@@ -54,7 +54,7 @@ const legend = [
   .route-map { height: 460px; border-radius: 14px; border: 1px solid var(--border); background: var(--surface); }
   .legend { display: flex; flex-wrap: wrap; gap: 18px; list-style: none; padding: 0; margin: 8px 0 0; font-size: .85rem; color: var(--muted); }
   .legend li::before { content: ''; display: inline-block; width: 22px; margin-right: 6px; vertical-align: middle; border-top: 3px solid; }
-  .legend .drive::before { border-color: #c2410c; }
+  .legend .drive::before { border-color: #7c3aed; }
   .legend .shinkansen::before { border-color: #dc2626; border-top-width: 4px; }
   .legend .express::before { border-color: #2563eb; }
   .legend .local::before { border-color: #16a34a; }

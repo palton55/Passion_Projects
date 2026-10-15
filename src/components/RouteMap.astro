@@ -1,8 +1,8 @@
 ---
-// Road map: stops in order. Optional `legs` draw real route lines (e.g. rail lines);
-// hops between stops that a leg already covers are not drawn again as straight lines.
+// Road map: stops are the places visited. Optional `legs` draw the real route (e.g. rail lines);
+// without legs, stops are joined in order by straight lines.
 const { stops, legs = [] } = Astro.props;
-const used = new Set([...stops.map((s: any) => s.mode), ...legs.map((l: any) => l.mode)]);
+const used = new Set(legs.length ? legs.map((l: any) => l.mode) : stops.map((s: any) => s.mode));
 const legend = [
   ['drive', 'Drive'], ['shinkansen', 'Shinkansen'], ['express', 'Limited express'], ['local', 'Local train'], ['daytrip', 'Day trip'],
   ['train', 'Getting around town'], ['flight', 'Flight'],
@@ -24,9 +24,6 @@ const legend = [
     walk: { color: '#16a34a', weight: 3 },
     other: { color: '#6b665e', weight: 3 },
   };
-  // A long straight hop is skipped when both of its ends sit on the drawn legs (the legs already show that journey).
-  const LONG_HOP_KM = 25, NEAR_LEG_KM = 15;
-  const km = (a: number[], b: number[]) => L.latLng(a[0], a[1]).distanceTo(L.latLng(b[0], b[1])) / 1000;
   document.querySelectorAll<HTMLElement>('.route-map').forEach((el) => {
     const stops = JSON.parse(el.dataset.stops || '[]');
     const legs = JSON.parse(el.dataset.legs || '[]');
@@ -34,17 +31,14 @@ const legend = [
     const map = L.map(el, { scrollWheelZoom: false });
     L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', { attribution: '© OpenStreetMap contributors' }).addTo(map);
     legs.forEach((leg: any) => L.polyline(leg.coords, styles[leg.mode] ?? styles.other).bindTooltip(leg.name).addTo(map));
-    stops.forEach((s: any, i: number) => {
-      if (i > 0) {
-        const a = [stops[i - 1].lat, stops[i - 1].lng], b = [s.lat, s.lng];
-        const onLeg = (p: number[]) => legs.some((leg: any) => leg.coords.some((c: number[]) => km(p, c) < NEAR_LEG_KM));
-        const covered = km(a, b) > LONG_HOP_KM && onLeg(a) && onLeg(b);
-        if (!covered) L.polyline([a, b], styles[s.mode] ?? styles.other).addTo(map);
-      }
+    // Without legs, connect the stops in order with straight lines.
+    if (!legs.length) stops.forEach((s: any, i: number) => {
+      if (i > 0) L.polyline([[stops[i - 1].lat, stops[i - 1].lng], [s.lat, s.lng]], styles[s.mode] ?? styles.other).addTo(map);
     });
     stops.forEach((s: any, i: number) => {
-      L.circleMarker([s.lat, s.lng], { radius: 6, color: '#fff', weight: 1.5, fillColor: '#c2410c', fillOpacity: .95 })
-        .bindPopup(`<strong>${i + 1}. ${s.name}</strong>${s.date ? `<br>${s.date}` : ''}${s.note ? `<br>${s.note}` : ''}`)
+      L.circleMarker([s.lat, s.lng], { radius: 8, color: '#fff', weight: 1.5, fillColor: '#c2410c', fillOpacity: .95 })
+        .bindPopup(`<strong>${s.name}</strong>${s.date ? `<br>${s.date}` : ''}${s.note ? `<br>${s.note}` : ''}`)
+        .bindTooltip(s.name, { permanent: stops.length <= 12, direction: 'right', offset: [8, 0], className: 'stop-label' })
         .addTo(map);
     });
     map.fitBounds(L.latLngBounds(stops.map((s: any) => [s.lat, s.lng])), { padding: [30, 30] });
@@ -61,5 +55,7 @@ const legend = [
   .legend .daytrip::before { border-color: #0d9488; border-top-style: dashed; }
   .legend .train::before { border-color: #6b7280; border-top-style: dashed; }
   .legend .flight::before { border-color: #6b665e; border-top-style: dotted; }
+  :global(.route-map .stop-label) { background: transparent; border: 0; box-shadow: none; font-weight: 600; color: #1f1d1a; text-shadow: 0 0 3px #fff, 0 0 3px #fff; }
+  :global(.route-map .stop-label::before) { display: none; }
   :global(.route-map .empty) { padding: 24px; color: var(--muted); }
 </style>

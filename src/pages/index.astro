@@ -1,0 +1,26 @@
+---
+import Base from '../layouts/Base.astro';
+import AdventureCard from '../components/AdventureCard.astro';
+import { getCollection } from 'astro:content';
+const base = import.meta.env.BASE_URL.replace(/\/$/, '');
+const all = (await getCollection('adventures', ({ data }) => !data.draft || import.meta.env.DEV))
+  .sort((a, b) => b.data.start.valueOf() - a.data.start.valueOf());
+---
+<Base title="Sidequests">
+  <section class="hero">
+    <h1>Adventures and sidequests</h1>
+    <p>A curated record of the trips, road trips, dives and detours that shaped me. Japan first, since it's where I've spent most of my adult life, but this goes wherever the road does.</p>
+    <a class="cta" href={`${base}/adventures/`}>Browse the adventures</a>
+  </section>
+  <h2>Latest</h2>
+  {all.length === 0 && <p class="empty">The first adventures are being written. Check back soon.</p>}
+  <div class="grid">{all.slice(0, 6).map((entry) => <AdventureCard entry={entry} />)}</div>
+</Base>
+<style>
+  .hero { padding: 48px 0 32px; max-width: 680px; }
+  .hero h1 { font-size: clamp(2.2rem, 6vw, 3.4rem); margin: 0 0 16px; }
+  .hero p { color: var(--muted); font-size: 1.1rem; }
+  .cta { display: inline-block; margin-top: 8px; padding: 10px 18px; border-radius: 999px; background: var(--accent); color: #fff; text-decoration: none; font-weight: 600; }
+  .empty { color: var(--muted); }
+  .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 20px; }
+</style>

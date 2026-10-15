@@ -1,0 +1,52 @@
+---
+interface Props { title: string; description?: string }
+const { title, description = 'A curated record of adventures and sidequests.' } = Astro.props;
+const base = import.meta.env.BASE_URL.replace(/\/$/, '');
+---
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+  </head>
+  <body>
+    <header class="site-header">
+      <a class="brand" href={`${base}/`}>Sidequests</a>
+      <nav>
+        <a href={`${base}/adventures/`}>Adventures</a>
+        <a href={`${base}/map/`}>Map</a>
+        <a href={`${base}/about/`}>About</a>
+      </nav>
+    </header>
+    <main><slot /></main>
+    <footer class="site-footer">A passion project. Made one adventure at a time.</footer>
+  </body>
+</html>
+<style is:global>
+  :root {
+    --bg: #faf7f2; --surface: #ffffff; --text: #1f1d1a; --muted: #6b665e;
+    --accent: #c2410c; --border: #e7e1d7; --visited: #c2410c; --unvisited: #e7e1d7;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #161513; --surface: #201e1b; --text: #f2eee8; --muted: #a39d93;
+      --accent: #fb923c; --border: #34312c; --visited: #fb923c; --unvisited: #34312c;
+    }
+  }
+  * { box-sizing: border-box; }
+  body { margin: 0; background: var(--bg); color: var(--text); font: 17px/1.65 Inter, system-ui, sans-serif; }
+  h1, h2, h3 { font-family: Fraunces, Georgia, serif; line-height: 1.2; }
+  a { color: var(--accent); }
+  main { max-width: 1040px; margin: 0 auto; padding: 0 16px 64px; }
+  .site-header { display: flex; justify-content: space-between; align-items: center; max-width: 1040px; margin: 0 auto; padding: 20px 16px; flex-wrap: wrap; gap: 12px; }
+  .brand { font-family: Fraunces, serif; font-weight: 700; font-size: 1.4rem; color: var(--text); text-decoration: none; }
+  nav { display: flex; gap: 20px; }
+  nav a { color: var(--text); text-decoration: none; font-weight: 500; }
+  nav a:hover { color: var(--accent); }
+  .site-footer { text-align: center; color: var(--muted); padding: 32px 16px; border-top: 1px solid var(--border); font-size: .9rem; }
+  img { max-width: 100%; display: block; }
+</style>

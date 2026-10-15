@@ -1,0 +1,21 @@
+---
+import Base from '../../layouts/Base.astro';
+import AdventureCard from '../../components/AdventureCard.astro';
+import { getCollection } from 'astro:content';
+const all = (await getCollection('adventures', ({ data }) => !data.draft || import.meta.env.DEV))
+  .sort((a, b) => b.data.start.valueOf() - a.data.start.valueOf());
+const regions = [...new Set(all.map((e) => e.data.region))];
+---
+<Base title="Adventures · Sidequests">
+  <h1>Adventures</h1>
+  {regions.length === 0 && <p style="color:var(--muted)">The first adventures are being written. Check back soon.</p>}
+  {regions.map((r) => (
+    <section>
+      <h2>{r}</h2>
+      <div class="grid">{all.filter((e) => e.data.region === r).map((entry) => <AdventureCard entry={entry} />)}</div>
+    </section>
+  ))}
+</Base>
+<style>
+  .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 20px; margin-bottom: 32px; }
+</style>

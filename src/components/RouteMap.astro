@@ -1,0 +1,39 @@
+---
+// Road map: stops in order, line style by travel mode (solid = drive, dashed = train, dotted = flight).
+const { stops } = Astro.props;
+---
+<div class="route-map" data-stops={JSON.stringify(stops)}></div>
+<ul class="legend"><li class="drive">Drive</li><li class="train">Train</li><li class="flight">Flight</li></ul>
+<script>
+  import L from 'leaflet';
+  import 'leaflet/dist/leaflet.css';
+  const styles: Record<string, L.PolylineOptions> = {
+    drive: { color: '#c2410c', weight: 4 },
+    train: { color: '#2563eb', weight: 4, dashArray: '8 6' },
+    flight: { color: '#6b665e', weight: 2, dashArray: '2 6' },
+    walk: { color: '#16a34a', weight: 3 },
+    other: { color: '#6b665e', weight: 3 },
+  };
+  document.querySelectorAll<HTMLElement>('.route-map').forEach((el) => {
+    const stops = JSON.parse(el.dataset.stops || '[]');
+    if (!stops.length) { el.innerHTML = '<p class="empty">Road map coming once photos are sorted.</p>'; return; }
+    const map = L.map(el, { scrollWheelZoom: false });
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', { attribution: '© OpenStreetMap contributors' }).addTo(map);
+    stops.forEach((s: any, i: number) => {
+      L.circleMarker([s.lat, s.lng], { radius: 7, color: '#c2410c', fillOpacity: .9 })
+        .bindPopup(`<strong>${i + 1}. ${s.name}</strong>${s.date ? `<br>${s.date}` : ''}${s.note ? `<br>${s.note}` : ''}`)
+        .addTo(map);
+      if (i > 0) L.polyline([[stops[i - 1].lat, stops[i - 1].lng], [s.lat, s.lng]], styles[s.mode] ?? styles.other).addTo(map);
+    });
+    map.fitBounds(L.latLngBounds(stops.map((s: any) => [s.lat, s.lng])), { padding: [30, 30] });
+  });
+</script>
+<style>
+  .route-map { height: 420px; border-radius: 14px; border: 1px solid var(--border); background: var(--surface); }
+  .legend { display: flex; gap: 18px; list-style: none; padding: 0; margin: 8px 0 0; font-size: .85rem; color: var(--muted); }
+  .legend li::before { content: ''; display: inline-block; width: 22px; margin-right: 6px; vertical-align: middle; border-top: 3px solid; }
+  .legend .drive::before { border-color: #c2410c; }
+  .legend .train::before { border-color: #2563eb; border-top-style: dashed; }
+  .legend .flight::before { border-color: #6b665e; border-top-style: dotted; }
+  :global(.route-map .empty) { padding: 24px; color: var(--muted); }
+</style>

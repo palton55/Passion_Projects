@@ -7,7 +7,7 @@ region: Japan
 collection: Japan 2023
 companions: [Shaggy]
 draft: true              # stays a draft until the story and the Mar 18 stop are filled in
-# Route from photo GPS (trips/japan-2023/stops.geojson). Rail lines are assumed (Shinkansen, limited express, local lines) through main stations. Day 8 travel (car or train) to confirm.
+# Route from photo GPS (trips/japan-2023/stops.geojson). Rail lines are assumed (Shinkansen, limited express, local lines) through main stations.
 stops:
   - { name: "Haneda Airport (arrival)", lat: 35.5449, lng: 139.7675, date: "Day 1 · Sat Mar 11, 21:30", mode: train }
   - { name: "Hotel area near Asakusabashi (base, Tokyo)", lat: 35.7, lng: 139.79, date: "Day 1 · Sat Mar 11, 22:30", note: "Approximate; rounded", mode: train }
@@ -21,8 +21,6 @@ stops:
   - { name: "Asakusa", lat: 35.7103, lng: 139.8005, date: "Day 2 · Sun Mar 12, 20:50", mode: train }
   - { name: "Shibuya", lat: 35.6631, lng: 139.7012, date: "Day 3 · Mon Mar 13, 11:15", note: "Most-photographed stop of the trip", mode: train }
   - { name: "Akihabara", lat: 35.6995, lng: 139.7716, date: "Day 3 · Mon Mar 13, 18:00", mode: train }
-  - { name: "Shinagawa", lat: 35.631, lng: 139.7406, date: "Day 4 · Tue Mar 14, 10:25", mode: train }
-  - { name: "Shin-Yokohama (Shinkansen stop, passed through)", lat: 35.5084, lng: 139.6188, date: "Day 4 · Tue Mar 14, 10:50", note: "Three photos in one minute from the stopped train; folder labeled Yokohama", mode: train }
   - { name: "Shinkansen west (Hamamatsu, Toyohashi)", lat: 34.7297, lng: 137.9049, date: "Day 4 · Tue Mar 14, 11:40", mode: train }
   - { name: "Osaka arrival (hotel area, Kitahama)", lat: 34.69, lng: 135.51, date: "Day 4 · Tue Mar 14, 14:05", note: "Approximate; rounded", mode: train }
   - { name: "Osaka Aquarium Kaiyukan", lat: 34.6546, lng: 135.4289, date: "Day 4 · Tue Mar 14, 15:15", mode: train }
@@ -42,11 +40,11 @@ stops:
   - { name: "Kehi no Matsubara area (inferred)", lat: 35.6566, lng: 136.0516, date: "Day 7 · Fri Mar 17, 15:50", mode: train }
   - { name: "Kehi Jingu", lat: 35.6542, lng: 136.0733, date: "Day 7 · Fri Mar 17, 16:05", mode: train }
   - { name: "East Tsuruga", lat: 35.6446, lng: 136.0964, date: "Day 7 · Fri Mar 17, 18:20", mode: train }
-  - { name: "Tsuruga town and port", lat: 35.653, lng: 136.0776, date: "Day 8 · Sat Mar 18, 11:00", mode: train }
-  - { name: "Hills east of Nagahama (to name)", lat: 35.5214, lng: 136.3867, date: "Day 8 · Sat Mar 18, 14:25", note: "Patrick to confirm what this place is", mode: train }
-  - { name: "Maibara area", lat: 35.3997, lng: 136.3753, date: "Day 8 · Sat Mar 18, 17:20", mode: train }
-  - { name: "Back north along Lake Biwa", lat: 35.4823, lng: 136.2397, date: "Day 8 · Sat Mar 18, 17:40", mode: train }
-  - { name: "Tsuruga homestay (night)", lat: 35.645, lng: 136.075, date: "Day 8 · Sat Mar 18, 22:45", note: "Private home: shown at town center only", mode: train }
+  - { name: "Tsuruga town and port", lat: 35.653, lng: 136.0776, date: "Day 8 · Sat Mar 18, 11:00", mode: drive }
+  - { name: "Okuibuki Ski Resort (skiing, inferred from GPS)", lat: 35.5214, lng: 136.3867, date: "Day 8 · Sat Mar 18, 14:25", note: "Car trip to go skiing", mode: drive }
+  - { name: "Maibara area", lat: 35.3997, lng: 136.3753, date: "Day 8 · Sat Mar 18, 17:20", mode: drive }
+  - { name: "Back north along Lake Biwa", lat: 35.4823, lng: 136.2397, date: "Day 8 · Sat Mar 18, 17:40", mode: drive }
+  - { name: "Tsuruga homestay (night)", lat: 35.645, lng: 136.075, date: "Day 8 · Sat Mar 18, 22:45", note: "Private home: shown at town center only", mode: drive }
   - { name: "Shibuya (last day)", lat: 35.6591, lng: 139.7011, date: "Day 9 · Sun Mar 19, 15:25", mode: train }
   - { name: "Haneda Airport (departure)", lat: 35.549, lng: 139.7761, date: "Day 9 · Sun Mar 19, 23:10", mode: train }
 legs:
@@ -68,8 +66,8 @@ legs:
   - name: "Haneda Airport to central Tokyo (Day 1)"
     mode: local
     coords: [[35.5494, 139.7798], [35.6812, 139.7671]]
-  - name: "Day trip by car or local train (to confirm) (Day 8)"
-    mode: daytrip
+  - name: "Car trip to go skiing (Day 8)"
+    mode: drive
     coords: [[35.6455, 136.0756], [35.5256, 136.1589], [35.5214, 136.3869], [35.3779, 136.2643], [35.3146, 136.29], [35.4823, 136.2397], [35.6455, 136.0756]]
   - name: "Tokyo to Haneda Airport (Day 9)"
     mode: local

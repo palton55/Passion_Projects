@@ -4,8 +4,8 @@
 const { stops, legs = [] } = Astro.props;
 const used = new Set([...stops.map((s: any) => s.mode), ...legs.map((l: any) => l.mode)]);
 const legend = [
-  ['drive', 'Drive'], ['shinkansen', 'Shinkansen'], ['express', 'Limited express'],
-  ['train', 'Train / local'], ['flight', 'Flight'],
+  ['drive', 'Drive'], ['shinkansen', 'Shinkansen'], ['express', 'Limited express'], ['local', 'Local train'],
+  ['train', 'Getting around town'], ['flight', 'Flight'],
 ].filter(([m]) => used.has(m));
 ---
 <div class="route-map" data-stops={JSON.stringify(stops)} data-legs={JSON.stringify(legs)}></div>
@@ -17,6 +17,7 @@ const legend = [
     drive: { color: '#c2410c', weight: 4 },
     shinkansen: { color: '#dc2626', weight: 5 },
     express: { color: '#2563eb', weight: 4 },
+    local: { color: '#16a34a', weight: 3 },
     train: { color: '#6b7280', weight: 2, dashArray: '6 6' },
     flight: { color: '#6b665e', weight: 2, dashArray: '2 6' },
     walk: { color: '#16a34a', weight: 3 },
@@ -55,6 +56,7 @@ const legend = [
   .legend .drive::before { border-color: #c2410c; }
   .legend .shinkansen::before { border-color: #dc2626; border-top-width: 4px; }
   .legend .express::before { border-color: #2563eb; }
+  .legend .local::before { border-color: #16a34a; }
   .legend .train::before { border-color: #6b7280; border-top-style: dashed; }
   .legend .flight::before { border-color: #6b665e; border-top-style: dotted; }
   :global(.route-map .empty) { padding: 24px; color: var(--muted); }

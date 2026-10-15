@@ -1,39 +1,61 @@
 ---
-// Road map: stops in order, line style by travel mode (solid = drive, dashed = train, dotted = flight).
-const { stops } = Astro.props;
+// Road map: stops in order. Optional `legs` draw real route lines (e.g. rail lines);
+// hops between stops that a leg already covers are not drawn again as straight lines.
+const { stops, legs = [] } = Astro.props;
+const used = new Set([...stops.map((s: any) => s.mode), ...legs.map((l: any) => l.mode)]);
+const legend = [
+  ['drive', 'Drive'], ['shinkansen', 'Shinkansen'], ['express', 'Limited express'],
+  ['train', 'Train / local'], ['flight', 'Flight'],
+].filter(([m]) => used.has(m));
 ---
-<div class="route-map" data-stops={JSON.stringify(stops)}></div>
-<ul class="legend"><li class="drive">Drive</li><li class="train">Train</li><li class="flight">Flight</li></ul>
+<div class="route-map" data-stops={JSON.stringify(stops)} data-legs={JSON.stringify(legs)}></div>
+<ul class="legend">{legend.map(([m, label]) => <li class={m}>{label}</li>)}</ul>
 <script>
   import L from 'leaflet';
   import 'leaflet/dist/leaflet.css';
   const styles: Record<string, L.PolylineOptions> = {
     drive: { color: '#c2410c', weight: 4 },
-    train: { color: '#2563eb', weight: 4, dashArray: '8 6' },
+    shinkansen: { color: '#dc2626', weight: 5 },
+    express: { color: '#2563eb', weight: 4 },
+    train: { color: '#6b7280', weight: 2, dashArray: '6 6' },
     flight: { color: '#6b665e', weight: 2, dashArray: '2 6' },
     walk: { color: '#16a34a', weight: 3 },
     other: { color: '#6b665e', weight: 3 },
   };
+  // A long straight hop is skipped when both of its ends sit on the drawn legs (the legs already show that journey).
+  const LONG_HOP_KM = 25, NEAR_LEG_KM = 15;
+  const km = (a: number[], b: number[]) => L.latLng(a[0], a[1]).distanceTo(L.latLng(b[0], b[1])) / 1000;
   document.querySelectorAll<HTMLElement>('.route-map').forEach((el) => {
     const stops = JSON.parse(el.dataset.stops || '[]');
+    const legs = JSON.parse(el.dataset.legs || '[]');
     if (!stops.length) { el.innerHTML = '<p class="empty">Road map coming once photos are sorted.</p>'; return; }
     const map = L.map(el, { scrollWheelZoom: false });
     L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', { attribution: '© OpenStreetMap contributors' }).addTo(map);
+    legs.forEach((leg: any) => L.polyline(leg.coords, styles[leg.mode] ?? styles.other).bindTooltip(leg.name).addTo(map));
     stops.forEach((s: any, i: number) => {
-      L.circleMarker([s.lat, s.lng], { radius: 7, color: '#c2410c', fillOpacity: .9 })
+      if (i > 0) {
+        const a = [stops[i - 1].lat, stops[i - 1].lng], b = [s.lat, s.lng];
+        const onLeg = (p: number[]) => legs.some((leg: any) => leg.coords.some((c: number[]) => km(p, c) < NEAR_LEG_KM));
+        const covered = km(a, b) > LONG_HOP_KM && onLeg(a) && onLeg(b);
+        if (!covered) L.polyline([a, b], styles[s.mode] ?? styles.other).addTo(map);
+      }
+    });
+    stops.forEach((s: any, i: number) => {
+      L.circleMarker([s.lat, s.lng], { radius: 6, color: '#fff', weight: 1.5, fillColor: '#c2410c', fillOpacity: .95 })
         .bindPopup(`<strong>${i + 1}. ${s.name}</strong>${s.date ? `<br>${s.date}` : ''}${s.note ? `<br>${s.note}` : ''}`)
         .addTo(map);
-      if (i > 0) L.polyline([[stops[i - 1].lat, stops[i - 1].lng], [s.lat, s.lng]], styles[s.mode] ?? styles.other).addTo(map);
     });
     map.fitBounds(L.latLngBounds(stops.map((s: any) => [s.lat, s.lng])), { padding: [30, 30] });
   });
 </script>
 <style>
-  .route-map { height: 420px; border-radius: 14px; border: 1px solid var(--border); background: var(--surface); }
-  .legend { display: flex; gap: 18px; list-style: none; padding: 0; margin: 8px 0 0; font-size: .85rem; color: var(--muted); }
+  .route-map { height: 460px; border-radius: 14px; border: 1px solid var(--border); background: var(--surface); }
+  .legend { display: flex; flex-wrap: wrap; gap: 18px; list-style: none; padding: 0; margin: 8px 0 0; font-size: .85rem; color: var(--muted); }
   .legend li::before { content: ''; display: inline-block; width: 22px; margin-right: 6px; vertical-align: middle; border-top: 3px solid; }
   .legend .drive::before { border-color: #c2410c; }
-  .legend .train::before { border-color: #2563eb; border-top-style: dashed; }
+  .legend .shinkansen::before { border-color: #dc2626; border-top-width: 4px; }
+  .legend .express::before { border-color: #2563eb; }
+  .legend .train::before { border-color: #6b7280; border-top-style: dashed; }
   .legend .flight::before { border-color: #6b665e; border-top-style: dotted; }
   :global(.route-map .empty) { padding: 24px; color: var(--muted); }
 </style>

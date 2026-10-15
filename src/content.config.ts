@@ -22,7 +22,13 @@ const adventures = defineCollection({
       lng: z.number(),
       date: z.string().optional(),
       note: z.string().optional(),
-      mode: z.enum(['drive', 'train', 'flight', 'walk', 'other']).default('other'),
+      mode: z.enum(['drive', 'train', 'shinkansen', 'express', 'flight', 'walk', 'other']).default('other'),
+    })).default([]),
+    // Optional real route lines (e.g. rail lines). When a leg covers a hop, the straight line for it is skipped.
+    legs: z.array(z.object({
+      name: z.string(),
+      mode: z.enum(['drive', 'train', 'shinkansen', 'express', 'flight', 'walk', 'other']),
+      coords: z.array(z.tuple([z.number(), z.number()])), // [lat, lng]
     })).default([]),
   }),
 });

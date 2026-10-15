@@ -1,6 +1,7 @@
 ---
 interface Props { title: string; description?: string }
 const { title, description = 'A curated record of adventures and sidequests.' } = Astro.props;
+import { isAlpha } from '../lib/drafts';
 const base = import.meta.env.BASE_URL.replace(/\/$/, '');
 ---
 <!doctype html>
@@ -10,10 +11,12 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, '');
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>{title}</title>
     <meta name="description" content={description} />
+    {isAlpha && <meta name="robots" content="noindex" />}
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
   </head>
   <body>
+    {isAlpha && <div class="alpha-banner">Alpha preview: includes drafts that aren't on the live site yet.</div>}
     <header class="site-header">
       <a class="brand" href={`${base}/`}>Sidequests</a>
       <nav>
@@ -49,4 +52,5 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, '');
   nav a:hover { color: var(--accent); }
   .site-footer { text-align: center; color: var(--muted); padding: 32px 16px; border-top: 1px solid var(--border); font-size: .9rem; }
   img { max-width: 100%; display: block; }
+  .alpha-banner { background: var(--accent); color: #fff; text-align: center; padding: 6px 16px; font-size: .85rem; font-weight: 600; }
 </style>

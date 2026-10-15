@@ -22,3 +22,7 @@ npm install
 npm run dev
 ```
 Drafts show up locally but not on the live site.
+
+## Alpha preview
+
+Every deploy also publishes an alpha copy at `/alpha/` that includes draft entries, with a banner at the top and hidden from search engines. Use it to review entries before setting `draft: false`.

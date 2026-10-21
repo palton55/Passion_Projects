@@ -16,12 +16,12 @@ stops:
   - {"name": "Waterbomb, Goyang", "lat": 37.6632, "lng": 126.7413, "date": "Day 4"}
   - {"name": "Lotte World Tower", "lat": 37.5134, "lng": 127.1036, "date": "Day 6"}
 legs:
-  - {"name": "Flight, Narita to Incheon", "mode": "flight", "coords": [[35.772, 140.3929], [36.9, 133.5], [37.4602, 126.4407]]}
-  - {"name": "Airport railroad into Seoul (assumed)", "mode": "express", "coords": [[37.4602, 126.4407], [37.5695, 126.6877], [37.5622, 126.801], [37.5556, 126.9723]]}
-  - {"name": "DMZ tour (assumed tour bus)", "mode": "bus", "coords": [[37.5623, 126.9972], [37.558, 126.9251], [37.7, 126.75], [37.8905, 126.7396], [37.9103, 126.7059], [37.7732, 126.6771], [37.573, 126.9815]]}
-  - {"name": "To Waterbomb in Goyang", "mode": "local", "coords": [[37.5623, 126.9972], [37.58, 126.86], [37.6632, 126.7413], [37.5663, 127.005]]}
-  - {"name": "Airport railroad, Seoul Station to Incheon", "mode": "express", "coords": [[37.5556, 126.9723], [37.5622, 126.801], [37.5695, 126.6877], [37.5236, 126.5442], [37.4602, 126.4407]]}
-  - {"name": "Flight, Incheon to Narita", "mode": "flight", "coords": [[37.4602, 126.4407], [36.6, 133.5], [35.772, 140.3929]]}
+  - {"name": "Flight, Narita to Incheon", "mode": "flight", "coords": [[35.772, 140.3929], [36.9, 133.5], [37.4602, 126.4407]], "day": 1}
+  - {"name": "Airport railroad into Seoul (assumed)", "mode": "express", "coords": [[37.4602, 126.4407], [37.5695, 126.6877], [37.5622, 126.801], [37.5556, 126.9723]], "day": 1}
+  - {"name": "DMZ tour (assumed tour bus)", "mode": "bus", "coords": [[37.5623, 126.9972], [37.558, 126.9251], [37.7, 126.75], [37.8905, 126.7396], [37.9103, 126.7059], [37.7732, 126.6771], [37.573, 126.9815]], "day": 2}
+  - {"name": "To Waterbomb in Goyang", "mode": "local", "coords": [[37.5623, 126.9972], [37.58, 126.86], [37.6632, 126.7413], [37.5663, 127.005]], "day": 4}
+  - {"name": "Airport railroad, Seoul Station to Incheon", "mode": "express", "coords": [[37.5556, 126.9723], [37.5622, 126.801], [37.5695, 126.6877], [37.5236, 126.5442], [37.4602, 126.4407]], "day": 8}
+  - {"name": "Flight, Incheon to Narita", "mode": "flight", "coords": [[37.4602, 126.4407], [36.6, 133.5], [35.772, 140.3929]], "day": 8}
 # Day-by-day timeline, generated from the trip notes by scripts/import_trips.py.
 timeline:
   - label: "Day 1"

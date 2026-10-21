@@ -15,8 +15,8 @@ stops:
   - {"name": "Kodaira", "lat": 35.7, "lng": 139.48, "date": "home base"}
   - {"name": "Ikebukuro", "lat": 35.73, "lng": 139.7153, "date": "Day 2"}
 legs:
-  - {"name": "Kodaira to Kusatsu (to confirm)", "mode": "drive", "coords": [[35.7, 139.48], [35.93, 139.4], [36.2543, 139.1197], [36.49, 139.0], [36.5397, 138.6716], [36.6223, 138.5956]]}
-  - {"name": "Kusatsu back to Ikebukuro (to confirm)", "mode": "drive", "coords": [[36.6223, 138.5956], [36.5478, 138.6848], [36.49, 139.0], [36.2543, 139.1197], [35.93, 139.4], [35.73, 139.7153]]}
+  - {"name": "Kodaira to Kusatsu (to confirm)", "mode": "drive", "coords": [[35.7, 139.48], [35.93, 139.4], [36.2543, 139.1197], [36.49, 139.0], [36.5397, 138.6716], [36.6223, 138.5956]], "day": 1}
+  - {"name": "Kusatsu back to Ikebukuro (to confirm)", "mode": "drive", "coords": [[36.6223, 138.5956], [36.5478, 138.6848], [36.49, 139.0], [36.2543, 139.1197], [35.93, 139.4], [35.73, 139.7153]], "day": 2}
 # Day-by-day timeline, generated from the trip notes by scripts/import_trips.py.
 timeline:
   - label: "Day 1"

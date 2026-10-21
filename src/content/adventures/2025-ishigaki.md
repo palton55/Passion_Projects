@@ -16,13 +16,13 @@ stops:
   - {"name": "Cape Ogan", "lat": 24.4483, "lng": 124.0718, "date": "Day 3"}
   - {"name": "Boat trips", "lat": 24.2614, "lng": 123.9929, "date": "Days 2 and 4"}
 legs:
-  - {"name": "Flight, Haneda to Ishigaki", "mode": "flight", "coords": [[35.5494, 139.7798], [30.0, 133.0], [24.391, 124.2461]]}
-  - {"name": "Airport to Ishigaki town", "mode": "drive", "coords": [[24.391, 124.2461], [24.36, 124.2], [24.34, 124.155]]}
-  - {"name": "Boat trip from Ishigaki port", "mode": "ferry", "coords": [[24.338, 124.15], [24.31, 124.12], [24.2856, 124.0944], [24.338, 124.15]]}
-  - {"name": "Drive up the west coast", "mode": "drive", "coords": [[24.34, 124.155], [24.39, 124.11], [24.4125, 124.0755], [24.4483, 124.0718], [24.4892, 124.1176], [24.42, 124.15], [24.34, 124.155]]}
-  - {"name": "Boat trip toward Kohama and Kuroshima", "mode": "ferry", "coords": [[24.338, 124.15], [24.3118, 124.102], [24.2836, 124.0422], [24.2614, 123.9929], [24.3127, 124.097], [24.338, 124.15]]}
-  - {"name": "Ferry to Taketomi and back", "mode": "ferry", "coords": [[24.338, 124.15], [24.3338, 124.0916], [24.3251, 124.0764], [24.338, 124.15]]}
-  - {"name": "Flight, Ishigaki to Haneda", "mode": "flight", "coords": [[24.391, 124.2461], [30.8, 133.6], [35.5494, 139.7798]]}
+  - {"name": "Flight, Haneda to Ishigaki", "mode": "flight", "coords": [[35.5494, 139.7798], [30.0, 133.0], [24.391, 124.2461]], "day": 1}
+  - {"name": "Airport to Ishigaki town", "mode": "drive", "coords": [[24.391, 124.2461], [24.36, 124.2], [24.34, 124.155]], "day": 1}
+  - {"name": "Boat trip from Ishigaki port", "mode": "ferry", "coords": [[24.338, 124.15], [24.31, 124.12], [24.2856, 124.0944], [24.338, 124.15]], "day": 2}
+  - {"name": "Drive up the west coast", "mode": "drive", "coords": [[24.34, 124.155], [24.39, 124.11], [24.4125, 124.0755], [24.4483, 124.0718], [24.4892, 124.1176], [24.42, 124.15], [24.34, 124.155]], "day": 3}
+  - {"name": "Boat trip toward Kohama and Kuroshima", "mode": "ferry", "coords": [[24.338, 124.15], [24.3118, 124.102], [24.2836, 124.0422], [24.2614, 123.9929], [24.3127, 124.097], [24.338, 124.15]], "day": 4}
+  - {"name": "Ferry to Taketomi and back", "mode": "ferry", "coords": [[24.338, 124.15], [24.3338, 124.0916], [24.3251, 124.0764], [24.338, 124.15]], "day": 5}
+  - {"name": "Flight, Ishigaki to Haneda", "mode": "flight", "coords": [[24.391, 124.2461], [30.8, 133.6], [35.5494, 139.7798]], "day": 6}
 # Day-by-day timeline, generated from the trip notes by scripts/import_trips.py.
 timeline:
   - label: "Day 1"

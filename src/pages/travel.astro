@@ -7,7 +7,7 @@ import { getCollection } from 'astro:content';
 import { regions } from '../data/regions';
 const travel = (await getCollection('adventures', ({ data }) => data.category === 'Travel' && (!data.draft || showDrafts)))
   .sort((a, b) => (b.data.start?.valueOf() ?? 0) - (a.data.start?.valueOf() ?? 0));
-const regionNames = new Set(regions.map((r) => r.region));
+const regionNames = new Set(regions.flatMap((r) => [r.region].flat()));
 const otherTravel = travel.filter((e) => !regionNames.has(e.data.region ?? ''));
 ---
 <Base title="Experience · Sidequest Resume" description="Travel and experiences, organized by destination.">

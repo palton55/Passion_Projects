@@ -9,7 +9,7 @@ export function getStaticPaths() {
 }
 const { region } = Astro.props as { region: Region };
 const base = import.meta.env.BASE_URL.replace(/\/$/, '');
-const entries = (await getCollection('adventures', ({ data }) => data.region === region.region && (!data.draft || showDrafts)))
+const entries = (await getCollection('adventures', ({ data }) => [region.region].flat().includes(data.region ?? '') && (!data.draft || showDrafts)))
   .sort((a, b) => (b.data.start?.valueOf() ?? 0) - (a.data.start?.valueOf() ?? 0));
 ---
 <Base title={`${region.name} · Sidequest Resume`} description={region.blurb}>

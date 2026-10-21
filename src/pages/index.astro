@@ -11,7 +11,8 @@ const all = (await getCollection('adventures', ({ data }) => !data.draft || show
   <section class="hero">
     <h1>Sidequest Resume</h1>
     <p>A curated record of the things I have pursued: travel, scuba diving, Brazilian Jiu-Jitsu, professional esports, drones and photography, and the other sidequests along the way. Each entry documents what was done, where, and what came of it.</p>
-    <a class="cta" href={`${base}/sidequests/`}>View all sidequests</a>
+    <a class="cta" href={`${base}/travel/`}>Travel</a>
+    <a class="cta" href={`${base}/hobbies/`}>Hobbies</a>
   </section>
   <h2>Recent sidequests</h2>
   {all.length === 0 && <p class="empty">Entries are currently in preparation.</p>}
@@ -21,7 +22,7 @@ const all = (await getCollection('adventures', ({ data }) => !data.draft || show
   .hero { padding: 48px 0 32px; max-width: 680px; }
   .hero h1 { font-size: clamp(2.2rem, 6vw, 3.4rem); margin: 0 0 16px; }
   .hero p { color: var(--muted); font-size: 1.1rem; }
-  .cta { display: inline-block; margin-top: 8px; padding: 10px 18px; border-radius: 999px; background: var(--accent); color: #fff; text-decoration: none; font-weight: 600; }
+  .cta { display: inline-block; margin: 8px 8px 0 0; padding: 10px 18px; border-radius: 999px; background: var(--accent); color: #fff; text-decoration: none; font-weight: 600; }
   .empty { color: var(--muted); }
   .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 20px; }
 </style>

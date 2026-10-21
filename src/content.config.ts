@@ -24,13 +24,21 @@ const adventures = defineCollection({
       lng: z.number(),
       date: z.string().optional(),
       note: z.string().optional(),
-      mode: z.enum(['drive', 'train', 'shinkansen', 'express', 'local', 'daytrip', 'flight', 'walk', 'other']).default('other'),
+      mode: z.enum(['drive', 'train', 'shinkansen', 'express', 'local', 'daytrip', 'bus', 'ferry', 'flight', 'walk', 'other']).default('other'),
     })).default([]),
     // Optional real route lines (e.g. rail lines). When a leg covers a hop, the straight line for it is skipped.
     legs: z.array(z.object({
       name: z.string(),
-      mode: z.enum(['drive', 'train', 'shinkansen', 'express', 'local', 'daytrip', 'flight', 'walk', 'other']),
+      mode: z.enum(['drive', 'train', 'shinkansen', 'express', 'local', 'daytrip', 'bus', 'ferry', 'flight', 'walk', 'other']),
       coords: z.array(z.tuple([z.number(), z.number()])), // [lat, lng]
+    })).default([]),
+    // Day-by-day timeline. Each day lists events in order; `route` lines say how the day's travel was made.
+    timeline: z.array(z.object({
+      label: z.string(),
+      date: z.coerce.date().optional(),
+      title: z.string().optional(),
+      events: z.array(z.object({ time: z.string().optional(), text: z.string() })).default([]),
+      route: z.array(z.string()).default([]),
     })).default([]),
   }),
 });

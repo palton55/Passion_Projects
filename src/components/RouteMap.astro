@@ -1,14 +1,14 @@
 ---
 // Road map: stops are the places visited. Optional `legs` draw the real route (e.g. rail lines);
 // without legs, stops are joined in order by straight lines.
-const { stops, legs = [] } = Astro.props;
+const { stops, legs = [], height = 460 } = Astro.props;
 const used = new Set(legs.length ? legs.map((l: any) => l.mode) : stops.map((s: any) => s.mode));
 const legend = [
-  ['drive', 'Drive'], ['shinkansen', 'Shinkansen'], ['express', 'Limited express'], ['local', 'Local train'], ['daytrip', 'Day trip'],
+  ['drive', 'Drive'], ['shinkansen', 'Shinkansen'], ['express', 'Limited express'], ['local', 'Local train'], ['daytrip', 'Day trip'], ['bus', 'Bus'], ['ferry', 'Boat / ferry'],
   ['train', 'Getting around town'], ['flight', 'Flight'],
 ].filter(([m]) => used.has(m));
 ---
-<div class="route-map" data-stops={JSON.stringify(stops)} data-legs={JSON.stringify(legs)}></div>
+<div class="route-map" style={`height: ${height}px`} data-stops={JSON.stringify(stops)} data-legs={JSON.stringify(legs)}></div>
 <ul class="legend">{legend.map(([m, label]) => <li class={m}>{label}</li>)}</ul>
 <script>
   import L from 'leaflet';
@@ -19,6 +19,8 @@ const legend = [
     express: { color: '#2563eb', weight: 4 },
     local: { color: '#16a34a', weight: 3 },
     daytrip: { color: '#0d9488', weight: 3, dashArray: '8 6' },
+    bus: { color: '#d97706', weight: 3 },
+    ferry: { color: '#0891b2', weight: 3, dashArray: '4 6' },
     train: { color: '#6b7280', weight: 2, dashArray: '6 6' },
     flight: { color: '#6b665e', weight: 2, dashArray: '2 6' },
     walk: { color: '#16a34a', weight: 3 },
@@ -45,7 +47,7 @@ const legend = [
   });
 </script>
 <style>
-  .route-map { height: 460px; border-radius: 14px; border: 1px solid var(--border); background: var(--surface); }
+  .route-map { border-radius: 14px; border: 1px solid var(--border); background: var(--surface); }
   .legend { display: flex; flex-wrap: wrap; gap: 18px; list-style: none; padding: 0; margin: 8px 0 0; font-size: .85rem; color: var(--muted); }
   .legend li::before { content: ''; display: inline-block; width: 22px; margin-right: 6px; vertical-align: middle; border-top: 3px solid; }
   .legend .drive::before { border-color: #7c3aed; }
@@ -53,6 +55,8 @@ const legend = [
   .legend .express::before { border-color: #2563eb; }
   .legend .local::before { border-color: #16a34a; }
   .legend .daytrip::before { border-color: #0d9488; border-top-style: dashed; }
+  .legend .bus::before { border-color: #d97706; }
+  .legend .ferry::before { border-color: #0891b2; border-top-style: dashed; }
   .legend .train::before { border-color: #6b7280; border-top-style: dashed; }
   .legend .flight::before { border-color: #6b665e; border-top-style: dotted; }
   :global(.route-map .stop-label) { background: transparent; border: 0; box-shadow: none; font-weight: 600; color: #1f1d1a; text-shadow: 0 0 3px #fff, 0 0 3px #fff; }

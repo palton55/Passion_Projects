@@ -5,7 +5,7 @@ import Gallery from '../../components/Gallery.astro';
 import Timeline from '../../components/Timeline.astro';
 import { showDrafts } from '../../lib/drafts';
 import { getCollection, render } from 'astro:content';
-import { parentOf, slug } from '../../data/japan-topics';
+import { parentOf } from '../../data/japan-topics';
 export async function getStaticPaths() {
   const all = await getCollection('adventures', ({ data }) => !data.draft || showDrafts);
   return all.map((entry) => ({ params: { id: entry.id }, props: { entry } }));
@@ -23,7 +23,7 @@ const yt = d.video?.match(/(?:v=|youtu\.be\/)([\w-]{11})/)?.[1];
     <p class="meta">{[d.category, d.collection ?? d.region, d.start && `${fmt(d.start)}${d.end ? ` to ${fmt(d.end)}` : ''}`].filter(Boolean).join(' · ')}</p>
     <h1>{d.title}</h1>
     <p class="lede">{d.summary}</p>
-    {parent && <p class="meta">Part of <a href={`${base}/japan/#${slug(parent.collection)}`}>{parent.title}</a></p>}
+    {parent && <p class="meta">Part of <a href={`${base}/japan/${parent.page}/`}>{parent.title}</a></p>}
     {d.companions.length > 0 && <p class="meta">With {d.companions.join(', ')}</p>}
     {yt && <div class="video"><iframe src={`https://www.youtube-nocookie.com/embed/${yt}`} title={d.title} allowfullscreen loading="lazy"></iframe></div>}
     {d.stops.length > 0 && <h2>The route</h2>}

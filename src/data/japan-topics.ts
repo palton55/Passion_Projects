@@ -2,6 +2,10 @@
 // `collection` frontmatter matches the topic's `collection`.
 export interface JapanTopic {
   collection: string;
+  // Page under /japan/<page>/ for top-level trips.
+  page?: string;
+  // Short label for the module tile.
+  label?: string;
   title: string;
   dates?: string;
   blurb: string;
@@ -13,18 +17,24 @@ export interface JapanTopic {
 export const japanTopics: JapanTopic[] = [
   {
     collection: 'Japan 2023',
+    page: '2023',
+    label: '2023',
     title: 'Japan 2023: First Visit',
     dates: 'March 11 to 19, 2023',
     blurb: 'A spring break journey with Shaggy from Tokyo to Osaka, Kyoto, and a homestay in Tsuruga, Fukui.',
   },
   {
     collection: 'Japan 2024',
+    page: '2024',
+    label: '2024',
     title: 'Japan 2024: Return to Tokyo',
     dates: 'May 11 to 19, 2024',
     blurb: 'A return after sophomore finals with friends, including a first visit to Tokyo for Michael and a day trip to Mt. Fuji and Kawaguchiko.',
   },
   {
     collection: 'Study Abroad 2025',
+    page: '2025',
+    label: '2025',
     title: 'Study Abroad 2025',
     dates: 'March 20 to August 24, 2025',
     blurb: 'Six months living in Kodaira, Tokyo, as an exchange student at Hitotsubashi University, with road trips, train journeys, and travel across the country.',
@@ -43,6 +53,8 @@ export const japanTopics: JapanTopic[] = [
   },
   {
     collection: 'Japan 2026',
+    page: '2026',
+    label: '2026',
     title: 'Japan 2026',
     dates: '2026',
     blurb: 'A return to Japan, part of it with family, told from my own perspective.',

@@ -1,0 +1,22 @@
+---
+// A module tile linking to a section page (e.g. a country or a trip year).
+const { href, label, meta, title, blurb } = Astro.props;
+const base = import.meta.env.BASE_URL.replace(/\/$/, '');
+---
+<a class="tile" href={`${base}${href}`}>
+  <div class="cover"><span>{label ?? title}</span></div>
+  <div class="body">
+    {meta && <p class="meta">{meta}</p>}
+    <h3>{title}</h3>
+    <p>{blurb}</p>
+  </div>
+</a>
+<style>
+  .tile { display: block; background: var(--surface); border: 1px solid var(--border); border-radius: 14px; overflow: hidden; text-decoration: none; color: var(--text); transition: transform .15s; }
+  .tile:hover { transform: translateY(-3px); }
+  .cover { aspect-ratio: 16/10; background: var(--unvisited); display: grid; place-items: center; color: var(--muted); font-family: var(--font-head); font-size: 1.6rem; }
+  .body { padding: 16px 18px 20px; }
+  .meta { color: var(--muted); font-size: .85rem; margin: 0; }
+  h3 { margin: 4px 0 8px; font-size: 1.25rem; }
+  .body p:last-child { margin: 0; color: var(--muted); font-size: .95rem; }
+</style>

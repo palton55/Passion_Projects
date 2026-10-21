@@ -17,7 +17,7 @@ const fmt = (x: Date) => x.toLocaleDateString('en-US', { month: 'short', year: '
 <style>
   .card { display: block; background: var(--surface); border: 1px solid var(--border); border-radius: 14px; overflow: hidden; text-decoration: none; color: var(--text); transition: transform .15s; }
   .card:hover { transform: translateY(-3px); }
-  .cover { aspect-ratio: 16/10; background: var(--unvisited) center/cover; display: grid; place-items: center; color: var(--muted); font-family: Fraunces, serif; font-size: 1.3rem; }
+  .cover { aspect-ratio: 16/10; background: var(--unvisited) center/cover; display: grid; place-items: center; color: var(--muted); font-family: var(--font-head); font-size: 1.3rem; }
   .body { padding: 16px 18px 20px; }
   .meta { color: var(--muted); font-size: .85rem; margin: 0; }
   h3 { margin: 4px 0 8px; font-size: 1.25rem; }

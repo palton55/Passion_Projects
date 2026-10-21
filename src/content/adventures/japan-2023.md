@@ -1,12 +1,12 @@
 ---
 title: "First Visit to Japan"
-summary: "A nine-day spring break journey with Shaggy from Tokyo to Osaka, Kyoto, and a homestay in Tsuruga, undertaken with first-year Japanese."
+summary: "A nine-day spring break journey with friends from Tokyo to Osaka, Kyoto, and a homestay in Tsuruga, undertaken with first-year Japanese."
 start: 2023-03-11
 end: 2023-03-19
 category: Travel
 region: Japan
 collection: Japan 2023
-companions: [Shaggy]
+companions: [friends]
 draft: true              # stays a draft until the story and the Mar 18 stop are filled in
 # Cities visited and the route between them (from trips/japan-2023/stops.geojson). Rail lines are assumed through main stations.
 stops:

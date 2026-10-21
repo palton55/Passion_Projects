@@ -6,9 +6,11 @@ const adventures = defineCollection({
   schema: z.object({
     title: z.string(),
     summary: z.string(),
-    start: z.coerce.date(),
+    // What kind of sidequest this is, e.g. "Travel", "Scuba Diving", "Brazilian Jiu-Jitsu". Groups the Sidequests page.
+    category: z.string().default('Travel'),
+    start: z.coerce.date().optional(),
     end: z.coerce.date().optional(),
-    region: z.string(),               // e.g. "Japan", "Hawaii", "Korea"
+    region: z.string().optional(),    // where it happened, e.g. "Japan", "Hawaii", "Korea"
     collection: z.string().optional(), // e.g. "Japan 2025 study abroad"
     companions: z.array(z.string()).default([]),
     cover: z.string().optional(),      // path under /public, e.g. "photos/japan-2023/cover.jpg"

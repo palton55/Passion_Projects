@@ -5,8 +5,9 @@ A curated record of my adventures and sidequests, built with [Astro](https://ast
 ## Adding an adventure
 
 1. Put photos in `public/photos/<adventure-id>/`.
-2. Copy `src/content/adventures/japan-2023.md` to `src/content/adventures/<adventure-id>.md` and fill in the frontmatter:
-   - `stops`: the road map, in order. `mode` is how you got to that stop (`drive`, `train`, `shinkansen`, `express`, `local`, `daytrip`, `flight`, `walk`). Add `legs` with real route coordinates (e.g. rail lines) to draw the actual path instead of straight hops.
+2. Copy `src/content/adventures/japan-2023.md` (each file is one sidequest, served at `/sidequests/<id>/`) to `src/content/adventures/<adventure-id>.md` and fill in the frontmatter:
+   - `category`: the kind of sidequest (`Travel`, `Scuba Diving`, `Brazilian Jiu-Jitsu`, ...). `region` and `start` are optional.
+   - `stops`: the road map (optional, for trips), in order. `mode` is how you got to that stop (`drive`, `train`, `shinkansen`, `express`, `local`, `daytrip`, `flight`, `walk`). Add `legs` with real route coordinates (e.g. rail lines) to draw the actual path instead of straight hops.
    - `photos`: `{ src: photos/<adventure-id>/file.jpg, caption: ... }`
    - `video`: a YouTube link, when there is one.
    - `draft: false` when it's ready to go live.

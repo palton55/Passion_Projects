@@ -1,5 +1,5 @@
 // Japan prefectures visited, from the prefectures-visited map (to be confirmed against photo GPS).
-// Add trip slugs to `trips` to link each prefecture to the adventures that covered it.
+// Add trip slugs to `trips` to link each prefecture to the sidequests that covered it.
 export const visited: Record<string, { trips: string[] }> = {
   Hokkaido: { trips: [] }, Aomori: { trips: [] }, Iwate: { trips: [] }, Akita: { trips: [] },
   Miyagi: { trips: [] }, Yamagata: { trips: [] }, Fukushima: { trips: [] },

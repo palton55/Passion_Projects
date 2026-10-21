@@ -4,10 +4,11 @@ import Tile from '../../components/Tile.astro';
 import { visited } from '../../data/visited';
 import { japanTopics } from '../../data/japan-topics';
 const count = Object.keys(visited).length;
+const base = import.meta.env.BASE_URL.replace(/\/$/, '');
 ---
 <Base title="Japan · Sidequest Resume" description="Trips to Japan, each with its own page, route maps, and timelines.">
   <h1>Japan</h1>
-  <p class="lede">Japan is where I have spent the most time as an adult, across short trips and a six-month study abroad. Each trip has its own page with route maps and a day-by-day account.</p>
+  <p class="lede">Japan is where I have spent the most time as an adult, across short trips and a six-month study abroad. Each trip has its own page with route maps and a day-by-day account, and <a href={`${base}/japan/map/`}>the Japan route map</a> combines every road and rail line covered so far.</p>
   <p class="meta">{count} of 47 prefectures visited.</p>
   <div class="grid">
     {japanTopics.map((t) => <Tile href={`/japan/${t.page}/`} label={t.label} title={t.title} meta={t.dates} blurb={t.blurb} />)}

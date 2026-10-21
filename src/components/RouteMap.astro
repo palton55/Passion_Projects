@@ -1,14 +1,14 @@
 ---
 // Road map: stops are the places visited. Optional `legs` draw the real route (e.g. rail lines);
 // without legs, stops are joined in order by straight lines.
-const { stops, legs = [], height = 460 } = Astro.props;
+const { stops, legs = [], height = 460, dot = 8 } = Astro.props;
 const used = new Set(legs.length ? legs.map((l: any) => l.mode) : stops.map((s: any) => s.mode));
 const legend = [
   ['drive', 'Drive'], ['shinkansen', 'Shinkansen'], ['express', 'Limited express'], ['local', 'Local train'], ['daytrip', 'Day trip'], ['bus', 'Bus'], ['ferry', 'Boat / ferry'],
   ['train', 'Getting around town'], ['flight', 'Flight'],
 ].filter(([m]) => used.has(m));
 ---
-<div class="route-map" style={`height: ${height}px`} data-stops={JSON.stringify(stops)} data-legs={JSON.stringify(legs)}></div>
+<div class="route-map" style={`height: ${height}px`} data-dot={dot} data-stops={JSON.stringify(stops)} data-legs={JSON.stringify(legs)}></div>
 <ul class="legend">{legend.map(([m, label]) => <li class={m}>{label}</li>)}</ul>
 <script>
   import L from 'leaflet';
@@ -38,7 +38,7 @@ const legend = [
       if (i > 0) L.polyline([[stops[i - 1].lat, stops[i - 1].lng], [s.lat, s.lng]], styles[s.mode] ?? styles.other).addTo(map);
     });
     stops.forEach((s: any, i: number) => {
-      L.circleMarker([s.lat, s.lng], { radius: 8, color: '#fff', weight: 1.5, fillColor: '#c2410c', fillOpacity: .95 })
+      L.circleMarker([s.lat, s.lng], { radius: Number(el.dataset.dot || 8), color: '#fff', weight: 1.5, fillColor: '#c2410c', fillOpacity: .95 })
         .bindPopup(`<strong>${s.name}</strong>${s.date ? `<br>${s.date}` : ''}${s.note ? `<br>${s.note}` : ''}`)
         .bindTooltip(s.name, { permanent: stops.length <= 12, direction: 'right', offset: [8, 0], className: 'stop-label' })
         .addTo(map);

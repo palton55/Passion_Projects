@@ -12,7 +12,7 @@ const all = (await getCollection('adventures', ({ data }) => !data.draft || show
     <h1>Sidequest Resume</h1>
     <p>A curated record of the things I have pursued: travel, scuba diving, Brazilian Jiu-Jitsu, professional esports, drones and photography, and the other sidequests along the way. Each entry documents what was done, where, and what came of it.</p>
     <a class="cta" href={`${base}/travel/`}>Travel</a>
-    <a class="cta" href={`${base}/hobbies/`}>Hobbies</a>
+    <a class="cta" href={`${base}/skills/`}>Skills</a>
   </section>
   <h2>Recent sidequests</h2>
   {all.length === 0 && <p class="empty">Entries are currently in preparation.</p>}

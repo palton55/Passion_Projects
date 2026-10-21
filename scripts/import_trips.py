@@ -29,7 +29,7 @@ ENTRIES = [
     dict(id='japan-2024', dir='japan-2024', title='Return to Tokyo', collection='Japan 2024', companions=['friends'],
          summary='A nine-day return to Tokyo after sophomore finals with friends, including a day trip to Mt. Fuji and Kawaguchiko.'),
     # One entry with two sections (Patrick, Oct 21 2026): the Shimanami Kaido, then the drive back as the West Japan Road Trip.
-    dict(id='2025-west-japan-road-trip', dirs=['2025-study-abroad/01a-shimanami-kaido', '2025-study-abroad/01b-drive-back-to-tokyo'],
+    dict(id='2025-west-japan-road-trip', dir='2025-study-abroad/01-west-japan-road-trip',
          title='Shimanami Kaido and West Japan Road Trip', collection='Shimanami Kaido and West Japan Road Trip',
          summary='The opening week of the study abroad: the Shinkansen to Osaka and the Shimanami Kaido across the islands of the Seto Inland Sea, followed by a road trip back to Tokyo by way of Himeji, Arima Onsen, Nara, and Hakone.',
          parts=[
@@ -61,7 +61,7 @@ ENTRIES = [
                          'Shin-Hakodate-Hokuto', 'Sapporo', 'Hakodate', 'Tokyo'],
                   blurb='From Omiya to Hokkaido and back by the Tohoku, Yamagata, Akita, and Hokkaido Shinkansen and the Hokuto limited express, with stops across Tohoku and two nights in Hakodate.'),
              dict(title='The Hokkaido Road Trip', days=[3], modes=['drive'],
-                  stops=['Sapporo', 'Wakkanai / Cape Soya', 'Nakatombetsu', 'Asahikawa'],
+                  stops=['Sapporo Station', 'Obira', 'Enbetsu', 'Wakkanai', 'Cape Soya', 'Nakatombetsu', 'Asahikawa'],
                   blurb='A drive from Sapporo up the Sea of Japan coast on the Oronron Line to Wakkanai and Cape Soya, the northernmost point of Japan, then inland to Asahikawa and back to Sapporo.'),
          ]),
     dict(id='2025-kusatsu-onsen', dir='2025-study-abroad/07-kusatsu-onsen', title='Kusatsu Onsen', collection='Kusatsu Onsen',

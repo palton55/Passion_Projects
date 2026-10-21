@@ -8,24 +8,24 @@ region: Japan
 collection: "Shimanami Kaido and West Japan Road Trip"
 companions: []
 draft: true
-# Cities and route from 2025-study-abroad/01a-shimanami-kaido, 2025-study-abroad/01b-drive-back-to-tokyo/stops.geojson.
+# Cities and route from 2025-study-abroad/01-west-japan-road-trip/stops.geojson.
 stops:
   - {"name": "Tokyo", "lat": 35.6812, "lng": 139.7671, "date": "Days 1-3 · arrival"}
   - {"name": "Shin-Osaka", "lat": 34.7334, "lng": 135.5004, "date": "Day 3"}
-  - {"name": "Shimanami Kaido", "lat": 34.28, "lng": 133.08, "date": "Day 3 · the highlight"}
+  - {"name": "Shimanami Kaido", "lat": 34.28, "lng": 133.08, "date": "Day 3"}
   - {"name": "Imabari", "lat": 34.065, "lng": 132.995, "date": "Day 3 · night"}
-  - {"name": "Haneda Airport", "lat": 35.5494, "lng": 139.7798, "date": "arrive Mar 20"}
   - {"name": "Fukuyama", "lat": 34.4896, "lng": 133.3618, "date": "Day 4"}
   - {"name": "Okayama / Kurashiki", "lat": 34.6649, "lng": 133.9184, "date": "Day 4 · night"}
   - {"name": "Himeji", "lat": 34.8408, "lng": 134.6936, "date": "Day 5"}
   - {"name": "Arima Onsen", "lat": 34.7986, "lng": 135.2476, "date": "Day 5"}
   - {"name": "Nara", "lat": 34.6813, "lng": 135.8357, "date": "Day 5"}
-  - {"name": "Mountain village", "lat": 34.6801, "lng": 135.9765, "date": "Day 5 · east of Nara"}
-  - {"name": "Nagashima Spa Land", "lat": 35.0306, "lng": 136.733, "date": "Day 5 · drove past"}
-  - {"name": "Nagoya", "lat": 35.1709, "lng": 136.8815, "date": "Day 5 · drove past"}
   - {"name": "Hamamatsu", "lat": 34.72, "lng": 137.674, "date": "Day 5 · night"}
+  - {"name": "Nagoya", "lat": 35.1709, "lng": 136.8815, "date": "Day 5 · drove past"}
+  - {"name": "Nagashima Spa Land", "lat": 35.0306, "lng": 136.733, "date": "Day 5 · drove past"}
+  - {"name": "Mountain village", "lat": 34.6801, "lng": 135.9765, "date": "Day 5 · east of Nara"}
   - {"name": "Hakone / Gotemba", "lat": 35.25, "lng": 139.0, "date": "Day 6"}
   - {"name": "Kodaira", "lat": 35.7, "lng": 139.48, "date": "Day 6 · home base"}
+  - {"name": "Haneda Airport", "lat": 35.5494, "lng": 139.7798, "date": "arrive Mar 20"}
 legs:
   - {"name": "Tokaido Shinkansen, Tokyo to Shin-Osaka", "mode": "shinkansen", "coords": [[35.6812, 139.7671], [35.6285, 139.7388], [35.5075, 139.6175], [35.2564, 139.1553], [35.1265, 138.911], [34.9717, 138.389], [34.7038, 137.735], [34.7629, 137.382], [35.1709, 136.8815], [35.3156, 136.6855], [35.3141, 136.2902], [34.9858, 135.7588], [34.7334, 135.5004]], "day": 3}
   - {"name": "Drive from Shin-Osaka to the Shimanami Kaido (to confirm)", "mode": "drive", "coords": [[34.7334, 135.5004], [34.75, 135.1], [34.85, 134.69], [34.7, 133.9], [34.49, 133.36], [34.41, 133.2], [34.33, 133.17], [34.3045, 133.0903]], "day": 3}
@@ -62,9 +62,8 @@ timeline:
     route: ["Tokaido Shinkansen, Tokyo to Shin-Osaka.", "Drive from Shin-Osaka to the Shimanami Kaido (to confirm).", "Shimanami Kaido to Imabari."]
   - label: "Day 4"
     date: 2025-03-23
-    title: "Imabari, Fukuyama, Kibitsu Shrine"
+    title: "Fukuyama, Kibitsu Shrine, Kurashiki Bikan Historical Quarter"
     events:
-      - { time: "08:30", text: "Imabari, start of the drive back." }
       - { time: "11:15", text: "Fukuyama (castle area)." }
       - { time: "14:15", text: "Okayama Station area." }
       - { time: "16:30", text: "Kibitsu Shrine." }

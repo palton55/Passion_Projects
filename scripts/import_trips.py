@@ -197,6 +197,66 @@ def j(v):
     return json.dumps(v, ensure_ascii=False)
 
 
+# Average speeds (km/h) for rough travel-time estimates, and how much longer the real line is than the drawn one.
+SPEED = {'shinkansen': 210, 'express': 85, 'local': 45, 'drive': 65, 'bus': 60, 'ferry': 25}
+DETOUR = {'drive': 1.15, 'bus': 1.15}
+BUCKETS = [('Morning', 0, 12), ('Afternoon', 12, 17), ('Evening', 17, 24)]
+
+
+def km(coords):
+    from math import radians, sin, cos, asin, sqrt
+    total = 0.0
+    for (a, b), (c, d) in zip(coords, coords[1:]):
+        p1, p2 = radians(a), radians(c)
+        h = sin((p2 - p1) / 2) ** 2 + cos(p1) * cos(p2) * sin(radians(d - b) / 2) ** 2
+        total += 2 * 6371 * asin(sqrt(h))
+    return total
+
+
+def leg_summary(leg):
+    """'Name (about 515 km, 2 h 30 min)': distance from the drawn line, time from an average speed."""
+    name = re.sub(r'\s*\(Day \d+\)', '', leg['name'])
+    if leg['mode'] not in SPEED:
+        return name + '.'
+    dist = km(leg['coords']) * DETOUR.get(leg['mode'], 1.0)
+    if dist < 3:
+        return name + '.'
+    mins = dist / SPEED[leg['mode']] * 60
+    mins = round(mins / 5) * 5 if mins < 60 else round(mins / 15) * 15
+    t = f'{mins // 60} h {mins % 60} min' if mins >= 60 and mins % 60 else (f'{mins // 60} h' if mins >= 60 else f'{max(mins, 5)} min')
+    d = round(dist, -1) if dist >= 30 else round(dist)
+    return f'{name} (about {int(d)} km, {t}).'
+
+
+def bucket_of(time, prev):
+    if not time:
+        return prev or 'Morning'
+    m = re.search(r'(\d{1,2}):\d{2}', time)
+    if m:
+        h = int(m.group(1))
+        return next(n for n, a, b in BUCKETS if a <= h < b)
+    t = time.lower()
+    return 'Morning' if 'morning' in t else 'Afternoon' if 'afternoon' in t else 'Evening'
+
+
+def consolidate(days, legs):
+    """Fold each day's stops into morning, afternoon and evening lines, and list its legs with distance and time."""
+    for d in days:
+        if not d['events']:
+            continue
+        groups, prev = {}, None
+        for e in d['events']:
+            prev = bucket_of(e.get('time'), prev)
+            short = re.split(r'(?<=[a-z)])\.\s', e['text'])[0].rstrip('.')
+            groups.setdefault(prev, []).append(short)
+        d['events'] = [{'time': n, 'text': '; '.join(groups[n]) + '.'} for n, _, _ in BUCKETS if n in groups]
+        day_no = int(d['label'].split()[1]) if re.match(r'Day \d', d['label']) else None
+        day_legs = [l for l in legs if l.get('day') == day_no]
+        if day_legs:
+            d['route'] = [leg_summary(l) for l in day_legs]
+    return days
+
+
 def timeline_yaml(days):
     out = ['# Day-by-day timeline, generated from the trip notes by scripts/import_trips.py.', 'timeline:']
     for d in days:
@@ -256,6 +316,7 @@ def write_entry(e):
     fm += [f'  - {j(s)}' for s in stops]
     fm.append('legs:')
     fm += [f'  - {j(l)}' for l in legs]
+    consolidate(days, legs)
     if 'parts' in e:
         fm.append('parts:')
         fm += [f'  - {j(pt)}' for pt in e['parts']]
@@ -272,6 +333,12 @@ def update_2023():
     fm = re.sub(r'# Day-by-day timeline.*?(?=^\S(?!.*timeline)|\Z)', '', fm, flags=re.S | re.M)
     fm = re.sub(r'^timeline:\n(?:  .*\n)*', '', fm, flags=re.M)
     days = parse_days((TRIPS / 'japan-2023/road-map.md').read_text(), 2023)
+    import yaml
+    legs = yaml.safe_load(fm).get('legs', [])
+    for l in legs:
+        m = re.search(r'\(Day (\d+)\)', l['name'])
+        l['day'] = int(m.group(1)) if m else None
+    consolidate(days, legs)
     fm = fm.rstrip('\n') + '\n' + '\n'.join(timeline_yaml(days)) + '\n'
     path.write_text(f'---\n{fm}---\n{body}')
     print(f'japan-2023: {len(days)} days (timeline only)')

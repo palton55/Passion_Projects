@@ -23,17 +23,14 @@ timeline:
     date: 2025-08-17
     title: "Naganohara, Kusatsu Onsen"
     events:
-      - { time: "09:15", text: "Kan-Etsu Expressway near Fujioka." }
-      - { time: "10:55", text: "Naganohara." }
-      - { time: "11:45", text: "Kusatsu Onsen, Yubatake (night)." }
-    route: ["Kodaira to Kusatsu (to confirm)."]
+      - { time: "Morning", text: "Kan-Etsu Expressway near Fujioka; Naganohara; Kusatsu Onsen, Yubatake (night)." }
+    route: ["Kodaira to Kusatsu (to confirm) (about 160 km, 2 h 30 min)."]
   - label: "Day 2"
     date: 2025-08-18
     title: "Naganohara, Ikebukuro"
     events:
-      - { time: "17:40", text: "Naganohara." }
-      - { time: "21:25", text: "Ikebukuro." }
-    route: ["Kusatsu back to Ikebukuro (to confirm)."]
+      - { time: "Evening", text: "Naganohara; Ikebukuro." }
+    route: ["Kusatsu back to Ikebukuro (to confirm) (about 170 km, 2 h 45 min)."]
 ---
 
 *The full account of this sidequest is forthcoming.*

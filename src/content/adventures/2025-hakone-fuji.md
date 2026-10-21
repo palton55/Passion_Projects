@@ -26,24 +26,23 @@ timeline:
     date: 2025-04-07
     title: "Lake Ashi, Manazuru"
     events:
-      - { time: "12:10", text: "Lake Ashi, Hakone." }
-      - { time: "18:00", text: "Manazuru (base, two nights)." }
-    route: ["Kodaira to Lake Ashi (to confirm).", "Lake Ashi to Manazuru."]
+      - { time: "Afternoon", text: "Lake Ashi, Hakone." }
+      - { time: "Evening", text: "Manazuru (base, two nights)." }
+    route: ["Kodaira to Lake Ashi (to confirm) (about 80 km, 1 h 15 min).", "Lake Ashi to Manazuru (about 14 km, 15 min)."]
   - label: "Day 2"
     date: 2025-04-08
     title: "Fuji-Q Highland"
     events:
-      - { time: "13:15", text: "Fuji-Q Highland." }
-      - { time: "20:55", text: "Back in Manazuru." }
-    route: ["Manazuru to Fuji-Q Highland and back."]
+      - { time: "Afternoon", text: "Fuji-Q Highland." }
+      - { time: "Evening", text: "Back in Manazuru." }
+    route: ["Manazuru to Fuji-Q Highland and back (about 70 km, 1 h)."]
   - label: "Day 3"
     date: 2025-04-09
     title: "Hakone / Yugawara hills, Gotemba Premium Outlets"
     events:
-      - { time: "10:40", text: "Hakone / Yugawara hills." }
-      - { time: "11:55", text: "Gotemba Premium Outlets." }
-      - { time: "19:50", text: "Home in Kodaira." }
-    route: ["Manazuru to Gotemba and home."]
+      - { time: "Morning", text: "Hakone / Yugawara hills; Gotemba Premium Outlets." }
+      - { time: "Evening", text: "Home in Kodaira." }
+    route: ["Manazuru to Gotemba and home (about 110 km, 1 h 45 min)."]
 ---
 
 *The full account of this sidequest is forthcoming.*

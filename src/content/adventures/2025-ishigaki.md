@@ -29,41 +29,39 @@ timeline:
     date: 2025-08-19
     title: "Ishigaki town"
     events:
-      - { time: "13:35", text: "Haneda Airport." }
-      - { time: "20:00", text: "New Ishigaki Airport." }
-      - { time: "21:15", text: "Ishigaki town." }
-    route: ["Flight, Haneda to Ishigaki.", "Airport to Ishigaki town."]
+      - { time: "Afternoon", text: "Haneda Airport." }
+      - { time: "Evening", text: "New Ishigaki Airport; Ishigaki town." }
+    route: ["Flight, Haneda to Ishigaki.", "Airport to Ishigaki town (about 13 km, 10 min)."]
   - label: "Day 2"
     date: 2025-08-20
     title: "Boat trip south of Ishigaki"
     events:
-      - { time: "08:50", text: "Boat trip south of Ishigaki, near Taketomi." }
-    route: ["Boat trip from Ishigaki port."]
+      - { time: "Morning", text: "Boat trip south of Ishigaki, near Taketomi." }
+    route: ["Boat trip from Ishigaki port (about 16 km, 40 min)."]
   - label: "Day 3"
     date: 2025-08-21
     title: "West coast drive to Cape Ogan, North-west Ishigaki"
     events:
-      - { time: "08:25", text: "West coast drive to Cape Ogan." }
-      - { time: "08:45", text: "North-west Ishigaki." }
-    route: ["Drive up the west coast."]
+      - { time: "Morning", text: "West coast drive to Cape Ogan; North-west Ishigaki." }
+    route: ["Drive up the west coast (about 50 km, 40 min)."]
   - label: "Day 4"
     date: 2025-08-22
     title: "Boat trip near Kohama and Kuroshima"
     events:
-      - { time: "10:25", text: "Boat trip near Kohama and Kuroshima." }
-    route: ["Boat trip toward Kohama and Kuroshima."]
+      - { time: "Morning", text: "Boat trip near Kohama and Kuroshima." }
+    route: ["Boat trip toward Kohama and Kuroshima (about 40 km, 1 h 30 min)."]
   - label: "Day 5"
     date: 2025-08-23
     title: "Taketomi Island"
     events:
-      - { time: "10:30", text: "Taketomi Island." }
-    route: ["Ferry to Taketomi and back."]
+      - { time: "Morning", text: "Taketomi Island." }
+    route: ["Ferry to Taketomi and back (about 15 km, 35 min)."]
   - label: "Day 6"
     date: 2025-08-24
     title: "Travel day"
     events:
-      - { time: "09:05", text: "New Ishigaki Airport." }
-      - { time: "17:30", text: "Back in Tokyo." }
+      - { time: "Morning", text: "New Ishigaki Airport." }
+      - { time: "Evening", text: "Back in Tokyo." }
     route: ["Flight, Ishigaki to Haneda."]
 ---
 

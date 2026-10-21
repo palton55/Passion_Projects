@@ -54,60 +54,47 @@ timeline:
     date: 2025-08-03
     title: "Utsunomiya, Yamagata, Sendai Port area"
     events:
-      - { time: "08:30", text: "Omiya Station, Tohoku Shinkansen." }
-      - { text: "Utsunomiya, walk around town." }
-      - { time: "11:05", text: "Yamagata." }
-      - { time: "13:15", text: "Fukushima Station." }
-      - { time: "14:45", text: "Sendai Port area (Mitsui Outlet Park)." }
-      - { time: "17:20", text: "Sendai Station area." }
-      - { time: "20:45", text: "Omagari, Daisen (night)." }
-    route: ["Tohoku Shinkansen, Omiya to Fukushima.", "Yamagata Shinkansen, Fukushima to Yamagata and back.", "Tohoku Shinkansen, Fukushima to Sendai and Morioka.", "Akita Shinkansen, Morioka to Omagari (and back on Day 2)."]
+      - { time: "Morning", text: "Omiya Station, Tohoku Shinkansen; Utsunomiya, walk around town; Yamagata." }
+      - { time: "Afternoon", text: "Fukushima Station; Sendai Port area (Mitsui Outlet Park)." }
+      - { time: "Evening", text: "Sendai Station area; Omagari, Daisen (night)." }
+    route: ["Tohoku Shinkansen, Omiya to Fukushima (about 220 km, 1 h).", "Yamagata Shinkansen, Fukushima to Yamagata and back (about 80 km, 20 min).", "Tohoku Shinkansen, Fukushima to Sendai and Morioka (about 230 km, 1 h).", "Akita Shinkansen, Morioka to Omagari (and back on Day 2) (about 70 km, 20 min)."]
   - label: "Day 2"
     date: 2025-08-04
     title: "Aomori, Shin-Hakodate-Hokuto, Sapporo"
     events:
-      - { time: "10:25", text: "Morioka Station." }
-      - { text: "Aomori, food stop." }
-      - { time: "12:15", text: "Shin-Hakodate-Hokuto." }
-      - { time: "16:25", text: "Sapporo (night)." }
-    route: ["Tohoku and Hokkaido Shinkansen, Morioka to Shin-Hakodate-Hokuto.", "Limited express Hokuto, Shin-Hakodate-Hokuto to Sapporo."]
+      - { time: "Morning", text: "Morioka Station; Aomori, food stop." }
+      - { time: "Afternoon", text: "Shin-Hakodate-Hokuto; Sapporo (night)." }
+    route: ["Tohoku and Hokkaido Shinkansen, Morioka to Shin-Hakodate-Hokuto (about 290 km, 1 h 30 min).", "Limited express Hokuto, Shin-Hakodate-Hokuto to Sapporo (about 250 km, 3 h)."]
   - label: "Day 3"
     date: 2025-08-05
     title: "Obira, Enbetsu, Wakkanai"
     events:
-      - { time: "10:05", text: "Obira, Oronron Line coast road." }
-      - { time: "11:35", text: "Enbetsu." }
-      - { time: "13:00", text: "Wakkanai." }
-      - { time: "14:30", text: "Cape Soya, northern tip of Japan." }
-      - { time: "16:10", text: "Nakatombetsu." }
-      - { time: "19:25", text: "Asahikawa area (night)." }
-    route: ["Drive, Sapporo up the coast to Wakkanai and Cape Soya, then down to Asahikawa."]
+      - { time: "Morning", text: "Obira, Oronron Line coast road; Enbetsu." }
+      - { time: "Afternoon", text: "Wakkanai; Cape Soya, northern tip of Japan; Nakatombetsu." }
+      - { time: "Evening", text: "Asahikawa area (night)." }
+    route: ["Drive, Sapporo up the coast to Wakkanai and Cape Soya, then down to Asahikawa (about 610 km, 9 h 30 min)."]
   - label: "Day 4"
     date: 2025-08-06
     title: "Sapporo, Goryokaku, Mt. Hakodate night view"
     events:
-      - { time: "07:55", text: "Sapporo." }
-      - { time: "12:40", text: "Hakodate Station / morning market area." }
-      - { time: "14:55", text: "Goryokaku." }
-      - { time: "19:45", text: "Mt. Hakodate night view." }
-      - { time: "22:30", text: "Hakodate bay area (night)." }
-    route: ["Drive, Asahikawa back to Sapporo Station to return the car.", "Limited express Hokuto, Sapporo to Hakodate."]
+      - { time: "Morning", text: "Sapporo." }
+      - { time: "Afternoon", text: "Hakodate Station / morning market area; Goryokaku." }
+      - { time: "Evening", text: "Mt; Hakodate bay area (night)." }
+    route: ["Drive, Asahikawa back to Sapporo Station to return the car (about 150 km, 2 h 15 min).", "Limited express Hokuto, Sapporo to Hakodate (about 270 km, 3 h 15 min)."]
   - label: "Day 5"
     date: 2025-08-07
     title: "Onuma Park, Nanae, Hakodate"
     events:
-      - { time: "09:55", text: "Onuma Park." }
-      - { time: "13:25", text: "Nanae." }
-      - { time: "15:25", text: "Hakodate." }
-      - { time: "18:55", text: "Shin-Hakodate-Hokuto." }
-      - { time: "21:00", text: "Morioka (night)." }
-    route: ["Hakodate to Onuma Park and back (train or bus, to confirm).", "Hakodate Liner, Hakodate to Shin-Hakodate-Hokuto.", "Hokkaido and Tohoku Shinkansen, Shin-Hakodate-Hokuto to Morioka."]
+      - { time: "Morning", text: "Onuma Park." }
+      - { time: "Afternoon", text: "Nanae; Hakodate." }
+      - { time: "Evening", text: "Shin-Hakodate-Hokuto; Morioka (night)." }
+    route: ["Hakodate to Onuma Park and back (train or bus, to confirm) (about 50 km, 1 h).", "Hakodate Liner, Hakodate to Shin-Hakodate-Hokuto (about 16 km, 20 min).", "Hokkaido and Tohoku Shinkansen, Shin-Hakodate-Hokuto to Morioka (about 290 km, 1 h 30 min)."]
   - label: "Day 6"
     date: 2025-08-08
     title: "Travel day"
     events:
-      - { time: "09:10", text: "Tokyo Station." }
-    route: ["Tohoku Shinkansen, Morioka to Tokyo."]
+      - { time: "Morning", text: "Tokyo Station." }
+    route: ["Tohoku Shinkansen, Morioka to Tokyo (about 480 km, 2 h 15 min)."]
 ---
 
 *The full account of this sidequest is forthcoming.*

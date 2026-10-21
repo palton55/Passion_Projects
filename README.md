@@ -1,4 +1,4 @@
-# Sidequests
+# Sidequest Resume
 
 A curated record of my adventures and sidequests, built with [Astro](https://astro.build) and hosted on GitHub Pages.
 

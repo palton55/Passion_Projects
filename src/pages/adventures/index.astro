@@ -7,7 +7,7 @@ const all = (await getCollection('adventures', ({ data }) => !data.draft || show
   .sort((a, b) => b.data.start.valueOf() - a.data.start.valueOf());
 const regions = [...new Set(all.map((e) => e.data.region))];
 ---
-<Base title="Adventures · Sidequests">
+<Base title="Adventures · Sidequest Resume">
   <h1>Adventures</h1>
   {regions.length === 0 && <p style="color:var(--muted)">The first adventures are being written. Check back soon.</p>}
   {regions.map((r) => (

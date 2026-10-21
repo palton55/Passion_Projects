@@ -7,7 +7,7 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, '');
 const all = (await getCollection('adventures', ({ data }) => !data.draft || showDrafts))
   .sort((a, b) => b.data.start.valueOf() - a.data.start.valueOf());
 ---
-<Base title="Sidequests">
+<Base title="Sidequest Resume">
   <section class="hero">
     <h1>Adventures and sidequests</h1>
     <p>A curated record of the trips, road trips, dives and detours that shaped me. Japan first, since it's where I've spent most of my adult life, but this goes wherever the road does.</p>

@@ -4,21 +4,18 @@ import SidequestCard from '../components/SidequestCard.astro';
 import Tile from '../components/Tile.astro';
 import { showDrafts } from '../lib/drafts';
 import { getCollection } from 'astro:content';
+import { regions } from '../data/regions';
 const travel = (await getCollection('adventures', ({ data }) => data.category === 'Travel' && (!data.draft || showDrafts)))
   .sort((a, b) => (b.data.start?.valueOf() ?? 0) - (a.data.start?.valueOf() ?? 0));
-// Japan and Korea have their own sections; other travel entries are listed as cards.
-const regions = [
-  { name: 'Japan', href: '/japan/', blurb: 'Four trips, including the 2025 study abroad, with route maps and day-by-day timelines.' },
-  { name: 'Korea', href: '/korea/', blurb: 'A week in Seoul during the 2025 study abroad, including the DMZ and Waterbomb.' },
-];
-const otherTravel = travel.filter((e) => e.data.region !== 'Japan' && e.data.region !== 'South Korea');
+const regionNames = new Set(regions.map((r) => r.region));
+const otherTravel = travel.filter((e) => !regionNames.has(e.data.region ?? ''));
 ---
-<Base title="Travel · Sidequest Resume" description="Trips and journeys, organized by country.">
+<Base title="Travel · Sidequest Resume" description="Trips and journeys, organized by destination.">
   <h1>Travel</h1>
-  <p class="lede">Trips and journeys, organized by country.</p>
+  <p class="lede">Trips and journeys, organized by destination.</p>
   <div class="grid">
     {regions.map((r) => (
-      <Tile href={r.href} title={r.name} meta="Travel · Country" blurb={r.blurb} />
+      <Tile href={r.href ?? `/travel/${r.slug}/`} title={r.name} meta="Travel" blurb={r.blurb} />
     ))}
     {otherTravel.map((entry) => <SidequestCard entry={entry} />)}
   </div>

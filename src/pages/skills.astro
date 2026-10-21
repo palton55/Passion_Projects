@@ -8,7 +8,7 @@ const skills = (await getCollection('adventures', ({ data }) => data.category !=
 ---
 <Base title="Skills · Sidequest Resume" description="Skills developed over time.">
   <h1>Skills</h1>
-  <p class="lede">Skills developed over time: scuba diving, Brazilian Jiu-Jitsu, professional esports, and drones and photography.</p>
+  <p class="lede">Skills developed over time: scuba diving, Brazilian Jiu-Jitsu, professional esports, drones and photography, and scenic drives.</p>
   {skills.length === 0 && <p class="meta">Entries are currently in preparation.</p>}
   <div class="grid">{skills.map((entry) => <SidequestCard entry={entry} />)}</div>
 </Base>

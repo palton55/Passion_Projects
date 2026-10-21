@@ -4,7 +4,7 @@ import { visited } from '../data/visited';
 const base = import.meta.env.BASE_URL.replace(/\/$/, '');
 const count = Object.keys(visited).length;
 ---
-<Base title="Map · Sidequests">
+<Base title="Map · Sidequest Resume">
   <h1>Where I've been in Japan</h1>
   <p class="meta">{count} of 47 prefectures visited. Click a prefecture to see the adventures that went there.</p>
   <div id="pref-map" data-visited={JSON.stringify(visited)} data-base={base}></div>

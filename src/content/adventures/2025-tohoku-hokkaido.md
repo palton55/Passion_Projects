@@ -25,6 +25,12 @@ stops:
   - {"name": "Nakatombetsu", "lat": 44.9705, "lng": 142.2863, "date": "Day 3"}
   - {"name": "Asahikawa", "lat": 43.7, "lng": 142.4, "date": "Day 3 · night"}
   - {"name": "Tokyo", "lat": 35.6812, "lng": 139.7671, "date": "Day 6"}
+  - {"name": "Hakodate / Onuma", "lat": 41.774, "lng": 140.7261, "date": "Days 4-5 · night"}
+  - {"name": "Sapporo Station", "lat": 43.0686, "lng": 141.3508, "date": "Days 3-4 · pick-up and return"}
+  - {"name": "Obira", "lat": 44.0013, "lng": 141.6573, "date": "Day 3 · Oronron Line"}
+  - {"name": "Enbetsu", "lat": 44.7206, "lng": 141.7928, "date": "Day 3"}
+  - {"name": "Wakkanai", "lat": 45.4173, "lng": 141.6773, "date": "Day 3"}
+  - {"name": "Cape Soya", "lat": 45.5226, "lng": 141.9371, "date": "Day 3 · northern tip"}
 legs:
   - {"name": "Tohoku Shinkansen, Omiya to Fukushima", "mode": "shinkansen", "coords": [[35.9063, 139.6239], [36.5594, 139.8985], [37.3979, 140.388], [37.7543, 140.4597]], "day": 1}
   - {"name": "Yamagata Shinkansen, Fukushima to Yamagata and back", "mode": "shinkansen", "coords": [[37.7543, 140.4597], [37.9122, 140.1306], [38.2485, 140.3279]], "day": 1}
@@ -41,7 +47,7 @@ legs:
   - {"name": "Tohoku Shinkansen, Morioka to Tokyo", "mode": "shinkansen", "coords": [[39.7017, 141.1366], [39.2875, 141.1135], [38.9268, 141.1347], [38.2601, 140.8822], [37.7543, 140.4597], [37.3979, 140.388], [36.5594, 139.8985], [35.9063, 139.6239], [35.7138, 139.7774], [35.6812, 139.7671]], "day": 6}
 parts:
   - {"title": "The Train Journey", "days": [1, 2, 4, 5, 6], "modes": ["shinkansen", "express", "local"], "stops": ["Omiya", "Utsunomiya", "Fukushima", "Yamagata", "Sendai", "Omagari", "Morioka", "Aomori", "Shin-Hakodate-Hokuto", "Sapporo", "Hakodate", "Tokyo"], "blurb": "From Omiya to Hokkaido and back by the Tohoku, Yamagata, Akita, and Hokkaido Shinkansen and the Hokuto limited express, with stops across Tohoku and two nights in Hakodate."}
-  - {"title": "The Hokkaido Road Trip", "days": [3], "modes": ["drive"], "stops": ["Sapporo", "Wakkanai / Cape Soya", "Nakatombetsu", "Asahikawa"], "blurb": "A drive from Sapporo up the Sea of Japan coast on the Oronron Line to Wakkanai and Cape Soya, the northernmost point of Japan, then inland to Asahikawa and back to Sapporo."}
+  - {"title": "The Hokkaido Road Trip", "days": [3], "modes": ["drive"], "stops": ["Sapporo Station", "Obira", "Enbetsu", "Wakkanai", "Cape Soya", "Nakatombetsu", "Asahikawa"], "blurb": "A drive from Sapporo up the Sea of Japan coast on the Oronron Line to Wakkanai and Cape Soya, the northernmost point of Japan, then inland to Asahikawa and back to Sapporo."}
 # Day-by-day timeline, generated from the trip notes by scripts/import_trips.py.
 timeline:
   - label: "Day 1"

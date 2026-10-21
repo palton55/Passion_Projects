@@ -28,55 +28,52 @@ timeline:
     date: 2025-07-02
     title: "Myeongdong, Gwanghwamun and Cheonggyecheon"
     events:
-      - { time: "09:55", text: "Narita Airport." }
-      - { time: "14:25", text: "Incheon Airport." }
-      - { time: "17:00", text: "Myeongdong." }
-      - { time: "19:20", text: "Gwanghwamun and Cheonggyecheon." }
-    route: ["Flight, Narita to Incheon.", "Airport railroad into Seoul (assumed)."]
+      - { time: "Morning", text: "Narita Airport." }
+      - { time: "Afternoon", text: "Incheon Airport." }
+      - { time: "Evening", text: "Myeongdong; Gwanghwamun and Cheonggyecheon." }
+    route: ["Flight, Narita to Incheon.", "Airport railroad into Seoul (assumed) (about 50 km, 35 min)."]
   - label: "Day 2"
     date: 2025-07-03
     title: "DMZ, Paju"
     events:
-      - { time: "08:20", text: "DMZ: Imjingak." }
-      - { time: "10:00", text: "DMZ: Third Tunnel / Dora Observatory area." }
-      - { time: "12:25", text: "Paju." }
-    route: ["DMZ tour (assumed tour bus)."]
+      - { time: "Morning", text: "DMZ: Imjingak; DMZ: Third Tunnel / Dora Observatory area." }
+      - { time: "Afternoon", text: "Paju." }
+    route: ["DMZ tour (assumed tour bus) (about 120 km, 2 h)."]
   - label: "Day 3"
     date: 2025-07-04
     title: "Gangnam / COEX, Hongdae at night"
     events:
-      - { time: "15:20", text: "Gangnam / COEX." }
-      - { time: "19:45", text: "Hongdae at night." }
+      - { time: "Afternoon", text: "Gangnam / COEX." }
+      - { time: "Evening", text: "Hongdae at night." }
   - label: "Day 4"
     date: 2025-07-05
     title: "Waterbomb"
     events:
-      - { time: "15:15", text: "Waterbomb, KINTEX area, Goyang." }
-    route: ["To Waterbomb in Goyang."]
+      - { time: "Afternoon", text: "Waterbomb, KINTEX area, Goyang." }
+    route: ["To Waterbomb in Goyang (about 50 km, 1 h 15 min)."]
   - label: "Day 5"
     date: 2025-07-06
     title: "Gyeongbokgung Palace, Yongsan and the Han River"
     events:
-      - { time: "14:55", text: "Gyeongbokgung Palace." }
-      - { time: "18:15", text: "Yongsan and the Han River." }
+      - { time: "Afternoon", text: "Gyeongbokgung Palace." }
+      - { time: "Evening", text: "Yongsan and the Han River." }
   - label: "Day 6"
     date: 2025-07-07
     title: "Lotte World Tower"
     events:
-      - { time: "12:50", text: "Lotte World Tower, Jamsil." }
+      - { time: "Afternoon", text: "Lotte World Tower, Jamsil." }
   - label: "Day 7"
     date: 2025-07-08
     title: "Dongdaemun"
     events:
-      - { time: "13:40", text: "Dongdaemun." }
+      - { time: "Afternoon", text: "Dongdaemun." }
   - label: "Day 8"
     date: 2025-07-09
     title: "Travel day"
     events:
-      - { time: "07:25", text: "Seoul Station (airport railroad)." }
-      - { time: "08:55", text: "Incheon Airport." }
-      - { time: "13:25", text: "Narita Airport." }
-    route: ["Airport railroad, Seoul Station to Incheon.", "Flight, Incheon to Narita."]
+      - { time: "Morning", text: "Seoul Station (airport railroad); Incheon Airport." }
+      - { time: "Afternoon", text: "Narita Airport." }
+    route: ["Airport railroad, Seoul Station to Incheon (about 50 km, 35 min).", "Flight, Incheon to Narita."]
 ---
 
 *The full account of this sidequest is forthcoming.*

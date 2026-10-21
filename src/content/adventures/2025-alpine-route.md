@@ -29,33 +29,24 @@ timeline:
     date: 2025-04-25
     title: "Matsumoto"
     events:
-      - { time: "13:20", text: "Tachikawa Station." }
-      - { time: "15:50", text: "Matsumoto (castle area, night)." }
-    route: ["Limited express Azusa, Tachikawa to Matsumoto."]
+      - { time: "Afternoon", text: "Tachikawa Station; Matsumoto (castle area, night)." }
+    route: ["Limited express Azusa, Tachikawa to Matsumoto (about 170 km, 2 h)."]
   - label: "Day 2"
     date: 2025-04-26
     title: "Matsumoto, Shinano-Omachi, Ogizawa"
     events:
-      - { time: "06:35", text: "Matsumoto, early departure north." }
-      - { time: "07:30", text: "Shinano-Omachi." }
-      - { time: "08:45", text: "Ogizawa (Alpine Route entrance)." }
-      - { time: "09:20", text: "Kurobe Dam." }
-      - { time: "11:10", text: "Kurobedaira and Daikanbo (cable car and ropeway)." }
-      - { time: "12:10", text: "Murodo, the snow wall." }
-      - { time: "18:30", text: "Bijodaira and Tateyama Station." }
-      - { time: "20:05", text: "Toyama." }
-      - { time: "20:50", text: "Takaoka (night)." }
-    route: ["Oito Line, Matsumoto to Shinano-Omachi.", "Alpine Route: bus, trolley bus, cable cars and ropeway.", "Toyama Chiho Railway to Toyama, then on to Takaoka."]
+      - { time: "Morning", text: "Matsumoto, early departure north; Shinano-Omachi; Ogizawa (Alpine Route entrance); Kurobe Dam; Kurobedaira and Daikanbo (cable car and ropeway)." }
+      - { time: "Afternoon", text: "Murodo, the snow wall." }
+      - { time: "Evening", text: "Bijodaira and Tateyama Station; Toyama; Takaoka (night)." }
+    route: ["Oito Line, Matsumoto to Shinano-Omachi (about 30 km, 45 min).", "Alpine Route: bus, trolley bus, cable cars and ropeway (about 50 km, 50 min).", "Toyama Chiho Railway to Toyama, then on to Takaoka (about 40 km, 50 min)."]
   - label: "Day 3"
     date: 2025-04-27
     title: "Amaharashi Coast, Takaoka"
     events:
-      - { time: "09:10", text: "Amaharashi Coast." }
-      - { time: "10:55", text: "Takaoka (Daibutsu area)." }
-      - { time: "11:35", text: "Toyama Station area." }
-      - { time: "14:58", text: "Tokyo Station." }
-      - { time: "18:55", text: "Home in Kodaira." }
-    route: ["Himi Line to Amaharashi and back, then to Toyama.", "Hokuriku Shinkansen, Toyama to Tokyo."]
+      - { time: "Morning", text: "Amaharashi Coast; Takaoka (Daibutsu area); Toyama Station area." }
+      - { time: "Afternoon", text: "Tokyo Station." }
+      - { time: "Evening", text: "Home in Kodaira." }
+    route: ["Himi Line to Amaharashi and back, then to Toyama (about 30 km, 45 min).", "Hokuriku Shinkansen, Toyama to Tokyo (about 360 km, 1 h 45 min)."]
 ---
 
 *The full account of this sidequest is forthcoming.*

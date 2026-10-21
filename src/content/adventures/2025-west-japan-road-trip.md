@@ -42,55 +42,45 @@ timeline:
     date: 2025-03-20
     title: "Ikebukuro"
     events:
-      - { time: "17:50", text: "Haneda Airport (arrival in Japan)." }
-      - { time: "21:05", text: "Ikebukuro, first night in Tokyo." }
+      - { time: "Evening", text: "Haneda Airport (arrival in Japan); Ikebukuro, first night in Tokyo." }
   - label: "Day 2"
     date: 2025-03-21
     title: "Harajuku / Omotesando, Roppongi"
     events:
-      - { time: "09:55", text: "Harajuku / Omotesando." }
-      - { time: "16:30", text: "Roppongi." }
+      - { time: "Morning", text: "Harajuku / Omotesando." }
+      - { time: "Afternoon", text: "Roppongi." }
   - label: "Day 3"
     date: 2025-03-22
     title: "Shin-Osaka, Setoda, Tatara Bridge area"
     events:
-      - { time: "05:55", text: "Tokyo Station, Tokaido Shinkansen." }
-      - { time: "08:25", text: "Shin-Osaka." }
-      - { time: "11:00", text: "Setoda, Ikuchijima (Shimanami Kaido)." }
-      - { time: "14:50", text: "Tatara Bridge area (Shimanami Kaido)." }
-      - { time: "19:40", text: "Imabari (night)." }
-    route: ["Tokaido Shinkansen, Tokyo to Shin-Osaka.", "Drive from Shin-Osaka to the Shimanami Kaido (to confirm).", "Shimanami Kaido to Imabari."]
+      - { time: "Morning", text: "Tokyo Station, Tokaido Shinkansen; Shin-Osaka; Setoda, Ikuchijima (Shimanami Kaido)." }
+      - { time: "Afternoon", text: "Tatara Bridge area (Shimanami Kaido)." }
+      - { time: "Evening", text: "Imabari (night)." }
+    route: ["Tokaido Shinkansen, Tokyo to Shin-Osaka (about 470 km, 2 h 15 min).", "Drive from Shin-Osaka to the Shimanami Kaido (to confirm) (about 270 km, 4 h 15 min).", "Shimanami Kaido to Imabari (about 40 km, 40 min)."]
   - label: "Day 4"
     date: 2025-03-23
     title: "Fukuyama, Kibitsu Shrine, Kurashiki Bikan Historical Quarter"
     events:
-      - { time: "11:15", text: "Fukuyama (castle area)." }
-      - { time: "14:15", text: "Okayama Station area." }
-      - { time: "16:30", text: "Kibitsu Shrine." }
-      - { time: "18:00", text: "Kurashiki Bikan Historical Quarter." }
-      - { time: "19:45", text: "Okayama (night)." }
-    route: ["Imabari back over the Shimanami Kaido to Fukuyama, Okayama and Kurashiki."]
+      - { time: "Morning", text: "Fukuyama (castle area)." }
+      - { time: "Afternoon", text: "Okayama Station area; Kibitsu Shrine." }
+      - { time: "Evening", text: "Kurashiki Bikan Historical Quarter; Okayama (night)." }
+    route: ["Imabari back over the Shimanami Kaido to Fukuyama, Okayama and Kurashiki (about 180 km, 2 h 45 min)."]
   - label: "Day 5"
     date: 2025-03-24
     title: "Himeji Castle, Arima Onsen, Nara Park"
     events:
-      - { time: "09:40", text: "Himeji Castle." }
-      - { time: "11:10", text: "Arima Onsen." }
-      - { time: "13:35", text: "Nara Park." }
-      - { time: "15:08", text: "Small mountain village east of Nara, with drone shots." }
-      - { text: "Nagashima Spa Land, Mie (drove past)." }
-      - { time: "17:10", text: "Along the Ise Bay coast, across the bay islands past Nagoya." }
-      - { time: "18:20", text: "Lake Hamana, crossing the bridge." }
-      - { time: "19:10", text: "Hamamatsu (night)." }
-    route: ["Okayama to Himeji, Arima Onsen and Nara, then east through the Mie mountains to Yokkaichi, along the Ise Bay coast past Nagashima Spa Land and across the bay islands past Nagoya, then over Lake Hamana to Hamamatsu."]
+      - { time: "Morning", text: "Himeji Castle; Arima Onsen." }
+      - { time: "Afternoon", text: "Nara Park; Small mountain village east of Nara, with drone shots; Nagashima Spa Land, Mie (drove past)." }
+      - { time: "Evening", text: "Along the Ise Bay coast, across the bay islands past Nagoya; Lake Hamana, crossing the bridge; Hamamatsu (night)." }
+    route: ["Okayama to Himeji, Arima Onsen and Nara, then east through the Mie mountains to Yokkaichi, along the Ise Bay coast past Nagashima Spa Land and across the bay islands past Nagoya, then over Lake Hamana to Hamamatsu (about 440 km, 6 h 45 min)."]
   - label: "Day 6"
     date: 2025-03-25
     title: "Lake Ashi, Gotemba Premium Outlets, Kodaira"
     events:
-      - { time: "09:55", text: "Lake Ashi, Hakone." }
-      - { time: "12:00", text: "Gotemba Premium Outlets." }
-      - { time: "17:10", text: "Kodaira, the study-abroad home base." }
-    route: ["Hamamatsu to Hakone, Gotemba and Kodaira."]
+      - { time: "Morning", text: "Lake Ashi, Hakone." }
+      - { time: "Afternoon", text: "Gotemba Premium Outlets." }
+      - { time: "Evening", text: "Kodaira, the study-abroad home base." }
+    route: ["Hamamatsu to Hakone, Gotemba and Kodaira (about 250 km, 4 h)."]
 ---
 
 *The full account of this sidequest is forthcoming.*

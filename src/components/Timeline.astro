@@ -1,0 +1,30 @@
+---
+// Day-by-day timeline for an entry.
+const { days } = Astro.props;
+const fmt = (x: Date) => x.toLocaleDateString('en-US', { weekday: 'short', month: 'short', day: 'numeric', timeZone: 'UTC' });
+---
+<ol class="timeline">
+  {days.map((day: any) => (
+    <li class="day">
+      <p class="day-head"><span class="label">{day.label}</span>{day.date && <span class="date">{fmt(day.date)}</span>}</p>
+      {day.title && <h3>{day.title}</h3>}
+      <ul class="events">
+        {day.events.map((e: any) => <li><span class="time">{e.time}</span><span>{e.text}</span></li>)}
+      </ul>
+      {day.route.length > 0 && <p class="route">{day.route.join(' ')}</p>}
+    </li>
+  ))}
+</ol>
+<style>
+  .timeline { list-style: none; padding: 0; margin: 16px 0 0; border-left: 2px solid var(--border); }
+  .day { position: relative; padding: 0 0 24px 22px; }
+  .day::before { content: ''; position: absolute; left: -7px; top: 4px; width: 12px; height: 12px; border-radius: 50%; background: var(--accent, #c2410c); }
+  .day-head { margin: 0; font-size: .85rem; color: var(--muted); display: flex; gap: 10px; }
+  .label { font-weight: 600; text-transform: uppercase; letter-spacing: .04em; }
+  h3 { margin: 2px 0 6px; font-size: 1.1rem; }
+  .events { list-style: none; padding: 0; margin: 0; }
+  .events li { display: flex; gap: 12px; padding: 2px 0; }
+  .time { flex: 0 0 7.5em; color: var(--muted); font-variant-numeric: tabular-nums; font-size: .92rem; }
+  .route { margin: 6px 0 0; font-size: .9rem; color: var(--muted); font-style: italic; }
+  @media (max-width: 560px) { .events li { flex-direction: column; gap: 0; } .time { flex: none; } }
+</style>

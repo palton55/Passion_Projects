@@ -1,51 +1,80 @@
 ---
 import Base from '../layouts/Base.astro';
-import SidequestCard from '../components/SidequestCard.astro';
+import RouteMap from '../components/RouteMap.astro';
 import { visited } from '../data/visited';
 import { showDrafts } from '../lib/drafts';
 import { getCollection } from 'astro:content';
+import { japanTopics, slug, type JapanTopic } from '../data/japan-topics';
 const base = import.meta.env.BASE_URL.replace(/\/$/, '');
 const count = Object.keys(visited).length;
-const entries = (await getCollection('adventures', ({ data }) => data.region === 'Japan' && (!data.draft || showDrafts)))
+const topicCollections = new Set(japanTopics.flatMap((t) => [t.collection, ...(t.subtopics ?? []).map((s) => s.collection)]));
+const entries = (await getCollection('adventures', ({ data }) => (data.region === 'Japan' || topicCollections.has(data.collection ?? '')) && (!data.draft || showDrafts)))
   .sort((a, b) => (a.data.start?.valueOf() ?? 0) - (b.data.start?.valueOf() ?? 0));
+const inTopic = (t: JapanTopic) => entries.filter((e) => e.data.collection === t.collection);
+const other = entries.filter((e) => !topicCollections.has(e.data.collection ?? ''));
 ---
-<Base title="Japan · Sidequest Resume" description="Sidequests in Japan and a map of the prefectures visited.">
+<Base title="Japan · Sidequest Resume" description="Sidequests in Japan, each with its route map and timeline.">
   <h1>Japan</h1>
-  <p class="lede">Japan is where I have spent the most time as an adult, across short trips and a six-month study abroad. This section collects those sidequests.</p>
-  <h2>Prefectures visited</h2>
-  <p class="meta">{count} of 47 prefectures visited. Select a prefecture to see the sidequests that included it.</p>
-  <div id="pref-map" data-visited={JSON.stringify(visited)} data-base={base}></div>
-  <h2>Sidequests in Japan</h2>
-  {entries.length === 0 && <p class="meta">Entries are currently in preparation.</p>}
-  <div class="grid">{entries.map((entry) => <SidequestCard entry={entry} />)}</div>
+  <p class="lede">Japan is where I have spent the most time as an adult, across short trips and a six-month study abroad. Each posting below includes its route map and a link to the full day-by-day account.</p>
+  <p class="meta">{count} of 47 prefectures visited.</p>
+  <nav class="toc" aria-label="Japan topics">
+    {japanTopics.map((t) => <a href={`#${slug(t.collection)}`}>{t.title}</a>)}
+  </nav>
+  {japanTopics.map((t) => (
+    <section class="topic" id={slug(t.collection)}>
+      <h2>{t.title}</h2>
+      {t.dates && <p class="meta">{t.dates}</p>}
+      <p>{t.blurb}</p>
+      {inTopic(t).map((e) => (
+        <div class="posting">
+          {e.data.stops.length > 0 && <RouteMap stops={e.data.stops} legs={e.data.legs} height={420} />}
+          <p><a href={`${base}/sidequests/${e.id}/`}>Read the full entry and timeline</a></p>
+        </div>
+      ))}
+      {!t.subtopics && inTopic(t).length === 0 && <p class="meta pending">Entry in preparation.</p>}
+      {t.subtopics && (
+        <ol class="sa-timeline">
+          {t.subtopics.map((s) => (
+            <li id={slug(s.collection)}>
+              <p class="sa-date">{s.dates ?? 'Throughout'}</p>
+              <h3>{s.title}</h3>
+              <p>{s.blurb}</p>
+              {s.section && <p><a href={`${base}${s.section.href}`}>{s.section.label}</a></p>}
+              {!s.section && inTopic(s).length === 0 && <p class="meta pending">Entry in preparation.</p>}
+              {!s.section && inTopic(s).map((e) => (
+                <div class="posting">
+                  {e.data.stops.length > 0 && <RouteMap stops={e.data.stops} legs={e.data.legs} height={340} />}
+                  <p><a href={`${base}/sidequests/${e.id}/`}>Read the full entry and timeline</a></p>
+                </div>
+              ))}
+            </li>
+          ))}
+        </ol>
+      )}
+    </section>
+  ))}
+  {other.length > 0 && (
+    <section class="topic">
+      <h2>Other Sidequests in Japan</h2>
+      {other.map((e) => <p><a href={`${base}/sidequests/${e.id}/`}>{e.data.title}</a></p>)}
+    </section>
+  )}
 </Base>
-<script>
-  import L from 'leaflet';
-  import 'leaflet/dist/leaflet.css';
-  const el = document.getElementById('pref-map')!;
-  const visited = JSON.parse(el.dataset.visited!);
-  const base = el.dataset.base!;
-  const css = getComputedStyle(document.documentElement);
-  const map = L.map(el, { scrollWheelZoom: false }).setView([37.5, 137.5], 5);
-  L.tileLayer('https://{s}.basemaps.cartocdn.com/light_nolabels/{z}/{x}/{y}{r}.png', { attribution: '© OpenStreetMap, © CARTO' }).addTo(map);
-  fetch(`${base}/japan-prefectures.geojson`).then((r) => r.json()).then((geo) => {
-    L.geoJSON(geo, {
-      style: (f: any) => {
-        const on = visited[f.properties.nam] !== undefined;
-        return { color: '#fff', weight: 1, fillOpacity: on ? .85 : .5, fillColor: on ? css.getPropertyValue('--visited') : css.getPropertyValue('--unvisited') };
-      },
-      onEachFeature: (f: any, layer) => {
-        const v = visited[f.properties.nam];
-        const links = v?.trips?.map((t: string) => `<a href="${base}/sidequests/${t}/">${t}</a>`).join('<br>');
-        layer.bindPopup(`<strong>${f.properties.nam}</strong><br>${v ? (links || 'Visited') : 'Not yet visited'}`);
-      },
-    }).addTo(map);
-  });
-</script>
 <style>
-  #pref-map { height: 640px; border-radius: 14px; border: 1px solid var(--border); margin-top: 16px; }
   .meta { color: var(--muted); }
   .lede { font-size: 1.1rem; max-width: 680px; }
   h2 { margin-top: 40px; }
-  .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 20px; }
+  .topic { border-top: 1px solid var(--border); margin-top: 40px; }
+  .posting { margin: 16px 0 8px; }
+  .posting p { margin: 8px 0 0; }
+  .pending { font-style: italic; }
+  .toc { display: flex; flex-wrap: wrap; gap: 8px 16px; margin: 8px 0 24px; }
+  .toc a { color: var(--muted); }
+  section[id] { scroll-margin-top: 16px; }
+  .sa-timeline { list-style: none; padding: 0; margin: 20px 0 0; border-left: 2px solid var(--border); }
+  .sa-timeline > li { position: relative; padding: 0 0 28px 22px; scroll-margin-top: 16px; }
+  .sa-timeline > li::before { content: ''; position: absolute; left: -7px; top: 5px; width: 12px; height: 12px; border-radius: 50%; background: var(--accent); }
+  .sa-timeline h3 { margin: 2px 0 4px; }
+  .sa-timeline > li > p { margin: 0; }
+  .sa-date { font-size: .85rem; color: var(--muted); text-transform: uppercase; letter-spacing: .04em; font-weight: 600; }
 </style>

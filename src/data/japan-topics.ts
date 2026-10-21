@@ -40,7 +40,8 @@ export const japanTopics: JapanTopic[] = [
     blurb: 'Six months living in Kodaira, Tokyo, as an exchange student at Hitotsubashi University, with road trips, train journeys, and travel across the country.',
     subtopics: [
       { collection: 'Life in Tokyo', title: 'Life in Tokyo', blurb: 'Campus life and the everyday routine around Kodaira, Kokubunji, Kunitachi, and central Tokyo.' },
-      { collection: 'West Japan Road Trip', title: 'West Japan Road Trip', dates: 'March 20 to 25, 2025', blurb: 'Shinkansen to Osaka, then a drive back to Tokyo by way of the Shimanami Kaido, Okayama, Himeji, Nara, and Hakone.' },
+      { collection: 'Shimanami Kaido', title: 'Shimanami Kaido', dates: 'March 20 to 23, 2025', blurb: 'Arrival in Tokyo, the Shinkansen to Osaka, and the Shimanami Kaido across the islands of the Seto Inland Sea, with Fukuyama, Okayama, and Kurashiki to follow.' },
+      { collection: 'Road Trip Back to Tokyo', title: 'Road Trip Back to Tokyo', dates: 'March 24 to 25, 2025', blurb: 'Two days on the road from Okayama to Tokyo by way of Himeji Castle, Arima Onsen, Nara, Lake Hamana, and Hakone.' },
       { collection: 'Hakone and Mt. Fuji', title: 'Hakone and Mt. Fuji', dates: 'April 7 to 9, 2025', blurb: 'A weekend around Hakone and Mt. Fuji with two nights in Manazuru.' },
       { collection: 'Tateyama Kurobe Alpine Route', title: 'Tateyama Kurobe Alpine Route', dates: 'April 25 to 27, 2025', blurb: 'A rail journey through the Northern Alps by the Azusa, the Alpine Route, and the Hokuriku Shinkansen.' },
       { collection: 'Kyoto, Osaka and Okinawa', title: 'Kyoto, Osaka, and Okinawa', dates: 'June 15 to 24, 2025', blurb: 'Kyoto and Osaka by Shinkansen, followed by a flight to Okinawa and a drive around the island.' },

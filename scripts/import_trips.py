@@ -19,11 +19,15 @@ OUT = Path(__file__).resolve().parent.parent / 'src/content/adventures'
 KODAIRA = [35.7286, 139.4775]
 MODES = {'car': 'drive', 'bus': 'bus', 'ferry': 'ferry', 'flight': 'flight', 'shinkansen': 'shinkansen',
          'express': 'express', 'local': 'local'}
+# Friends are not named on the site (Patrick, Oct 2026).
+FRIENDS = [(r'Michael joined from today, the day after getting back from Fuji\. Days 5 to 9 are the Tokyo tour with him\.',
+            'Days 5 to 9 were spent touring Tokyo with friends.'),
+           (r',? Michael joins\b', ''), (r'\b(?:Michael|Shaggy)\b', 'friends')]
 MONTHS = {m: i for i, m in enumerate('Jan Feb Mar Apr May Jun Jul Aug Sep Oct Nov Dec'.split(), 1)}
 
 ENTRIES = [
-    dict(id='japan-2024', dir='japan-2024', title='Return to Tokyo', collection='Japan 2024', companions=['Michael'],
-         summary='A nine-day return to Tokyo after sophomore finals with friends, including a day trip to Mt. Fuji and Kawaguchiko and a first tour of the city for Michael.'),
+    dict(id='japan-2024', dir='japan-2024', title='Return to Tokyo', collection='Japan 2024', companions=['friends'],
+         summary='A nine-day return to Tokyo after sophomore finals with friends, including a day trip to Mt. Fuji and Kawaguchiko.'),
     dict(id='2025-west-japan-road-trip', dir='2025-study-abroad/01-west-japan-road-trip', title='West Japan Road Trip',
          collection='West Japan Road Trip',
          summary='The opening week of the study abroad: arrival in Tokyo, the Shinkansen to Osaka, and a drive back across the Shimanami Kaido, Okayama, Himeji, Nara, and Hakone.'),
@@ -49,9 +53,15 @@ ENTRIES = [
 ]
 
 
+def anonymize(text):
+    for pat, rep in FRIENDS:
+        text = re.sub(pat, rep, text)
+    return text
+
+
 def clean(text):
-    """Drop markdown, photo counts and notes addressed to Patrick from a road-map line."""
-    text = text.replace('**', '').replace('*', '')
+    """Drop markdown, photo counts, friends' names and notes addressed to Patrick from a road-map line."""
+    text = anonymize(text.replace('**', '').replace('*', ''))
     text = re.sub(r'\((?:inferred[^)]*|rounded|[^)]*, rounded)\)', '', text)
     text = re.sub(r', (?:inferred|rounded)\)', ')', text)
     text = re.sub(r'\s*\(no photos\)', '', text)
@@ -97,7 +107,7 @@ def parse_days(md, year):
         h = re.match(r'Day (\d+) · \w{3} (\w{3}) (\d{1,2})(?: · (.+))?', lines[0])
         if not h:
             continue
-        title = h.group(4) or ''
+        title = anonymize(h.group(4) or '')
         if re.search(r'photos and videos', title):
             title = ''
         events, route = [], []

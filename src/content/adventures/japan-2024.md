@@ -1,12 +1,12 @@
 ---
 title: "Return to Tokyo"
-summary: "A nine-day return to Tokyo after sophomore finals with friends, including a day trip to Mt. Fuji and Kawaguchiko and a first tour of the city for Michael."
+summary: "A nine-day return to Tokyo after sophomore finals with friends, including a day trip to Mt. Fuji and Kawaguchiko."
 start: 2024-05-11
 end: 2024-05-19
 category: Travel
 region: Japan
 collection: "Japan 2024"
-companions: ["Michael"]
+companions: ["friends"]
 draft: true
 # Cities and route from japan-2024/stops.geojson.
 stops:
@@ -52,9 +52,9 @@ timeline:
       - { time: "21:55", text: "Highway bus back to Tokyo, arriving at Shibuya." }
   - label: "Day 5"
     date: 2024-05-15
-    title: "Moving to Nakano, Michael joins"
+    title: "Moving to Nakano"
     events:
-      - { text: "Michael joined from today, the day after getting back from Fuji. Days 5 to 9 are the Tokyo tour with him." }
+      - { text: "Days 5 to 9 were spent touring Tokyo with friends." }
       - { time: "13:20", text: "Ginza." }
       - { time: "16:55", text: "Moved to Nakano. This was the base for the last four nights." }
       - { time: "20:55", text: "Shinjuku at night." }

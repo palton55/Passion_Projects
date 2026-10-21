@@ -21,7 +21,7 @@ export const japanTopics: JapanTopic[] = [
     label: '2023',
     title: 'Japan 2023: First Visit',
     dates: 'March 11 to 19, 2023',
-    blurb: 'A spring break journey with Shaggy from Tokyo to Osaka, Kyoto, and a homestay in Tsuruga, Fukui.',
+    blurb: 'A spring break journey with friends from Tokyo to Osaka, Kyoto, and a homestay in Tsuruga, Fukui.',
   },
   {
     collection: 'Japan 2024',
@@ -29,7 +29,7 @@ export const japanTopics: JapanTopic[] = [
     label: '2024',
     title: 'Japan 2024: Return to Tokyo',
     dates: 'May 11 to 19, 2024',
-    blurb: 'A return after sophomore finals with friends, including a first visit to Tokyo for Michael and a day trip to Mt. Fuji and Kawaguchiko.',
+    blurb: 'A return after sophomore finals with friends, including a day trip to Mt. Fuji and Kawaguchiko.',
   },
   {
     collection: 'Study Abroad 2025',

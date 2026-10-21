@@ -4,19 +4,21 @@ import SidequestCard from '../../components/SidequestCard.astro';
 import { showDrafts } from '../../lib/drafts';
 import { getCollection } from 'astro:content';
 const all = (await getCollection('adventures', ({ data }) => !data.draft || showDrafts))
-  .sort((a, b) => b.data.start.valueOf() - a.data.start.valueOf());
-const regions = [...new Set(all.map((e) => e.data.region))];
+  .sort((a, b) => (b.data.start?.valueOf() ?? 0) - (a.data.start?.valueOf() ?? 0));
+const categories = [...new Set(all.map((e) => e.data.category))];
 ---
 <Base title="Sidequests · Sidequest Resume">
   <h1>Sidequests</h1>
-  {regions.length === 0 && <p style="color:var(--muted)">Entries are currently in preparation.</p>}
-  {regions.map((r) => (
+  <p class="lede">Travels, training, and other pursuits, grouped by type.</p>
+  {categories.length === 0 && <p style="color:var(--muted)">Entries are currently in preparation.</p>}
+  {categories.map((c) => (
     <section>
-      <h2>{r}</h2>
-      <div class="grid">{all.filter((e) => e.data.region === r).map((entry) => <SidequestCard entry={entry} />)}</div>
+      <h2>{c}</h2>
+      <div class="grid">{all.filter((e) => e.data.category === c).map((entry) => <SidequestCard entry={entry} />)}</div>
     </section>
   ))}
 </Base>
 <style>
+  .lede { color: var(--muted); font-size: 1.1rem; }
   .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 20px; margin-bottom: 32px; }
 </style>

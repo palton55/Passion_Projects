@@ -16,13 +16,13 @@ const yt = d.video?.match(/(?:v=|youtu\.be\/)([\w-]{11})/)?.[1];
 ---
 <Base title={`${d.title} · Sidequest Resume`} description={d.summary}>
   <article>
-    <p class="meta">{d.collection ?? d.region} · {fmt(d.start)}{d.end && ` to ${fmt(d.end)}`}</p>
+    <p class="meta">{[d.category, d.collection ?? d.region, d.start && `${fmt(d.start)}${d.end ? ` to ${fmt(d.end)}` : ''}`].filter(Boolean).join(' · ')}</p>
     <h1>{d.title}</h1>
     <p class="lede">{d.summary}</p>
     {d.companions.length > 0 && <p class="meta">With {d.companions.join(', ')}</p>}
     {yt && <div class="video"><iframe src={`https://www.youtube-nocookie.com/embed/${yt}`} title={d.title} allowfullscreen loading="lazy"></iframe></div>}
-    <h2>The route</h2>
-    <RouteMap stops={d.stops} legs={d.legs} />
+    {d.stops.length > 0 && <h2>The route</h2>}
+    {d.stops.length > 0 && <RouteMap stops={d.stops} legs={d.legs} />}
     <div class="story"><Content /></div>
     {d.photos.length > 0 && <h2>Photos</h2>}
     <Gallery photos={d.photos} />

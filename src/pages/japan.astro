@@ -7,7 +7,7 @@ import { getCollection } from 'astro:content';
 const base = import.meta.env.BASE_URL.replace(/\/$/, '');
 const count = Object.keys(visited).length;
 const entries = (await getCollection('adventures', ({ data }) => data.region === 'Japan' && (!data.draft || showDrafts)))
-  .sort((a, b) => a.data.start.valueOf() - b.data.start.valueOf());
+  .sort((a, b) => (a.data.start?.valueOf() ?? 0) - (b.data.start?.valueOf() ?? 0));
 ---
 <Base title="Japan · Sidequest Resume" description="Sidequests in Japan and a map of the prefectures visited.">
   <h1>Japan</h1>

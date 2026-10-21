@@ -3,6 +3,7 @@ title: "First Visit to Japan"
 summary: "A nine-day spring break journey with Shaggy from Tokyo to Osaka, Kyoto, and a homestay in Tsuruga, undertaken with first-year Japanese."
 start: 2023-03-11
 end: 2023-03-19
+category: Travel
 region: Japan
 collection: Japan 2023
 companions: [Shaggy]

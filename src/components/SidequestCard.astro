@@ -6,10 +6,10 @@ const fmt = (x: Date) => x.toLocaleDateString('en-US', { month: 'short', year: '
 ---
 <a class="card" href={`${base}/sidequests/${entry.id}/`}>
   <div class="cover" style={d.cover ? `background-image:url(${base}/${d.cover})` : ''}>
-    {!d.cover && <span>{d.region}</span>}
+    {!d.cover && <span>{d.category}</span>}
   </div>
   <div class="body">
-    <p class="meta">{d.region} · {fmt(d.start)}</p>
+    <p class="meta">{[d.category, d.region, d.start && fmt(d.start)].filter(Boolean).join(' · ')}</p>
     <h3>{d.title}</h3>
     <p>{d.summary}</p>
   </div>

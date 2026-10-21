@@ -28,16 +28,19 @@ MONTHS = {m: i for i, m in enumerate('Jan Feb Mar Apr May Jun Jul Aug Sep Oct No
 ENTRIES = [
     dict(id='japan-2024', dir='japan-2024', title='Return to Tokyo', collection='Japan 2024', companions=['friends'],
          summary='A nine-day return to Tokyo after sophomore finals with friends, including a day trip to Mt. Fuji and Kawaguchiko.'),
-    # One road-map folder, two trips (Patrick, Oct 21 2026): the Shimanami Kaido trip, then the drive back as its own trip.
-    dict(id='2025-shimanami-kaido', dir='2025-study-abroad/01-west-japan-road-trip', title='Shimanami Kaido',
-         collection='Shimanami Kaido', days=(1, 4),
-         stops=['Haneda Airport', 'Tokyo', 'Shin-Osaka', 'Shimanami Kaido', 'Imabari', 'Fukuyama', 'Okayama / Kurashiki'],
-         summary='The opening days of the study abroad: arrival in Tokyo, the Shinkansen to Osaka, and the Shimanami Kaido across the islands of the Seto Inland Sea, followed by Fukuyama, Okayama, and Kurashiki.'),
-    dict(id='2025-drive-back-to-tokyo', dir='2025-study-abroad/01-west-japan-road-trip', title='Road Trip Back to Tokyo',
-         collection='Road Trip Back to Tokyo', days=(5, 6),
-         stops=['Okayama / Kurashiki', 'Himeji', 'Arima Onsen', 'Nara', 'Mountain village', 'Nagashima Spa Land', 'Nagoya',
-                'Hamamatsu', 'Hakone / Gotemba', 'Kodaira'],
-         summary='A two-day drive from Okayama back to Tokyo by way of Himeji Castle, Arima Onsen, Nara, the Ise Bay coast, Lake Hamana, Hakone, and Gotemba.'),
+    # One entry with two sections (Patrick, Oct 21 2026): the Shimanami Kaido, then the drive back as the West Japan Road Trip.
+    dict(id='2025-west-japan-road-trip', dirs=['2025-study-abroad/01a-shimanami-kaido', '2025-study-abroad/01b-drive-back-to-tokyo'],
+         title='Shimanami Kaido and West Japan Road Trip', collection='Shimanami Kaido and West Japan Road Trip',
+         summary='The opening week of the study abroad: the Shinkansen to Osaka and the Shimanami Kaido across the islands of the Seto Inland Sea, followed by a road trip back to Tokyo by way of Himeji, Arima Onsen, Nara, and Hakone.',
+         parts=[
+             dict(title='Shimanami Kaido', days=[1, 2, 3],
+                  stops=['Haneda Airport', 'Tokyo', 'Shin-Osaka', 'Shimanami Kaido', 'Imabari'],
+                  blurb='Arrival in Tokyo, the Tokaido Shinkansen to Osaka, and the Shimanami Kaido from Setoda over the Tatara Bridge to Imabari.'),
+             dict(title='West Japan Road Trip', days=[4, 5, 6],
+                  stops=['Imabari', 'Fukuyama', 'Okayama / Kurashiki', 'Himeji', 'Arima Onsen', 'Nara', 'Mountain village', 'Nagashima Spa Land',
+                         'Nagoya', 'Hamamatsu', 'Hakone / Gotemba', 'Kodaira'],
+                  blurb='Three days on the road from Imabari back to Tokyo: across the islands to Fukuyama, Okayama, and Kurashiki, then Himeji Castle, Arima Onsen, and Nara, along the Ise Bay coast and over Lake Hamana to Hamamatsu, and on through Hakone and Gotemba to Kodaira.'),
+         ]),
     dict(id='2025-hakone-fuji', dir='2025-study-abroad/02-hakone-fuji', title='Hakone and Mt. Fuji', collection='Hakone and Mt. Fuji',
          summary='A three-day weekend based in Manazuru, with Lake Ashi, Fuji-Q Highland, and the Gotemba outlets.'),
     dict(id='2025-alpine-route', dir='2025-study-abroad/03-alpine-route', title='Tateyama Kurobe Alpine Route',
@@ -50,7 +53,17 @@ ENTRIES = [
          region='South Korea',
          summary='Eight days in Seoul from Tokyo, including the DMZ and the Waterbomb music festival in Goyang.'),
     dict(id='2025-tohoku-hokkaido', dir='2025-study-abroad/06-tohoku-hokkaido', title='Tohoku and Hokkaido', collection='Tohoku and Hokkaido',
-         summary='North by Shinkansen, a round-trip drive from Sapporo to Cape Soya, the northernmost point of Japan, and the Hokuto limited express to Hakodate.'),
+         summary='North by Shinkansen, a round-trip drive from Sapporo to Cape Soya, the northernmost point of Japan, and the Hokuto limited express to Hakodate.',
+         # Kept as one entry, with the train journey and the road trip as their own sections (Patrick, Oct 21 2026).
+         parts=[
+             dict(title='The Train Journey', days=[1, 2, 4, 5, 6], modes=['shinkansen', 'express', 'local'],
+                  stops=['Omiya', 'Utsunomiya', 'Fukushima', 'Yamagata', 'Sendai', 'Omagari', 'Morioka', 'Aomori',
+                         'Shin-Hakodate-Hokuto', 'Sapporo', 'Hakodate', 'Tokyo'],
+                  blurb='From Omiya to Hokkaido and back by the Tohoku, Yamagata, Akita, and Hokkaido Shinkansen and the Hokuto limited express, with stops across Tohoku and two nights in Hakodate.'),
+             dict(title='The Hokkaido Road Trip', days=[3], modes=['drive'],
+                  stops=['Sapporo', 'Wakkanai / Cape Soya', 'Nakatombetsu', 'Asahikawa'],
+                  blurb='A drive from Sapporo up the Sea of Japan coast on the Oronron Line to Wakkanai and Cape Soya, the northernmost point of Japan, then inland to Asahikawa and back to Sapporo.'),
+         ]),
     dict(id='2025-kusatsu-onsen', dir='2025-study-abroad/07-kusatsu-onsen', title='Kusatsu Onsen', collection='Kusatsu Onsen',
          summary='An overnight visit to the hot spring town of Kusatsu in Gunma.'),
     dict(id='2025-ishigaki', dir='2025-study-abroad/08-ishigaki', title='Ishigaki and Taketomi', collection='Ishigaki and Taketomi',
@@ -167,13 +180,13 @@ def map_data(geo, kanto=False):
             stops.append({'name': p['name'], 'lat': latlng(g['coordinates'])[0], 'lng': latlng(g['coordinates'])[1],
                           'date': d.strftime('%b ') + str(d.day), 'mode': 'daytrip'})
             legs.append({'name': p['name'], 'mode': 'daytrip', 'coords': [KODAIRA, latlng(g['coordinates'])]})
-        elif g['type'] == 'Point' and p.get('kind') == 'city':
+        elif g['type'] == 'Point' and p.get('kind') == 'city' and p['name'] not in {st['name'] for st in stops}:
             ll = latlng(g['coordinates'])
             stops.append({'name': p['name'], 'lat': ll[0], 'lng': ll[1],
                           'date': re.sub(r'^,\s*|,?\s*no photos', '', p.get('days', '')).strip()})
         elif g['type'] == 'LineString':
             leg_dates.append(p.get('date'))
-            legs.append({'name': clean(p['name']), 'mode': MODES.get(p.get('mode'), 'other'),
+            legs.append({'name': clean(p['name']), 'mode': MODES.get(p.get('mode'), 'other'), 'date': p.get('date'),
                          'coords': thin([latlng(c) for c in g['coordinates']])})
     if kanto:
         stops.insert(0, {'name': 'Kodaira (home base)', 'lat': KODAIRA[0], 'lng': KODAIRA[1], 'mode': 'daytrip'})
@@ -200,36 +213,52 @@ def timeline_yaml(days):
     return out
 
 
-def write_entry(e):
-    src = TRIPS / e['dir']
+def load(d):
+    src = TRIPS / d
     md = (src / 'road-map.md').read_text()
     geo = json.loads((src / 'stops.geojson').read_text())
-    kanto = 'kanto' in e['dir']
-    stops, legs, dates, leg_dates = map_data(geo, kanto)
+    kanto = 'kanto' in d
+    stops, legs, dates, _ = map_data(geo, kanto)
     year = int(dates[0][:4])
     days = kanto_days(md, year) if kanto else parse_days(md, year)
-    if 'days' in e:
-        first, last = e['days']
-        days = [d for d in days if first <= int(d['label'].split()[1]) <= last]
-        for i, d in enumerate(days, 1):
-            d['label'] = f'Day {i}'
-        keep = {d['date'] for d in days}
-        legs = [l for l, dt in zip(legs, leg_dates) if dt in keep]
-        stops = sorted((st for st in stops if st['name'] in e['stops']), key=lambda st: e['stops'].index(st['name']))
-        shift = lambda m: str(int(m.group(0)) - first + 1) if first <= int(m.group(0)) <= last else m.group(0)
-        for st in stops:  # renumber "Day N" labels to this trip's days
-            if any(int(n) < first for n in re.findall(r'Days? (\d+)', st.get('date', ''))):
-                st['date'] = 'start'
-                continue
-            st['date'] = re.sub(r'(?<=Day )\d+|(?<=Days )\d+|(?<=-)\d+', shift, st.get('date', ''))
-        dates = sorted(keep)
+    return stops, legs, dates, days
+
+
+def shift_days(text, offset):
+    return re.sub(r'(?<=Day )\d+|(?<=Days )\d+|(?<=-)\d+|(?<= and )\d+', lambda m: str(int(m.group(0)) + offset), text)
+
+
+def write_entry(e):
+    # An entry can combine several road-map folders (e.g. two parts of one trip); days are numbered across them.
+    stops, legs, dates, days = [], [], [], []
+    for d in e.get('dirs', [e.get('dir')]):
+        s_, l_, d_, t_ = load(d)
+        offset = len(days)
+        for st in s_:
+            if st['name'] not in {x['name'] for x in stops}:
+                st['date'] = shift_days(st.get('date', ''), offset) if offset else st.get('date', '')
+                stops.append(st)
+        for t in t_:
+            t['label'] = f'Day {int(t["label"].split()[1]) + offset}' if re.match(r'Day \d', t['label']) else t['label']
+        legs += l_
+        dates += d_
+        days += t_
+    dates.sort()
+    start = date.fromisoformat(dates[0])
+    for l in legs:
+        if l.get('date'):
+            l['day'] = (date.fromisoformat(l['date']) - start).days + 1
+        l.pop('date', None)
     fm = ['---', f'title: {j(e["title"])}', f'summary: {j(e["summary"])}', f'start: {dates[0]}', f'end: {dates[-1]}',
           'category: Travel', f'region: {e.get("region", "Japan")}', f'collection: {j(e["collection"])}',
           f'companions: {j(e.get("companions", []))}', 'draft: true',
-          f'# Cities and route from {e["dir"]}/stops.geojson.', 'stops:']
+          f'# Cities and route from {", ".join(e.get("dirs", [e.get("dir")]))}/stops.geojson.', 'stops:']
     fm += [f'  - {j(s)}' for s in stops]
     fm.append('legs:')
     fm += [f'  - {j(l)}' for l in legs]
+    if 'parts' in e:
+        fm.append('parts:')
+        fm += [f'  - {j(pt)}' for pt in e['parts']]
     fm += timeline_yaml(days)
     fm += ['---', '', '*The full account of this sidequest is forthcoming.*', '']
     (OUT / f'{e["id"]}.md').write_text('\n'.join(fm))

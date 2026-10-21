@@ -10,7 +10,7 @@ companions: []
 draft: true
 # Cities and route from 2025-study-abroad/kanto-day-trips/stops.geojson.
 stops:
-  - {"name": "Kodaira (home base)", "lat": 35.7286, "lng": 139.4775, "mode": "daytrip"}
+  - {"name": "Kodaira (home base)", "lat": 35.7286, "lng": 139.4775, "mode": "daytrip", "date": ""}
   - {"name": "Asakusa and Tokyo Skytree", "lat": 35.7107, "lng": 139.7963, "date": "Apr 5", "mode": "daytrip"}
   - {"name": "Mitsui Outlet Park Iruma", "lat": 35.8106, "lng": 139.3793, "date": "May 3", "mode": "daytrip"}
   - {"name": "The Railway Museum, Omiya", "lat": 35.9208, "lng": 139.6183, "date": "May 4", "mode": "daytrip"}

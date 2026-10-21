@@ -16,10 +16,10 @@ stops:
   - {"name": "Gotemba Premium Outlets", "lat": 35.3068, "lng": 138.9656, "date": "Day 3"}
   - {"name": "Kodaira", "lat": 35.7, "lng": 139.48, "date": "home base"}
 legs:
-  - {"name": "Kodaira to Lake Ashi (to confirm)", "mode": "drive", "coords": [[35.7, 139.48], [35.44, 139.36], [35.26, 139.15], [35.2007, 139.0254]]}
-  - {"name": "Lake Ashi to Manazuru", "mode": "drive", "coords": [[35.2007, 139.0254], [35.2, 139.1], [35.16, 139.14]]}
-  - {"name": "Manazuru to Fuji-Q Highland and back", "mode": "drive", "coords": [[35.16, 139.14], [35.26, 139.15], [35.3, 138.93], [35.41, 138.87], [35.4871, 138.7808]]}
-  - {"name": "Manazuru to Gotemba and home", "mode": "drive", "coords": [[35.16, 139.14], [35.2176, 139.1427], [35.27, 139.03], [35.3068, 138.9656], [35.38, 139.1], [35.44, 139.36], [35.7, 139.48]]}
+  - {"name": "Kodaira to Lake Ashi (to confirm)", "mode": "drive", "coords": [[35.7, 139.48], [35.44, 139.36], [35.26, 139.15], [35.2007, 139.0254]], "day": 1}
+  - {"name": "Lake Ashi to Manazuru", "mode": "drive", "coords": [[35.2007, 139.0254], [35.2, 139.1], [35.16, 139.14]], "day": 1}
+  - {"name": "Manazuru to Fuji-Q Highland and back", "mode": "drive", "coords": [[35.16, 139.14], [35.26, 139.15], [35.3, 138.93], [35.41, 138.87], [35.4871, 138.7808]], "day": 2}
+  - {"name": "Manazuru to Gotemba and home", "mode": "drive", "coords": [[35.16, 139.14], [35.2176, 139.1427], [35.27, 139.03], [35.3068, 138.9656], [35.38, 139.1], [35.44, 139.36], [35.7, 139.48]], "day": 3}
 # Day-by-day timeline, generated from the trip notes by scripts/import_trips.py.
 timeline:
   - label: "Day 1"

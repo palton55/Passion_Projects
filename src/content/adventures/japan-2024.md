@@ -14,10 +14,10 @@ stops:
   - {"name": "Fujiyoshida / Kawaguchiko", "lat": 35.4986, "lng": 138.7686, "date": "Day 4 · day trip"}
   - {"name": "Narita Airport", "lat": 35.7645, "lng": 140.3819, "date": "arrive May 11 · depart May 19"}
 legs:
-  - {"name": "Keisei Access Express / Toei Asakusa Line, Narita to Shinagawa", "mode": "local", "coords": [[35.7645, 140.3819], [35.7209, 139.8224], [35.702, 139.7924], [35.6285, 139.7388]]}
-  - {"name": "Highway bus, Shinjuku to Mt. Fuji area", "mode": "bus", "coords": [[35.6888, 139.7013], [35.6556, 139.3389], [35.6125, 138.9425], [35.4986, 138.7686]]}
-  - {"name": "Highway bus back to Shibuya", "mode": "bus", "coords": [[35.4986, 138.7686], [35.6125, 138.9425], [35.6556, 139.3389], [35.658, 139.7016]]}
-  - {"name": "Keisei Skyliner, Nippori to Narita", "mode": "express", "coords": [[35.7279, 139.771], [35.748, 139.834], [35.76, 140.07], [35.7645, 140.3819]]}
+  - {"name": "Keisei Access Express / Toei Asakusa Line, Narita to Shinagawa", "mode": "local", "coords": [[35.7645, 140.3819], [35.7209, 139.8224], [35.702, 139.7924], [35.6285, 139.7388]], "day": 1}
+  - {"name": "Highway bus, Shinjuku to Mt. Fuji area", "mode": "bus", "coords": [[35.6888, 139.7013], [35.6556, 139.3389], [35.6125, 138.9425], [35.4986, 138.7686]], "day": 4}
+  - {"name": "Highway bus back to Shibuya", "mode": "bus", "coords": [[35.4986, 138.7686], [35.6125, 138.9425], [35.6556, 139.3389], [35.658, 139.7016]], "day": 4}
+  - {"name": "Keisei Skyliner, Nippori to Narita", "mode": "express", "coords": [[35.7279, 139.771], [35.748, 139.834], [35.76, 140.07], [35.7645, 140.3819]], "day": 9}
 # Day-by-day timeline, generated from the trip notes by scripts/import_trips.py.
 timeline:
   - label: "Day 1"

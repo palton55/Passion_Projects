@@ -1,13 +1,20 @@
 ---
 // Road map: stops are the places visited. Optional `legs` draw the real route (e.g. rail lines);
 // without legs, stops are joined in order by straight lines.
-const { stops, legs = [], height = 460, dot = 8 } = Astro.props;
+// Optional `groups` (e.g. years) add toggle buttons; legs and stops then carry `groups: string[]`.
+const { stops, legs = [], height = 460, dot = 8, groups = [] } = Astro.props;
 const used = new Set(legs.length ? legs.map((l: any) => l.mode) : stops.map((s: any) => s.mode));
 const legend = [
   ['drive', 'Drive'], ['shinkansen', 'Shinkansen'], ['express', 'Limited express'], ['local', 'Local train'], ['daytrip', 'Day trip'], ['bus', 'Bus'], ['ferry', 'Boat / ferry'],
   ['train', 'Getting around town'], ['flight', 'Flight'],
 ].filter(([m]) => used.has(m));
 ---
+{groups.length > 1 && (
+  <div class="map-filter" role="group" aria-label="Filter by year">
+    <button type="button" class="all" aria-pressed="true">All</button>
+    {groups.map((g: string) => <button type="button" data-group={g} aria-pressed="true">{g}</button>)}
+  </div>
+)}
 <div class="route-map" style={`height: ${height}px`} data-dot={dot} data-stops={JSON.stringify(stops)} data-legs={JSON.stringify(legs)}></div>
 <ul class="legend">{legend.map(([m, label]) => <li class={m}>{label}</li>)}</ul>
 <script>
@@ -32,21 +39,46 @@ const legend = [
     if (!stops.length) { el.innerHTML = '<p class="empty">Route map forthcoming.</p>'; return; }
     const map = L.map(el, { scrollWheelZoom: false });
     L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', { attribution: '© OpenStreetMap contributors' }).addTo(map);
-    legs.forEach((leg: any) => L.polyline(leg.coords, styles[leg.mode] ?? styles.other).bindTooltip(leg.name).addTo(map));
+    const layers: { groups?: string[]; layer: L.Layer }[] = [];
+    legs.forEach((leg: any) => layers.push({ groups: leg.groups, layer: L.polyline(leg.coords, styles[leg.mode] ?? styles.other).bindTooltip(leg.name).addTo(map) }));
     // Without legs, connect the stops in order with straight lines.
     if (!legs.length) stops.forEach((s: any, i: number) => {
       if (i > 0) L.polyline([[stops[i - 1].lat, stops[i - 1].lng], [s.lat, s.lng]], styles[s.mode] ?? styles.other).addTo(map);
     });
     stops.forEach((s: any, i: number) => {
-      L.circleMarker([s.lat, s.lng], { radius: Number(el.dataset.dot || 8), color: '#fff', weight: 1.5, fillColor: '#c2410c', fillOpacity: .95 })
+      const marker = L.circleMarker([s.lat, s.lng], { radius: Number(el.dataset.dot || 8), color: '#fff', weight: 1.5, fillColor: '#c2410c', fillOpacity: .95 })
         .bindPopup(`<strong>${s.name}</strong>${s.date ? `<br>${s.date}` : ''}${s.note ? `<br>${s.note}` : ''}`)
         .bindTooltip(s.name, { permanent: stops.length <= 12, direction: 'right', offset: [8, 0], className: 'stop-label' })
         .addTo(map);
+      layers.push({ groups: s.groups, layer: marker });
     });
+    // Year toggles: a layer shows while any of its groups is switched on.
+    const filter = el.previousElementSibling?.classList.contains('map-filter') ? el.previousElementSibling : null;
+    if (filter) {
+      const buttons = [...filter.querySelectorAll<HTMLButtonElement>('button[data-group]')];
+      const allButton = filter.querySelector<HTMLButtonElement>('button.all')!;
+      const apply = () => {
+        const on = new Set(buttons.filter((b) => b.getAttribute('aria-pressed') === 'true').map((b) => b.dataset.group));
+        allButton.setAttribute('aria-pressed', String(on.size === buttons.length));
+        layers.forEach(({ groups, layer }) => {
+          const show = !groups || groups.some((g) => on.has(g));
+          if (show && !map.hasLayer(layer)) layer.addTo(map);
+          if (!show && map.hasLayer(layer)) map.removeLayer(layer);
+        });
+      };
+      buttons.forEach((b) => b.addEventListener('click', () => {
+        b.setAttribute('aria-pressed', String(b.getAttribute('aria-pressed') !== 'true'));
+        apply();
+      }));
+      allButton.addEventListener('click', () => { buttons.forEach((b) => b.setAttribute('aria-pressed', 'true')); apply(); });
+    }
     map.fitBounds(L.latLngBounds(stops.map((s: any) => [s.lat, s.lng])), { padding: [30, 30] });
   });
 </script>
 <style>
+  .map-filter { display: flex; flex-wrap: wrap; gap: 8px; margin: 0 0 12px; }
+  .map-filter button { font: inherit; font-size: .9rem; padding: 6px 14px; border-radius: 999px; border: 1px solid var(--border); background: var(--surface); color: var(--muted); cursor: pointer; }
+  .map-filter button[aria-pressed="true"] { background: var(--accent); border-color: var(--accent); color: #fff; }
   .route-map { border-radius: 14px; border: 1px solid var(--border); background: var(--surface); }
   .legend { display: flex; flex-wrap: wrap; gap: 18px; list-style: none; padding: 0; margin: 8px 0 0; font-size: .85rem; color: var(--muted); }
   .legend li::before { content: ''; display: inline-block; width: 22px; margin-right: 6px; vertical-align: middle; border-top: 3px solid; }

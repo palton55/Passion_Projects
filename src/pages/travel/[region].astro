@@ -13,7 +13,7 @@ const entries = (await getCollection('adventures', ({ data }) => data.region ===
   .sort((a, b) => (b.data.start?.valueOf() ?? 0) - (a.data.start?.valueOf() ?? 0));
 ---
 <Base title={`${region.name} · Sidequest Resume`} description={region.blurb}>
-  <p class="crumb"><a href={`${base}/travel/`}>Travel</a></p>
+  <p class="crumb"><a href={`${base}/travel/`}>Experience</a></p>
   <h1>{region.name}</h1>
   <p class="lede">{region.blurb}</p>
   {entries.length === 0 && <p class="meta pending">Entries are currently in preparation.</p>}

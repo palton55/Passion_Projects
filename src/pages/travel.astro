@@ -10,9 +10,9 @@ const travel = (await getCollection('adventures', ({ data }) => data.category ==
 const regionNames = new Set(regions.map((r) => r.region));
 const otherTravel = travel.filter((e) => !regionNames.has(e.data.region ?? ''));
 ---
-<Base title="Travel · Sidequest Resume" description="Trips and journeys, organized by destination.">
-  <h1>Travel</h1>
-  <p class="lede">Trips and journeys, organized by destination.</p>
+<Base title="Experience · Sidequest Resume" description="Travel and experiences, organized by destination.">
+  <h1>Experience</h1>
+  <p class="lede">Travel and experiences, organized by destination.</p>
   <div class="grid">
     {regions.map((r) => (
       <Tile href={r.href ?? `/travel/${r.slug}/`} title={r.name} meta="Travel" blurb={r.blurb} />

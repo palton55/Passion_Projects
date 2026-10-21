@@ -1,6 +1,6 @@
 ---
-title: "First time in Japan"
-summary: "Freshman spring break with Shaggy: nine days from Tokyo to Osaka, Kyoto and a homestay in Tsuruga, on Japanese 101."
+title: "First Visit to Japan"
+summary: "A nine-day spring break journey with Shaggy from Tokyo to Osaka, Kyoto, and a homestay in Tsuruga, undertaken with first-year Japanese."
 start: 2023-03-11
 end: 2023-03-19
 region: Japan
@@ -43,4 +43,4 @@ legs:
 photos: []
 ---
 
-*Story coming soon: first impressions, getting by on beginner Japanese, the homestay in Tsuruga, and why Shibuya got a second visit on the last day.*
+*The full account of this trip is forthcoming. It will cover first impressions of Japan, navigating the country with beginner Japanese, and the homestay in Tsuruga.*

@@ -1,13 +1,23 @@
 ---
 import Base from '../layouts/Base.astro';
+import SidequestCard from '../components/SidequestCard.astro';
 import { visited } from '../data/visited';
+import { showDrafts } from '../lib/drafts';
+import { getCollection } from 'astro:content';
 const base = import.meta.env.BASE_URL.replace(/\/$/, '');
 const count = Object.keys(visited).length;
+const entries = (await getCollection('adventures', ({ data }) => data.region === 'Japan' && (!data.draft || showDrafts)))
+  .sort((a, b) => a.data.start.valueOf() - b.data.start.valueOf());
 ---
-<Base title="Map · Sidequest Resume">
-  <h1>Where I've been in Japan</h1>
-  <p class="meta">{count} of 47 prefectures visited. Click a prefecture to see the adventures that went there.</p>
+<Base title="Japan · Sidequest Resume" description="Sidequests in Japan and a map of the prefectures visited.">
+  <h1>Japan</h1>
+  <p class="lede">Japan is where I have spent the most time as an adult, across short trips and a six-month study abroad. This section collects those sidequests.</p>
+  <h2>Prefectures visited</h2>
+  <p class="meta">{count} of 47 prefectures visited. Select a prefecture to see the sidequests that included it.</p>
   <div id="pref-map" data-visited={JSON.stringify(visited)} data-base={base}></div>
+  <h2>Sidequests in Japan</h2>
+  {entries.length === 0 && <p class="meta">Entries are currently in preparation.</p>}
+  <div class="grid">{entries.map((entry) => <SidequestCard entry={entry} />)}</div>
 </Base>
 <script>
   import L from 'leaflet';
@@ -26,8 +36,8 @@ const count = Object.keys(visited).length;
       },
       onEachFeature: (f: any, layer) => {
         const v = visited[f.properties.nam];
-        const links = v?.trips?.map((t: string) => `<a href="${base}/adventures/${t}/">${t}</a>`).join('<br>');
-        layer.bindPopup(`<strong>${f.properties.nam}</strong><br>${v ? (links || 'Visited') : 'Not yet'}`);
+        const links = v?.trips?.map((t: string) => `<a href="${base}/sidequests/${t}/">${t}</a>`).join('<br>');
+        layer.bindPopup(`<strong>${f.properties.nam}</strong><br>${v ? (links || 'Visited') : 'Not yet visited'}`);
       },
     }).addTo(map);
   });
@@ -35,4 +45,7 @@ const count = Object.keys(visited).length;
 <style>
   #pref-map { height: 640px; border-radius: 14px; border: 1px solid var(--border); margin-top: 16px; }
   .meta { color: var(--muted); }
+  .lede { font-size: 1.1rem; max-width: 680px; }
+  h2 { margin-top: 40px; }
+  .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 20px; }
 </style>

@@ -1,19 +1,19 @@
 ---
 import Base from '../../layouts/Base.astro';
-import AdventureCard from '../../components/AdventureCard.astro';
+import SidequestCard from '../../components/SidequestCard.astro';
 import { showDrafts } from '../../lib/drafts';
 import { getCollection } from 'astro:content';
 const all = (await getCollection('adventures', ({ data }) => !data.draft || showDrafts))
   .sort((a, b) => b.data.start.valueOf() - a.data.start.valueOf());
 const regions = [...new Set(all.map((e) => e.data.region))];
 ---
-<Base title="Adventures · Sidequest Resume">
-  <h1>Adventures</h1>
-  {regions.length === 0 && <p style="color:var(--muted)">The first adventures are being written. Check back soon.</p>}
+<Base title="Sidequests · Sidequest Resume">
+  <h1>Sidequests</h1>
+  {regions.length === 0 && <p style="color:var(--muted)">Entries are currently in preparation.</p>}
   {regions.map((r) => (
     <section>
       <h2>{r}</h2>
-      <div class="grid">{all.filter((e) => e.data.region === r).map((entry) => <AdventureCard entry={entry} />)}</div>
+      <div class="grid">{all.filter((e) => e.data.region === r).map((entry) => <SidequestCard entry={entry} />)}</div>
     </section>
   ))}
 </Base>

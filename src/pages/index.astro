@@ -1,6 +1,6 @@
 ---
 import Base from '../layouts/Base.astro';
-import AdventureCard from '../components/AdventureCard.astro';
+import SidequestCard from '../components/SidequestCard.astro';
 import { showDrafts } from '../lib/drafts';
 import { getCollection } from 'astro:content';
 const base = import.meta.env.BASE_URL.replace(/\/$/, '');
@@ -9,13 +9,13 @@ const all = (await getCollection('adventures', ({ data }) => !data.draft || show
 ---
 <Base title="Sidequest Resume">
   <section class="hero">
-    <h1>Adventures and sidequests</h1>
-    <p>A curated record of the trips, road trips, dives and detours that shaped me. Japan first, since it's where I've spent most of my adult life, but this goes wherever the road does.</p>
-    <a class="cta" href={`${base}/adventures/`}>Browse the adventures</a>
+    <h1>Sidequest Resume</h1>
+    <p>A curated record of travels, road trips, dives, and the detours along the way. The collection begins with Japan, where I have spent most of my adult life, and will expand to destinations beyond it.</p>
+    <a class="cta" href={`${base}/sidequests/`}>View all sidequests</a>
   </section>
-  <h2>Latest</h2>
-  {all.length === 0 && <p class="empty">The first adventures are being written. Check back soon.</p>}
-  <div class="grid">{all.slice(0, 6).map((entry) => <AdventureCard entry={entry} />)}</div>
+  <h2>Recent sidequests</h2>
+  {all.length === 0 && <p class="empty">Entries are currently in preparation.</p>}
+  <div class="grid">{all.slice(0, 6).map((entry) => <SidequestCard entry={entry} />)}</div>
 </Base>
 <style>
   .hero { padding: 48px 0 32px; max-width: 680px; }

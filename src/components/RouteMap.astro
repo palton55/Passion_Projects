@@ -27,7 +27,7 @@ const legend = [
   document.querySelectorAll<HTMLElement>('.route-map').forEach((el) => {
     const stops = JSON.parse(el.dataset.stops || '[]');
     const legs = JSON.parse(el.dataset.legs || '[]');
-    if (!stops.length) { el.innerHTML = '<p class="empty">Road map coming once photos are sorted.</p>'; return; }
+    if (!stops.length) { el.innerHTML = '<p class="empty">Route map forthcoming.</p>'; return; }
     const map = L.map(el, { scrollWheelZoom: false });
     L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', { attribution: '© OpenStreetMap contributors' }).addTo(map);
     legs.forEach((leg: any) => L.polyline(leg.coords, styles[leg.mode] ?? styles.other).bindTooltip(leg.name).addTo(map));

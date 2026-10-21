@@ -10,14 +10,14 @@ const fmt = (x: Date) => x.toLocaleDateString('en-US', { month: 'long', day: 'nu
 ---
 <Base title="Korea · Sidequest Resume" description="Sidequests in South Korea, each with its route map and timeline.">
   <h1>Korea</h1>
-  <p class="lede">My time in South Korea so far came during the <a href={`${base}/japan/#study-abroad-2025`}>Study Abroad 2025</a> semester in Tokyo, with a week in Seoul for the city, the DMZ, and the Waterbomb festival.</p>
+  <p class="lede">My time in South Korea so far came during the <a href={`${base}/japan/2025/`}>Study Abroad 2025</a> semester in Tokyo, with a week in Seoul for the city, the DMZ, and the Waterbomb festival.</p>
   {entries.length === 0 && <p class="meta pending">Entries are currently in preparation.</p>}
   {entries.map((e) => (
     <section class="topic">
       <h2>{e.data.title}</h2>
       {e.data.start && <p class="meta">{fmt(e.data.start)}{e.data.end && ` to ${fmt(e.data.end)}`}</p>}
       <p>{e.data.summary}</p>
-      {e.data.collection === 'Korea and Waterbomb' && <p class="meta">Part of <a href={`${base}/japan/#study-abroad-2025`}>Study Abroad 2025</a></p>}
+      {e.data.collection === 'Korea and Waterbomb' && <p class="meta">Part of <a href={`${base}/japan/2025/`}>Study Abroad 2025</a></p>}
       {e.data.stops.length > 0 && <RouteMap stops={e.data.stops} legs={e.data.legs} height={420} />}
       <p><a href={`${base}/sidequests/${e.id}/`}>Read the full entry and timeline</a></p>
     </section>

@@ -1,0 +1,20 @@
+---
+import Base from '../../layouts/Base.astro';
+import Tile from '../../components/Tile.astro';
+import { visited } from '../../data/visited';
+import { japanTopics } from '../../data/japan-topics';
+const count = Object.keys(visited).length;
+---
+<Base title="Japan · Sidequest Resume" description="Trips to Japan, each with its own page, route maps, and timelines.">
+  <h1>Japan</h1>
+  <p class="lede">Japan is where I have spent the most time as an adult, across short trips and a six-month study abroad. Each trip has its own page with route maps and a day-by-day account.</p>
+  <p class="meta">{count} of 47 prefectures visited.</p>
+  <div class="grid">
+    {japanTopics.map((t) => <Tile href={`/japan/${t.page}/`} label={t.label} title={t.title} meta={t.dates} blurb={t.blurb} />)}
+  </div>
+</Base>
+<style>
+  .lede { font-size: 1.1rem; max-width: 680px; }
+  .meta { color: var(--muted); }
+  .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 20px; margin: 24px 0; }
+</style>

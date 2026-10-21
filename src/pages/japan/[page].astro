@@ -1,33 +1,29 @@
 ---
-import Base from '../layouts/Base.astro';
-import RouteMap from '../components/RouteMap.astro';
-import { visited } from '../data/visited';
-import { showDrafts } from '../lib/drafts';
+import Base from '../../layouts/Base.astro';
+import RouteMap from '../../components/RouteMap.astro';
+import { showDrafts } from '../../lib/drafts';
 import { getCollection } from 'astro:content';
-import { japanTopics, slug, type JapanTopic } from '../data/japan-topics';
+import { japanTopics, slug, type JapanTopic } from '../../data/japan-topics';
+export function getStaticPaths() {
+  return japanTopics.map((topic) => ({ params: { page: topic.page }, props: { topic } }));
+}
+const { topic } = Astro.props as { topic: JapanTopic };
 const base = import.meta.env.BASE_URL.replace(/\/$/, '');
-const count = Object.keys(visited).length;
 const topicCollections = new Set(japanTopics.flatMap((t) => [t.collection, ...(t.subtopics ?? []).map((s) => s.collection)]));
 const entries = (await getCollection('adventures', ({ data }) => (data.region === 'Japan' || topicCollections.has(data.collection ?? '')) && (!data.draft || showDrafts)))
   .sort((a, b) => (a.data.start?.valueOf() ?? 0) - (b.data.start?.valueOf() ?? 0));
 const inTopic = (t: JapanTopic) => entries.filter((e) => e.data.collection === t.collection);
-const other = entries.filter((e) => !topicCollections.has(e.data.collection ?? ''));
 ---
-<Base title="Japan · Sidequest Resume" description="Sidequests in Japan, each with its route map and timeline.">
-  <h1>Japan</h1>
-  <p class="lede">Japan is where I have spent the most time as an adult, across short trips and a six-month study abroad. Each posting below includes its route map and a link to the full day-by-day account.</p>
-  <p class="meta">{count} of 47 prefectures visited.</p>
-  <nav class="toc" aria-label="Japan topics">
-    {japanTopics.map((t) => <a href={`#${slug(t.collection)}`}>{t.title}</a>)}
-  </nav>
-  {japanTopics.map((t) => (
-    <section class="topic" id={slug(t.collection)}>
-      <h2>{t.title}</h2>
+<Base title={`${topic.title} · Sidequest Resume`} description={topic.blurb}>
+  <p class="crumb"><a href={`${base}/travel/`}>Travel</a> / <a href={`${base}/japan/`}>Japan</a></p>
+  {[topic].map((t) => (
+    <section id={slug(t.collection)}>
+      <h1>{t.title}</h1>
       {t.dates && <p class="meta">{t.dates}</p>}
-      <p>{t.blurb}</p>
+      <p class="lede">{t.blurb}</p>
       {inTopic(t).map((e) => (
         <div class="posting">
-          {e.data.stops.length > 0 && <RouteMap stops={e.data.stops} legs={e.data.legs} height={420} />}
+          {e.data.stops.length > 0 && <RouteMap stops={e.data.stops} legs={e.data.legs} height={460} />}
           <p><a href={`${base}/sidequests/${e.id}/`}>Read the full entry and timeline</a></p>
         </div>
       ))}
@@ -53,18 +49,16 @@ const other = entries.filter((e) => !topicCollections.has(e.data.collection ?? '
       )}
     </section>
   ))}
-  {other.length > 0 && (
-    <section class="topic">
-      <h2>Other Sidequests in Japan</h2>
-      {other.map((e) => <p><a href={`${base}/sidequests/${e.id}/`}>{e.data.title}</a></p>)}
-    </section>
-  )}
+  <nav class="pager" aria-label="Other Japan trips">
+    {japanTopics.filter((t) => t !== topic).map((t) => <a href={`${base}/japan/${t.page}/`}>{t.title}</a>)}
+  </nav>
 </Base>
 <style>
   .meta { color: var(--muted); }
   .lede { font-size: 1.1rem; max-width: 680px; }
   h2 { margin-top: 40px; }
-  .topic { border-top: 1px solid var(--border); margin-top: 40px; }
+  .crumb { color: var(--muted); font-size: .9rem; margin: 0 0 8px; }
+  .pager { display: flex; flex-wrap: wrap; gap: 8px 20px; border-top: 1px solid var(--border); margin-top: 40px; padding-top: 16px; }
   .posting { margin: 16px 0 8px; }
   .posting p { margin: 8px 0 0; }
   .pending { font-style: italic; }

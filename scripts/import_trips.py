@@ -28,9 +28,16 @@ MONTHS = {m: i for i, m in enumerate('Jan Feb Mar Apr May Jun Jul Aug Sep Oct No
 ENTRIES = [
     dict(id='japan-2024', dir='japan-2024', title='Return to Tokyo', collection='Japan 2024', companions=['friends'],
          summary='A nine-day return to Tokyo after sophomore finals with friends, including a day trip to Mt. Fuji and Kawaguchiko.'),
-    dict(id='2025-west-japan-road-trip', dir='2025-study-abroad/01-west-japan-road-trip', title='West Japan Road Trip',
-         collection='West Japan Road Trip',
-         summary='The opening week of the study abroad: arrival in Tokyo, the Shinkansen to Osaka, and a drive back across the Shimanami Kaido, Okayama, Himeji, Nara, and Hakone.'),
+    # One road-map folder, two trips (Patrick, Oct 21 2026): the Shimanami Kaido trip, then the drive back as its own trip.
+    dict(id='2025-shimanami-kaido', dir='2025-study-abroad/01-west-japan-road-trip', title='Shimanami Kaido',
+         collection='Shimanami Kaido', days=(1, 4),
+         stops=['Haneda Airport', 'Tokyo', 'Shin-Osaka', 'Shimanami Kaido', 'Imabari', 'Fukuyama', 'Okayama / Kurashiki'],
+         summary='The opening days of the study abroad: arrival in Tokyo, the Shinkansen to Osaka, and the Shimanami Kaido across the islands of the Seto Inland Sea, followed by Fukuyama, Okayama, and Kurashiki.'),
+    dict(id='2025-drive-back-to-tokyo', dir='2025-study-abroad/01-west-japan-road-trip', title='Road Trip Back to Tokyo',
+         collection='Road Trip Back to Tokyo', days=(5, 6),
+         stops=['Okayama / Kurashiki', 'Himeji', 'Arima Onsen', 'Nara', 'Mountain village', 'Nagashima Spa Land', 'Nagoya',
+                'Hamamatsu', 'Hakone / Gotemba', 'Kodaira'],
+         summary='A two-day drive from Okayama back to Tokyo by way of Himeji Castle, Arima Onsen, Nara, the Ise Bay coast, Lake Hamana, Hakone, and Gotemba.'),
     dict(id='2025-hakone-fuji', dir='2025-study-abroad/02-hakone-fuji', title='Hakone and Mt. Fuji', collection='Hakone and Mt. Fuji',
          summary='A three-day weekend based in Manazuru, with Lake Ashi, Fuji-Q Highland, and the Gotemba outlets.'),
     dict(id='2025-alpine-route', dir='2025-study-abroad/03-alpine-route', title='Tateyama Kurobe Alpine Route',
@@ -150,7 +157,7 @@ def thin(coords, limit=120):
 
 
 def map_data(geo, kanto=False):
-    stops, legs, dates = [], [], []
+    stops, legs, dates, leg_dates = [], [], [], []
     for f in geo['features']:
         p, g = f['properties'], f['geometry']
         if p.get('date'):
@@ -165,11 +172,12 @@ def map_data(geo, kanto=False):
             stops.append({'name': p['name'], 'lat': ll[0], 'lng': ll[1],
                           'date': re.sub(r'^,\s*|,?\s*no photos', '', p.get('days', '')).strip()})
         elif g['type'] == 'LineString':
+            leg_dates.append(p.get('date'))
             legs.append({'name': clean(p['name']), 'mode': MODES.get(p.get('mode'), 'other'),
                          'coords': thin([latlng(c) for c in g['coordinates']])})
     if kanto:
         stops.insert(0, {'name': 'Kodaira (home base)', 'lat': KODAIRA[0], 'lng': KODAIRA[1], 'mode': 'daytrip'})
-    return stops, legs, sorted(dates)
+    return stops, legs, sorted(dates), leg_dates
 
 
 def j(v):
@@ -197,9 +205,24 @@ def write_entry(e):
     md = (src / 'road-map.md').read_text()
     geo = json.loads((src / 'stops.geojson').read_text())
     kanto = 'kanto' in e['dir']
-    stops, legs, dates = map_data(geo, kanto)
+    stops, legs, dates, leg_dates = map_data(geo, kanto)
     year = int(dates[0][:4])
     days = kanto_days(md, year) if kanto else parse_days(md, year)
+    if 'days' in e:
+        first, last = e['days']
+        days = [d for d in days if first <= int(d['label'].split()[1]) <= last]
+        for i, d in enumerate(days, 1):
+            d['label'] = f'Day {i}'
+        keep = {d['date'] for d in days}
+        legs = [l for l, dt in zip(legs, leg_dates) if dt in keep]
+        stops = sorted((st for st in stops if st['name'] in e['stops']), key=lambda st: e['stops'].index(st['name']))
+        shift = lambda m: str(int(m.group(0)) - first + 1) if first <= int(m.group(0)) <= last else m.group(0)
+        for st in stops:  # renumber "Day N" labels to this trip's days
+            if any(int(n) < first for n in re.findall(r'Days? (\d+)', st.get('date', ''))):
+                st['date'] = 'start'
+                continue
+            st['date'] = re.sub(r'(?<=Day )\d+|(?<=Days )\d+|(?<=-)\d+', shift, st.get('date', ''))
+        dates = sorted(keep)
     fm = ['---', f'title: {j(e["title"])}', f'summary: {j(e["summary"])}', f'start: {dates[0]}', f'end: {dates[-1]}',
           'category: Travel', f'region: {e.get("region", "Japan")}', f'collection: {j(e["collection"])}',
           f'companions: {j(e.get("companions", []))}', 'draft: true',

@@ -56,8 +56,8 @@ export const japanTopics: JapanTopic[] = [
     page: '2026',
     label: '2026',
     title: 'Japan 2026',
-    dates: '2026',
-    blurb: 'A return to Japan, part of it with family, told from my own perspective.',
+    dates: 'March 6 to 24, 2026',
+    blurb: 'A return to Japan, part of it with family: Kanazawa, the Fuji Five Lakes, Tokyo, and a road trip around Hokkaido.',
   },
 ];
 

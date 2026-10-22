@@ -70,25 +70,31 @@ ENTRIES = [
          summary='The final trip of the semester: six days in the Yaeyama Islands, with boat trips past Taketomi, Kohama, and Kuroshima, a drive along the west coast of Ishigaki to Cape Ogan, and a day among the red-tiled houses of Taketomi.'),
     dict(id='2025-kanto-day-trips', dir='2025-study-abroad/kanto-day-trips', title='Kanto Day Trips', collection='Kanto Day Trips',
          summary='Fourteen day trips from Kodaira between April and August 2025 by train, bus, and car, from Asakusa, Yokohama, and Enoshima to Chichibu, Mt. Takao, Okutama, the Boso Peninsula, Atami, and Ito on the Izu Peninsula.'),
-    # Five parts (trips/japan-2026/road-map.md). Told from Patrick's own perspective, with no companions named.
-    dict(id='japan-2026', dir='japan-2026', title='Kanazawa, Mt. Fuji, and Hokkaido', collection='Japan 2026',
-         summary='Nineteen days in March 2026. The Hokuriku Shinkansen to Kanazawa, the Fuji Five Lakes, and a week in Tokyo, followed by a winter road trip around Hokkaido from Abashiri along the drift ice of the Sea of Okhotsk to Monbetsu and Cape Soya, then Biei, Furano, and Upopoy, before a final day in Sapporo.',
+    # Japan 2026 (trips/japan-2026/road-map.md) as three entries (Patrick, Oct 22 2026): Kanazawa, Mt. Fuji with the
+    # Tokyo week that followed, and Hokkaido with the last days in Sapporo. `days` picks each entry's days from the
+    # trip, renumbered from 1. Told from Patrick's own perspective, with no companions named.
+    dict(id='japan-2026-kanazawa', dir='japan-2026', days=[1, 2, 3], title='Kanazawa', collection='Kanazawa',
+         summary='The opening days of March 2026. Arrival at Narita and a night in Shinjuku, then the Hokuriku Shinkansen to Kanazawa for Kanazawa Station and the Tsuzumi Gate, the Asanogawa River, and the lantern-lit lanes of the Higashi Chaya district, returning the next morning along the Japan Sea coast past Toyama and Itoigawa.',
+         stops=['Narita Airport', 'Shinjuku', 'Tokyo Station', 'Omiya', 'Kanazawa', 'Toyama', 'Itoigawa / Joetsu', 'Yokohama', 'Machida']),
+    dict(id='japan-2026-fuji', dir='japan-2026', days=list(range(4, 13)), title='Mt. Fuji and Tokyo', collection='Mt. Fuji and Tokyo',
+         summary='A drive from Yokohama to the Gotemba outlets and a night at Lake Yamanakako, followed by the Chureito Pagoda, Lake Kawaguchiko, and Fuji-Q Highland beneath Mt. Fuji, then a week around Tokyo from the Machida and Sagamihara side before the flight north from Haneda.',
          parts=[
-             dict(title='Tokyo and Kanazawa', days=[1, 2, 3],
-                  stops=['Narita Airport', 'Shinjuku', 'Tokyo Station', 'Omiya', 'Kanazawa', 'Toyama', 'Itoigawa / Joetsu', 'Yokohama', 'Machida'],
-                  blurb='Arrival at Narita and a night in Shinjuku, then the Hokuriku Shinkansen to Kanazawa and the Higashi Chaya district, returning the next morning along the Japan Sea coast.'),
              dict(title='Mt. Fuji and the Fuji Five Lakes', days=[4, 5],
-                  stops=['Yokohama', 'Gotemba Premium Outlets', 'Lake Yamanakako', 'Chureito Pagoda', 'Lake Kawaguchiko', 'Fuji-Q Highland', 'Tachikawa'],
-                  blurb='The Gotemba outlets and a night at Lake Yamanakako, followed by the Chureito Pagoda, Lake Kawaguchiko, and Fuji-Q Highland.'),
+                  stops=['Yokohama', 'Gotemba Premium Outlets', 'Lake Yamanakako', 'Chureito Pagoda', 'Lake Kawaguchiko', 'Fuji-Q Highland', 'Shinjuku'],
+                  blurb='The Gotemba outlets and a night at Lake Yamanakako, followed by the Chureito Pagoda, Lake Kawaguchiko, and Fuji-Q Highland, with the car returned in Shinjuku.'),
              dict(title='Tokyo Days', days=[6, 7, 8, 9, 10, 11, 12],
                   stops=['Machida / Sagamihara', 'Zama', 'Shibuya / Harajuku', 'Setagaya', 'Ikebukuro', 'Tachikawa', 'Ebisu', 'Haneda Airport'],
                   blurb='A week around Tokyo from the Machida and Sagamihara side, covering Shibuya, Setagaya, Ikebukuro, and Tachikawa, and ending with a flight north from Haneda.'),
+         ]),
+    dict(id='japan-2026-hokkaido', dir='japan-2026', days=list(range(13, 20)), title='Hokkaido Road Trip', collection='Hokkaido Road Trip',
+         summary='A winter road trip around Hokkaido from New Chitose: across Tokachi to Abashiri, along the Sea of Okhotsk to the drift ice at Monbetsu, north to Cape Soya, inland to Asahikawa, Biei, and Furano, and south to Upopoy, the National Ainu Museum, followed by a day in Sapporo and the journey home by way of Tokyo.',
+         parts=[
              dict(title='Hokkaido Road Trip', days=[13, 14, 15, 16], modes=['drive'],
                   stops=['New Chitose Airport', 'Obihiro', 'Ashoro / Rikubetsu', 'Abashiri', 'Monbetsu', 'Cape Soya', 'Wakkanai', 'Teshio',
                          'Asahikawa', 'Biei / Furano', 'Furano', 'Upopoy, Shiraoi'],
                   blurb='Four days of driving from New Chitose: across Tokachi to Abashiri, along the Sea of Okhotsk to the drift ice at Monbetsu, north to Cape Soya, inland to Asahikawa, Biei, and Furano, and south to Upopoy.'),
              dict(title='Sapporo and Home', days=[16, 17, 18, 19],
-                  stops=['Sapporo', 'New Chitose Airport', 'Haneda Airport', 'Tokyo', 'Narita Airport'],
+                  stops=['Sapporo', 'New Chitose Airport'],
                   blurb='A day in Odori and Tanukikoji in Sapporo, the flight back to Tokyo, and a final afternoon in Ginza before departing from Narita.'),
          ]),
 ]
@@ -311,6 +317,54 @@ def shift_days(text, offset):
     return re.sub(r'(?<=Day )\d+|(?<=Days )\d+|(?<=-)\d+|(?<= and )\d+', lambda m: str(int(m.group(0)) + offset), text)
 
 
+def day_set(text):
+    """Day numbers named in a stop's date ('Days 1-12, 18-19', 'Days 6, 7 and 12', 'Day 3 · night')."""
+    head = text.split(' · ')[0]
+    if not re.match(r'Days? \d', head):
+        return None
+    out = set()
+    for a, b in re.findall(r'(\d+)(?:-(\d+))?', head):
+        out.update(range(int(a), int(b or a) + 1))
+    return out
+
+
+def day_label(nums):
+    nums = sorted(nums)
+    runs, i = [], 0
+    while i < len(nums):
+        j = i
+        while j + 1 < len(nums) and nums[j + 1] == nums[j] + 1:
+            j += 1
+        runs.append(str(nums[i]) if i == j else f'{nums[i]}-{nums[j]}')
+        i = j + 1
+    if len(nums) == 1:
+        return f'Day {nums[0]}'
+    return 'Days ' + (' and '.join(runs) if len(runs) == 2 else ', '.join(runs))
+
+
+def pick_days(e, stops, legs, days):
+    """Keep only the entry's days of a longer trip, renumbered from 1, with its listed stops and those days' legs."""
+    keep, offset = set(e['days']), min(e['days']) - 1
+    names = e.get('stops') or [n for pt in e['parts'] for n in pt['stops']]
+    picked = []
+    for st in stops:
+        if st['name'] not in names:
+            continue
+        st = dict(st)
+        ds = day_set(st.get('date', ''))
+        if ds is not None:
+            inside = ds & keep
+            rest = st['date'].split(' · ', 1)[1:]
+            st['date'] = ' · '.join([day_label([d - offset for d in inside])] + rest) if inside else ''
+        picked.append(st)
+    legs = [dict(l, day=l['day'] - offset) for l in legs if l.get('day') in keep]
+    days = [dict(d, label=f'Day {int(d["label"].split()[1]) - offset}') for d in days
+            if re.match(r'Day \d', d['label']) and int(d['label'].split()[1]) in keep]
+    for pt in e.get('parts', []):
+        pt['days'] = [d - offset for d in pt['days']]
+    return picked, legs, days, [d['date'] for d in days]
+
+
 def write_entry(e):
     # An entry can combine several road-map folders (e.g. two parts of one trip); days are numbered across them.
     stops, legs, dates, days = [], [], [], []
@@ -332,6 +386,8 @@ def write_entry(e):
         if l.get('date'):
             l['day'] = (date.fromisoformat(l['date']) - start).days + 1
         l.pop('date', None)
+    if 'days' in e:
+        stops, legs, days, dates = pick_days(e, stops, legs, days)
     fm = ['---', f'title: {j(e["title"])}', f'summary: {j(e["summary"])}', f'start: {dates[0]}', f'end: {dates[-1]}',
           'category: Travel', f'region: {e.get("region", "Japan")}', f'collection: {j(e["collection"])}',
           f'companions: {j(e.get("companions", []))}', 'draft: true',

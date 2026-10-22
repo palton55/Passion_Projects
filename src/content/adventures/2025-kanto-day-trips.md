@@ -20,11 +20,12 @@ stops:
   - {"name": "Toyosu and Odaiba, then the Railway Museum again", "lat": 35.649, "lng": 139.7898, "date": "Jun 11", "mode": "daytrip"}
   - {"name": "Okutama (overnight to Jun 15)", "lat": 35.8456, "lng": 139.1532, "date": "Jun 14", "mode": "daytrip"}
   - {"name": "Boso Peninsula: Umihotaru, Mt. Nokogiri, Cape Futtsu", "lat": 35.1621, "lng": 139.8246, "date": "Jun 29", "mode": "daytrip"}
+  - {"name": "Tama River fireworks, Inagi / Fuchu (photo trip from school)", "lat": 35.65, "lng": 139.502, "date": "Jul 19", "mode": "daytrip"}
   - {"name": "Enoshima", "lat": 35.3078, "lng": 139.4853, "date": "Jul 21", "mode": "daytrip"}
   - {"name": "Kisarazu, then Yokohama at night by the Aqua-Line", "lat": 35.4151, "lng": 139.9812, "date": "Jul 25", "mode": "daytrip"}
   - {"name": "Atami and Hatsushima, then Oiso", "lat": 35.0426, "lng": 139.1707, "date": "Jul 27", "mode": "daytrip"}
   - {"name": "Mitsui Outlet Park Iruma again", "lat": 35.8107, "lng": 139.3789, "date": "Aug 9", "mode": "daytrip"}
-  - {"name": "Ito, Izu Peninsula", "lat": 34.8967, "lng": 139.1324, "date": "Aug 12", "mode": "daytrip"}
+  - {"name": "Ito, Izu Peninsula (scuba diving)", "lat": 34.8967, "lng": 139.1324, "date": "Aug 12", "mode": "daytrip"}
 legs:
   - {"name": "Asakusa and Tokyo Skytree", "mode": "daytrip", "coords": [[35.7286, 139.4775], [35.7107, 139.7963]]}
   - {"name": "Mitsui Outlet Park Iruma", "mode": "daytrip", "coords": [[35.7286, 139.4775], [35.8106, 139.3793]]}
@@ -35,11 +36,12 @@ legs:
   - {"name": "Toyosu and Odaiba, then the Railway Museum again", "mode": "daytrip", "coords": [[35.7286, 139.4775], [35.649, 139.7898]]}
   - {"name": "Okutama (overnight to Jun 15)", "mode": "daytrip", "coords": [[35.7286, 139.4775], [35.8456, 139.1532]]}
   - {"name": "Boso Peninsula: Umihotaru, Mt. Nokogiri, Cape Futtsu", "mode": "daytrip", "coords": [[35.7286, 139.4775], [35.1621, 139.8246]]}
+  - {"name": "Tama River fireworks, Inagi / Fuchu (photo trip from school)", "mode": "daytrip", "coords": [[35.7286, 139.4775], [35.65, 139.502]]}
   - {"name": "Enoshima", "mode": "daytrip", "coords": [[35.7286, 139.4775], [35.3078, 139.4853]]}
   - {"name": "Kisarazu, then Yokohama at night by the Aqua-Line", "mode": "daytrip", "coords": [[35.7286, 139.4775], [35.4151, 139.9812]]}
   - {"name": "Atami and Hatsushima, then Oiso", "mode": "daytrip", "coords": [[35.7286, 139.4775], [35.0426, 139.1707]]}
   - {"name": "Mitsui Outlet Park Iruma again", "mode": "daytrip", "coords": [[35.7286, 139.4775], [35.8107, 139.3789]]}
-  - {"name": "Ito, Izu Peninsula", "mode": "daytrip", "coords": [[35.7286, 139.4775], [34.8967, 139.1324]]}
+  - {"name": "Ito, Izu Peninsula (scuba diving)", "mode": "daytrip", "coords": [[35.7286, 139.4775], [34.8967, 139.1324]]}
 # Day-by-day timeline, generated from the trip notes by scripts/import_trips.py.
 timeline:
   - label: "Day trip"
@@ -70,6 +72,9 @@ timeline:
     date: 2025-06-29
     title: "Boso Peninsula: Umihotaru, Mt. Nokogiri, Cape Futtsu"
   - label: "Day trip"
+    date: 2025-07-19
+    title: "Tama River fireworks, Inagi / Fuchu (photo trip from school)"
+  - label: "Day trip"
     date: 2025-07-21
     title: "Enoshima"
   - label: "Day trip"
@@ -83,7 +88,7 @@ timeline:
     title: "Mitsui Outlet Park Iruma again"
   - label: "Day trip"
     date: 2025-08-12
-    title: "Ito, Izu Peninsula"
+    title: "Ito, Izu Peninsula (scuba diving)"
 ---
 
 *The full account of this sidequest is forthcoming.*

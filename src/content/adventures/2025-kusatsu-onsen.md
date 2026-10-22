@@ -1,6 +1,6 @@
 ---
 title: "Kusatsu Onsen"
-summary: "An overnight trip by bus from Ikebukuro to Kusatsu Onsen in the mountains of Gunma, one of the best-known hot spring towns in Japan, with the Yubatake at its centre and the Yanba Dam area in Naganohara."
+summary: "An overnight bus trip from Ikebukuro to Kusatsu Onsen in the mountains of Gunma, one of the best-known hot spring towns in Japan, with the Yubatake at its center and a stop around Yanba Dam in Naganohara."
 start: 2025-08-17
 end: 2025-08-18
 category: Travel
@@ -33,4 +33,4 @@ timeline:
     route: ["Highway bus from Kusatsu Onsen back to Ikebukuro (about 170 km, 2 h 45 min)."]
 ---
 
-*The full account of this sidequest is forthcoming.*
+*The full write-up for this sidequest is coming soon.*

@@ -64,7 +64,7 @@ const legend = [
   document.querySelectorAll<HTMLElement>('.route-map').forEach((el) => {
     const stops = JSON.parse(el.dataset.stops || '[]');
     const legs = JSON.parse(el.dataset.legs || '[]');
-    if (!stops.length) { el.innerHTML = '<p class="empty">Route map forthcoming.</p>'; return; }
+    if (!stops.length) { el.innerHTML = '<p class="empty">Route map coming soon.</p>'; return; }
     const map = L.map(el, { scrollWheelZoom: false });
     const streets = L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', { maxZoom: 19, attribution: '© OpenStreetMap contributors' }).addTo(map);
     const satellite = L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}', { maxZoom: 19, attribution: 'Imagery © Esri, Maxar, Earthstar Geographics' });

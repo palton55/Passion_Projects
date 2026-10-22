@@ -76,4 +76,4 @@ timeline:
     route: ["Airport railroad, Seoul Station to Incheon (about 50 km, 35 min).", "Flight, Incheon to Narita."]
 ---
 
-*The full account of this sidequest is forthcoming.*
+*The full write-up for this sidequest is coming soon.*

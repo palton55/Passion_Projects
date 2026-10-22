@@ -1,6 +1,6 @@
 ---
 title: "Hakone and Mt. Fuji"
-summary: "A three-day weekend based at Manazuru on Sagami Bay, with Lake Ashi in Hakone, a day at Fuji-Q Highland at the foot of Mt. Fuji, and the Gotemba Premium Outlets."
+summary: "A three-day weekend staying in Manazuru on Sagami Bay, with Lake Ashi in Hakone, a day at Fuji-Q Highland at the foot of Mt. Fuji, and some shopping at the Gotemba Premium Outlets."
 start: 2025-04-07
 end: 2025-04-09
 category: Travel
@@ -45,4 +45,4 @@ timeline:
     route: ["Manazuru to Gotemba and home (about 110 km, 1 h 45 min)."]
 ---
 
-*The full account of this sidequest is forthcoming.*
+*The full write-up for this sidequest is coming soon.*

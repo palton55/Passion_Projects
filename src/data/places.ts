@@ -16,8 +16,8 @@ export const placeNotes: PlaceNote[] = [
   {
     slug: 'sapporo', name: 'Sapporo', country: 'Japan', area: 'Hokkaido', match: ['Sapporo'],
     text: [
-      'Sapporo is the capital of Hokkaido and the fifth-largest city in Japan, with a population of nearly two million. It was laid out on a grid from 1869 as the administrative centre for the settlement of Hokkaido, and its streets are still numbered by block from the city centre.',
-      'The city hosted the 1972 Winter Olympics, the first held in Asia. Odori Park, the long green strip at its centre, holds the Sapporo Snow Festival each February, with the Sapporo TV Tower at its eastern end; Susukino to the south is the largest entertainment district north of Tokyo. Sapporo Beer, founded in 1876, is the oldest beer brand in Japan.',
+      'Sapporo is the capital of Hokkaido and the fifth-largest city in Japan, with a population of nearly two million. It was laid out on a grid from 1869 as the administrative center for the settlement of Hokkaido, and its streets are still numbered by block from the city center.',
+      'The city hosted the 1972 Winter Olympics, the first held in Asia. Odori Park, the long green strip at its center, holds the Sapporo Snow Festival each February, with the Sapporo TV Tower at its eastern end; Susukino to the south is the largest entertainment district north of Tokyo. Sapporo Beer, founded in 1876, is the oldest beer brand in Japan.',
     ],
     photos: ['japan-2026/17.jpg', 'japan-2026/18.jpg'],
   },
@@ -32,7 +32,7 @@ export const placeNotes: PlaceNote[] = [
   {
     slug: 'onuma-park', name: 'Onuma Park', country: 'Japan', area: 'Hokkaido', match: ['Hakodate / Onuma'],
     text: [
-      'Onuma Quasi-National Park lies in Nanae, about 20 kilometres north of Hakodate. Its three lakes, Onuma, Konuma, and Junsainuma, are scattered with small wooded islands joined by footbridges.',
+      'Onuma Quasi-National Park lies in Nanae, about 20 kilometers north of Hakodate. Its three lakes, Onuma, Konuma, and Junsainuma, are scattered with small wooded islands joined by footbridges.',
       'The lakes were formed by eruptions of Hokkaido Komagatake, the active volcano that rises over the water to the north. The park is reached in about twenty minutes on the Hakodate Main Line.',
     ],
     photos: ['2025-tohoku-hokkaido/13.jpg', '2025-tohoku-hokkaido/14.jpg'],
@@ -41,7 +41,7 @@ export const placeNotes: PlaceNote[] = [
     slug: 'cape-soya', name: 'Cape Soya', country: 'Japan', area: 'Hokkaido', match: ['Cape Soya', 'Wakkanai / Cape Soya'],
     text: [
       'Cape Soya, at 45°31′ north, is the northernmost point of Japan that can be freely visited. A triangular monument marks the spot on the shore of the Soya Strait, known internationally as the La Pérouse Strait.',
-      'On clear days the island of Sakhalin, in Russia, is visible about 43 kilometres across the water. The cape was reached twice on these trips: by car from Sapporo in the summer of 2025, and again on the winter road trip of 2026.',
+      'On clear days the island of Sakhalin, in Russia, is visible about 43 kilometers across the water. The cape was reached twice on these trips: by car from Sapporo in the summer of 2025, and again on the winter road trip of 2026.',
     ],
     photos: ['2025-tohoku-hokkaido/08.jpg', '2025-tohoku-hokkaido/09.jpg', 'japan-2026/10.jpg', 'japan-2026/11.jpg'],
   },
@@ -107,15 +107,15 @@ export const placeNotes: PlaceNote[] = [
     slug: 'tokyo', name: 'Tokyo', country: 'Japan', area: 'Tokyo',
     match: ['Tokyo', 'Shinjuku', 'Shibuya / Harajuku', 'Toyosu and Odaiba', 'Asakusa and Tokyo Skytree', 'Ebisu', 'Ikebukuro', 'Setagaya'],
     text: [
-      'Tokyo is the capital of Japan and the centre of the most populous metropolitan area in the world, home to about 37 million people. Formerly known as Edo, it became the seat of the Tokugawa shogunate in 1603 and took its present name in 1868, when the emperor moved there from Kyoto.',
-      'The city is made up of 23 special wards, each with its own character, from the skyscrapers of Shinjuku and the youth culture of Shibuya and Harajuku to the temples of Asakusa and the waterfront of Odaiba. Its landmarks include Tokyo Skytree, at 634 metres the tallest tower in the world, Tokyo Tower beside Zojoji Temple, and the forested grounds of Meiji Jingu. Beyond the wards, the Tama area to the west includes Kodaira, home during the 2025 study abroad.',
+      'Tokyo is the capital of Japan and the center of the most populous metropolitan area in the world, home to about 37 million people. Formerly known as Edo, it became the seat of the Tokugawa shogunate in 1603 and took its present name in 1868, when the emperor moved there from Kyoto.',
+      'The city is made up of 23 special wards, each with its own character, from the skyscrapers of Shinjuku and the youth culture of Shibuya and Harajuku to the temples of Asakusa and the waterfront of Odaiba. Its landmarks include Tokyo Skytree, at 634 meters the tallest tower in the world, Tokyo Tower beside Zojoji Temple, and the forested grounds of Meiji Jingu. Beyond the wards, the Tama area to the west includes Kodaira, home during the 2025 study abroad.',
     ],
     photos: ['japan-2023/01.jpg', 'japan-2023/03.jpg', 'japan-2023/04.jpg', 'japan-2023/02.jpg', 'japan-2024/02.jpg', 'japan-2024/03.jpg', 'japan-2024/06.jpg', 'japan-2024/07.jpg', '2025-west-japan-road-trip/01.jpg', '2025-kanto-day-trips/06.jpg'],
   },
   {
     slug: 'mt-takao', name: 'Mt. Takao', country: 'Japan', area: 'Tokyo', match: ['Mt. Takao'],
     text: [
-      'Mt. Takao is a 599-metre mountain in Hachioji, on the western edge of Tokyo, and one of the most climbed mountains in the world. It is reached in under an hour by train from Shinjuku.',
+      'Mt. Takao is a 599-meter mountain in Hachioji, on the western edge of Tokyo, and one of the most climbed mountains in the world. It is reached in under an hour by train from Shinjuku.',
       'Trails and a cable car lead to Yakuoin, a Buddhist temple founded in the eighth century, and on to the summit, which looks west to Mt. Fuji on clear days.',
     ],
     photos: ['2025-kanto-day-trips/05.jpg'],
@@ -171,15 +171,15 @@ export const placeNotes: PlaceNote[] = [
     slug: 'atami', name: 'Atami', country: 'Japan', area: 'Shizuoka', match: ['Atami and Hatsushima'],
     text: [
       'Atami is a hot spring resort city in Shizuoka, at the base of the Izu Peninsula on Sagami Bay. A popular getaway from Tokyo since the Edo period, it is less than an hour away by Shinkansen.',
-      'Hatsushima, a small island about ten kilometres offshore, is reached by ferry from the Atami harbour.',
+      'Hatsushima, a small island about ten kilometers offshore, is reached by ferry from the Atami harbor.',
     ],
     photos: ['2025-kanto-day-trips/12.jpg', '2025-kanto-day-trips/13.jpg'],
   },
   {
     slug: 'kusatsu-onsen', name: 'Kusatsu Onsen', country: 'Japan', area: 'Gunma', match: ['Kusatsu Onsen'],
     text: [
-      'Kusatsu Onsen is a hot spring town at about 1,200 metres in the mountains of Gunma, long ranked among the finest onsen in Japan. Its springs have the largest natural flow of any in the country, and their strongly acidic water has been prized for its healing properties for centuries.',
-      'At the centre of town is the Yubatake, or "hot water field", where the steaming spring water runs through wooden channels to cool before it is piped to the baths.',
+      'Kusatsu Onsen is a hot spring town at about 1,200 meters in the mountains of Gunma, long ranked among the finest onsen in Japan. Its springs have the largest natural flow of any in the country, and their strongly acidic water has been prized for its healing properties for centuries.',
+      'At the center of town is the Yubatake, or "hot water field", where the steaming spring water runs through wooden channels to cool before it is piped to the baths.',
     ],
     photos: ['2025-kusatsu-onsen/03.jpg', '2025-kusatsu-onsen/04.jpg', '2025-kusatsu-onsen/05.jpg'],
   },
@@ -188,7 +188,7 @@ export const placeNotes: PlaceNote[] = [
     slug: 'mt-fuji', name: 'Mt. Fuji and the Fuji Five Lakes', country: 'Japan', area: 'Yamanashi',
     match: ['Fujiyoshida / Kawaguchiko', 'Lake Kawaguchiko', 'Chureito Pagoda', 'Fuji-Q Highland', 'Lake Yamanakako', 'Mt. Fuji / Lake Yamanakako'],
     text: [
-      'Mt. Fuji, at 3,776 metres, is the highest mountain in Japan, an active stratovolcano that last erupted in 1707. It was inscribed as a UNESCO World Heritage Site in 2013 as a sacred place and a source of artistic inspiration.',
+      'Mt. Fuji, at 3,776 meters, is the highest mountain in Japan, an active stratovolcano that last erupted in 1707. It was inscribed as a UNESCO World Heritage Site in 2013 as a sacred place and a source of artistic inspiration.',
       'The Fuji Five Lakes lie along its northern foot in Yamanashi. Lake Kawaguchiko is the most visited, while the Chureito Pagoda above Fujiyoshida frames the mountain in one of the best-known views in Japan. Fuji-Q Highland, an amusement park known for its roller coasters, sits at the base of the mountain nearby.',
     ],
     photos: ['japan-2024/04.jpg', 'japan-2024/05.jpg', 'japan-2026/04.jpg', 'japan-2026/05.jpg', '2025-hakone-fuji/03.jpg'],
@@ -197,7 +197,7 @@ export const placeNotes: PlaceNote[] = [
     slug: 'alpine-route', name: 'Tateyama Kurobe Alpine Route', country: 'Japan', area: 'Toyama and Nagano', match: ['Murodo / Kurobe Dam'],
     text: [
       'The Tateyama Kurobe Alpine Route crosses the Northern Alps between Tateyama in Toyama and Ogizawa in Nagano by a sequence of buses, cable cars, and a ropeway. It opened in full in 1971.',
-      'Along the way it passes Kurobe Dam, at 186 metres the tallest dam in Japan, and reaches its highest point at Murodo, 2,450 metres above sea level. In spring the road there is cut through the snowpack, leaving the walls of the Yuki-no-Otani corridor standing up to twenty metres high.',
+      'Along the way it passes Kurobe Dam, at 186 meters the tallest dam in Japan, and reaches its highest point at Murodo, 2,450 meters above sea level. In spring the road there is cut through the snowpack, leaving the walls of the Yuki-no-Otani corridor standing up to twenty meters high.',
     ],
     photos: ['2025-alpine-route/02.jpg', '2025-alpine-route/03.jpg', '2025-alpine-route/04.jpg', '2025-alpine-route/05.jpg', '2025-alpine-route/06.jpg'],
   },
@@ -212,7 +212,7 @@ export const placeNotes: PlaceNote[] = [
   {
     slug: 'amaharashi-coast', name: 'Amaharashi Coast', country: 'Japan', area: 'Toyama', match: ['Takaoka'],
     text: [
-      'The Amaharashi Coast in Takaoka is one of the few places in the world where mountains of 3,000 metres can be seen rising directly across the sea. On clear days the Tateyama range stands over Toyama Bay, a view celebrated since the eighth-century poet Otomo no Yakamochi served as governor of the province.',
+      'The Amaharashi Coast in Takaoka is one of the few places in the world where mountains of 3,000 meters can be seen rising directly across the sea. On clear days the Tateyama range stands over Toyama Bay, a view celebrated since the eighth-century poet Otomo no Yakamochi served as governor of the province.',
       'Takaoka itself is known for its copper casting and its Great Buddha.',
     ],
     photos: ['2025-alpine-route/07.jpg', '2025-alpine-route/08.jpg', '2025-alpine-route/09.jpg', '2025-alpine-route/10.jpg'],
@@ -221,15 +221,15 @@ export const placeNotes: PlaceNote[] = [
     slug: 'kanazawa', name: 'Kanazawa', country: 'Japan', area: 'Ishikawa', match: ['Kanazawa'],
     text: [
       'Kanazawa is the capital of Ishikawa Prefecture and was the castle town of the Maeda clan, the wealthiest feudal lords of the Edo period after the Tokugawa. Spared from bombing in the Second World War, it retains its samurai and teahouse districts.',
-      'Kenrokuen is counted among the three great gardens of Japan, and the Higashi Chaya district preserves its geisha teahouses along the Asano River. The city produces nearly all of the gold leaf made in Japan. Its station is fronted by the Tsuzumi Gate, a wooden gate modelled on a hand drum.',
+      'Kenrokuen is counted among the three great gardens of Japan, and the Higashi Chaya district preserves its geisha teahouses along the Asano River. The city produces nearly all of the gold leaf made in Japan. Its station is fronted by the Tsuzumi Gate, a wooden gate modeled on a hand drum.',
     ],
     photos: ['japan-2026/01.jpg', 'japan-2026/02.jpg', 'japan-2026/03.jpg'],
   },
   {
     slug: 'tsuruga', name: 'Tsuruga', country: 'Japan', area: 'Fukui', match: ['Tsuruga'],
     text: [
-      'Tsuruga is a port city on Tsuruga Bay, on the Sea of Japan coast of Fukui. For centuries it was a gateway to the Asian mainland, and in the twentieth century it received Polish orphans from Siberia and Jewish refugees travelling on visas issued by Chiune Sugihara.',
-      'Kehi Jingu, the principal shrine of the old Echizen province, stands in the centre of the city behind one of the largest wooden torii in Japan. The Hokuriku Shinkansen reached Tsuruga in 2024.',
+      'Tsuruga is a port city on Tsuruga Bay, on the Sea of Japan coast of Fukui. For centuries it was a gateway to the Asian mainland, and in the twentieth century it received Polish orphans from Siberia and Jewish refugees traveling on visas issued by Chiune Sugihara.',
+      'Kehi Jingu, the principal shrine of the old Echizen province, stands in the center of the city behind one of the largest wooden torii in Japan. The Hokuriku Shinkansen reached Tsuruga in 2024.',
     ],
     photos: ['japan-2023/09.jpg'],
   },
@@ -237,7 +237,7 @@ export const placeNotes: PlaceNote[] = [
   {
     slug: 'okuibuki', name: 'Okuibuki Ski Resort', country: 'Japan', area: 'Shiga', match: ['Okuibuki Ski Resort'],
     text: [
-      'Okuibuki is one of the largest ski areas in the Kansai region, in the Ibuki Mountains of northern Shiga. The range is known for heavy snowfall: Mt. Ibuki, its highest peak, holds the record for the deepest snow ever measured, 11.82 metres in 1927.',
+      'Okuibuki is one of the largest ski areas in the Kansai region, in the Ibuki Mountains of northern Shiga. The range is known for heavy snowfall: Mt. Ibuki, its highest peak, holds the record for the deepest snow ever measured, 11.82 meters in 1927.',
     ],
     photos: ['japan-2023/10.jpg'],
   },
@@ -252,7 +252,7 @@ export const placeNotes: PlaceNote[] = [
   {
     slug: 'osaka', name: 'Osaka', country: 'Japan', area: 'Osaka', match: ['Osaka', 'Shin-Osaka'],
     text: [
-      'Osaka is the third most populous city in Japan and the commercial centre of the Kansai region. Historically a merchant city known as "the nation\'s kitchen", it remains known for its street food and nightlife.',
+      'Osaka is the third most populous city in Japan and the commercial center of the Kansai region. Historically a merchant city known as "the nation\'s kitchen", it remains known for its street food and nightlife.',
       'Osaka Castle was built by Toyotomi Hideyoshi from 1583; its present main tower dates from 1931. The Shinsekai district grew around the Tsutenkaku tower, and the bay area holds the Kaiyukan, one of the largest aquariums in the world, and Universal Studios Japan. In 2025 the artificial island of Yumeshima hosted Expo 2025, ringed by the Grand Ring, the largest wooden architectural structure in the world.',
     ],
     photos: ['japan-2023/05.jpg', 'japan-2023/06.jpg', 'japan-2023/07.jpg', '2025-kyoto-osaka-okinawa/02.jpg', '2025-kyoto-osaka-okinawa/03.jpg', '2025-kyoto-osaka-okinawa/04.jpg', '2025-kyoto-osaka-okinawa/05.jpg', '2025-kyoto-osaka-okinawa/06.jpg', '2025-kyoto-osaka-okinawa/07.jpg'],
@@ -269,7 +269,7 @@ export const placeNotes: PlaceNote[] = [
   {
     slug: 'cape-maeda', name: 'Cape Maeda', country: 'Japan', area: 'Okinawa', match: ['Cape Maeda'],
     text: [
-      'Cape Maeda is a rocky headland in Onna on the west coast of Okinawa Island, known as one of the best snorkelling and diving spots on the island. Its Blue Cave glows with reflected light from the clear water below.',
+      'Cape Maeda is a rocky headland in Onna on the west coast of Okinawa Island, known as one of the best snorkeling and diving spots on the island. Its Blue Cave glows with reflected light from the clear water below.',
     ],
     photos: ['2025-kyoto-osaka-okinawa/08.jpg'],
   },
@@ -277,7 +277,7 @@ export const placeNotes: PlaceNote[] = [
     slug: 'chatan', name: 'Chatan and American Village', country: 'Japan', area: 'Okinawa', match: ['Chatan / Kitanakagusuku'],
     text: [
       'Chatan is a coastal town in central Okinawa, much of it built on land returned from the United States military. Its Mihama American Village is a seaside shopping and entertainment district built in an American style, beside Sunset Beach.',
-      'Inland in neighbouring Kitanakagusuku, Aeon Mall Okinawa Rycom, the largest shopping mall in the prefecture, opened in 2015 on a former military golf course.',
+      'Inland in neighboring Kitanakagusuku, Aeon Mall Okinawa Rycom, the largest shopping mall in the prefecture, opened in 2015 on a former military golf course.',
     ],
     photos: ['2025-kyoto-osaka-okinawa/12.jpg', '2025-kyoto-osaka-okinawa/11.jpg'],
   },
@@ -299,7 +299,7 @@ export const placeNotes: PlaceNote[] = [
   {
     slug: 'ishigaki', name: 'Ishigaki Island', country: 'Japan', area: 'Okinawa', match: ['Ishigaki town', 'Cape Ogan'],
     text: [
-      'Ishigaki is the main island of the Yaeyama Islands, about 400 kilometres southwest of Okinawa Island and closer to Taiwan than to Naha. Its coral reefs, home to manta rays, form part of Iriomote-Ishigaki National Park.',
+      'Ishigaki is the main island of the Yaeyama Islands, about 400 kilometers southwest of Okinawa Island and closer to Taiwan than to Naha. Its coral reefs, home to manta rays, form part of Iriomote-Ishigaki National Park.',
       'The island is the transport hub of the Yaeyama group, with ferries from its port to Taketomi, Kohama, Kuroshima, and Iriomote. Cape Ogan, at the end of its western coast, is known for its sunsets.',
     ],
     photos: ['2025-ishigaki/01.jpg', '2025-ishigaki/02.jpg', '2025-ishigaki/03.jpg', '2025-ishigaki/04.jpg', '2025-ishigaki/05.jpg'],
@@ -317,14 +317,14 @@ export const placeNotes: PlaceNote[] = [
     slug: 'seoul', name: 'Seoul', country: 'South Korea', area: 'Seoul', match: ['Seoul', 'Lotte World Tower'],
     text: [
       'Seoul is the capital of South Korea, and its metropolitan area is home to about half of the country\'s population. It has been the capital since 1394, when the Joseon dynasty made it the seat of its court.',
-      'Gyeongbokgung, the main royal palace of Joseon, stands behind the Gwanghwamun gate at the head of the city\'s central boulevard, near the Cheonggyecheon, an urban stream restored in 2005 after an elevated highway over it was removed. Elsewhere the city ranges from the commercial towers of Gangnam and the COEX complex to the student nightlife of Hongdae and the markets of Dongdaemun. Lotte World Tower, at 555 metres, is the tallest building in Korea.',
+      'Gyeongbokgung, the main royal palace of Joseon, stands behind the Gwanghwamun gate at the head of the city\'s central boulevard, near the Cheonggyecheon, an urban stream restored in 2005 after an elevated highway over it was removed. Elsewhere the city ranges from the commercial towers of Gangnam and the COEX complex to the student nightlife of Hongdae and the markets of Dongdaemun. Lotte World Tower, at 555 meters, is the tallest building in Korea.',
     ],
     photos: ['2025-korea-waterbomb/02.jpg', '2025-korea-waterbomb/03.jpg', '2025-korea-waterbomb/04.jpg', '2025-korea-waterbomb/15.jpg', '2025-korea-waterbomb/08.jpg', '2025-korea-waterbomb/09.jpg', '2025-korea-waterbomb/10.jpg', '2025-korea-waterbomb/11.jpg', '2025-korea-waterbomb/12.jpg', '2025-korea-waterbomb/16.jpg'],
   },
   {
     slug: 'dmz', name: 'The Korean Demilitarized Zone', country: 'South Korea', area: 'Gyeonggi', match: ['DMZ'],
     text: [
-      'The Korean Demilitarized Zone is a strip of land about 250 kilometres long and 4 kilometres wide that divides North and South Korea, established by the armistice that ended the fighting of the Korean War in 1953.',
+      'The Korean Demilitarized Zone is a strip of land about 250 kilometers long and 4 kilometers wide that divides North and South Korea, established by the armistice that ended the fighting of the Korean War in 1953.',
       'Tours from Seoul visit Imjingak, a park beside the Freedom Bridge; the Third Tunnel, an infiltration tunnel dug from the North and discovered in 1978; and the Dora Observatory, which looks across the border into North Korea.',
     ],
     photos: ['2025-korea-waterbomb/05.jpg', '2025-korea-waterbomb/06.jpg', '2025-korea-waterbomb/07.jpg'],
@@ -333,7 +333,7 @@ export const placeNotes: PlaceNote[] = [
     slug: 'waterbomb', name: 'Waterbomb, Goyang', country: 'South Korea', area: 'Gyeonggi', match: ['Waterbomb, Goyang'],
     text: [
       'Waterbomb is a summer music festival held in Korea since 2015, at which performers and the audience drench one another with water cannons and water guns. Its Seoul edition draws major K-pop and hip-hop acts.',
-      'The 2025 Seoul festival was held at KINTEX in Goyang, the largest exhibition centre in Korea, just northwest of Seoul.',
+      'The 2025 Seoul festival was held at KINTEX in Goyang, the largest exhibition center in Korea, just northwest of Seoul.',
     ],
     photos: ['2025-korea-waterbomb/13.jpg', '2025-korea-waterbomb/14.jpg'],
   },

@@ -1,6 +1,6 @@
 ---
 title: "Kanazawa"
-summary: "The opening days of March 2026. Arrival at Narita and a night in Shinjuku, then the Hokuriku Shinkansen to Kanazawa for Kanazawa Station and the Tsuzumi Gate, the Asanogawa River, and the lantern-lit lanes of the Higashi Chaya district, returning the next morning along the Japan Sea coast past Toyama and Itoigawa."
+summary: "The first few days of March 2026. I landed at Narita and spent a night in Shinjuku, then took the Hokuriku Shinkansen to Kanazawa for the Tsuzumi Gate at Kanazawa Station, the Asanogawa River, and the lantern-lit lanes of the Higashi Chaya district, heading back the next morning along the Japan Sea coast past Toyama and Itoigawa."
 start: 2026-03-06
 end: 2026-03-08
 category: Travel
@@ -50,4 +50,4 @@ timeline:
     route: ["Hokuriku Shinkansen, Kanazawa back to Tokyo (about 410 km, 2 h).", "Tokyo to Yokohama and Machida (train, to confirm) (about 60 km, 1 h 30 min)."]
 ---
 
-*The full account of this sidequest is forthcoming.*
+*The full write-up for this sidequest is coming soon.*

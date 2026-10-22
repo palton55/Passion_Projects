@@ -1,6 +1,6 @@
 ---
 title: "Tohoku and Hokkaido"
-summary: "Six days north from Tokyo. The Tohoku, Yamagata, and Akita Shinkansen through Yamagata, Sendai, and Morioka to Hokkaido, a single-day drive from Sapporo up the Oronron Line to Cape Soya, the northernmost point of Japan, and two nights in Hakodate with Goryokaku and Onuma Park."
+summary: "Six days heading north from Tokyo. I rode the Tohoku, Yamagata, and Akita Shinkansen through Yamagata, Sendai, and Morioka up to Hokkaido, drove from Sapporo up the Oronron Line to Cape Soya, the northernmost point of Japan, and back in a single day, and spent two nights in Hakodate with Goryokaku and Onuma Park."
 start: 2025-08-03
 end: 2025-08-08
 category: Travel
@@ -97,4 +97,4 @@ timeline:
     route: ["Tohoku Shinkansen, Morioka to Tokyo (about 480 km, 2 h 15 min)."]
 ---
 
-*The full account of this sidequest is forthcoming.*
+*The full write-up for this sidequest is coming soon.*

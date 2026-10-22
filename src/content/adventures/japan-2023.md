@@ -1,6 +1,6 @@
 ---
 title: "First Visit to Japan"
-summary: "Nine days over freshman spring break with friends: Tokyo, the Shinkansen to Osaka, Kyoto, and a homestay in Tsuruga on the Sea of Japan coast, with a day of skiing at Okuibuki. The first chance to put a year of classroom Japanese to use."
+summary: "My first trip to Japan: nine days over freshman spring break with friends. We started in Tokyo, took the Shinkansen to Osaka and Kyoto, and then headed to Tsuruga on the Sea of Japan coast for a homestay, with a day of skiing at Okuibuki. It was my first real chance to use a year of classroom Japanese."
 start: 2023-03-11
 end: 2023-03-19
 category: Travel
@@ -112,4 +112,4 @@ timeline:
     route: ["Limited express Thunderbird (Kosei Line) (about 90 km, 1 h).", "Tokaido Shinkansen (about 450 km, 2 h 15 min).", "Tokyo to Haneda Airport (about 15 km, 20 min)."]
 ---
 
-*The full account of this trip is forthcoming. It will cover first impressions of Japan, navigating the country with beginner Japanese, and the homestay in Tsuruga.*
+*The full write-up for this trip is coming soon. It will cover my first impressions of Japan, getting around with beginner Japanese, and the homestay in Tsuruga.*

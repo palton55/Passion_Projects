@@ -1,6 +1,6 @@
 ---
 title: "Hokkaido Road Trip"
-summary: "A winter road trip around Hokkaido from New Chitose: across Tokachi to Abashiri, along the Sea of Okhotsk to the drift ice at Monbetsu, north to Cape Soya, inland to Asahikawa, Biei, and Furano, and south to Upopoy, the National Ainu Museum, followed by a day in Sapporo and the journey home by way of Tokyo."
+summary: "A winter road trip around Hokkaido from New Chitose: across Tokachi to Abashiri, along the Sea of Okhotsk to the drift ice at Monbetsu, up to Cape Soya, inland to Asahikawa, Biei, and Furano, and down to Upopoy, the National Ainu Museum, followed by a day in Sapporo and the trip home through Tokyo."
 start: 2026-03-18
 end: 2026-03-24
 category: Travel
@@ -35,7 +35,7 @@ legs:
   - {"name": "Tokyo to Narita Airport (train, to confirm)", "mode": "express", "coords": [[35.542, 139.446], [35.6896, 139.7006], [35.6812, 139.7671], [35.73, 140.1], [35.772, 140.3929]], "day": 7}
 parts:
   - {"title": "Hokkaido Road Trip", "days": [1, 2, 3, 4], "modes": ["drive"], "stops": ["New Chitose Airport", "Obihiro", "Ashoro / Rikubetsu", "Abashiri", "Monbetsu", "Cape Soya", "Wakkanai", "Teshio", "Asahikawa", "Biei / Furano", "Furano", "Upopoy, Shiraoi"], "blurb": "Four days of driving from New Chitose: across Tokachi to Abashiri, along the Sea of Okhotsk to the drift ice at Monbetsu, north to Cape Soya, inland to Asahikawa, Biei, and Furano, and south to Upopoy."}
-  - {"title": "Sapporo and Home", "days": [4, 5, 6, 7], "stops": ["Sapporo", "New Chitose Airport"], "blurb": "A day in Odori and Tanukikoji in Sapporo, the flight back to Tokyo, and a final afternoon in Ginza before departing from Narita."}
+  - {"title": "Sapporo and Home", "days": [4, 5, 6, 7], "stops": ["Sapporo", "New Chitose Airport"], "blurb": "A day around Odori and Tanukikoji in Sapporo, the flight back to Tokyo, and one last afternoon in Ginza before flying out of Narita."}
 # Day-by-day timeline, generated from the trip notes by scripts/import_trips.py.
 timeline:
   - label: "Day 1"
@@ -91,4 +91,4 @@ timeline:
     route: ["Tokyo to Narita Airport (train, to confirm) (about 90 km, 1 h)."]
 ---
 
-*The full account of this sidequest is forthcoming.*
+*The full write-up for this sidequest is coming soon.*

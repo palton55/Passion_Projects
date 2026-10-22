@@ -1,6 +1,6 @@
 ---
 title: "Shimanami Kaido and West Japan Road Trip"
-summary: "The opening week of the study abroad. The Tokaido Shinkansen to Osaka and a crossing of the Shimanami Kaido from Setoda over the Tatara Bridge to Imabari, followed by three days on the road back to Tokyo by way of Kurashiki, Himeji Castle, Arima Onsen, Nara, Lake Hamana, and Hakone."
+summary: "The first week of my study abroad. I took the Tokaido Shinkansen to Osaka and crossed the Shimanami Kaido from Setoda over the Tatara Bridge to Imabari, then spent three days driving back to Tokyo by way of Kurashiki, Himeji Castle, Arima Onsen, Nara, Lake Hamana, and Hakone."
 start: 2025-03-20
 end: 2025-03-25
 category: Travel
@@ -33,7 +33,7 @@ legs:
   - {"name": "Okayama to Himeji, Arima Onsen and Nara, then east through the Mie mountains to Yokkaichi, along the Ise Bay coast past Nagashima Spa Land and across the bay islands south of Nagoya, then over Lake Hamana to Hamamatsu", "mode": "drive", "coords": [[34.665, 133.918], [34.7727, 134.098], [34.7812, 134.3013], [34.8408, 134.6936], [34.7986, 135.2476], [34.8052, 135.4786], [34.7577, 135.5738], [34.6832, 135.5958], [34.6813, 135.8357], [34.6803, 135.9761], [34.7, 136.05], [34.76, 136.13], [34.8, 136.25], [34.85, 136.4], [34.86, 136.46], [34.92, 136.55], [34.97, 136.6], [35.0, 136.64], [35.02, 136.68], [35.035, 136.725], [35.05, 136.745], [35.055, 136.76], [35.05, 136.8], [35.0521, 136.8277], [35.04, 136.86], [35.02, 136.89], [35.03, 136.95], [35.05, 137.05], [35.07, 137.1], [35.0, 137.18], [34.93, 137.25], [34.86, 137.33], [34.83, 137.4], [34.81, 137.5], [34.8102, 137.557], [34.7887, 137.5929], [34.76, 137.63], [34.7346, 137.6737], [34.72, 137.674]], "day": 5}
   - {"name": "Hamamatsu to Hakone, Gotemba and Kodaira", "mode": "drive", "coords": [[34.72, 137.674], [34.7536, 138.0751], [34.8039, 138.2491], [35.0773, 138.5461], [35.1997, 138.9115], [35.1997, 139.027], [35.2871, 138.9757], [35.3066, 138.9662], [35.43, 139.2], [35.6611, 139.3594], [35.6971, 139.4121], [35.7, 139.48]], "day": 6}
 parts:
-  - {"title": "Shimanami Kaido", "days": [1, 2, 3], "stops": ["Haneda Airport", "Tokyo", "Shin-Osaka", "Shimanami Kaido", "Imabari"], "blurb": "Arrival in Tokyo, the Tokaido Shinkansen to Osaka, and the Shimanami Kaido from Setoda over the Tatara Bridge to Imabari."}
+  - {"title": "Shimanami Kaido", "days": [1, 2, 3], "stops": ["Haneda Airport", "Tokyo", "Shin-Osaka", "Shimanami Kaido", "Imabari"], "blurb": "Landing in Tokyo, the Tokaido Shinkansen to Osaka, and the Shimanami Kaido from Setoda over the Tatara Bridge to Imabari."}
   - {"title": "West Japan Road Trip", "days": [4, 5, 6], "stops": ["Imabari", "Fukuyama", "Okayama / Kurashiki", "Himeji", "Arima Onsen", "Nara", "Mountain village", "Nagashima Spa Land", "Nagoya", "Hamamatsu", "Hakone / Gotemba", "Kodaira"], "blurb": "Three days on the road from Imabari back to Tokyo: across the islands to Fukuyama, Okayama, and Kurashiki, then Himeji Castle, Arima Onsen, and Nara, along the Ise Bay coast and over Lake Hamana to Hamamatsu, and on through Hakone and Gotemba to Kodaira."}
 # Day-by-day timeline, generated from the trip notes by scripts/import_trips.py.
 timeline:
@@ -82,4 +82,4 @@ timeline:
     route: ["Hamamatsu to Hakone, Gotemba and Kodaira (about 250 km, 4 h)."]
 ---
 
-*The full account of this sidequest is forthcoming.*
+*The full write-up for this sidequest is coming soon.*

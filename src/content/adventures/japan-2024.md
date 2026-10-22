@@ -1,6 +1,6 @@
 ---
 title: "Return to Tokyo"
-summary: "Nine days in Tokyo after sophomore finals with friends, from Shinjuku and Shibuya to Tokyo Tower and Zojoji Temple, with a day trip to Fujiyoshida for the view of Mt. Fuji from Arakurayama Sengen Park and Lake Kawaguchiko."
+summary: "Nine days in Tokyo with friends right after sophomore finals, from Shinjuku and Shibuya to Tokyo Tower and Zojoji Temple, plus a day trip to Fujiyoshida to see Mt. Fuji from Arakurayama Sengen Park and Lake Kawaguchiko."
 start: 2024-05-11
 end: 2024-05-19
 category: Travel
@@ -80,4 +80,4 @@ timeline:
     route: ["Keisei Skyliner, Nippori to Narita (about 60 km, 40 min)."]
 ---
 
-*The full account of this sidequest is forthcoming.*
+*The full write-up for this sidequest is coming soon.*

@@ -62,8 +62,8 @@ legs:
   - {"name": "Drive, New Chitose through Shimukappu, Shintoku and Obihiro, then north through Ashoro, Rikubetsu and Bihoro to Abashiri", "mode": "drive", "coords": [[42.8008, 141.7036], [42.95, 141.95], [43.0093, 142.4222], [43.0826, 142.8329], [42.9183, 143.2027], [43.126, 143.6136], [43.244, 143.5462], [43.4678, 143.7431], [43.695, 144.0298], [43.8363, 144.1064], [43.9159, 144.1715], [44.0219, 144.2744]], "day": 13}
   - {"name": "Drive, Abashiri along the Sea of Okhotsk past Lake Saroma to the drift ice at Monbetsu, up the coast to Cape Soya and Wakkanai, then down the Japan Sea coast to Teshio", "mode": "drive", "coords": [[44.0219, 144.2744], [44.0007, 144.179], [44.1208, 144.0394], [44.0933, 143.9578], [44.0985, 143.8796], [44.1846, 143.5949], [44.334, 143.3736], [44.4028, 143.2704], [44.47, 143.12], [44.58, 142.96], [44.94, 142.58], [45.12, 142.37], [45.3292, 142.1772], [45.5228, 141.9366], [45.4127, 141.8196], [45.4173, 141.6776], [45.25, 141.64], [45.05, 141.7], [44.8763, 141.7447]], "day": 14}
   - {"name": "Drive, Teshio inland through Otoineppu, Bifuka, Shibetsu and Asahikawa to Biei and Furano", "mode": "drive", "coords": [[44.8763, 141.7447], [44.8456, 141.765], [44.7297, 142.0755], [44.7249, 142.1679], [44.7388, 142.1976], [44.6431, 142.2682], [44.36, 142.46], [44.1764, 142.3926], [44.1, 142.3591], [43.8161, 142.4039], [43.7595, 142.3488], [43.5548, 142.4451], [43.3233, 142.3559]], "day": 15}
-  - {"name": "Drive, Furano south through the Hidaka hills to Upopoy in Shiraoi, then to Chitose to end the drive", "mode": "drive", "coords": [[43.3233, 142.3559], [43.1, 142.3], [42.9171, 142.1849], [42.62, 141.93], [42.63, 141.6], [42.5588, 141.3647], [42.7, 141.55], [42.8461, 141.6198], [42.801, 141.7033]], "day": 16}
-  - {"name": "Chitose to Sapporo (train, to confirm)", "mode": "express", "coords": [[42.801, 141.7033], [42.827, 141.651], [42.99, 141.56], [43.0686, 141.3508]], "day": 16}
+  - {"name": "Drive, Furano south through the Hidaka hills to Upopoy in Shiraoi, then to New Chitose Airport to return the car", "mode": "drive", "coords": [[43.3233, 142.3559], [43.1, 142.3], [42.9171, 142.1849], [42.62, 141.93], [42.63, 141.6], [42.5588, 141.3647], [42.7, 141.55], [42.8461, 141.6198], [42.801, 141.7033], [42.7752, 141.692]], "day": 16}
+  - {"name": "Train, New Chitose Airport to Sapporo after returning the car", "mode": "express", "coords": [[42.7752, 141.692], [42.827, 141.651], [42.99, 141.56], [43.0686, 141.3508]], "day": 16}
   - {"name": "Sapporo to New Chitose Airport", "mode": "express", "coords": [[43.0686, 141.3508], [42.99, 141.56], [42.827, 141.651], [42.7752, 141.692]], "day": 18}
   - {"name": "Flight, New Chitose to Haneda (to confirm)", "mode": "flight", "coords": [[42.7752, 141.692], [38.8, 141.4], [35.5494, 139.7798]], "day": 18}
   - {"name": "Haneda to Roppongi and Machida", "mode": "local", "coords": [[35.5494, 139.7798], [35.6652, 139.7121], [35.542, 139.446]], "day": 18}
@@ -184,9 +184,9 @@ timeline:
     title: "Through the Hidaka hills, Upopoy, Chitose"
     events:
       - { time: "Morning", text: "Through the Hidaka hills; Upopoy, National Ainu Museum, Shiraoi." }
-      - { time: "Afternoon", text: "Chitose; New Chitose Airport area, end of the drive." }
+      - { time: "Afternoon", text: "Chitose; New Chitose Airport, car returned." }
       - { time: "Evening", text: "Sapporo Station (night)." }
-    route: ["Drive, Furano south through the Hidaka hills to Upopoy in Shiraoi, then to Chitose to end the drive (about 210 km, 3 h 15 min).", "Chitose to Sapporo (train, to confirm) (about 40 km, 30 min)."]
+    route: ["Drive, Furano south through the Hidaka hills to Upopoy in Shiraoi, then to New Chitose Airport to return the car (about 210 km, 3 h 15 min).", "Train, New Chitose Airport to Sapporo after returning the car (about 50 km, 30 min)."]
   - label: "Day 17"
     date: 2026-03-22
     title: "Odori and Tanukikoji"

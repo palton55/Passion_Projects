@@ -1,12 +1,44 @@
 {
   "2025-alpine-route": [
     {
+      "src": "photos/2025-alpine-route/14.jpg",
+      "caption": "Limited express Azusa to Matsumoto"
+    },
+    {
       "src": "photos/2025-alpine-route/01.jpg",
       "caption": "Shinano-Omachi"
     },
     {
+      "src": "photos/2025-alpine-route/15.jpg",
+      "caption": "The Northern Alps from the train"
+    },
+    {
+      "src": "photos/2025-alpine-route/16.jpg",
+      "caption": "Farmland below the Northern Alps, Shinano-Omachi"
+    },
+    {
       "src": "photos/2025-alpine-route/02.jpg",
       "caption": "Ogizawa (Alpine Route entrance)"
+    },
+    {
+      "src": "photos/2025-alpine-route/17.jpg",
+      "caption": "Kurobe Dam"
+    },
+    {
+      "src": "photos/2025-alpine-route/18.jpg",
+      "caption": "Kurobe Gorge"
+    },
+    {
+      "src": "photos/2025-alpine-route/19.jpg",
+      "caption": "Snow-covered peaks above Kurobe"
+    },
+    {
+      "src": "photos/2025-alpine-route/20.jpg",
+      "caption": "Tateyama Ropeway"
+    },
+    {
+      "src": "photos/2025-alpine-route/21.jpg",
+      "caption": "2,316 m at Murodo"
     },
     {
       "src": "photos/2025-alpine-route/03.jpg",
@@ -17,16 +49,44 @@
       "caption": "Murodo, the snow wall"
     },
     {
+      "src": "photos/2025-alpine-route/22.jpg",
+      "caption": "Murodo, Tateyama"
+    },
+    {
+      "src": "photos/2025-alpine-route/23.jpg",
+      "caption": "The snow wall at Murodo"
+    },
+    {
+      "src": "photos/2025-alpine-route/24.jpg",
+      "caption": "Snowfield at Murodo"
+    },
+    {
       "src": "photos/2025-alpine-route/05.jpg",
       "caption": "Murodo, the snow wall"
+    },
+    {
+      "src": "photos/2025-alpine-route/25.jpg",
+      "caption": "River crossing on the Toyama Chiho Railway"
     },
     {
       "src": "photos/2025-alpine-route/06.jpg",
       "caption": "Bijodaira and Tateyama Station"
     },
     {
+      "src": "photos/2025-alpine-route/26.jpg",
+      "caption": "Miso ramen in Toyama"
+    },
+    {
       "src": "photos/2025-alpine-route/07.jpg",
       "caption": "Amaharashi Coast"
+    },
+    {
+      "src": "photos/2025-alpine-route/27.jpg",
+      "caption": "Amaharashi Coast"
+    },
+    {
+      "src": "photos/2025-alpine-route/28.jpg",
+      "caption": "Amaharashi Coast through the rocks"
     },
     {
       "src": "photos/2025-alpine-route/08.jpg",
@@ -41,6 +101,10 @@
       "caption": "Takaoka"
     },
     {
+      "src": "photos/2025-alpine-route/29.jpg",
+      "caption": "Tateyama mountain panorama, Toyama Station"
+    },
+    {
       "src": "photos/2025-alpine-route/11.jpg",
       "caption": "Toyama Station area"
     },
@@ -49,8 +113,16 @@
       "caption": "Toyama Station area"
     },
     {
+      "src": "photos/2025-alpine-route/30.jpg",
+      "caption": "Toyama Castle"
+    },
+    {
       "src": "photos/2025-alpine-route/13.jpg",
       "caption": "Toyama Station area"
+    },
+    {
+      "src": "photos/2025-alpine-route/31.jpg",
+      "caption": "Pokemon Center, Tokyo Station"
     }
   ],
   "2025-hakone-fuji": [
@@ -59,18 +131,90 @@
       "caption": "Lake Ashi, Hakone"
     },
     {
+      "src": "photos/2025-hakone-fuji/04.jpg",
+      "caption": "Lake Ashi, Hakone"
+    },
+    {
+      "src": "photos/2025-hakone-fuji/05.jpg",
+      "caption": "Hakone Shrine torii on Lake Ashi"
+    },
+    {
+      "src": "photos/2025-hakone-fuji/06.jpg",
+      "caption": "Hakone Shrine"
+    },
+    {
       "src": "photos/2025-hakone-fuji/02.jpg",
       "caption": "Lake Ashi, Hakone"
     },
     {
+      "src": "photos/2025-hakone-fuji/07.jpg",
+      "caption": "Fuji-Q Highland"
+    },
+    {
       "src": "photos/2025-hakone-fuji/03.jpg",
       "caption": "Fuji-Q Highland"
+    },
+    {
+      "src": "photos/2025-hakone-fuji/08.jpg",
+      "caption": "Mt. Fuji over the Fuji-Q coasters"
+    },
+    {
+      "src": "photos/2025-hakone-fuji/09.jpg",
+      "caption": "Naruto at Fuji-Q Highland"
+    },
+    {
+      "src": "photos/2025-hakone-fuji/10.jpg",
+      "caption": "Hidden Leaf Village area, Fuji-Q Highland"
+    },
+    {
+      "src": "photos/2025-hakone-fuji/11.jpg",
+      "caption": "Ramen at Fuji-Q Highland"
+    },
+    {
+      "src": "photos/2025-hakone-fuji/12.jpg",
+      "caption": "Mt. Fuji from Fuji-Q Highland"
+    },
+    {
+      "src": "photos/2025-hakone-fuji/13.jpg",
+      "caption": "Sunset over Fuji-Q Highland"
+    },
+    {
+      "src": "photos/2025-hakone-fuji/14.jpg",
+      "caption": "Fuji-Q Highland at dusk"
+    },
+    {
+      "src": "photos/2025-hakone-fuji/15.jpg",
+      "caption": "Mt. Fuji from Gotemba Premium Outlets"
+    },
+    {
+      "src": "photos/2025-hakone-fuji/16.jpg",
+      "caption": "Cherry blossoms and Mt. Fuji"
+    },
+    {
+      "src": "photos/2025-hakone-fuji/17.jpg",
+      "caption": "Mt. Fuji at sunset"
     }
   ],
   "2025-ishigaki": [
     {
+      "src": "photos/2025-ishigaki/10.jpg",
+      "caption": "Soba before the flight, Haneda Airport"
+    },
+    {
+      "src": "photos/2025-ishigaki/11.jpg",
+      "caption": "New Ishigaki Airport"
+    },
+    {
+      "src": "photos/2025-ishigaki/12.jpg",
+      "caption": "Heading out by boat from Ishigaki"
+    },
+    {
       "src": "photos/2025-ishigaki/01.jpg",
       "caption": "Boat trip south of Ishigaki, near Taketomi"
+    },
+    {
+      "src": "photos/2025-ishigaki/13.jpg",
+      "caption": "Crossing to the dive sites"
     },
     {
       "src": "photos/2025-ishigaki/02.jpg",
@@ -89,6 +233,14 @@
       "caption": "Boat trip near Kohama and Kuroshima"
     },
     {
+      "src": "photos/2025-ishigaki/14.jpg",
+      "caption": "Turquoise water near Kohama and Kuroshima"
+    },
+    {
+      "src": "photos/2025-ishigaki/15.jpg",
+      "caption": "A local cat on Taketomi Island"
+    },
+    {
       "src": "photos/2025-ishigaki/06.jpg",
       "caption": "Taketomi Island"
     },
@@ -97,22 +249,102 @@
       "caption": "Taketomi Island"
     },
     {
+      "src": "photos/2025-ishigaki/16.jpg",
+      "caption": "Exploring Taketomi by bicycle"
+    },
+    {
+      "src": "photos/2025-ishigaki/17.jpg",
+      "caption": "Cycling around Taketomi"
+    },
+    {
+      "src": "photos/2025-ishigaki/18.jpg",
+      "caption": "Coral-stone walls on Taketomi"
+    },
+    {
+      "src": "photos/2025-ishigaki/19.jpg",
+      "caption": "Taketomi cat"
+    },
+    {
       "src": "photos/2025-ishigaki/08.jpg",
       "caption": "Taketomi Island"
     },
     {
+      "src": "photos/2025-ishigaki/20.jpg",
+      "caption": "Kondoi Beach, Taketomi"
+    },
+    {
+      "src": "photos/2025-ishigaki/21.jpg",
+      "caption": "White sand on Taketomi"
+    },
+    {
+      "src": "photos/2025-ishigaki/22.jpg",
+      "caption": "Yaeyama soba"
+    },
+    {
+      "src": "photos/2025-ishigaki/23.jpg",
+      "caption": "Tropical drinks on Taketomi"
+    },
+    {
+      "src": "photos/2025-ishigaki/24.jpg",
+      "caption": "A goat on Taketomi"
+    },
+    {
       "src": "photos/2025-ishigaki/09.jpg",
       "caption": "Taketomi Island"
+    },
+    {
+      "src": "photos/2025-ishigaki/25.jpg",
+      "caption": "Okinawan Spam, New Ishigaki Airport"
     }
   ],
   "2025-kanto-day-trips": [
+    {
+      "src": "photos/2025-kanto-day-trips/14.jpg",
+      "caption": "Kaminarimon, Senso-ji, Asakusa"
+    },
+    {
+      "src": "photos/2025-kanto-day-trips/15.jpg",
+      "caption": "Tokyo Skytree at night"
+    },
+    {
+      "src": "photos/2025-kanto-day-trips/16.jpg",
+      "caption": "Historic train, The Railway Museum, Omiya"
+    },
     {
       "src": "photos/2025-kanto-day-trips/01.jpg",
       "caption": "The Railway Museum, Omiya"
     },
     {
+      "src": "photos/2025-kanto-day-trips/17.jpg",
+      "caption": "Shinkansen at The Railway Museum"
+    },
+    {
+      "src": "photos/2025-kanto-day-trips/18.jpg",
+      "caption": "Model railway diorama, The Railway Museum"
+    },
+    {
+      "src": "photos/2025-kanto-day-trips/19.jpg",
+      "caption": "Ramen in Omiya"
+    },
+    {
+      "src": "photos/2025-kanto-day-trips/20.jpg",
+      "caption": "Seibu-Chichibu Station"
+    },
+    {
       "src": "photos/2025-kanto-day-trips/02.jpg",
       "caption": "Chichibu"
+    },
+    {
+      "src": "photos/2025-kanto-day-trips/21.jpg",
+      "caption": "Moss phlox at Hitsujiyama Park, Chichibu"
+    },
+    {
+      "src": "photos/2025-kanto-day-trips/22.jpg",
+      "caption": "Anohana art in Chichibu"
+    },
+    {
+      "src": "photos/2025-kanto-day-trips/23.jpg",
+      "caption": "Yokohama Chinatown"
     },
     {
       "src": "photos/2025-kanto-day-trips/03.jpg",
@@ -123,16 +355,36 @@
       "caption": "Yokohama"
     },
     {
+      "src": "photos/2025-kanto-day-trips/24.jpg",
+      "caption": "Tengu statue, Mt. Takao"
+    },
+    {
       "src": "photos/2025-kanto-day-trips/05.jpg",
       "caption": "Mt. Takao"
+    },
+    {
+      "src": "photos/2025-kanto-day-trips/25.jpg",
+      "caption": "Yakuo-in Temple, Mt. Takao"
+    },
+    {
+      "src": "photos/2025-kanto-day-trips/26.jpg",
+      "caption": "View from Mt. Takao"
     },
     {
       "src": "photos/2025-kanto-day-trips/06.jpg",
       "caption": "Tokyo Big Sight, Odaiba"
     },
     {
+      "src": "photos/2025-kanto-day-trips/27.jpg",
+      "caption": "teamLab Planets, Toyosu"
+    },
+    {
       "src": "photos/2025-kanto-day-trips/07.jpg",
       "caption": "Tokyo Big Sight, Odaiba"
+    },
+    {
+      "src": "photos/2025-kanto-day-trips/28.jpg",
+      "caption": "Okutama"
     },
     {
       "src": "photos/2025-kanto-day-trips/08.jpg",
@@ -151,12 +403,24 @@
       "caption": "Enoshima"
     },
     {
+      "src": "photos/2025-kanto-day-trips/29.jpg",
+      "caption": "Enoshima beach"
+    },
+    {
+      "src": "photos/2025-kanto-day-trips/30.jpg",
+      "caption": "The GR86 on the night drive to Kisarazu"
+    },
+    {
       "src": "photos/2025-kanto-day-trips/12.jpg",
       "caption": "Atami"
     },
     {
       "src": "photos/2025-kanto-day-trips/13.jpg",
       "caption": "Atami"
+    },
+    {
+      "src": "photos/2025-kanto-day-trips/31.jpg",
+      "caption": "Ito coastline, Izu Peninsula"
     }
   ],
   "2025-korea-waterbomb": [
@@ -249,8 +513,36 @@
   ],
   "2025-kyoto-osaka-okinawa": [
     {
+      "src": "photos/2025-kyoto-osaka-okinawa/17.jpg",
+      "caption": "Tokaido Shinkansen from Tokyo"
+    },
+    {
+      "src": "photos/2025-kyoto-osaka-okinawa/18.jpg",
+      "caption": "Kinkaku-ji"
+    },
+    {
       "src": "photos/2025-kyoto-osaka-okinawa/01.jpg",
       "caption": "Fushimi Inari Taisha"
+    },
+    {
+      "src": "photos/2025-kyoto-osaka-okinawa/19.jpg",
+      "caption": "Bamboo grove, Kyoto"
+    },
+    {
+      "src": "photos/2025-kyoto-osaka-okinawa/20.jpg",
+      "caption": "Penguins at Osaka Aquarium Kaiyukan"
+    },
+    {
+      "src": "photos/2025-kyoto-osaka-okinawa/21.jpg",
+      "caption": "Manta ray, Osaka Aquarium Kaiyukan"
+    },
+    {
+      "src": "photos/2025-kyoto-osaka-okinawa/22.jpg",
+      "caption": "Whale shark, Osaka Aquarium Kaiyukan"
+    },
+    {
+      "src": "photos/2025-kyoto-osaka-okinawa/23.jpg",
+      "caption": "Jellyfish, Osaka Aquarium Kaiyukan"
     },
     {
       "src": "photos/2025-kyoto-osaka-okinawa/02.jpg",
@@ -261,28 +553,80 @@
       "caption": "Osaka Aquarium Kaiyukan, Tempozan"
     },
     {
+      "src": "photos/2025-kyoto-osaka-okinawa/24.jpg",
+      "caption": "Osaka Station"
+    },
+    {
       "src": "photos/2025-kyoto-osaka-okinawa/04.jpg",
       "caption": "Universal Studios Japan"
+    },
+    {
+      "src": "photos/2025-kyoto-osaka-okinawa/25.jpg",
+      "caption": "Universal Studios Japan"
+    },
+    {
+      "src": "photos/2025-kyoto-osaka-okinawa/26.jpg",
+      "caption": "Super Nintendo World"
+    },
+    {
+      "src": "photos/2025-kyoto-osaka-okinawa/27.jpg",
+      "caption": "Super Nintendo World"
     },
     {
       "src": "photos/2025-kyoto-osaka-okinawa/05.jpg",
       "caption": "Universal Studios Japan"
     },
     {
+      "src": "photos/2025-kyoto-osaka-okinawa/28.jpg",
+      "caption": "Hogsmeade, Universal Studios Japan"
+    },
+    {
+      "src": "photos/2025-kyoto-osaka-okinawa/29.jpg",
+      "caption": "Expo 2025 Osaka"
+    },
+    {
       "src": "photos/2025-kyoto-osaka-okinawa/06.jpg",
       "caption": "Expo 2025 Osaka, Yumeshima"
+    },
+    {
+      "src": "photos/2025-kyoto-osaka-okinawa/30.jpg",
+      "caption": "The Grand Ring, Expo 2025 Osaka"
+    },
+    {
+      "src": "photos/2025-kyoto-osaka-okinawa/31.jpg",
+      "caption": "Expo 2025 Osaka at night"
+    },
+    {
+      "src": "photos/2025-kyoto-osaka-okinawa/32.jpg",
+      "caption": "Pavilions at night, Expo 2025 Osaka"
+    },
+    {
+      "src": "photos/2025-kyoto-osaka-okinawa/33.jpg",
+      "caption": "Gundam at Expo 2025 Osaka"
     },
     {
       "src": "photos/2025-kyoto-osaka-okinawa/07.jpg",
       "caption": "Expo 2025 Osaka, Yumeshima"
     },
     {
+      "src": "photos/2025-kyoto-osaka-okinawa/34.jpg",
+      "caption": "Spam shirts at Naha Airport"
+    },
+    {
       "src": "photos/2025-kyoto-osaka-okinawa/08.jpg",
       "caption": "Cape Maeda, Onna"
     },
     {
+      "src": "photos/2025-kyoto-osaka-okinawa/35.jpg",
+      "caption": "Scuba gear, Cape Maeda"
+    },
+    {
       "src": "photos/2025-kyoto-osaka-okinawa/09.jpg",
       "caption": "Driving in Okinawa"
+    },
+    {
+      "src": "photos/2025-kyoto-osaka-okinawa/36.jpg",
+      "caption": "Fireworks over Motobu"
     },
     {
       "src": "photos/2025-kyoto-osaka-okinawa/10.jpg",
@@ -293,8 +637,16 @@
       "caption": "Aeon Mall Okinawa Rycom, Kitanakagusuku"
     },
     {
+      "src": "photos/2025-kyoto-osaka-okinawa/37.jpg",
+      "caption": "Torii in American Village, Chatan"
+    },
+    {
       "src": "photos/2025-kyoto-osaka-okinawa/12.jpg",
       "caption": "American Village, Chatan"
+    },
+    {
+      "src": "photos/2025-kyoto-osaka-okinawa/38.jpg",
+      "caption": "Cape Hedo"
     },
     {
       "src": "photos/2025-kyoto-osaka-okinawa/13.jpg",
@@ -303,6 +655,10 @@
     {
       "src": "photos/2025-kyoto-osaka-okinawa/14.jpg",
       "caption": "Sesoko at sunset"
+    },
+    {
+      "src": "photos/2025-kyoto-osaka-okinawa/39.jpg",
+      "caption": "Sunset over the East China Sea, Motobu"
     },
     {
       "src": "photos/2025-kyoto-osaka-okinawa/15.jpg",
@@ -327,8 +683,32 @@
       "caption": "Yamagata"
     },
     {
+      "src": "photos/2025-tohoku-hokkaido/16.jpg",
+      "caption": "Fukushima Station"
+    },
+    {
       "src": "photos/2025-tohoku-hokkaido/04.jpg",
       "caption": "Sendai Station area"
+    },
+    {
+      "src": "photos/2025-tohoku-hokkaido/17.jpg",
+      "caption": "Sendai Station"
+    },
+    {
+      "src": "photos/2025-tohoku-hokkaido/18.jpg",
+      "caption": "Tanabata decorations, Sendai Station"
+    },
+    {
+      "src": "photos/2025-tohoku-hokkaido/19.jpg",
+      "caption": "Station stamp, Morioka"
+    },
+    {
+      "src": "photos/2025-tohoku-hokkaido/20.jpg",
+      "caption": "Farmland near Shin-Hakodate-Hokuto"
+    },
+    {
+      "src": "photos/2025-tohoku-hokkaido/21.jpg",
+      "caption": "Shin-Hakodate-Hokuto Station"
     },
     {
       "src": "photos/2025-tohoku-hokkaido/05.jpg",
@@ -347,8 +727,24 @@
       "caption": "Cape Soya, northern tip of Japan"
     },
     {
+      "src": "photos/2025-tohoku-hokkaido/22.jpg",
+      "caption": "At Cape Soya"
+    },
+    {
       "src": "photos/2025-tohoku-hokkaido/09.jpg",
       "caption": "Cape Soya, northern tip of Japan"
+    },
+    {
+      "src": "photos/2025-tohoku-hokkaido/23.jpg",
+      "caption": "The Sea of Okhotsk from Cape Soya"
+    },
+    {
+      "src": "photos/2025-tohoku-hokkaido/24.jpg",
+      "caption": "Country road near Otoineppu"
+    },
+    {
+      "src": "photos/2025-tohoku-hokkaido/25.jpg",
+      "caption": "Sunset on the drive south from Otoineppu"
     },
     {
       "src": "photos/2025-tohoku-hokkaido/10.jpg",
@@ -359,8 +755,24 @@
       "caption": "Hakodate Station"
     },
     {
+      "src": "photos/2025-tohoku-hokkaido/26.jpg",
+      "caption": "Limited express at Hakodate Station"
+    },
+    {
+      "src": "photos/2025-tohoku-hokkaido/27.jpg",
+      "caption": "Goryokaku from Goryokaku Tower"
+    },
+    {
       "src": "photos/2025-tohoku-hokkaido/12.jpg",
       "caption": "Goryokaku"
+    },
+    {
+      "src": "photos/2025-tohoku-hokkaido/28.jpg",
+      "caption": "Hakodate from Mt. Hakodate at night"
+    },
+    {
+      "src": "photos/2025-tohoku-hokkaido/29.jpg",
+      "caption": "Onuma Park"
     },
     {
       "src": "photos/2025-tohoku-hokkaido/13.jpg",
@@ -371,25 +783,125 @@
       "caption": "Onuma Park"
     },
     {
+      "src": "photos/2025-tohoku-hokkaido/30.jpg",
+      "caption": "Fog over the hills at Nanae"
+    },
+    {
       "src": "photos/2025-tohoku-hokkaido/15.jpg",
       "caption": "Hakodate"
+    },
+    {
+      "src": "photos/2025-tohoku-hokkaido/31.jpg",
+      "caption": "Hakodate Morning Market"
+    },
+    {
+      "src": "photos/2025-tohoku-hokkaido/32.jpg",
+      "caption": "Seafood at the Hakodate Morning Market"
     }
   ],
   "2025-west-japan-road-trip": [
     {
+      "src": "photos/2025-west-japan-road-trip/04.jpg",
+      "caption": "Conveyor-belt sushi, Harajuku"
+    },
+    {
       "src": "photos/2025-west-japan-road-trip/01.jpg",
       "caption": "Harajuku / Omotesando"
+    },
+    {
+      "src": "photos/2025-west-japan-road-trip/05.jpg",
+      "caption": "Shinkansen at Shin-Osaka"
+    },
+    {
+      "src": "photos/2025-west-japan-road-trip/06.jpg",
+      "caption": "Kosanji Temple, Setoda"
+    },
+    {
+      "src": "photos/2025-west-japan-road-trip/07.jpg",
+      "caption": "Shimanami Kaido coastline, Ikuchijima"
+    },
+    {
+      "src": "photos/2025-west-japan-road-trip/08.jpg",
+      "caption": "Tatara Bridge"
+    },
+    {
+      "src": "photos/2025-west-japan-road-trip/09.jpg",
+      "caption": "Clear water along the Seto Inland Sea"
+    },
+    {
+      "src": "photos/2025-west-japan-road-trip/10.jpg",
+      "caption": "Fukuyama Castle"
+    },
+    {
+      "src": "photos/2025-west-japan-road-trip/11.jpg",
+      "caption": "Ramen near Okayama Station"
+    },
+    {
+      "src": "photos/2025-west-japan-road-trip/12.jpg",
+      "caption": "Kibitsu Shrine"
+    },
+    {
+      "src": "photos/2025-west-japan-road-trip/13.jpg",
+      "caption": "Kurashiki Bikan Historical Quarter at dusk"
+    },
+    {
+      "src": "photos/2025-west-japan-road-trip/14.jpg",
+      "caption": "Kurashiki canal at night"
+    },
+    {
+      "src": "photos/2025-west-japan-road-trip/15.jpg",
+      "caption": "Himeji Castle"
+    },
+    {
+      "src": "photos/2025-west-japan-road-trip/16.jpg",
+      "caption": "Arima Onsen"
+    },
+    {
+      "src": "photos/2025-west-japan-road-trip/17.jpg",
+      "caption": "Soft serve in Arima Onsen"
     },
     {
       "src": "photos/2025-west-japan-road-trip/02.jpg",
       "caption": "Nara Park"
     },
     {
+      "src": "photos/2025-west-japan-road-trip/18.jpg",
+      "caption": "Deer at Nara Park"
+    },
+    {
+      "src": "photos/2025-west-japan-road-trip/19.jpg",
+      "caption": "A young deer, Nara Park"
+    },
+    {
+      "src": "photos/2025-west-japan-road-trip/20.jpg",
+      "caption": "Jizo statues, Nara"
+    },
+    {
+      "src": "photos/2025-west-japan-road-trip/21.jpg",
+      "caption": "Ukimido Pavilion, Nara Park"
+    },
+    {
       "src": "photos/2025-west-japan-road-trip/03.jpg",
       "caption": "Mountain village east of Nara"
+    },
+    {
+      "src": "photos/2025-west-japan-road-trip/22.jpg",
+      "caption": "Lake Ashi, Hakone"
+    },
+    {
+      "src": "photos/2025-west-japan-road-trip/23.jpg",
+      "caption": "Mt. Fuji from the road to Gotemba"
+    },
+    {
+      "src": "photos/2025-west-japan-road-trip/24.jpg",
+      "caption": "Mt. Fuji from Gotemba Premium Outlets"
     }
   ],
   "japan-2023": [
+    {
+      "src": "photos/japan-2023/11.jpg",
+      "caption": "Tokyo Station, Marunouchi side"
+    },
     {
       "src": "photos/japan-2023/01.jpg",
       "caption": "Tokyo Station"
@@ -399,12 +911,48 @@
       "caption": "teamLab Planets, Toyosu"
     },
     {
+      "src": "photos/japan-2023/12.jpg",
+      "caption": "Shinjuku"
+    },
+    {
+      "src": "photos/japan-2023/13.jpg",
+      "caption": "Crossing in Shinjuku"
+    },
+    {
       "src": "photos/japan-2023/03.jpg",
       "caption": "Tokyo at night from Tokyo Skytree"
     },
     {
       "src": "photos/japan-2023/04.jpg",
       "caption": "Meiji Jingu"
+    },
+    {
+      "src": "photos/japan-2023/14.jpg",
+      "caption": "Shibuya Scramble Crossing"
+    },
+    {
+      "src": "photos/japan-2023/15.jpg",
+      "caption": "Ekiben on the Shinkansen"
+    },
+    {
+      "src": "photos/japan-2023/16.jpg",
+      "caption": "Penguin at Osaka Aquarium Kaiyukan"
+    },
+    {
+      "src": "photos/japan-2023/17.jpg",
+      "caption": "Whale shark, Osaka Aquarium Kaiyukan"
+    },
+    {
+      "src": "photos/japan-2023/18.jpg",
+      "caption": "Sea turtle, Osaka Aquarium Kaiyukan"
+    },
+    {
+      "src": "photos/japan-2023/19.jpg",
+      "caption": "Shopping arcade near Shinsekai"
+    },
+    {
+      "src": "photos/japan-2023/20.jpg",
+      "caption": "Teppanyaki in Umeda"
     },
     {
       "src": "photos/japan-2023/05.jpg",
@@ -419,12 +967,44 @@
       "caption": "Shinsekai (Tsutenkaku)"
     },
     {
+      "src": "photos/japan-2023/21.jpg",
+      "caption": "Romon Gate, Fushimi Inari Taisha"
+    },
+    {
+      "src": "photos/japan-2023/22.jpg",
+      "caption": "Senbon Torii, Fushimi Inari Taisha"
+    },
+    {
+      "src": "photos/japan-2023/23.jpg",
+      "caption": "Bamboo on Mt. Inari"
+    },
+    {
+      "src": "photos/japan-2023/24.jpg",
+      "caption": "Torii tunnel, Fushimi Inari Taisha"
+    },
+    {
+      "src": "photos/japan-2023/25.jpg",
+      "caption": "The lanes below Kiyomizu-dera"
+    },
+    {
+      "src": "photos/japan-2023/26.jpg",
+      "caption": "Kyoto Station"
+    },
+    {
       "src": "photos/japan-2023/08.jpg",
       "caption": "Arashiyama at dusk"
     },
     {
+      "src": "photos/japan-2023/27.jpg",
+      "caption": "The homestay dog in Tsuruga"
+    },
+    {
       "src": "photos/japan-2023/09.jpg",
       "caption": "Kehi Jingu"
+    },
+    {
+      "src": "photos/japan-2023/28.jpg",
+      "caption": "Tsuruga at dusk"
     },
     {
       "src": "photos/japan-2023/10.jpg",
@@ -435,6 +1015,18 @@
     {
       "src": "photos/japan-2024/01.jpg",
       "caption": "Narita Airport"
+    },
+    {
+      "src": "photos/japan-2024/08.jpg",
+      "caption": "Fried rice in Oimachi"
+    },
+    {
+      "src": "photos/japan-2024/09.jpg",
+      "caption": "The 3D cat billboard, Shinjuku"
+    },
+    {
+      "src": "photos/japan-2024/10.jpg",
+      "caption": "Shinjuku"
     },
     {
       "src": "photos/japan-2024/02.jpg",
@@ -453,15 +1045,95 @@
       "caption": "Mt. Fuji from Kawaguchiko"
     },
     {
+      "src": "photos/japan-2024/11.jpg",
+      "caption": "Chureito Pagoda"
+    },
+    {
+      "src": "photos/japan-2024/12.jpg",
+      "caption": "Mt. Fuji and Chureito Pagoda"
+    },
+    {
+      "src": "photos/japan-2024/13.jpg",
+      "caption": "Chureito Pagoda and Mt. Fuji"
+    },
+    {
+      "src": "photos/japan-2024/14.jpg",
+      "caption": "Mt. Fuji over Fujiyoshida"
+    },
+    {
+      "src": "photos/japan-2024/15.jpg",
+      "caption": "Nemophila and Mt. Fuji, Oishi Park"
+    },
+    {
+      "src": "photos/japan-2024/16.jpg",
+      "caption": "Fujikyu train near Kawaguchiko"
+    },
+    {
+      "src": "photos/japan-2024/17.jpg",
+      "caption": "Shibuya at night"
+    },
+    {
+      "src": "photos/japan-2024/18.jpg",
+      "caption": "Kabukicho, Shinjuku at night"
+    },
+    {
+      "src": "photos/japan-2024/19.jpg",
+      "caption": "Meiji Jingu"
+    },
+    {
+      "src": "photos/japan-2024/20.jpg",
+      "caption": "A Slowpoke hat in Shibuya"
+    },
+    {
+      "src": "photos/japan-2024/21.jpg",
+      "caption": "Tokyo from Tokyo Tower"
+    },
+    {
+      "src": "photos/japan-2024/22.jpg",
+      "caption": "Looking down from Tokyo Tower"
+    },
+    {
       "src": "photos/japan-2024/06.jpg",
       "caption": "Zojoji Temple"
     },
     {
       "src": "photos/japan-2024/07.jpg",
       "caption": "Nintendo Tokyo, Shibuya"
+    },
+    {
+      "src": "photos/japan-2024/23.jpg",
+      "caption": "Tsukemen and gyoza, Ikebukuro"
+    },
+    {
+      "src": "photos/japan-2024/24.jpg",
+      "caption": "Boxfish at Sunshine Aquarium"
+    },
+    {
+      "src": "photos/japan-2024/25.jpg",
+      "caption": "Rays at Sunshine Aquarium"
+    },
+    {
+      "src": "photos/japan-2024/26.jpg",
+      "caption": "The flying penguins, Sunshine Aquarium"
+    },
+    {
+      "src": "photos/japan-2024/27.jpg",
+      "caption": "Swan in the Imperial Palace moat"
+    },
+    {
+      "src": "photos/japan-2024/28.jpg",
+      "caption": "Akihabara"
+    },
+    {
+      "src": "photos/japan-2024/29.jpg",
+      "caption": "Skyliner to Narita"
     }
   ],
   "japan-2026": [
+    {
+      "src": "photos/japan-2026/19.jpg",
+      "caption": "Welcome to Kanazawa"
+    },
     {
       "src": "photos/japan-2026/01.jpg",
       "caption": "Tsuzumi Gate, Kanazawa Station"
@@ -475,12 +1147,80 @@
       "caption": "Higashi Chaya district, Kanazawa"
     },
     {
+      "src": "photos/japan-2026/20.jpg",
+      "caption": "Snow along the Japan Sea coast from the Hokuriku Shinkansen"
+    },
+    {
+      "src": "photos/japan-2026/21.jpg",
+      "caption": "Arakura Fuji Sengen Shrine, below Chureito Pagoda"
+    },
+    {
       "src": "photos/japan-2026/04.jpg",
       "caption": "Mt. Fuji over Lake Kawaguchiko"
     },
     {
       "src": "photos/japan-2026/05.jpg",
       "caption": "Mt. Fuji and a lakeside torii, Kawaguchiko"
+    },
+    {
+      "src": "photos/japan-2026/22.jpg",
+      "caption": "Chiikawa at Sunshine City, Ikebukuro"
+    },
+    {
+      "src": "photos/japan-2026/23.jpg",
+      "caption": "Overwatch at an esports cafe, Ikebukuro"
+    },
+    {
+      "src": "photos/japan-2026/24.jpg",
+      "caption": "Teishoku lunch in Tachikawa"
+    },
+    {
+      "src": "photos/japan-2026/25.jpg",
+      "caption": "Strawberry pancakes in Shibuya"
+    },
+    {
+      "src": "photos/japan-2026/26.jpg",
+      "caption": "Front-window view on the JR line into Ebisu"
+    },
+    {
+      "src": "photos/japan-2026/27.jpg",
+      "caption": "Snowy highway at Shimukappu"
+    },
+    {
+      "src": "photos/japan-2026/28.jpg",
+      "caption": "Shintoku"
+    },
+    {
+      "src": "photos/japan-2026/29.jpg",
+      "caption": "Manhole cover art, Obihiro"
+    },
+    {
+      "src": "photos/japan-2026/30.jpg",
+      "caption": "Manhole cover, Ashoro"
+    },
+    {
+      "src": "photos/japan-2026/31.jpg",
+      "caption": "Rikubetsu, the coldest town in Japan"
+    },
+    {
+      "src": "photos/japan-2026/32.jpg",
+      "caption": "Manhole cover, Rikubetsu"
+    },
+    {
+      "src": "photos/japan-2026/33.jpg",
+      "caption": "Bihoro Station"
+    },
+    {
+      "src": "photos/japan-2026/34.jpg",
+      "caption": "Manhole cover, Bihoro"
+    },
+    {
+      "src": "photos/japan-2026/35.jpg",
+      "caption": "Memanbetsu at night"
+    },
+    {
+      "src": "photos/japan-2026/36.jpg",
+      "caption": "Manhole cover, Memanbetsu"
     },
     {
       "src": "photos/japan-2026/06.jpg",

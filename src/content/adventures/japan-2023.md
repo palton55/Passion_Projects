@@ -1,6 +1,6 @@
 ---
 title: "First Visit to Japan"
-summary: "A nine-day spring break journey with friends from Tokyo to Osaka, Kyoto, and a homestay in Tsuruga, undertaken with first-year Japanese."
+summary: "Nine days over freshman spring break with friends: Tokyo, the Shinkansen to Osaka, Kyoto, and a homestay in Tsuruga on the Sea of Japan coast, with a day of skiing at Okuibuki. The first chance to put a year of classroom Japanese to use."
 start: 2023-03-11
 end: 2023-03-19
 category: Travel

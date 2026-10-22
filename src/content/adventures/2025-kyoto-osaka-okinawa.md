@@ -1,6 +1,6 @@
 ---
 title: "Kyoto, Osaka, and Okinawa"
-summary: "Ten days across Kyoto and Osaka by Shinkansen, followed by a flight to Okinawa and a drive around the island."
+summary: "Ten days in Kansai and Okinawa. Fushimi Inari in Kyoto, then Osaka with Universal Studios Japan, the Kaiyukan aquarium, and Expo 2025, followed by a flight to Okinawa and a drive from Cape Maeda and Chatan to Sesoko and Cape Hedo at the northern tip of the island."
 start: 2025-06-15
 end: 2025-06-24
 category: Travel

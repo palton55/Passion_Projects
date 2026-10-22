@@ -8,6 +8,8 @@ import { showDrafts } from '../../lib/drafts';
 import { getCollection, render } from 'astro:content';
 import { parentOf } from '../../data/japan-topics';
 import photoData from '../../data/photos.json';
+import { placePages } from '../../lib/place-notes';
+import PlaceCards from '../../components/PlaceCards.astro';
 export async function getStaticPaths() {
   const all = await getCollection('adventures', ({ data }) => !data.draft || showDrafts);
   return all.map((entry) => ({ params: { id: entry.id }, props: { entry } }));
@@ -20,6 +22,7 @@ const photos = d.photos.length ? d.photos : ((photoData as Record<string, { src:
 const fmt = (x: Date) => x.toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric', timeZone: 'UTC' });
 const parent = parentOf(d.collection);
 const base = import.meta.env.BASE_URL.replace(/\/$/, '');
+const places = placePages([entry]);
 const yt = d.video?.match(/(?:v=|youtu\.be\/)([\w-]{11})/)?.[1];
 ---
 <Base title={`${d.title} · Sidequest Resume`} description={d.summary}>
@@ -44,6 +47,8 @@ const yt = d.video?.match(/(?:v=|youtu\.be\/)([\w-]{11})/)?.[1];
       </section>
     ))}
     <div class="story"><Content /></div>
+    {places.length > 0 && <h2>Places on this trip</h2>}
+    <PlaceCards places={places} />
     {photos.length > 0 && <h2>Photos</h2>}
     <Gallery photos={photos} />
   </article>

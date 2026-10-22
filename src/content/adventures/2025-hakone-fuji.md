@@ -1,6 +1,6 @@
 ---
 title: "Hakone and Mt. Fuji"
-summary: "A three-day weekend based in Manazuru, with Lake Ashi, Fuji-Q Highland, and the Gotemba outlets."
+summary: "A three-day weekend based at Manazuru on Sagami Bay, with Lake Ashi in Hakone, a day at Fuji-Q Highland at the foot of Mt. Fuji, and the Gotemba Premium Outlets."
 start: 2025-04-07
 end: 2025-04-09
 category: Travel

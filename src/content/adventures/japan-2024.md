@@ -1,6 +1,6 @@
 ---
 title: "Return to Tokyo"
-summary: "A nine-day return to Tokyo after sophomore finals with friends, including a day trip to Mt. Fuji and Kawaguchiko."
+summary: "Nine days in Tokyo after sophomore finals with friends, from Shinjuku and Shibuya to Tokyo Tower and Zojoji Temple, with a day trip to Fujiyoshida for the view of Mt. Fuji from Arakurayama Sengen Park and Lake Kawaguchiko."
 start: 2024-05-11
 end: 2024-05-19
 category: Travel

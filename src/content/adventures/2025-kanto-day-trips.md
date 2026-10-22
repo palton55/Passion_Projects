@@ -1,6 +1,6 @@
 ---
 title: "Kanto Day Trips"
-summary: "Fourteen day trips from Kodaira across the Kanto region and the Izu Peninsula between April and August 2025."
+summary: "Fourteen day trips from Kodaira between April and August 2025 by train, bus, and car, from Asakusa, Yokohama, and Enoshima to Chichibu, Mt. Takao, Okutama, the Boso Peninsula, Atami, and Ito on the Izu Peninsula."
 start: 2025-04-05
 end: 2025-08-12
 category: Travel

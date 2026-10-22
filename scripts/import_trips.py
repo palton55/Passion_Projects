@@ -27,11 +27,11 @@ MONTHS = {m: i for i, m in enumerate('Jan Feb Mar Apr May Jun Jul Aug Sep Oct No
 
 ENTRIES = [
     dict(id='japan-2024', dir='japan-2024', title='Return to Tokyo', collection='Japan 2024', companions=['friends'],
-         summary='A nine-day return to Tokyo after sophomore finals with friends, including a day trip to Mt. Fuji and Kawaguchiko.'),
+         summary='Nine days in Tokyo after sophomore finals with friends, from Shinjuku and Shibuya to Tokyo Tower and Zojoji Temple, with a day trip to Fujiyoshida for the view of Mt. Fuji from Arakurayama Sengen Park and Lake Kawaguchiko.'),
     # One entry with two sections (Patrick, Oct 21 2026): the Shimanami Kaido, then the drive back as the West Japan Road Trip.
     dict(id='2025-west-japan-road-trip', dir='2025-study-abroad/01-west-japan-road-trip',
          title='Shimanami Kaido and West Japan Road Trip', collection='Shimanami Kaido and West Japan Road Trip',
-         summary='The opening week of the study abroad: the Shinkansen to Osaka and the Shimanami Kaido across the islands of the Seto Inland Sea, followed by a road trip back to Tokyo by way of Himeji, Arima Onsen, Nara, and Hakone.',
+         summary='The opening week of the study abroad. The Tokaido Shinkansen to Osaka and a crossing of the Shimanami Kaido from Setoda over the Tatara Bridge to Imabari, followed by three days on the road back to Tokyo by way of Kurashiki, Himeji Castle, Arima Onsen, Nara, Lake Hamana, and Hakone.',
          parts=[
              dict(title='Shimanami Kaido', days=[1, 2, 3],
                   stops=['Haneda Airport', 'Tokyo', 'Shin-Osaka', 'Shimanami Kaido', 'Imabari'],
@@ -42,18 +42,18 @@ ENTRIES = [
                   blurb='Three days on the road from Imabari back to Tokyo: across the islands to Fukuyama, Okayama, and Kurashiki, then Himeji Castle, Arima Onsen, and Nara, along the Ise Bay coast and over Lake Hamana to Hamamatsu, and on through Hakone and Gotemba to Kodaira.'),
          ]),
     dict(id='2025-hakone-fuji', dir='2025-study-abroad/02-hakone-fuji', title='Hakone and Mt. Fuji', collection='Hakone and Mt. Fuji',
-         summary='A three-day weekend based in Manazuru, with Lake Ashi, Fuji-Q Highland, and the Gotemba outlets.'),
+         summary='A three-day weekend based at Manazuru on Sagami Bay, with Lake Ashi in Hakone, a day at Fuji-Q Highland at the foot of Mt. Fuji, and the Gotemba Premium Outlets.'),
     dict(id='2025-alpine-route', dir='2025-study-abroad/03-alpine-route', title='Tateyama Kurobe Alpine Route',
          collection='Tateyama Kurobe Alpine Route',
-         summary='A rail journey through the Northern Alps by the Azusa limited express, the Tateyama Kurobe Alpine Route, and the Hokuriku Shinkansen.'),
+         summary='Three days across the Northern Alps: the Azusa limited express to Matsumoto and Shinano-Omachi, the Tateyama Kurobe Alpine Route past Kurobe Dam to the snow walls at Murodo, and the Amaharashi Coast and Toyama before the Hokuriku Shinkansen back to Tokyo.'),
     dict(id='2025-kyoto-osaka-okinawa', dir='2025-study-abroad/04-kyoto-osaka-okinawa', title='Kyoto, Osaka, and Okinawa',
          collection='Kyoto, Osaka and Okinawa',
-         summary='Ten days across Kyoto and Osaka by Shinkansen, followed by a flight to Okinawa and a drive around the island.'),
+         summary='Ten days in Kansai and Okinawa. Fushimi Inari in Kyoto, then Osaka with Universal Studios Japan, the Kaiyukan aquarium, and Expo 2025, followed by a flight to Okinawa and a drive from Cape Maeda and Chatan to Sesoko and Cape Hedo at the northern tip of the island.'),
     dict(id='2025-korea-waterbomb', dir='2025-study-abroad/05-korea-waterbomb', title='Korea and Waterbomb', collection='Korea and Waterbomb',
          region='South Korea',
-         summary='Eight days in Seoul from Tokyo, including the DMZ and the Waterbomb music festival in Goyang.'),
+         summary='Eight days in Seoul from Tokyo: Gyeongbokgung Palace and Gwanghwamun, Gangnam, Hongdae, and Dongdaemun, a tour of the DMZ, and the Waterbomb music festival in Goyang.'),
     dict(id='2025-tohoku-hokkaido', dir='2025-study-abroad/06-tohoku-hokkaido', title='Tohoku and Hokkaido', collection='Tohoku and Hokkaido',
-         summary='North by Shinkansen, a round-trip drive from Sapporo to Cape Soya, the northernmost point of Japan, and the Hokuto limited express to Hakodate.',
+         summary='Six days north from Tokyo. The Tohoku, Yamagata, and Akita Shinkansen through Yamagata, Sendai, and Morioka to Hokkaido, a single-day drive from Sapporo up the Oronron Line to Cape Soya, the northernmost point of Japan, and two nights in Hakodate with Goryokaku and Onuma Park.',
          # Kept as one entry, with the train journey and the road trip as their own sections (Patrick, Oct 21 2026).
          parts=[
              dict(title='The Train Journey', days=[1, 2, 4, 5, 6], modes=['shinkansen', 'express', 'local'],
@@ -65,14 +65,14 @@ ENTRIES = [
                   blurb='A drive from Sapporo up the Sea of Japan coast on the Oronron Line to Wakkanai and Cape Soya, the northernmost point of Japan, then inland to Asahikawa and back to Sapporo.'),
          ]),
     dict(id='2025-kusatsu-onsen', dir='2025-study-abroad/07-kusatsu-onsen', title='Kusatsu Onsen', collection='Kusatsu Onsen',
-         summary='An overnight visit to the hot spring town of Kusatsu in Gunma.'),
+         summary='An overnight trip by bus from Ikebukuro to Kusatsu Onsen in the mountains of Gunma, one of the best-known hot spring towns in Japan, with the Yubatake at its centre and the Yanba Dam area in Naganohara.'),
     dict(id='2025-ishigaki', dir='2025-study-abroad/08-ishigaki', title='Ishigaki and Taketomi', collection='Ishigaki and Taketomi',
-         summary='The final trip of the semester: six days in the Yaeyama Islands, with boat trips, a drive along the coast of Ishigaki, and a visit to Taketomi.'),
+         summary='The final trip of the semester: six days in the Yaeyama Islands, with boat trips past Taketomi, Kohama, and Kuroshima, a drive along the west coast of Ishigaki to Cape Ogan, and a day among the red-tiled houses of Taketomi.'),
     dict(id='2025-kanto-day-trips', dir='2025-study-abroad/kanto-day-trips', title='Kanto Day Trips', collection='Kanto Day Trips',
-         summary='Fourteen day trips from Kodaira across the Kanto region and the Izu Peninsula between April and August 2025.'),
+         summary='Fourteen day trips from Kodaira between April and August 2025 by train, bus, and car, from Asakusa, Yokohama, and Enoshima to Chichibu, Mt. Takao, Okutama, the Boso Peninsula, Atami, and Ito on the Izu Peninsula.'),
     # Five parts (trips/japan-2026/road-map.md). Told from Patrick's own perspective, with no companions named.
     dict(id='japan-2026', dir='japan-2026', title='Kanazawa, Mt. Fuji, and Hokkaido', collection='Japan 2026',
-         summary='Nineteen days in March 2026: the Hokuriku Shinkansen to Kanazawa, the Fuji Five Lakes, a week in Tokyo, and a road trip around Hokkaido from Abashiri to the drift ice at Monbetsu, Cape Soya, Furano, and Upopoy.',
+         summary='Nineteen days in March 2026. The Hokuriku Shinkansen to Kanazawa, the Fuji Five Lakes, and a week in Tokyo, followed by a winter road trip around Hokkaido from Abashiri along the drift ice of the Sea of Okhotsk to Monbetsu and Cape Soya, then Biei, Furano, and Upopoy, before a final day in Sapporo.',
          parts=[
              dict(title='Tokyo and Kanazawa', days=[1, 2, 3],
                   stops=['Narita Airport', 'Shinjuku', 'Tokyo Station', 'Omiya', 'Kanazawa', 'Toyama', 'Itoigawa / Joetsu', 'Yokohama', 'Machida'],

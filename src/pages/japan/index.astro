@@ -6,12 +6,17 @@ import { visited } from '../../data/visited';
 import { japanTopics } from '../../data/japan-topics';
 import { showDrafts } from '../../lib/drafts';
 import { placesFrom, areas } from '../../lib/places';
+import { placePages } from '../../lib/place-notes';
+import PlaceCards from '../../components/PlaceCards.astro';
 import { getCollection } from 'astro:content';
 const count = Object.keys(visited).length;
 const base = import.meta.env.BASE_URL.replace(/\/$/, '');
 const entries = (await getCollection('adventures', ({ data }) => data.region === 'Japan' && (!data.draft || showDrafts)))
   .sort((a, b) => (a.data.start?.valueOf() ?? 0) - (b.data.start?.valueOf() ?? 0));
 const places = placesFrom(entries);
+// Place pages are listed north to south, in the order of src/data/places.ts.
+const notes = placePages(entries).filter((p) => p.country === 'Japan');
+const pageOf = new Map(notes.flatMap((n) => n.match.map((m) => [m, n.slug] as const)));
 const years = [...new Set(places.flatMap((p) => p.trips.map((t) => t.year)))].sort();
 const dots = places.map((p) => ({ name: p.name, lat: p.lat, lng: p.lng, date: p.prefecture, note: p.trips.map((t) => t.title).join(', '), groups: [...new Set(p.trips.map((t) => t.year))] }));
 const grouped = areas.map(([area, prefs]) => ({
@@ -26,6 +31,13 @@ const grouped = areas.map(([area, prefs]) => ({
   <div class="grid">
     {japanTopics.map((t) => <Tile href={`/japan/${t.page}/`} label={t.label} title={t.title} meta={t.dates} blurb={t.blurb} />)}
   </div>
+  {notes.length > 0 && (
+    <section class="places">
+      <h2>Notable Places</h2>
+      <p class="lede">Short encyclopedia-style entries on the main cities and landmarks visited, each with photographs from the trips.</p>
+      <PlaceCards places={notes} />
+    </section>
+  )}
   <section class="places">
     <h2>Cities and Towns</h2>
     <p class="lede">The {places.length} cities, towns, and landmarks visited across the Japan trips, taken from the stops on <a href={`${base}/japan/map/`}>the Japan route map</a>. Select a place on the map to see which trips included it.</p>
@@ -39,7 +51,7 @@ const grouped = areas.map(([area, prefs]) => ({
               <p class="pref-name">{g.pref}</p>
               <ul>
                 {g.places.map((p) => (
-                  <li>{p.name} {[...new Set(p.trips.map((t) => t.year))].map((y) => <a class="yr" href={`${base}/japan/${y}/`} title={p.trips.filter((t) => t.year === y).map((t) => t.title).join(', ')}>{y}</a>)}</li>
+                  <li>{pageOf.has(p.name) ? <a href={`${base}/places/${pageOf.get(p.name)}/`}>{p.name}</a> : p.name} {[...new Set(p.trips.map((t) => t.year))].map((y) => <a class="yr" href={`${base}/japan/${y}/`} title={p.trips.filter((t) => t.year === y).map((t) => t.title).join(', ')}>{y}</a>)}</li>
                 ))}
               </ul>
             </div>

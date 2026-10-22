@@ -58,6 +58,11 @@ export const japanTopics: JapanTopic[] = [
     title: 'Japan 2026',
     dates: 'March 6 to 24, 2026',
     blurb: 'A return to Japan in March 2026, part of it with family: Kanazawa, the Fuji Five Lakes, a week in Tokyo, and a winter road trip around Hokkaido to the drift ice, Cape Soya, and Upopoy.',
+    subtopics: [
+      { collection: 'Kanazawa', title: 'Kanazawa', dates: 'March 6 to 8, 2026', blurb: 'Arrival in Tokyo and the Hokuriku Shinkansen to Kanazawa for the Tsuzumi Gate, the Asanogawa River, and the Higashi Chaya district, returning along the Japan Sea coast.' },
+      { collection: 'Mt. Fuji and Tokyo', title: 'Mt. Fuji and Tokyo', dates: 'March 9 to 17, 2026', blurb: 'A drive to Lake Yamanakako, the Chureito Pagoda, Lake Kawaguchiko, and Fuji-Q Highland, followed by a week around Tokyo.' },
+      { collection: 'Hokkaido Road Trip', title: 'Hokkaido Road Trip', dates: 'March 18 to 24, 2026', blurb: 'Four days of winter driving from New Chitose to Abashiri, the drift ice at Monbetsu, Cape Soya, Biei, Furano, and Upopoy, then Sapporo and the journey home.' },
+    ],
   },
 ];
 

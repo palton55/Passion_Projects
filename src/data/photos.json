@@ -1129,7 +1129,7 @@
       "caption": "Skyliner to Narita"
     }
   ],
-  "japan-2026": [
+  "japan-2026-kanazawa": [
     {
       "src": "photos/japan-2026/19.jpg",
       "caption": "Welcome to Kanazawa"
@@ -1149,7 +1149,9 @@
     {
       "src": "photos/japan-2026/20.jpg",
       "caption": "Snow along the Japan Sea coast from the Hokuriku Shinkansen"
-    },
+    }
+  ],
+  "japan-2026-fuji": [
     {
       "src": "photos/japan-2026/21.jpg",
       "caption": "Arakura Fuji Sengen Shrine, below Chureito Pagoda"
@@ -1181,7 +1183,9 @@
     {
       "src": "photos/japan-2026/26.jpg",
       "caption": "Front-window view on the JR line into Ebisu"
-    },
+    }
+  ],
+  "japan-2026-hokkaido": [
     {
       "src": "photos/japan-2026/27.jpg",
       "caption": "Snowy highway at Shimukappu"

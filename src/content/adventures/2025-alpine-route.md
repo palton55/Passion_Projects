@@ -1,6 +1,6 @@
 ---
 title: "Tateyama Kurobe Alpine Route"
-summary: "A rail journey through the Northern Alps by the Azusa limited express, the Tateyama Kurobe Alpine Route, and the Hokuriku Shinkansen."
+summary: "Three days across the Northern Alps: the Azusa limited express to Matsumoto and Shinano-Omachi, the Tateyama Kurobe Alpine Route past Kurobe Dam to the snow walls at Murodo, and the Amaharashi Coast and Toyama before the Hokuriku Shinkansen back to Tokyo."
 start: 2025-04-25
 end: 2025-04-27
 category: Travel

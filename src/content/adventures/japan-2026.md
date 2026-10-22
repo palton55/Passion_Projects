@@ -1,6 +1,6 @@
 ---
 title: "Kanazawa, Mt. Fuji, and Hokkaido"
-summary: "Nineteen days in March 2026: the Hokuriku Shinkansen to Kanazawa, the Fuji Five Lakes, a week in Tokyo, and a road trip around Hokkaido from Abashiri to the drift ice at Monbetsu, Cape Soya, Furano, and Upopoy."
+summary: "Nineteen days in March 2026. The Hokuriku Shinkansen to Kanazawa, the Fuji Five Lakes, and a week in Tokyo, followed by a winter road trip around Hokkaido from Abashiri along the drift ice of the Sea of Okhotsk to Monbetsu and Cape Soya, then Biei, Furano, and Upopoy, before a final day in Sapporo."
 start: 2026-03-06
 end: 2026-03-24
 category: Travel

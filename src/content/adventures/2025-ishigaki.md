@@ -1,6 +1,6 @@
 ---
 title: "Ishigaki and Taketomi"
-summary: "The final trip of the semester: six days in the Yaeyama Islands, with boat trips, a drive along the coast of Ishigaki, and a visit to Taketomi."
+summary: "The final trip of the semester: six days in the Yaeyama Islands, with boat trips past Taketomi, Kohama, and Kuroshima, a drive along the west coast of Ishigaki to Cape Ogan, and a day among the red-tiled houses of Taketomi."
 start: 2025-08-19
 end: 2025-08-24
 category: Travel

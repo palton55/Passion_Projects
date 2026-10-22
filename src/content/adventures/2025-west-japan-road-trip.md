@@ -1,6 +1,6 @@
 ---
 title: "Shimanami Kaido and West Japan Road Trip"
-summary: "The opening week of the study abroad: the Shinkansen to Osaka and the Shimanami Kaido across the islands of the Seto Inland Sea, followed by a road trip back to Tokyo by way of Himeji, Arima Onsen, Nara, and Hakone."
+summary: "The opening week of the study abroad. The Tokaido Shinkansen to Osaka and a crossing of the Shimanami Kaido from Setoda over the Tatara Bridge to Imabari, followed by three days on the road back to Tokyo by way of Kurashiki, Himeji Castle, Arima Onsen, Nara, Lake Hamana, and Hakone."
 start: 2025-03-20
 end: 2025-03-25
 category: Travel

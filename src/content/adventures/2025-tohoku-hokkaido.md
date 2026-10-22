@@ -1,6 +1,6 @@
 ---
 title: "Tohoku and Hokkaido"
-summary: "North by Shinkansen, a round-trip drive from Sapporo to Cape Soya, the northernmost point of Japan, and the Hokuto limited express to Hakodate."
+summary: "Six days north from Tokyo. The Tohoku, Yamagata, and Akita Shinkansen through Yamagata, Sendai, and Morioka to Hokkaido, a single-day drive from Sapporo up the Oronron Line to Cape Soya, the northernmost point of Japan, and two nights in Hakodate with Goryokaku and Onuma Park."
 start: 2025-08-03
 end: 2025-08-08
 category: Travel

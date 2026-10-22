@@ -3,14 +3,17 @@ import Base from '../layouts/Base.astro';
 import RouteMap from '../components/RouteMap.astro';
 import { showDrafts } from '../lib/drafts';
 import { getCollection } from 'astro:content';
+import { placePages } from '../lib/place-notes';
+import PlaceCards from '../components/PlaceCards.astro';
 const base = import.meta.env.BASE_URL.replace(/\/$/, '');
 const entries = (await getCollection('adventures', ({ data }) => data.region === 'South Korea' && (!data.draft || showDrafts)))
   .sort((a, b) => (a.data.start?.valueOf() ?? 0) - (b.data.start?.valueOf() ?? 0));
+const notes = placePages(entries).filter((p) => p.country === 'South Korea');
 const fmt = (x: Date) => x.toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric', timeZone: 'UTC' });
 ---
 <Base title="Korea · Sidequest Resume" description="Sidequests in South Korea, each with its route map and timeline.">
   <h1>Korea</h1>
-  <p class="lede">My time in South Korea so far came during the <a href={`${base}/japan/2025/`}>Study Abroad 2025</a> semester in Tokyo, with a week in Seoul for the city, the DMZ, and the Waterbomb festival.</p>
+  <p class="lede">My time in South Korea so far came during the <a href={`${base}/japan/2025/`}>Study Abroad 2025</a> semester in Tokyo: a week in Seoul for its palaces and neighbourhoods, a tour of the DMZ, and the Waterbomb festival in Goyang.</p>
   {entries.length === 0 && <p class="meta pending">Entries are currently in preparation.</p>}
   {entries.map((e) => (
     <section class="topic">
@@ -22,6 +25,12 @@ const fmt = (x: Date) => x.toLocaleDateString('en-US', { month: 'long', day: 'nu
       <p><a href={`${base}/sidequests/${e.id}/`}>Read the full entry and timeline</a></p>
     </section>
   ))}
+  {notes.length > 0 && (
+    <section class="topic">
+      <h2>Notable Places</h2>
+      <PlaceCards places={notes} />
+    </section>
+  )}
 </Base>
 <style>
   .meta { color: var(--muted); }

@@ -1,6 +1,6 @@
 ---
 title: "Korea and Waterbomb"
-summary: "Eight days in Seoul from Tokyo, including the DMZ and the Waterbomb music festival in Goyang."
+summary: "Eight days in Seoul from Tokyo: Gyeongbokgung Palace and Gwanghwamun, Gangnam, Hongdae, and Dongdaemun, a tour of the DMZ, and the Waterbomb music festival in Goyang."
 start: 2025-07-02
 end: 2025-07-09
 category: Travel

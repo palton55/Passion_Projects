@@ -44,7 +44,7 @@ export const areas: [string, string[]][] = [
 // Stops that are not places to list: airports and generic labels.
 const skip = /airport|^boat trips$/i;
 // Tidy stop labels into place names ("Sapporo Station" and "Sapporo" are one place).
-const tidy = (n: string) => n.replace(/ \([^)]*\)$/, '').replace(/, then .*$/, '').replace(/: .*$/, '')
+export const tidy = (n: string) => n.replace(/ \([^)]*\)$/, '').replace(/, then .*$/, '').replace(/: .*$/, '')
   .replace(/ (Station|again)$/i, '').replace(/^Upopoy, /, '').trim();
 
 export type Place = { name: string; lat: number; lng: number; prefecture: string; trips: { id: string; title: string; year: string }[] };

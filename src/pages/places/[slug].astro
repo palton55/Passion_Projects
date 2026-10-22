@@ -1,0 +1,33 @@
+---
+import Base from '../../layouts/Base.astro';
+import Gallery from '../../components/Gallery.astro';
+import { showDrafts } from '../../lib/drafts';
+import { placePages, type PlacePage } from '../../lib/place-notes';
+import { getCollection } from 'astro:content';
+export async function getStaticPaths() {
+  const entries = (await getCollection('adventures', ({ data }) => !data.draft || showDrafts))
+    .sort((a, b) => (a.data.start?.valueOf() ?? 0) - (b.data.start?.valueOf() ?? 0));
+  return placePages(entries).map((place) => ({ params: { slug: place.slug }, props: { place } }));
+}
+const { place } = Astro.props as { place: PlacePage };
+const base = import.meta.env.BASE_URL.replace(/\/$/, '');
+const section = place.country === 'Japan' ? { href: '/japan/', label: 'Japan' } : { href: '/korea/', label: 'Korea' };
+---
+<Base title={`${place.name} · Sidequest Resume`} description={place.text[0]}>
+  <article>
+    <p class="crumb"><a href={`${base}/travel/`}>Experience</a> / <a href={`${base}${section.href}`}>{section.label}</a></p>
+    <h1>{place.name}</h1>
+    <p class="meta">{place.area === place.country ? place.country : `${place.area}, ${place.country}`}</p>
+    {place.text.map((p) => <p>{p}</p>)}
+    <p class="meta">Visited on {place.trips.map((t, i) => <>{i > 0 && ', '}<a href={`${base}/sidequests/${t.id}/`}>{t.title}</a> ({t.year})</>)}</p>
+    <h2>Photos</h2>
+    <Gallery photos={place.pics} />
+  </article>
+</Base>
+<style>
+  article { max-width: 760px; margin: 0 auto; }
+  h1 { font-size: clamp(2rem, 5vw, 2.8rem); margin: 4px 0 4px; }
+  .crumb { color: var(--muted); font-size: .9rem; margin: 0 0 8px; }
+  .meta { color: var(--muted); font-size: .95rem; }
+  h2 { margin-top: 32px; }
+</style>

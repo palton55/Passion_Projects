@@ -35,13 +35,13 @@ legs:
   - {"name": "Mt. Takao", "mode": "daytrip", "coords": [[35.7286, 139.4775], [35.6273, 139.2505]]}
   - {"name": "Toyosu and Odaiba, then the Railway Museum again", "mode": "daytrip", "coords": [[35.7286, 139.4775], [35.649, 139.7898]]}
   - {"name": "Okutama (overnight to Jun 15)", "mode": "daytrip", "coords": [[35.7286, 139.4775], [35.8456, 139.1532]]}
-  - {"name": "Boso Peninsula: Umihotaru, Mt. Nokogiri, Cape Futtsu", "mode": "daytrip", "coords": [[35.7286, 139.4775], [35.1621, 139.8246]]}
-  - {"name": "Tama River fireworks, Inagi / Fuchu (photo trip from school)", "mode": "daytrip", "coords": [[35.7286, 139.4775], [35.65, 139.502]]}
+  - {"name": "Boso Peninsula: Umihotaru, Mt. Nokogiri, Cape Futtsu", "mode": "drive", "coords": [[35.7286, 139.4775], [35.1621, 139.8246]]}
+  - {"name": "Tama River fireworks, Inagi / Fuchu (photo trip from school)", "mode": "drive", "coords": [[35.7286, 139.4775], [35.65, 139.502]]}
   - {"name": "Enoshima", "mode": "daytrip", "coords": [[35.7286, 139.4775], [35.3078, 139.4853]]}
-  - {"name": "Kisarazu, then Yokohama at night by the Aqua-Line (GR86 drive)", "mode": "daytrip", "coords": [[35.7286, 139.4775], [35.4151, 139.9812]]}
+  - {"name": "Kisarazu, then Yokohama at night by the Aqua-Line (GR86 drive)", "mode": "drive", "coords": [[35.7286, 139.4775], [35.4151, 139.9812]]}
   - {"name": "Atami and Hatsushima, then Oiso", "mode": "daytrip", "coords": [[35.7286, 139.4775], [35.0426, 139.1707]]}
   - {"name": "Mitsui Outlet Park Iruma again", "mode": "daytrip", "coords": [[35.7286, 139.4775], [35.8107, 139.3789]]}
-  - {"name": "Ito, Izu Peninsula (scuba diving)", "mode": "daytrip", "coords": [[35.7286, 139.4775], [34.8967, 139.1324]]}
+  - {"name": "Ito, Izu Peninsula (scuba diving)", "mode": "bus", "coords": [[35.7286, 139.4775], [34.8967, 139.1324]]}
 # Day-by-day timeline, generated from the trip notes by scripts/import_trips.py.
 timeline:
   - label: "Day trip"

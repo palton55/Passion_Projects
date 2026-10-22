@@ -22,7 +22,7 @@ stops:
   - {"name": "Boso Peninsula: Umihotaru, Mt. Nokogiri, Cape Futtsu", "lat": 35.1621, "lng": 139.8246, "date": "Jun 29", "mode": "daytrip"}
   - {"name": "Tama River fireworks, Inagi / Fuchu (photo trip from school)", "lat": 35.65, "lng": 139.502, "date": "Jul 19", "mode": "daytrip"}
   - {"name": "Enoshima", "lat": 35.3078, "lng": 139.4853, "date": "Jul 21", "mode": "daytrip"}
-  - {"name": "Kisarazu, then Yokohama at night by the Aqua-Line", "lat": 35.4151, "lng": 139.9812, "date": "Jul 25", "mode": "daytrip"}
+  - {"name": "Kisarazu, then Yokohama at night by the Aqua-Line (GR86 drive)", "lat": 35.4151, "lng": 139.9812, "date": "Jul 25", "mode": "daytrip"}
   - {"name": "Atami and Hatsushima, then Oiso", "lat": 35.0426, "lng": 139.1707, "date": "Jul 27", "mode": "daytrip"}
   - {"name": "Mitsui Outlet Park Iruma again", "lat": 35.8107, "lng": 139.3789, "date": "Aug 9", "mode": "daytrip"}
   - {"name": "Ito, Izu Peninsula (scuba diving)", "lat": 34.8967, "lng": 139.1324, "date": "Aug 12", "mode": "daytrip"}
@@ -38,7 +38,7 @@ legs:
   - {"name": "Boso Peninsula: Umihotaru, Mt. Nokogiri, Cape Futtsu", "mode": "daytrip", "coords": [[35.7286, 139.4775], [35.1621, 139.8246]]}
   - {"name": "Tama River fireworks, Inagi / Fuchu (photo trip from school)", "mode": "daytrip", "coords": [[35.7286, 139.4775], [35.65, 139.502]]}
   - {"name": "Enoshima", "mode": "daytrip", "coords": [[35.7286, 139.4775], [35.3078, 139.4853]]}
-  - {"name": "Kisarazu, then Yokohama at night by the Aqua-Line", "mode": "daytrip", "coords": [[35.7286, 139.4775], [35.4151, 139.9812]]}
+  - {"name": "Kisarazu, then Yokohama at night by the Aqua-Line (GR86 drive)", "mode": "daytrip", "coords": [[35.7286, 139.4775], [35.4151, 139.9812]]}
   - {"name": "Atami and Hatsushima, then Oiso", "mode": "daytrip", "coords": [[35.7286, 139.4775], [35.0426, 139.1707]]}
   - {"name": "Mitsui Outlet Park Iruma again", "mode": "daytrip", "coords": [[35.7286, 139.4775], [35.8107, 139.3789]]}
   - {"name": "Ito, Izu Peninsula (scuba diving)", "mode": "daytrip", "coords": [[35.7286, 139.4775], [34.8967, 139.1324]]}
@@ -79,7 +79,7 @@ timeline:
     title: "Enoshima"
   - label: "Day trip"
     date: 2025-07-25
-    title: "Kisarazu, then Yokohama at night by the Aqua-Line"
+    title: "Kisarazu, then Yokohama at night by the Aqua-Line (GR86 drive)"
   - label: "Day trip"
     date: 2025-07-27
     title: "Atami and Hatsushima, then Oiso"

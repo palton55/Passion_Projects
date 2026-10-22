@@ -52,9 +52,8 @@ legs:
   - {"name": "Hokuriku Shinkansen, Tokyo to Kanazawa", "mode": "shinkansen", "coords": [[35.6812, 139.7671], [35.7138, 139.7774], [35.9063, 139.6239], [36.3227, 139.0126], [36.3428, 138.6352], [36.3965, 138.2493], [36.6431, 138.1887], [36.8445, 138.3634], [37.0915, 138.2475], [37.0425, 137.8606], [36.8749, 137.4497], [36.7013, 137.2132], [36.73, 137.0106], [36.578, 136.648]], "day": 2}
   - {"name": "Hokuriku Shinkansen, Kanazawa back to Tokyo", "mode": "shinkansen", "coords": [[36.578, 136.648], [36.73, 137.0106], [36.7013, 137.2132], [36.8749, 137.4497], [37.0425, 137.8606], [37.0915, 138.2475], [36.8445, 138.3634], [36.6431, 138.1887], [36.3965, 138.2493], [36.3428, 138.6352], [36.3227, 139.0126], [35.9063, 139.6239], [35.7138, 139.7774], [35.6812, 139.7671]], "day": 3}
   - {"name": "Tokyo to Yokohama and Machida (train, to confirm)", "mode": "local", "coords": [[35.6812, 139.7671], [35.6285, 139.7388], [35.4658, 139.6223], [35.542, 139.446], [35.4658, 139.6223]], "day": 3}
-  - {"name": "Yokohama to Gotemba and Lake Yamanakako (car, to confirm)", "mode": "drive", "coords": [[35.4658, 139.6223], [35.43, 139.36], [35.37, 139.1], [35.3057, 138.9662], [35.36, 138.92], [35.4282, 138.8507]], "day": 4}
-  - {"name": "Lake Yamanakako to the Chureito Pagoda, Lake Kawaguchiko and Fuji-Q Highland, then over to Tachikawa (car, to confirm)", "mode": "drive", "coords": [[35.4282, 138.8507], [35.4996, 138.8001], [35.5232, 138.746], [35.4825, 138.7788], [35.55, 138.95], [35.6097, 138.9408], [35.64, 139.2], [35.6949, 139.4468]], "day": 5}
-  - {"name": "Tachikawa to Shinjuku", "mode": "local", "coords": [[35.6949, 139.4468], [35.6896, 139.7006]], "day": 5}
+  - {"name": "Drive, Yokohama to Gotemba and Lake Yamanakako", "mode": "drive", "coords": [[35.4658, 139.6223], [35.43, 139.36], [35.37, 139.1], [35.3057, 138.9662], [35.36, 138.92], [35.4282, 138.8507]], "day": 4}
+  - {"name": "Lake Yamanakako to the Chureito Pagoda, Lake Kawaguchiko and Fuji-Q Highland, then through Tachikawa to Shinjuku to drop off the car", "mode": "drive", "coords": [[35.4282, 138.8507], [35.4996, 138.8001], [35.5232, 138.746], [35.4825, 138.7788], [35.55, 138.95], [35.6097, 138.9408], [35.64, 139.2], [35.6949, 139.4468], [35.69, 139.58], [35.6896, 139.7006]], "day": 5}
   - {"name": "Tokyo days: Shinjuku, Shibuya, Machida, Sagamihara and Zama by train", "mode": "local", "coords": [[35.6896, 139.7006], [35.66, 139.7], [35.6, 139.6], [35.542, 139.446], [35.48, 139.43]], "day": 6}
   - {"name": "Machida to Ikebukuro and back", "mode": "local", "coords": [[35.542, 139.446], [35.62, 139.6], [35.6896, 139.7006], [35.7299, 139.717]], "day": 9}
   - {"name": "Machida to Tachikawa", "mode": "local", "coords": [[35.542, 139.446], [35.62, 139.42], [35.6999, 139.4118]], "day": 10}
@@ -105,14 +104,14 @@ timeline:
     events:
       - { time: "Afternoon", text: "Gotemba Premium Outlets." }
       - { time: "Evening", text: "Lake Yamanakako (night)." }
-    route: ["Yokohama to Gotemba and Lake Yamanakako (car, to confirm) (about 90 km, 1 h 30 min)."]
+    route: ["Drive, Yokohama to Gotemba and Lake Yamanakako (about 90 km, 1 h 30 min)."]
   - label: "Day 5"
     date: 2026-03-10
     title: "Chureito Pagoda, Lake Kawaguchiko, Fuji-Q Highland"
     events:
       - { time: "Morning", text: "Chureito Pagoda." }
-      - { time: "Afternoon", text: "Lake Kawaguchiko; Fuji-Q Highland; Tachikawa; Shinjuku (night)." }
-    route: ["Lake Yamanakako to the Chureito Pagoda, Lake Kawaguchiko and Fuji-Q Highland, then over to Tachikawa (car, to confirm) (about 100 km, 1 h 30 min).", "Tachikawa to Shinjuku (about 23 km, 30 min)."]
+      - { time: "Afternoon", text: "Lake Kawaguchiko; Fuji-Q Highland; Tachikawa; Shinjuku, car dropped off (night)." }
+    route: ["Lake Yamanakako to the Chureito Pagoda, Lake Kawaguchiko and Fuji-Q Highland, then through Tachikawa to Shinjuku to drop off the car (about 130 km, 2 h)."]
   - label: "Day 6"
     date: 2026-03-11
     title: "Shibuya, Zama"

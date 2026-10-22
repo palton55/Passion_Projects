@@ -70,6 +70,27 @@ ENTRIES = [
          summary='The final trip of the semester: six days in the Yaeyama Islands, with boat trips, a drive along the coast of Ishigaki, and a visit to Taketomi.'),
     dict(id='2025-kanto-day-trips', dir='2025-study-abroad/kanto-day-trips', title='Kanto Day Trips', collection='Kanto Day Trips',
          summary='Fourteen day trips from Kodaira across the Kanto region and the Izu Peninsula between April and August 2025.'),
+    # Five parts (trips/japan-2026/road-map.md). Told from Patrick's own perspective, with no companions named.
+    dict(id='japan-2026', dir='japan-2026', title='Kanazawa, Mt. Fuji, and Hokkaido', collection='Japan 2026',
+         summary='Nineteen days in March 2026: the Hokuriku Shinkansen to Kanazawa, the Fuji Five Lakes, a week in Tokyo, and a road trip around Hokkaido from Abashiri to the drift ice at Monbetsu, Cape Soya, Furano, and Upopoy.',
+         parts=[
+             dict(title='Tokyo and Kanazawa', days=[1, 2, 3],
+                  stops=['Narita Airport', 'Shinjuku', 'Tokyo Station', 'Omiya', 'Kanazawa', 'Toyama', 'Itoigawa / Joetsu', 'Yokohama', 'Machida'],
+                  blurb='Arrival at Narita and a night in Shinjuku, then the Hokuriku Shinkansen to Kanazawa and the Higashi Chaya district, returning the next morning along the Japan Sea coast.'),
+             dict(title='Mt. Fuji and the Fuji Five Lakes', days=[4, 5],
+                  stops=['Yokohama', 'Gotemba Premium Outlets', 'Lake Yamanakako', 'Chureito Pagoda', 'Lake Kawaguchiko', 'Fuji-Q Highland', 'Tachikawa'],
+                  blurb='The Gotemba outlets and a night at Lake Yamanakako, followed by the Chureito Pagoda, Lake Kawaguchiko, and Fuji-Q Highland.'),
+             dict(title='Tokyo Days', days=[6, 7, 8, 9, 10, 11, 12],
+                  stops=['Machida / Sagamihara', 'Zama', 'Shibuya / Harajuku', 'Setagaya', 'Ikebukuro', 'Tachikawa', 'Ebisu', 'Haneda Airport'],
+                  blurb='A week around Tokyo from the Machida and Sagamihara side, covering Shibuya, Setagaya, Ikebukuro, and Tachikawa, and ending with a flight north from Haneda.'),
+             dict(title='Hokkaido Road Trip', days=[13, 14, 15, 16], modes=['drive'],
+                  stops=['New Chitose Airport', 'Obihiro', 'Ashoro / Rikubetsu', 'Abashiri', 'Monbetsu', 'Cape Soya', 'Wakkanai', 'Teshio',
+                         'Asahikawa', 'Biei / Furano', 'Furano', 'Upopoy, Shiraoi'],
+                  blurb='Four days of driving from New Chitose: across Tokachi to Abashiri, along the Sea of Okhotsk to the drift ice at Monbetsu, north to Cape Soya, inland to Asahikawa, Biei, and Furano, and south to Upopoy.'),
+             dict(title='Sapporo and Home', days=[16, 17, 18, 19],
+                  stops=['Sapporo', 'New Chitose Airport', 'Haneda Airport', 'Tokyo', 'Narita Airport'],
+                  blurb='A day in Odori and Tanukikoji in Sapporo, the flight back to Tokyo, and a final afternoon in Ginza before departing from Narita.'),
+         ]),
 ]
 
 

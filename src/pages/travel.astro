@@ -2,12 +2,19 @@
 import Base from '../layouts/Base.astro';
 import SidequestCard from '../components/SidequestCard.astro';
 import Tile from '../components/Tile.astro';
+import RouteMap from '../components/RouteMap.astro';
 import { showDrafts } from '../lib/drafts';
 import { getCollection } from 'astro:content';
 import { regions } from '../data/regions';
 const travel = (await getCollection('adventures', ({ data }) => data.category === 'Travel' && (!data.draft || showDrafts)))
   .sort((a, b) => (b.data.start?.valueOf() ?? 0) - (a.data.start?.valueOf() ?? 0));
 const regionNames = new Set(regions.flatMap((r) => [r.region].flat()));
+// Every trip's stops and routes on one world map, toggled by destination. Flights are left out.
+const mapped = travel.filter((e) => e.data.stops.length);
+const areaOf = (e: (typeof travel)[number]) => regions.find((r) => [r.region].flat().includes(e.data.region ?? ''))?.name ?? (e.data.region ?? 'Other');
+const allLegs = mapped.flatMap((e) => e.data.legs.filter((l) => l.mode !== 'flight').map((l) => ({ ...l, name: `${e.data.title}: ${l.name}`, groups: [areaOf(e)] })));
+const allStops = mapped.flatMap((e) => e.data.stops.map((s) => ({ ...s, date: e.data.title, groups: [areaOf(e)] })));
+const areaNames = [...new Set(mapped.map(areaOf))];
 const otherTravel = travel.filter((e) => !regionNames.has(e.data.region ?? ''));
 ---
 <Base title="Experience · Sidequest Resume" description="Travel and experiences, organized by destination.">
@@ -19,6 +26,13 @@ const otherTravel = travel.filter((e) => !regionNames.has(e.data.region ?? ''));
     ))}
     {otherTravel.map((entry) => <SidequestCard entry={entry} />)}
   </div>
+  {allStops.length > 0 && (
+    <section class="world">
+      <h2>All Trips</h2>
+      <p class="lede">Every trip's stops and routes on one map. Use the buttons to show or hide each destination, and the corner switch for satellite imagery.</p>
+      <RouteMap stops={allStops} legs={allLegs} height={620} dot={4} groups={areaNames} lines={false} />
+    </section>
+  )}
 </Base>
 <style>
   .lede { color: var(--muted); font-size: 1.1rem; }
@@ -26,4 +40,5 @@ const otherTravel = travel.filter((e) => !regionNames.has(e.data.region ?? ''));
   .toc { display: flex; gap: 16px; margin: 8px 0 8px; }
   .group { border-top: 1px solid var(--border); margin-top: 32px; }
   .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 20px; margin-bottom: 24px; }
+  .world { border-top: 1px solid var(--border); margin-top: 32px; }
 </style>

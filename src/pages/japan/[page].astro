@@ -1,6 +1,8 @@
 ---
 import Base from '../../layouts/Base.astro';
 import RouteMap from '../../components/RouteMap.astro';
+import Highlights from '../../components/Highlights.astro';
+import photoData from '../../data/photos.json';
 import { showDrafts } from '../../lib/drafts';
 import { getCollection } from 'astro:content';
 import { japanTopics, slug, type JapanTopic } from '../../data/japan-topics';
@@ -12,6 +14,7 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, '');
 const topicCollections = new Set(japanTopics.flatMap((t) => [t.collection, ...(t.subtopics ?? []).map((s) => s.collection)]));
 const entries = (await getCollection('adventures', ({ data }) => (data.region === 'Japan' || topicCollections.has(data.collection ?? '')) && (!data.draft || showDrafts)))
   .sort((a, b) => (a.data.start?.valueOf() ?? 0) - (b.data.start?.valueOf() ?? 0));
+const photosOf = (e: (typeof entries)[number]) => e.data.photos.length ? e.data.photos : ((photoData as Record<string, { src: string; caption?: string }[]>)[e.id] ?? []);
 const inTopic = (t: JapanTopic) => entries.filter((e) => e.data.collection === t.collection);
 ---
 <Base title={`${topic.title} · Sidequest Resume`} description={topic.blurb}>
@@ -23,6 +26,7 @@ const inTopic = (t: JapanTopic) => entries.filter((e) => e.data.collection === t
       <p class="lede">{t.blurb}</p>
       {inTopic(t).map((e) => (
         <div class="posting">
+          <Highlights photos={photosOf(e)} href={`${base}/sidequests/${e.id}/`} />
           {e.data.stops.length > 0 && <RouteMap stops={e.data.stops} legs={e.data.legs} height={460} />}
           <p><a href={`${base}/sidequests/${e.id}/`}>Read the full entry and timeline</a></p>
         </div>
@@ -39,6 +43,7 @@ const inTopic = (t: JapanTopic) => entries.filter((e) => e.data.collection === t
               {!s.section && inTopic(s).length === 0 && <p class="meta pending">Entry in preparation.</p>}
               {!s.section && inTopic(s).map((e) => (
                 <div class="posting">
+                  <Highlights photos={photosOf(e)} href={`${base}/sidequests/${e.id}/`} />
                   {e.data.stops.length > 0 && <RouteMap stops={e.data.stops} legs={e.data.legs} height={340} />}
                   <p><a href={`${base}/sidequests/${e.id}/`}>Read the full entry and timeline</a></p>
                 </div>

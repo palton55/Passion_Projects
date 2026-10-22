@@ -1,0 +1,22 @@
+---
+// A row of highlight photos near the top of a trip page; the full set stays in the Photos gallery.
+const { photos, count = 4, href } = Astro.props;
+const base = import.meta.env.BASE_URL.replace(/\/$/, '');
+const all = photos as { src: string; caption?: string }[];
+// Spread the picks across the trip rather than taking the first few days.
+const pick = all.length <= count ? all : Array.from({ length: count }, (_, i) => all[Math.round((i * (all.length - 1)) / (count - 1))]);
+---
+{pick.length > 0 && (
+  <div class="highlights">
+    {pick.map((p) => (
+      <a href={href ?? `${base}/${p.src}`} target={href ? undefined : '_blank'}>
+        <img src={`${base}/${p.src}`} alt={p.caption ?? ''} title={p.caption} loading="lazy" />
+      </a>
+    ))}
+  </div>
+)}
+<style>
+  .highlights { display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px; margin: 16px 0; }
+  .highlights img { width: 100%; aspect-ratio: 1; object-fit: cover; border-radius: 10px; display: block; }
+  @media (max-width: 560px) { .highlights { grid-template-columns: repeat(2, 1fr); } }
+</style>

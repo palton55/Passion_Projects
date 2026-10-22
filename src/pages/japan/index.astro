@@ -1,10 +1,23 @@
 ---
 import Base from '../../layouts/Base.astro';
 import Tile from '../../components/Tile.astro';
+import RouteMap from '../../components/RouteMap.astro';
 import { visited } from '../../data/visited';
 import { japanTopics } from '../../data/japan-topics';
+import { showDrafts } from '../../lib/drafts';
+import { placesFrom, areas } from '../../lib/places';
+import { getCollection } from 'astro:content';
 const count = Object.keys(visited).length;
 const base = import.meta.env.BASE_URL.replace(/\/$/, '');
+const entries = (await getCollection('adventures', ({ data }) => data.region === 'Japan' && (!data.draft || showDrafts)))
+  .sort((a, b) => (a.data.start?.valueOf() ?? 0) - (b.data.start?.valueOf() ?? 0));
+const places = placesFrom(entries);
+const years = [...new Set(places.flatMap((p) => p.trips.map((t) => t.year)))].sort();
+const dots = places.map((p) => ({ name: p.name, lat: p.lat, lng: p.lng, date: p.prefecture, note: p.trips.map((t) => t.title).join(', '), groups: [...new Set(p.trips.map((t) => t.year))] }));
+const grouped = areas.map(([area, prefs]) => ({
+  area,
+  prefs: prefs.map((pref) => ({ pref, places: places.filter((p) => p.prefecture === pref).sort((a, b) => a.name.localeCompare(b.name)) })).filter((g) => g.places.length),
+})).filter((a) => a.prefs.length);
 ---
 <Base title="Japan · Sidequest Resume" description="Trips to Japan, each with its own page, route maps, and timelines.">
   <h1>Japan</h1>
@@ -13,9 +26,40 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, '');
   <div class="grid">
     {japanTopics.map((t) => <Tile href={`/japan/${t.page}/`} label={t.label} title={t.title} meta={t.dates} blurb={t.blurb} />)}
   </div>
+  <section class="places">
+    <h2>Cities and Towns</h2>
+    <p class="lede">The {places.length} cities, towns, and landmarks visited across the Japan trips, taken from the stops on <a href={`${base}/japan/map/`}>the Japan route map</a>. Select a place on the map to see which trips included it.</p>
+    <RouteMap stops={dots} height={560} dot={5} groups={years} lines={false} />
+    <div class="areas">
+      {grouped.map((a) => (
+        <div class="area">
+          <h3>{a.area}</h3>
+          {a.prefs.map((g) => (
+            <div class="pref">
+              <p class="pref-name">{g.pref}</p>
+              <ul>
+                {g.places.map((p) => (
+                  <li>{p.name} {[...new Set(p.trips.map((t) => t.year))].map((y) => <a class="yr" href={`${base}/japan/${y}/`} title={p.trips.filter((t) => t.year === y).map((t) => t.title).join(', ')}>{y}</a>)}</li>
+                ))}
+              </ul>
+            </div>
+          ))}
+        </div>
+      ))}
+    </div>
+  </section>
 </Base>
 <style>
   .lede { font-size: 1.1rem; max-width: 680px; }
   .meta { color: var(--muted); }
   .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 20px; margin: 24px 0; }
+  .places { border-top: 1px solid var(--border); margin-top: 40px; }
+  .areas { columns: 3 240px; column-gap: 32px; margin-top: 24px; }
+  .area { break-inside: avoid; margin-bottom: 20px; }
+  .area h3 { margin: 0 0 6px; }
+  .pref { break-inside: avoid; margin-bottom: 10px; }
+  .pref-name { margin: 0; font-size: .8rem; font-weight: 600; text-transform: uppercase; letter-spacing: .04em; color: var(--muted); }
+  .pref ul { list-style: none; padding: 0; margin: 2px 0 0; }
+  .pref li { margin: 2px 0; }
+  .yr { font-size: .75rem; color: var(--muted); margin-left: 4px; }
 </style>

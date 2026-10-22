@@ -3,7 +3,7 @@
 // without legs, stops are joined in order by straight lines.
 // Optional `groups` (e.g. years) add toggle buttons; legs and stops then carry `groups: string[]`.
 // Drive legs are photo-GPS waypoints; the browser snaps them to real roads when a router answers.
-const { stops, legs = [], height = 460, dot = 8, groups = [] } = Astro.props;
+const { stops, legs = [], height = 460, dot = 8, groups = [], lines = true } = Astro.props;
 const used = new Set(legs.length ? legs.map((l: any) => l.mode) : stops.map((s: any) => s.mode));
 const legend = [
   ['drive', 'Drive'], ['shinkansen', 'Shinkansen'], ['express', 'Limited express'], ['local', 'Local train'], ['daytrip', 'Day trip'], ['bus', 'Bus'], ['ferry', 'Boat / ferry'],
@@ -11,12 +11,12 @@ const legend = [
 ].filter(([m]) => used.has(m));
 ---
 {groups.length > 1 && (
-  <div class="map-filter" role="group" aria-label="Filter by year">
+  <div class="map-filter" role="group" aria-label="Filter the map">
     <button type="button" class="all" aria-pressed="true">All</button>
     {groups.map((g: string) => <button type="button" data-group={g} aria-pressed="true">{g}</button>)}
   </div>
 )}
-<div class="route-map" style={`height: ${height}px`} data-dot={dot} data-stops={JSON.stringify(stops)} data-legs={JSON.stringify(legs)}></div>
+<div class="route-map" style={`height: ${height}px`} data-dot={dot} data-stops={JSON.stringify(stops)} data-legs={JSON.stringify(legs)} data-lines={String(lines)}></div>
 <ul class="legend">{legend.map(([m, label]) => <li class={m}>{label}</li>)}</ul>
 <script>
   import L from 'leaflet';
@@ -76,7 +76,7 @@ const legend = [
       if (leg.mode === 'drive') queued(leg.coords).then((road) => { if (road) line.setLatLngs(road); });
     });
     // Without legs, connect the stops in order with straight lines.
-    if (!legs.length) stops.forEach((s: any, i: number) => {
+    if (!legs.length && el.dataset.lines !== 'false') stops.forEach((s: any, i: number) => {
       if (i > 0) L.polyline([[stops[i - 1].lat, stops[i - 1].lng], [s.lat, s.lng]], styles[s.mode] ?? styles.other).addTo(map);
     });
     stops.forEach((s: any, i: number) => {

@@ -1,6 +1,6 @@
 ---
 title: "Kanto Day Trips"
-summary: "Fourteen day trips from Kodaira between April and August 2025 by train, bus, and car, from Asakusa, Yokohama, and Enoshima to Chichibu, Mt. Takao, Okutama, the Boso Peninsula, Atami, and Ito on the Izu Peninsula."
+summary: "Fourteen day trips from Kodaira between April and August 2025 by train, bus, and car, from Asakusa, Yokohama, and Enoshima out to Chichibu, Mt. Takao, Okutama, the Boso Peninsula, Atami, and Ito on the Izu Peninsula."
 start: 2025-04-05
 end: 2025-08-12
 category: Travel
@@ -91,4 +91,4 @@ timeline:
     title: "Ito, Izu Peninsula (scuba diving)"
 ---
 
-*The full account of this sidequest is forthcoming.*
+*The full write-up for this sidequest is coming soon.*

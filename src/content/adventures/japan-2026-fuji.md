@@ -1,6 +1,6 @@
 ---
 title: "Mt. Fuji and Tokyo"
-summary: "A drive from Yokohama to the Gotemba outlets and a night at Lake Yamanakako, followed by the Chureito Pagoda, Lake Kawaguchiko, and Fuji-Q Highland beneath Mt. Fuji, then a week around Tokyo from the Machida and Sagamihara side before the flight north from Haneda."
+summary: "A drive from Yokohama to the Gotemba outlets and a night at Lake Yamanakako, then the Chureito Pagoda, Lake Kawaguchiko, and Fuji-Q Highland under Mt. Fuji, followed by a week around Tokyo from the Machida and Sagamihara side before flying north from Haneda."
 start: 2026-03-09
 end: 2026-03-17
 category: Travel
@@ -34,7 +34,7 @@ legs:
   - {"name": "Shibuya, Harajuku and Ebisu, then to Haneda", "mode": "local", "coords": [[35.6627, 139.6671], [35.666, 139.7091], [35.6476, 139.7095], [35.5546, 139.7413], [35.5494, 139.7798]], "day": 9}
   - {"name": "Flight, Haneda to New Chitose (to confirm)", "mode": "flight", "coords": [[35.5494, 139.7798], [38.8, 141.4], [42.7752, 141.692]], "day": 9}
 parts:
-  - {"title": "Mt. Fuji and the Fuji Five Lakes", "days": [1, 2], "stops": ["Yokohama", "Gotemba Premium Outlets", "Lake Yamanakako", "Chureito Pagoda", "Lake Kawaguchiko", "Fuji-Q Highland", "Shinjuku"], "blurb": "The Gotemba outlets and a night at Lake Yamanakako, followed by the Chureito Pagoda, Lake Kawaguchiko, and Fuji-Q Highland, with the car returned in Shinjuku."}
+  - {"title": "Mt. Fuji and the Fuji Five Lakes", "days": [1, 2], "stops": ["Yokohama", "Gotemba Premium Outlets", "Lake Yamanakako", "Chureito Pagoda", "Lake Kawaguchiko", "Fuji-Q Highland", "Shinjuku"], "blurb": "The Gotemba outlets and a night at Lake Yamanakako, then the Chureito Pagoda, Lake Kawaguchiko, and Fuji-Q Highland, dropping the car off in Shinjuku."}
   - {"title": "Tokyo Days", "days": [3, 4, 5, 6, 7, 8, 9], "stops": ["Machida / Sagamihara", "Zama", "Shibuya / Harajuku", "Setagaya", "Ikebukuro", "Tachikawa", "Ebisu", "Haneda Airport"], "blurb": "A week around Tokyo from the Machida and Sagamihara side, covering Shibuya, Setagaya, Ikebukuro, and Tachikawa, and ending with a flight north from Haneda."}
 # Day-by-day timeline, generated from the trip notes by scripts/import_trips.py.
 timeline:
@@ -97,4 +97,4 @@ timeline:
     route: ["Shibuya, Harajuku and Ebisu, then to Haneda (about 20 km, 25 min).", "Flight, Haneda to New Chitose (to confirm)."]
 ---
 
-*The full account of this sidequest is forthcoming.*
+*The full write-up for this sidequest is coming soon.*

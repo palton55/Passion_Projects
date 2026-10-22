@@ -1,6 +1,6 @@
 ---
 title: "Tateyama Kurobe Alpine Route"
-summary: "Three days across the Northern Alps: the Azusa limited express to Matsumoto and Shinano-Omachi, the Tateyama Kurobe Alpine Route past Kurobe Dam to the snow walls at Murodo, and the Amaharashi Coast and Toyama before the Hokuriku Shinkansen back to Tokyo."
+summary: "Three days crossing the Northern Alps: the Azusa limited express to Matsumoto and Shinano-Omachi, the Tateyama Kurobe Alpine Route past Kurobe Dam to the snow walls at Murodo, then the Amaharashi Coast and Toyama before taking the Hokuriku Shinkansen back to Tokyo."
 start: 2025-04-25
 end: 2025-04-27
 category: Travel
@@ -49,4 +49,4 @@ timeline:
     route: ["Himi Line to Amaharashi and back, then to Toyama (about 30 km, 45 min).", "Hokuriku Shinkansen, Toyama to Tokyo (about 360 km, 1 h 45 min)."]
 ---
 
-*The full account of this sidequest is forthcoming.*
+*The full write-up for this sidequest is coming soon.*

@@ -31,7 +31,7 @@ const inTopic = (t: JapanTopic) => entries.filter((e) => e.data.collection === t
           <p><a href={`${base}/sidequests/${e.id}/`}>Read the full entry and timeline</a></p>
         </div>
       ))}
-      {!t.subtopics && inTopic(t).length === 0 && <p class="meta pending">Entry in preparation.</p>}
+      {!t.subtopics && inTopic(t).length === 0 && <p class="meta pending">Entry coming soon.</p>}
       {t.subtopics && (
         <ol class="sa-timeline">
           {t.subtopics.map((s) => (
@@ -40,7 +40,7 @@ const inTopic = (t: JapanTopic) => entries.filter((e) => e.data.collection === t
               <h3>{s.title}</h3>
               <p>{s.blurb}</p>
               {s.section && <p><a href={`${base}${s.section.href}`}>{s.section.label}</a></p>}
-              {!s.section && inTopic(s).length === 0 && <p class="meta pending">Entry in preparation.</p>}
+              {!s.section && inTopic(s).length === 0 && <p class="meta pending">Entry coming soon.</p>}
               {!s.section && inTopic(s).map((e) => (
                 <div class="posting">
                   <Highlights photos={photosOf(e)} href={`${base}/sidequests/${e.id}/`} />

@@ -1,6 +1,6 @@
 ---
 title: "Kyoto, Osaka, and Okinawa"
-summary: "Ten days in Kansai and Okinawa. Fushimi Inari in Kyoto, then Osaka with Universal Studios Japan, the Kaiyukan aquarium, and Expo 2025, followed by a flight to Okinawa and a drive from Cape Maeda and Chatan to Sesoko and Cape Hedo at the northern tip of the island."
+summary: "Ten days in Kansai and Okinawa. I started with Fushimi Inari in Kyoto, then hit Universal Studios Japan, the Kaiyukan aquarium, and Expo 2025 in Osaka, before flying to Okinawa and driving from Cape Maeda and Chatan up to Sesoko and Cape Hedo at the northern tip of the island."
 start: 2025-06-15
 end: 2025-06-24
 category: Travel
@@ -105,4 +105,4 @@ timeline:
     route: ["Drive back to Naha Airport (about 70 km, 1 h).", "Flight, Naha to Haneda."]
 ---
 
-*The full account of this sidequest is forthcoming.*
+*The full write-up for this sidequest is coming soon.*

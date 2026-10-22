@@ -7,11 +7,9 @@ import { tidy } from './places';
 type Photo = { src: string; caption?: string };
 export type PlacePage = PlaceNote & { trips: { id: string; title: string; year: string }[]; pics: Photo[] };
 
-const photos = photoData as Record<string, Photo[]>;
-const photo = (ref: string): Photo => {
-  const [id, file] = ref.split('/');
-  return photos[id]?.find((p) => p.src.endsWith(`/${id}/${file}`)) ?? { src: `photos/${ref}` };
-};
+// Looked up by path rather than entry id, since a photo folder can be shared by several entries.
+const bySrc = new Map(Object.values(photoData as Record<string, Photo[]>).flat().map((p) => [p.src, p]));
+const photo = (ref: string): Photo => bySrc.get(`photos/${ref}`) ?? { src: `photos/${ref}` };
 
 // Only places on a visible trip are listed, so draft trips stay off the main site.
 export function placePages(entries: { id: string; data: any }[]): PlacePage[] {

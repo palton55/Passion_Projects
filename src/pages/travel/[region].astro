@@ -16,7 +16,7 @@ const entries = (await getCollection('adventures', ({ data }) => [region.region]
   <p class="crumb"><a href={`${base}/travel/`}>Experience</a></p>
   <h1>{region.name}</h1>
   <p class="lede">{region.blurb}</p>
-  {entries.length === 0 && <p class="meta pending">Entries are currently in preparation.</p>}
+  {entries.length === 0 && <p class="meta pending">Entries coming soon.</p>}
   <div class="grid">{entries.map((entry) => <SidequestCard entry={entry} />)}</div>
 </Base>
 <style>

@@ -24,10 +24,10 @@ const stops = [...byName.values()];
 const mapped = entries.filter((e) => e.data.legs.some((l) => !skip.has(l.mode)));
 const years = [...new Set(mapped.map(year))].sort();
 ---
-<Base title="Japan Route Map · Sidequest Resume" description="Every route travelled in Japan, combined on one map.">
+<Base title="Japan Route Map · Sidequest Resume" description="Every route traveled in Japan, combined on one map.">
   <p class="crumb"><a href={`${base}/travel/`}>Experience</a> / <a href={`${base}/japan/`}>Japan</a></p>
   <h1>Routes Across Japan</h1>
-  <p class="lede">Every route travelled across the Japan entries, combined on one map: rail lines, drives, buses, ferries, day trips from Kodaira, and domestic flights. Use the year buttons to show or hide each year, and hover over a line to see which trip it belongs to.</p>
+  <p class="lede">Every route I've traveled in Japan, all on one map: rail lines, drives, buses, ferries, day trips from Kodaira, and domestic flights. Use the year buttons to show or hide each year, and hover over a line to see which trip it's from.</p>
   <p class="meta">{mapped.length} {mapped.length === 1 ? 'entry' : 'entries'} · {legs.length} routes</p>
   <RouteMap stops={stops} legs={legs} height={720} dot={4} groups={years} />
   {mapped.length > 0 && (

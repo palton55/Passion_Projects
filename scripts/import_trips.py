@@ -200,7 +200,9 @@ def map_data(geo, kanto=False):
             d = date.fromisoformat(p['date'])
             stops.append({'name': p['name'], 'lat': latlng(g['coordinates'])[0], 'lng': latlng(g['coordinates'])[1],
                           'date': d.strftime('%b ') + str(d.day), 'mode': 'daytrip'})
-            legs.append({'name': p['name'], 'mode': 'daytrip', 'coords': [KODAIRA, latlng(g['coordinates'])]})
+            # Confirmed modes (car, bus) draw as that mode; the rest stay generic day-trip lines.
+            mode = {'car': 'drive', 'bus': 'bus'}.get(p.get('mode'), 'daytrip')
+            legs.append({'name': p['name'], 'mode': mode, 'coords': [KODAIRA, latlng(g['coordinates'])]})
         elif g['type'] == 'Point' and p.get('kind') == 'city' and p['name'] not in {st['name'] for st in stops}:
             ll = latlng(g['coordinates'])
             stops.append({'name': p['name'], 'lat': ll[0], 'lng': ll[1],

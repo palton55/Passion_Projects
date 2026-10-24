@@ -1013,10 +1013,6 @@
   ],
   "japan-2024": [
     {
-      "src": "photos/japan-2024/01.jpg",
-      "caption": "Narita Airport"
-    },
-    {
       "src": "photos/japan-2024/08.jpg",
       "caption": "Fried rice in Oimachi"
     },
@@ -1131,10 +1127,6 @@
   ],
   "japan-2026-kanazawa": [
     {
-      "src": "photos/japan-2026/37.jpg",
-      "caption": "Welcome mural at Narita Airport"
-    },
-    {
       "src": "photos/japan-2026/19.jpg",
       "caption": "Welcome to Kanazawa"
     },
@@ -1231,7 +1223,9 @@
     {
       "src": "photos/japan-2026/05.jpg",
       "caption": "Mt. Fuji and a lakeside torii, Kawaguchiko"
-    },
+    }
+  ],
+  "japan-2026-tokyo": [
     {
       "src": "photos/japan-2026/54.jpg",
       "caption": "Back at Hitotsubashi University, Kunitachi"

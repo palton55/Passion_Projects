@@ -33,6 +33,16 @@ const adventures = defineCollection({
       mode: z.enum(['drive', 'train', 'shinkansen', 'express', 'local', 'daytrip', 'bus', 'ferry', 'flight', 'walk', 'other']),
       coords: z.array(z.tuple([z.number(), z.number()])), // [lat, lng]
     })).default([]),
+    // Optional points shown as a switchable map layer (e.g. manhole covers), off by default.
+    pois: z.array(z.object({
+      layer: z.string(),
+      name: z.string(),
+      lat: z.number(),
+      lng: z.number(),
+      day: z.number().optional(),
+      date: z.string().optional(),
+      note: z.string().optional(),
+    })).default([]),
     // Optional sections within one entry (e.g. a train journey and a road trip). Each gets its own map and timeline.
     parts: z.array(z.object({
       title: z.string(),

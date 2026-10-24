@@ -35,14 +35,14 @@ const yt = d.video?.match(/(?:v=|youtu\.be\/)([\w-]{11})/)?.[1];
     {d.companions.length > 0 && <p class="meta">With {d.companions.join(', ')}</p>}
     {yt && <div class="video"><iframe src={`https://www.youtube-nocookie.com/embed/${yt}`} title={d.title} allowfullscreen loading="lazy"></iframe></div>}
     {d.stops.length > 0 && <h2>The route</h2>}
-    {d.stops.length > 0 && <RouteMap stops={d.stops} legs={d.legs} />}
+    {d.stops.length > 0 && <RouteMap stops={d.stops} legs={d.legs} pois={d.pois} />}
     {d.parts.length === 0 && d.timeline.length > 0 && <h2>Timeline</h2>}
     {d.parts.length === 0 && d.timeline.length > 0 && <Timeline days={d.timeline} />}
     {d.parts.map((part) => (
       <section class="part">
         <h2>{part.title}</h2>
         {part.blurb && <p>{part.blurb}</p>}
-        <RouteMap stops={d.stops.filter((s) => part.stops.includes(s.name))} legs={d.legs.filter((l) => part.modes ? part.modes.includes(l.mode) : l.day !== undefined && part.days.includes(l.day))} height={400} />
+        <RouteMap stops={d.stops.filter((s) => part.stops.includes(s.name))} legs={d.legs.filter((l) => part.modes ? part.modes.includes(l.mode) : l.day !== undefined && part.days.includes(l.day))} pois={d.pois.filter((p) => p.day !== undefined && part.days.includes(p.day) && (!part.modes || part.modes.includes('drive')))} height={400} />
         <Timeline days={d.timeline.filter((t) => part.days.includes(Number(t.label.replace(/\D/g, ''))))} />
       </section>
     ))}

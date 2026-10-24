@@ -33,6 +33,18 @@ legs:
   - {"name": "Flight, New Chitose to Haneda (to confirm)", "mode": "flight", "coords": [[42.7752, 141.692], [38.8, 141.4], [35.5494, 139.7798]], "day": 6}
   - {"name": "Haneda to Roppongi and Machida", "mode": "local", "coords": [[35.5494, 139.7798], [35.6652, 139.7121], [35.542, 139.446]], "day": 6}
   - {"name": "Tokyo to Narita Airport (train, to confirm)", "mode": "express", "coords": [[35.542, 139.446], [35.6896, 139.7006], [35.6812, 139.7671], [35.73, 140.1], [35.772, 140.3929]], "day": 7}
+pois:
+  - {"layer": "Manhole covers", "name": "Obihiro", "lat": 42.9182, "lng": 143.2025, "day": 1, "date": "Mar 18, 14:25", "note": "Near Obihiro Station"}
+  - {"layer": "Manhole covers", "name": "Honbetsu", "lat": 43.1258, "lng": 143.6134, "day": 1, "date": "Mar 18, 15:42"}
+  - {"layer": "Manhole covers", "name": "Ashoro", "lat": 43.2442, "lng": 143.5467, "day": 1, "date": "Mar 18, 16:29"}
+  - {"layer": "Manhole covers", "name": "Rikubetsu", "lat": 43.4676, "lng": 143.7426, "day": 1, "date": "Mar 18, 17:10"}
+  - {"layer": "Manhole covers", "name": "Tsubetsu", "lat": 43.695, "lng": 144.0298, "day": 1, "date": "Mar 18, 17:55"}
+  - {"layer": "Manhole covers", "name": "Bihoro", "lat": 43.8365, "lng": 144.1059, "day": 1, "date": "Mar 18, 18:25", "note": "By JR Bihoro Station"}
+  - {"layer": "Manhole covers", "name": "Memanbetsu (Ozora)", "lat": 43.9156, "lng": 144.1714, "day": 1, "date": "Mar 18, 18:46"}
+  - {"layer": "Manhole covers", "name": "Abashiri", "lat": 44.0219, "lng": 144.2744, "day": 1, "date": "Mar 18, 19:17", "note": "Abashiri waterfront, first night"}
+  - {"layer": "Manhole covers", "name": "Yubetsu", "lat": 44.1846, "lng": 143.5949, "day": 2, "date": "Mar 19, 09:51"}
+  - {"layer": "Manhole covers", "name": "Monbetsu", "lat": 44.3346, "lng": 143.3723, "day": 2, "date": "Mar 19, 11:26", "note": "Two different covers side by side, by the drift-ice harbor; 2 covers"}
+  - {"layer": "Manhole covers", "name": "Kenbuchi", "lat": 44.1, "lng": 142.3591, "day": 3, "date": "Mar 20, 14:10", "note": "Two covers on display indoors at the roadside station; 2 covers"}
 parts:
   - {"title": "Hokkaido Road Trip", "days": [1, 2, 3, 4], "modes": ["drive"], "stops": ["New Chitose Airport", "Obihiro", "Ashoro / Rikubetsu", "Abashiri", "Monbetsu", "Cape Soya", "Wakkanai", "Teshio", "Asahikawa", "Biei / Furano", "Furano", "Upopoy, Shiraoi"], "blurb": "Four days of driving from New Chitose: across Tokachi to Abashiri, along the Sea of Okhotsk to the drift ice at Monbetsu, north to Cape Soya, inland to Asahikawa, Biei, and Furano, and south to Upopoy."}
   - {"title": "Sapporo and Home", "days": [4, 5, 6, 7], "stops": ["Sapporo", "New Chitose Airport"], "blurb": "A day around Odori and Tanukikoji in Sapporo, the flight back to Tokyo, and one last afternoon in Ginza before flying out of Narita."}

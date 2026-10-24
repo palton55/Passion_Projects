@@ -61,3 +61,22 @@ export function placesFrom(entries: { id: string; data: any }[]): Place[] {
   }
   return [...byName.values()];
 }
+
+// Prefectures touched by each entry: its stops, plus the vertices of legs travelled at ground level
+// (drives, buses, ferries, local trains, day trips). Shinkansen, limited express and flights only pass through.
+const passThrough = new Set(['shinkansen', 'express', 'flight']);
+export function prefecturesOf(data: any): Set<string> {
+  const out = new Set<string>();
+  for (const s of data.stops) out.add(prefectureOf(s.lat, s.lng));
+  for (const l of data.legs) if (!passThrough.has(l.mode)) for (const [lat, lng] of l.coords) out.add(prefectureOf(lat, lng));
+  return out;
+}
+
+// GeoJSON outlines for the named prefectures, with extra properties per prefecture.
+export function prefectureShapes(props: Map<string, Record<string, unknown>>) {
+  return {
+    type: 'FeatureCollection',
+    features: geo.features.filter((f: any) => props.has(f.properties.nam))
+      .map((f: any) => ({ type: 'Feature', geometry: f.geometry, properties: { name: f.properties.nam, ...props.get(f.properties.nam) } })),
+  };
+}

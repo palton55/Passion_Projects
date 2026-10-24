@@ -5,6 +5,7 @@ import Base from '../../layouts/Base.astro';
 import RouteMap from '../../components/RouteMap.astro';
 import { showDrafts } from '../../lib/drafts';
 import { getCollection } from 'astro:content';
+import { prefecturesOf, prefectureShapes } from '../../lib/places';
 const base = import.meta.env.BASE_URL.replace(/\/$/, '');
 const entries = (await getCollection('adventures', ({ data }) => data.region === 'Japan' && (!data.draft || showDrafts)))
   .sort((a, b) => (a.data.start?.valueOf() ?? 0) - (b.data.start?.valueOf() ?? 0));
@@ -23,13 +24,18 @@ for (const e of entries) for (const s of e.data.stops) {
 const stops = [...byName.values()];
 const mapped = entries.filter((e) => e.data.legs.some((l) => !skip.has(l.mode)));
 const years = [...new Set(mapped.map(year))].sort();
+// Prefectures visited, shaded under the routes; each belongs to the years it was visited so the year buttons filter it too.
+const prefYears = new Map<string, Set<string>>();
+for (const e of entries) for (const p of prefecturesOf(e.data)) (prefYears.get(p) ?? prefYears.set(p, new Set()).get(p)!).add(year(e));
+const regions = prefectureShapes(new Map([...prefYears].map(([p, ys]) => [p, { groups: [...ys].sort(), note: [...ys].sort().join(', ') }])));
 ---
 <Base title="Japan Route Map · Sidequest Resume" description="Every route traveled in Japan, combined on one map.">
   <p class="crumb"><a href={`${base}/travel/`}>Experience</a> / <a href={`${base}/japan/`}>Japan</a></p>
   <h1>Routes Across Japan</h1>
-  <p class="lede">Every route I've traveled in Japan, all on one map: rail lines, drives, buses, ferries, day trips from Kodaira, and domestic flights. Use the year buttons to show or hide each year, and hover over a line to see which trip it's from.</p>
+  <p class="lede">Every route I've traveled in Japan, all on one map: rail lines, drives, buses, ferries, day trips from Kodaira, and domestic flights. Use the year buttons to show or hide each year, and hover over a line to see which trip it's from. Visited prefectures are shaded; switch them off with the layers button in the corner of the map.</p>
   <p class="meta">{mapped.length} {mapped.length === 1 ? 'entry' : 'entries'} · {legs.length} routes</p>
-  <RouteMap stops={stops} legs={legs} height={720} dot={4} groups={years} />
+  <p class="meta">{prefYears.size} of 47 prefectures visited</p>
+  <RouteMap stops={stops} legs={legs} height={720} dot={4} groups={years} regions={regions} />
   {mapped.length > 0 && (
     <>
       <h2>Included entries</h2>

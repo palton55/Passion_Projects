@@ -26,6 +26,8 @@ const inTopic = (t: JapanTopic) => entries.filter((e) => e.data.collection === t
       <p class="lede">{t.blurb}</p>
       {inTopic(t).map((e) => (
         <div class="posting">
+          {t.subtopics && <h2>{e.data.title}</h2>}
+          {t.subtopics && <p>{e.data.summary}</p>}
           <Highlights photos={photosOf(e)} href={`${base}/sidequests/${e.id}/`} />
           {e.data.stops.length > 0 && <RouteMap stops={e.data.stops} legs={e.data.legs} height={460} />}
           <p><a href={`${base}/sidequests/${e.id}/`}>Read the full entry and timeline</a></p>

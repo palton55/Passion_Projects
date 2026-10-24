@@ -60,7 +60,7 @@ export const japanTopics: JapanTopic[] = [
     blurb: 'Back in Japan in March 2026, part of the time with my family: Kanazawa, the Fuji Five Lakes, a week in Tokyo, and a winter road trip around Hokkaido to the drift ice, Cape Soya, and Upopoy.',
     subtopics: [
       { collection: 'Kanazawa', title: 'Kanazawa', dates: 'March 6 to 8, 2026', blurb: 'Landing in Tokyo and the Hokuriku Shinkansen to Kanazawa for the Tsuzumi Gate, the Asanogawa River, and the Higashi Chaya district, heading back along the Japan Sea coast.' },
-      { collection: 'Mt. Fuji and Tokyo', title: 'Mt. Fuji and Tokyo', dates: 'March 9 to 17, 2026', blurb: 'A drive to Lake Yamanakako, the Chureito Pagoda, Lake Kawaguchiko, and Fuji-Q Highland, then a week around Tokyo.' },
+      { collection: 'Mt. Fuji', title: 'Mt. Fuji', dates: 'March 9 to 10, 2026', blurb: 'A two-day drive to a ryokan on Lake Yamanakako, the Chureito Pagoda, Lake Kawaguchiko, and Fuji-Q Highland.' },
       { collection: 'Hokkaido Road Trip', title: 'Hokkaido Road Trip', dates: 'March 18 to 24, 2026', blurb: 'Four days of winter driving from New Chitose to Abashiri, the drift ice at Monbetsu, Cape Soya, Biei, Furano, and Upopoy, then Sapporo and the trip home.' },
     ],
   },
@@ -68,6 +68,8 @@ export const japanTopics: JapanTopic[] = [
 
 export const slug = (s: string) => s.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
 
-// The topic a sub-trip belongs to, for linking an entry back to its parent section.
+// The topic a sub-trip belongs to, for linking an entry back to its parent section. Entries filed directly under a
+// topic that also has sub-trips (e.g. the Tokyo week in Japan 2026) link back to it too.
 export const parentOf = (collection?: string) =>
-  japanTopics.find((t) => t.subtopics?.some((s) => s.collection === collection));
+  japanTopics.find((t) => t.subtopics?.some((s) => s.collection === collection))
+  ?? japanTopics.find((t) => t.subtopics && t.collection === collection);

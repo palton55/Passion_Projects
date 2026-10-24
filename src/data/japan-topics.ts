@@ -23,7 +23,7 @@ export const japanTopics: JapanTopic[] = [
     label: '2023',
     title: 'Japan 2023: First Visit',
     dates: 'March 11 to 19, 2023',
-    blurb: 'My first trip to Japan, over freshman spring break with friends and one year of Japanese under my belt. Nine days by train from Tokyo to Osaka and Kyoto, then up on the Thunderbird to Tsuruga on the Sea of Japan coast for a homestay, with a day of skiing at Okuibuki in Shiga before heading back to Tokyo.',
+    blurb: 'My first trip to Japan, over freshman spring break with a friend and one year of Japanese under my belt. Nine days by train from Tokyo to Osaka and Kyoto, then up on the Thunderbird to Tsuruga on the Sea of Japan coast for a homestay, with a day of skiing at Okuibuki in Shiga before heading back to Tokyo.',
   },
   {
     collection: 'Japan 2024',

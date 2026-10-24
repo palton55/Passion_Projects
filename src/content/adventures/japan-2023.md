@@ -1,12 +1,12 @@
 ---
 title: "First Visit to Japan"
-summary: "My first trip to Japan: nine days over freshman spring break with friends. We started in Tokyo, took the Shinkansen to Osaka and Kyoto, and then headed to Tsuruga on the Sea of Japan coast for a homestay, with a day of skiing at Okuibuki. It was my first real chance to use a year of classroom Japanese."
+summary: "My first trip to Japan: nine days over freshman spring break with a friend. We started in Tokyo, took the Shinkansen to Osaka and Kyoto, and then headed to Tsuruga on the Sea of Japan coast for a homestay, with a day of skiing at Okuibuki. It was my first real chance to use a year of classroom Japanese."
 start: 2023-03-11
 end: 2023-03-19
 category: Travel
 region: Japan
 collection: Japan 2023
-companions: [friends]
+companions: [a friend]
 draft: true              # stays a draft until the story and the Mar 18 stop are filled in
 # Cities visited and the route between them (from trips/japan-2023/stops.geojson). Rail lines are assumed through main stations.
 stops:

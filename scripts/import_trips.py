@@ -89,7 +89,7 @@ ENTRIES = [
     dict(id='japan-2026-hokkaido', dir='japan-2026', days=list(range(13, 20)), pois=[('japan-2026/manholes.geojson', 'Manhole covers')], title='Hokkaido Road Trip', collection='Hokkaido Road Trip',
          summary='A winter road trip around Hokkaido from New Chitose: across Tokachi to Abashiri, along the Sea of Okhotsk to the drift ice at Monbetsu, up to Cape Soya, inland to Asahikawa, Biei, and Furano, and down to Upopoy, the National Ainu Museum, followed by a day in Sapporo and the trip home through Tokyo.',
          parts=[
-             dict(title='Hokkaido Road Trip', days=[13, 14, 15, 16], modes=['drive'],
+             dict(title='Hokkaido Road Trip', days=[13, 14, 15, 16], modes=['drive'], note='Why this route: the manhole covers',
                   stops=['New Chitose Airport', 'Obihiro', 'Ashoro / Rikubetsu', 'Abashiri', 'Monbetsu', 'Cape Soya', 'Wakkanai', 'Teshio',
                          'Asahikawa', 'Biei / Furano', 'Furano', 'Upopoy, Shiraoi'],
                   blurb='Four days of driving from New Chitose: across Tokachi to Abashiri, along the Sea of Okhotsk to the drift ice at Monbetsu, north to Cape Soya, inland to Asahikawa, Biei, and Furano, and south to Upopoy.'),
@@ -374,10 +374,16 @@ def load_pois(e, start):
             d = date.fromisoformat(p['date'])
             count = p.get('count', 1)
             note = '; '.join(x for x in [p.get('note', ''), f'{count} covers' if count > 1 else ''] if x)
-            out.append({'layer': layer, 'name': p['town'], 'lat': ll[0], 'lng': ll[1],
+            out.append({'layer': layer, 'name': p['town'], 'lat': ll[0], 'lng': ll[1], **({'highlight': True} if p.get('way_up') else {}),
                         'day': (d - date.fromisoformat(str(start))).days + 1,
                         'date': d.strftime('%b ') + str(d.day) + (f", {p['time']}" if p.get('time') else ''), **({'note': note} if note else {})})
     return out
+
+
+def section_text(d, heading):
+    """Paragraphs under a `## heading` in a trip's road-map.md, without images."""
+    m = re.search(rf'^## {re.escape(heading)}\n(.*?)(?=^## |\Z)', (TRIPS / d / 'road-map.md').read_text(), re.S | re.M)
+    return [x.strip() for x in m.group(1).split('\n\n') if x.strip() and not x.strip().startswith('![')]
 
 
 def write_entry(e):
@@ -416,7 +422,7 @@ def write_entry(e):
         fm += [f'  - {j(pt)}' for pt in load_pois(e, dates[0])]
     if 'parts' in e:
         fm.append('parts:')
-        fm += [f'  - {j(pt)}' for pt in e['parts']]
+        fm += [f'  - {j({**pt, "note": {"title": pt["note"], "text": section_text(e["dir"], pt["note"])}} if "note" in pt else pt)}' for pt in e['parts']]
     fm += timeline_yaml(days)
     fm += ['---', '', '*The full write-up for this sidequest is coming soon.*', '']
     (OUT / f'{e["id"]}.md').write_text('\n'.join(fm))

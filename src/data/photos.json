@@ -1131,12 +1131,20 @@
   ],
   "japan-2026-kanazawa": [
     {
+      "src": "photos/japan-2026/37.jpg",
+      "caption": "Welcome mural at Narita Airport"
+    },
+    {
       "src": "photos/japan-2026/19.jpg",
       "caption": "Welcome to Kanazawa"
     },
     {
       "src": "photos/japan-2026/01.jpg",
       "caption": "Tsuzumi Gate, Kanazawa Station"
+    },
+    {
+      "src": "photos/japan-2026/38.jpg",
+      "caption": "Kimono Pikachu at the Pokemon Center, Kanazawa"
     },
     {
       "src": "photos/japan-2026/02.jpg",
@@ -1147,11 +1155,67 @@
       "caption": "Higashi Chaya district, Kanazawa"
     },
     {
+      "src": "photos/japan-2026/39.jpg",
+      "caption": "Goshuin book from Oyama Shrine, Kanazawa"
+    },
+    {
       "src": "photos/japan-2026/20.jpg",
       "caption": "Snow along the Japan Sea coast from the Hokuriku Shinkansen"
+    },
+    {
+      "src": "photos/japan-2026/40.jpg",
+      "caption": "Snow along the Japan Sea coast from the Hokuriku Shinkansen"
+    },
+    {
+      "src": "photos/japan-2026/41.jpg",
+      "caption": "Snowfields near Joetsu from the train"
+    },
+    {
+      "src": "photos/japan-2026/42.jpg",
+      "caption": "Back at Tokyo Station"
     }
   ],
   "japan-2026-fuji": [
+    {
+      "src": "photos/japan-2026/43.jpg",
+      "caption": "Right-hand drive, setting off from Yokohama"
+    },
+    {
+      "src": "photos/japan-2026/44.jpg",
+      "caption": "Mt. Fuji Pikachu, Gotemba"
+    },
+    {
+      "src": "photos/japan-2026/45.jpg",
+      "caption": "Lake Yamanakako at dusk"
+    },
+    {
+      "src": "photos/japan-2026/46.jpg",
+      "caption": "Shore of Lake Yamanakako"
+    },
+    {
+      "src": "photos/japan-2026/47.jpg",
+      "caption": "Ryokan room at Lake Yamanakako"
+    },
+    {
+      "src": "photos/japan-2026/48.jpg",
+      "caption": "Lanterns along the ryokan path at night"
+    },
+    {
+      "src": "photos/japan-2026/49.jpg",
+      "caption": "Ryokan vending machines"
+    },
+    {
+      "src": "photos/japan-2026/50.jpg",
+      "caption": "In yukata at the ryokan"
+    },
+    {
+      "src": "photos/japan-2026/51.jpg",
+      "caption": "Morning view over Lake Yamanakako"
+    },
+    {
+      "src": "photos/japan-2026/52.jpg",
+      "caption": "Mt. Fuji from the ryokan"
+    },
     {
       "src": "photos/japan-2026/21.jpg",
       "caption": "Arakura Fuji Sengen Shrine, below Chureito Pagoda"
@@ -1161,24 +1225,80 @@
       "caption": "Mt. Fuji over Lake Kawaguchiko"
     },
     {
+      "src": "photos/japan-2026/53.jpg",
+      "caption": "Lake Kawaguchiko marker"
+    },
+    {
       "src": "photos/japan-2026/05.jpg",
       "caption": "Mt. Fuji and a lakeside torii, Kawaguchiko"
+    },
+    {
+      "src": "photos/japan-2026/54.jpg",
+      "caption": "Back at Hitotsubashi University, Kunitachi"
+    },
+    {
+      "src": "photos/japan-2026/55.jpg",
+      "caption": "Shibuya Scramble Crossing"
+    },
+    {
+      "src": "photos/japan-2026/56.jpg",
+      "caption": "Chiikawa shop, Shibuya"
+    },
+    {
+      "src": "photos/japan-2026/57.jpg",
+      "caption": "Side street in Shibuya"
+    },
+    {
+      "src": "photos/japan-2026/58.jpg",
+      "caption": "Chiikawa ramen"
+    },
+    {
+      "src": "photos/japan-2026/59.jpg",
+      "caption": "Chiikawa immersive exhibit, Ikebukuro"
     },
     {
       "src": "photos/japan-2026/22.jpg",
       "caption": "Chiikawa at Sunshine City, Ikebukuro"
     },
     {
+      "src": "photos/japan-2026/60.jpg",
+      "caption": "Chiikawa exhibit, Ikebukuro"
+    },
+    {
+      "src": "photos/japan-2026/61.jpg",
+      "caption": "Chiikawa figure, Ikebukuro"
+    },
+    {
+      "src": "photos/japan-2026/62.jpg",
+      "caption": "Chiikawa exhibit, Sunshine City"
+    },
+    {
       "src": "photos/japan-2026/23.jpg",
       "caption": "Overwatch at an esports cafe, Ikebukuro"
+    },
+    {
+      "src": "photos/japan-2026/63.jpg",
+      "caption": "Overwatch esports cafe, Ikebukuro"
     },
     {
       "src": "photos/japan-2026/24.jpg",
       "caption": "Teishoku lunch in Tachikawa"
     },
     {
+      "src": "photos/japan-2026/64.jpg",
+      "caption": "Craft beer on the lawn in Tachikawa"
+    },
+    {
       "src": "photos/japan-2026/25.jpg",
       "caption": "Strawberry pancakes in Shibuya"
+    },
+    {
+      "src": "photos/japan-2026/65.jpg",
+      "caption": "Chiikawa latte art, Shibuya"
+    },
+    {
+      "src": "photos/japan-2026/66.jpg",
+      "caption": "Yamanote Line platform"
     },
     {
       "src": "photos/japan-2026/26.jpg",

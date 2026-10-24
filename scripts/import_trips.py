@@ -71,15 +71,16 @@ ENTRIES = [
     dict(id='2025-kanto-day-trips', dir='2025-study-abroad/kanto-day-trips', title='Kanto Day Trips', collection='Kanto Day Trips',
          summary='Fourteen day trips from Kodaira between April and August 2025 by train, bus, and car, from Asakusa, Yokohama, and Enoshima out to Chichibu, Mt. Takao, Okutama, the Boso Peninsula, Atami, and Ito on the Izu Peninsula.'),
     # Japan 2026 (trips/japan-2026/road-map.md): Kanazawa, Mt. Fuji and Hokkaido as their own entries (Patrick, Oct 22 2026),
-    # and the Tokyo week as part of the Japan 2026 page itself rather than a sidequest (Patrick, Oct 24 2026). `days` picks
+    # and the Tokyo week as part of the Japan 2026 page itself rather than a sidequest (Patrick, Oct 24 2026). The page runs
+    # in order: arriving in Tokyo, Kanazawa, Mt. Fuji, Tokyo, Hokkaido (Patrick, Oct 24 2026). `days` picks
     # each entry's days from the trip, renumbered from 1. Told from Patrick's own perspective, with no companions named.
-    dict(id='japan-2026-kanazawa', dir='japan-2026', days=[1, 2, 3], title='Kanazawa', collection='Kanazawa',
-         summary='The first few days of March 2026. I landed at Narita and spent a night in Shinjuku, then took the Hokuriku Shinkansen to Kanazawa for the Tsuzumi Gate at Kanazawa Station, the Asanogawa River, and the lantern-lit lanes of the Higashi Chaya district, heading back the next morning along the Japan Sea coast past Toyama and Itoigawa.',
-         stops=['Narita Airport', 'Shinjuku', 'Tokyo Station', 'Omiya', 'Kanazawa', 'Toyama', 'Itoigawa / Joetsu', 'Yokohama', 'Machida']),
+    dict(id='japan-2026-kanazawa', dir='japan-2026', days=[2, 3], title='Kanazawa', collection='Kanazawa',
+         summary='The Hokuriku Shinkansen from Tokyo Station to Kanazawa for the Tsuzumi Gate at Kanazawa Station, the Asanogawa River, and the lantern-lit lanes of the Higashi Chaya district, heading back the next morning along the Japan Sea coast past Toyama and Itoigawa.',
+         stops=['Tokyo Station', 'Omiya', 'Kanazawa', 'Toyama', 'Itoigawa / Joetsu', 'Yokohama', 'Machida']),
     dict(id='japan-2026-fuji', dir='japan-2026', days=[4, 5], title='Mt. Fuji', collection='Mt. Fuji',
          summary='A two-day drive from Yokohama to the Gotemba outlets and a night at a ryokan on Lake Yamanakako, then the Chureito Pagoda, Lake Kawaguchiko, and Fuji-Q Highland under Mt. Fuji, dropping the car off in Shinjuku.',
          stops=['Yokohama', 'Gotemba Premium Outlets', 'Lake Yamanakako', 'Chureito Pagoda', 'Lake Kawaguchiko', 'Fuji-Q Highland', 'Shinjuku']),
-    dict(id='japan-2026-tokyo', dir='japan-2026', days=list(range(6, 13)), title='Tokyo Days', collection='Japan 2026',
+    dict(id='japan-2026-tokyo', dir='japan-2026', days=list(range(6, 13)), title='Tokyo Days', collection='Tokyo Days',
          summary='A week around Tokyo from the Machida and Sagamihara side: back at Hitotsubashi in Kunitachi, Shibuya, Setagaya, the Chiikawa exhibit and an esports cafe in Ikebukuro, and Tachikawa, ending with a flight north from Haneda.',
          stops=['Machida / Sagamihara', 'Zama', 'Shibuya / Harajuku', 'Setagaya', 'Ikebukuro', 'Tachikawa', 'Ebisu', 'Haneda Airport']),
     dict(id='japan-2026-hokkaido', dir='japan-2026', days=list(range(13, 20)), pois=[('japan-2026/manholes.geojson', 'Manhole covers')], title='Hokkaido Road Trip', collection='Hokkaido Road Trip',

@@ -5,7 +5,7 @@ start: 2026-03-11
 end: 2026-03-17
 category: Travel
 region: Japan
-collection: "Japan 2026"
+collection: "Tokyo Days"
 companions: []
 draft: true
 # Cities and route from japan-2026/stops.geojson.

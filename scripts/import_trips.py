@@ -86,7 +86,7 @@ ENTRIES = [
                   stops=['Machida / Sagamihara', 'Zama', 'Shibuya / Harajuku', 'Setagaya', 'Ikebukuro', 'Tachikawa', 'Ebisu', 'Haneda Airport'],
                   blurb='A week around Tokyo from the Machida and Sagamihara side, covering Shibuya, Setagaya, Ikebukuro, and Tachikawa, and ending with a flight north from Haneda.'),
          ]),
-    dict(id='japan-2026-hokkaido', dir='japan-2026', days=list(range(13, 20)), title='Hokkaido Road Trip', collection='Hokkaido Road Trip',
+    dict(id='japan-2026-hokkaido', dir='japan-2026', days=list(range(13, 20)), pois=[('japan-2026/manholes.geojson', 'Manhole covers')], title='Hokkaido Road Trip', collection='Hokkaido Road Trip',
          summary='A winter road trip around Hokkaido from New Chitose: across Tokachi to Abashiri, along the Sea of Okhotsk to the drift ice at Monbetsu, up to Cape Soya, inland to Asahikawa, Biei, and Furano, and down to Upopoy, the National Ainu Museum, followed by a day in Sapporo and the trip home through Tokyo.',
          parts=[
              dict(title='Hokkaido Road Trip', days=[13, 14, 15, 16], modes=['drive'],
@@ -365,6 +365,21 @@ def pick_days(e, stops, legs, days):
     return picked, legs, days, [d['date'] for d in days]
 
 
+def load_pois(e, start):
+    """Extra map points from a geojson file (e.g. manhole covers), each with its day number in the entry."""
+    out = []
+    for path, layer in e['pois']:
+        for f in json.loads((TRIPS / path).read_text())['features']:
+            p, ll = f['properties'], latlng(f['geometry']['coordinates'])
+            d = date.fromisoformat(p['date'])
+            count = p.get('count', 1)
+            note = '; '.join(x for x in [p.get('note', ''), f'{count} covers' if count > 1 else ''] if x)
+            out.append({'layer': layer, 'name': p['town'], 'lat': ll[0], 'lng': ll[1],
+                        'day': (d - date.fromisoformat(str(start))).days + 1,
+                        'date': d.strftime('%b ') + str(d.day) + (f", {p['time']}" if p.get('time') else ''), **({'note': note} if note else {})})
+    return out
+
+
 def write_entry(e):
     # An entry can combine several road-map folders (e.g. two parts of one trip); days are numbered across them.
     stops, legs, dates, days = [], [], [], []
@@ -396,6 +411,9 @@ def write_entry(e):
     fm.append('legs:')
     fm += [f'  - {j(l)}' for l in legs]
     consolidate(days, legs)
+    if 'pois' in e:
+        fm.append('pois:')
+        fm += [f'  - {j(pt)}' for pt in load_pois(e, dates[0])]
     if 'parts' in e:
         fm.append('parts:')
         fm += [f'  - {j(pt)}' for pt in e['parts']]

@@ -3,7 +3,9 @@
 // without legs, stops are joined in order by straight lines.
 // Optional `groups` (e.g. years) add toggle buttons; legs and stops then carry `groups: string[]`.
 // Drive legs are photo-GPS waypoints; the browser snaps them to real roads when a router answers.
-const { stops, legs = [], height = 460, dot = 8, groups = [], lines = true } = Astro.props;
+// Optional `regions` (GeoJSON, e.g. prefectures visited) and `pois` (points with a `layer` name, e.g. manhole covers)
+// become overlays in the layer control; regions start on, point layers start off.
+const { stops, legs = [], height = 460, dot = 8, groups = [], lines = true, regions = null, regionsLabel = 'Prefectures visited', pois = [] } = Astro.props;
 const used = new Set(legs.length ? legs.map((l: any) => l.mode) : stops.map((s: any) => s.mode));
 const legend = [
   ['drive', 'Drive'], ['shinkansen', 'Shinkansen'], ['express', 'Limited express'], ['local', 'Local train'], ['daytrip', 'Day trip'], ['bus', 'Bus'], ['ferry', 'Boat / ferry'],
@@ -16,7 +18,8 @@ const legend = [
     {groups.map((g: string) => <button type="button" data-group={g} aria-pressed="true">{g}</button>)}
   </div>
 )}
-<div class="route-map" style={`height: ${height}px`} data-dot={dot} data-stops={JSON.stringify(stops)} data-legs={JSON.stringify(legs)} data-lines={String(lines)}></div>
+<div class="route-map" style={`height: ${height}px`} data-dot={dot} data-stops={JSON.stringify(stops)} data-legs={JSON.stringify(legs)} data-lines={String(lines)}
+  data-regions={regions ? JSON.stringify(regions) : ''} data-regions-label={regionsLabel} data-pois={JSON.stringify(pois)}></div>
 <ul class="legend">{legend.map(([m, label]) => <li class={m}>{label}</li>)}</ul>
 <script>
   import L from 'leaflet';
@@ -68,8 +71,28 @@ const legend = [
     const map = L.map(el, { scrollWheelZoom: false });
     const streets = L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', { maxZoom: 19, attribution: '© OpenStreetMap contributors' }).addTo(map);
     const satellite = L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}', { maxZoom: 19, attribution: 'Imagery © Esri, Maxar, Earthstar Geographics' });
-    L.control.layers({ Map: streets, Satellite: satellite }, undefined, { position: 'topright' }).addTo(map);
-    const layers: { groups?: string[]; layer: L.Layer }[] = [];
+    const overlays: Record<string, L.Layer> = {};
+    // host = where a layer lives (the map, or an overlay group the layer control can switch off).
+    const layers: { groups?: string[]; layer: L.Layer; host?: L.LayerGroup }[] = [];
+    if (el.dataset.regions) {
+      map.createPane('regions').style.zIndex = '350'; // under the route lines
+      const shaded = L.layerGroup().addTo(map);
+      JSON.parse(el.dataset.regions).features.forEach((f: any) => {
+        const layer = L.geoJSON(f, { style: { color: '#c2410c', weight: 1, fillColor: '#f97316', fillOpacity: .18 }, pane: 'regions' })
+          .bindTooltip(`${f.properties.name}${f.properties.note ? ` · ${f.properties.note}` : ''}`, { sticky: true });
+        layer.addTo(shaded);
+        layers.push({ groups: f.properties.groups, layer, host: shaded });
+      });
+      overlays[el.dataset.regionsLabel || 'Regions'] = shaded;
+    }
+    const pois = JSON.parse(el.dataset.pois || '[]');
+    pois.forEach((p: any) => {
+      const group = (overlays[p.layer] as L.LayerGroup) ?? (overlays[p.layer] = L.layerGroup());
+      L.marker([p.lat, p.lng], { icon: L.divIcon({ className: 'poi-marker', iconSize: [16, 16] }) })
+        .bindPopup(`<strong>${p.name}</strong>${p.date ? `<br>${p.date}` : ''}${p.note ? `<br>${p.note}` : ''}`)
+        .bindTooltip(p.name, { direction: 'top', offset: [0, -8] }).addTo(group as L.LayerGroup);
+    });
+    L.control.layers({ Map: streets, Satellite: satellite }, overlays, { position: 'topright' }).addTo(map);
     legs.forEach((leg: any) => {
       const line = L.polyline(leg.coords, styles[leg.mode] ?? styles.other).bindTooltip(leg.name).addTo(map);
       layers.push({ groups: leg.groups, layer: line });
@@ -94,10 +117,11 @@ const legend = [
       const apply = () => {
         const on = new Set(buttons.filter((b) => b.getAttribute('aria-pressed') === 'true').map((b) => b.dataset.group));
         allButton.setAttribute('aria-pressed', String(on.size === buttons.length));
-        layers.forEach(({ groups, layer }) => {
+        layers.forEach(({ groups, layer, host }) => {
           const show = !groups || groups.some((g) => on.has(g));
-          if (show && !map.hasLayer(layer)) layer.addTo(map);
-          if (!show && map.hasLayer(layer)) map.removeLayer(layer);
+          const h = host ?? map;
+          if (show && !h.hasLayer(layer)) h.addLayer(layer);
+          if (!show && h.hasLayer(layer)) h.removeLayer(layer);
         });
       };
       buttons.forEach((b) => b.addEventListener('click', () => {
@@ -127,5 +151,6 @@ const legend = [
   .legend .flight::before { border-color: #6b665e; border-top-style: dotted; }
   :global(.route-map .stop-label) { background: transparent; border: 0; box-shadow: none; font-weight: 600; color: #1f1d1a; text-shadow: 0 0 3px #fff, 0 0 3px #fff; }
   :global(.route-map .stop-label::before) { display: none; }
+  :global(.route-map .poi-marker) { width: 16px; height: 16px; border-radius: 50%; background: #374151; border: 3px solid #fbbf24; box-shadow: 0 0 0 1.5px #fff; box-sizing: border-box; }
   :global(.route-map .empty) { padding: 24px; color: var(--muted); }
 </style>

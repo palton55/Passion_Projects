@@ -4,7 +4,7 @@
 // Optional `groups` (e.g. years) add toggle buttons; legs and stops then carry `groups: string[]`.
 // Drive legs are photo-GPS waypoints; the browser snaps them to real roads when a router answers.
 // Optional `regions` (GeoJSON, e.g. prefectures visited) and `pois` (points with a `layer` name, e.g. manhole covers)
-// become overlays in the layer control; regions start on, point layers start off.
+// become overlays in the layer control; regions start on, point layers start off unless a point has `highlight`.
 const { stops, legs = [], height = 460, dot = 8, groups = [], lines = true, regions = null, regionsLabel = 'Prefectures visited', pois = [] } = Astro.props;
 const used = new Set(legs.length ? legs.map((l: any) => l.mode) : stops.map((s: any) => s.mode));
 const legend = [
@@ -68,7 +68,7 @@ const legend = [
     const stops = JSON.parse(el.dataset.stops || '[]');
     const legs = JSON.parse(el.dataset.legs || '[]');
     if (!stops.length) { el.innerHTML = '<p class="empty">Route map coming soon.</p>'; return; }
-    const map = L.map(el, { scrollWheelZoom: false });
+    const map = L.map(el, { scrollWheelZoom: false, zoomSnap: 0.25 });
     const streets = L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', { maxZoom: 19, attribution: '© OpenStreetMap contributors' }).addTo(map);
     const satellite = L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}', { maxZoom: 19, attribution: 'Imagery © Esri, Maxar, Earthstar Geographics' });
     const overlays: Record<string, L.Layer> = {};
@@ -86,11 +86,19 @@ const legend = [
       overlays[el.dataset.regionsLabel || 'Regions'] = shaded;
     }
     const pois = JSON.parse(el.dataset.pois || '[]');
+    // Highlighted points get a label unless a stop already names the town; labels alternate sides
+    // so neighboring towns don't stack on each other.
+    const named = new Set(stops.map((s: any) => s.name));
+    let side = 0;
     pois.forEach((p: any) => {
+      const label = p.highlight && !named.has(p.name);
+      const dir = label && side++ % 2 ? 'left' : 'right';
       const group = (overlays[p.layer] as L.LayerGroup) ?? (overlays[p.layer] = L.layerGroup());
-      L.marker([p.lat, p.lng], { icon: L.divIcon({ className: 'poi-marker', iconSize: [16, 16] }) })
+      L.marker([p.lat, p.lng], { icon: L.divIcon({ className: p.highlight ? 'poi-marker poi-highlight' : 'poi-marker', iconSize: [16, 16] }), zIndexOffset: 500 })
         .bindPopup(`<strong>${p.name}</strong>${p.date ? `<br>${p.date}` : ''}${p.note ? `<br>${p.note}` : ''}`)
-        .bindTooltip(p.name, { direction: 'top', offset: [0, -8] }).addTo(group as L.LayerGroup);
+        .bindTooltip(label ? p.name.replace(/ \(.*\)$/, '') : p.name, label ? { permanent: true, direction: dir, offset: [dir === 'left' ? -8 : 8, 0], className: 'poi-label' } : { direction: 'top', offset: [0, -8] })
+        .addTo(group as L.LayerGroup);
+      if (p.highlight) (group as L.LayerGroup).addTo(map);
     });
     L.control.layers({ Map: streets, Satellite: satellite }, overlays, { position: 'topright' }).addTo(map);
     legs.forEach((leg: any) => {
@@ -152,5 +160,8 @@ const legend = [
   :global(.route-map .stop-label) { background: transparent; border: 0; box-shadow: none; font-weight: 600; color: #1f1d1a; text-shadow: 0 0 3px #fff, 0 0 3px #fff; }
   :global(.route-map .stop-label::before) { display: none; }
   :global(.route-map .poi-marker) { width: 16px; height: 16px; border-radius: 50%; background: #374151; border: 3px solid #fbbf24; box-shadow: 0 0 0 1.5px #fff; box-sizing: border-box; }
+  :global(.route-map .poi-highlight) { background: #fbbf24; border-color: #92400e; }
+  :global(.route-map .poi-label) { background: #fef3c7; border-color: #f59e0b; color: #78350f; font-weight: 600; font-size: .75rem; padding: 1px 6px; box-shadow: none; }
+  :global(.route-map .poi-label::before) { display: none; }
   :global(.route-map .empty) { padding: 24px; color: var(--muted); }
 </style>

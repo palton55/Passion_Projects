@@ -42,6 +42,8 @@ const yt = d.video?.match(/(?:v=|youtu\.be\/)([\w-]{11})/)?.[1];
       <section class="part">
         <h2>{part.title}</h2>
         {part.blurb && <p>{part.blurb}</p>}
+        {part.note && <h3>{part.note.title}</h3>}
+        {part.note?.text.map((t) => <p>{t}</p>)}
         <RouteMap stops={d.stops.filter((s) => part.stops.includes(s.name))} legs={d.legs.filter((l) => part.modes ? part.modes.includes(l.mode) : l.day !== undefined && part.days.includes(l.day))} pois={d.pois.filter((p) => p.day !== undefined && part.days.includes(p.day) && (!part.modes || part.modes.includes('drive')))} height={400} />
         <Timeline days={d.timeline.filter((t) => part.days.includes(Number(t.label.replace(/\D/g, ''))))} />
       </section>

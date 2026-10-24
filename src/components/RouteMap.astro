@@ -86,15 +86,19 @@ const legend = [
       overlays[el.dataset.regionsLabel || 'Regions'] = shaded;
     }
     const pois = JSON.parse(el.dataset.pois || '[]');
-    // Highlighted points get a label unless a stop already names the town; labels alternate sides
-    // so neighboring towns don't stack on each other.
+    // Highlighted points get a label unless a stop already names the town; labels point away from the middle of
+    // the map so they stay clear of the route.
     const named = new Set(stops.map((s: any) => s.name));
-    let side = 0;
+    // In a layer with highlighted points, the rest are drawn smaller and paler.
+    const highlighted = new Set(pois.filter((p: any) => p.highlight).map((p: any) => p.layer));
+    const midLng = stops.reduce((a: number, s: any) => a + s.lng, 0) / Math.max(stops.length, 1);
     pois.forEach((p: any) => {
       const label = p.highlight && !named.has(p.name);
-      const dir = label && side++ % 2 ? 'left' : 'right';
+      const dir = label && p.lng < midLng ? 'left' : 'right';
       const group = (overlays[p.layer] as L.LayerGroup) ?? (overlays[p.layer] = L.layerGroup());
-      L.marker([p.lat, p.lng], { icon: L.divIcon({ className: p.highlight ? 'poi-marker poi-highlight' : 'poi-marker', iconSize: [16, 16] }), zIndexOffset: 500 })
+      L.marker([p.lat, p.lng], { icon: p.highlight ? L.divIcon({ className: 'poi-marker poi-highlight', iconSize: [16, 16] })
+        : highlighted.has(p.layer) ? L.divIcon({ className: 'poi-marker poi-minor', iconSize: [11, 11] })
+        : L.divIcon({ className: 'poi-marker', iconSize: [16, 16] }), zIndexOffset: 500 })
         .bindPopup(`<strong>${p.name}</strong>${p.date ? `<br>${p.date}` : ''}${p.note ? `<br>${p.note}` : ''}`)
         .bindTooltip(label ? p.name.replace(/ \(.*\)$/, '') : p.name, label ? { permanent: true, direction: dir, offset: [dir === 'left' ? -8 : 8, 0], className: 'poi-label' } : { direction: 'top', offset: [0, -8] })
         .addTo(group as L.LayerGroup);
@@ -161,6 +165,7 @@ const legend = [
   :global(.route-map .stop-label::before) { display: none; }
   :global(.route-map .poi-marker) { width: 16px; height: 16px; border-radius: 50%; background: #374151; border: 3px solid #fbbf24; box-shadow: 0 0 0 1.5px #fff; box-sizing: border-box; }
   :global(.route-map .poi-highlight) { background: #fbbf24; border-color: #92400e; }
+  :global(.route-map .poi-minor) { width: 11px; height: 11px; border-width: 2px; background: #fef3c7; border-color: #d97706; }
   :global(.route-map .poi-label) { background: #fef3c7; border-color: #f59e0b; color: #78350f; font-weight: 600; font-size: .75rem; padding: 1px 6px; box-shadow: none; }
   :global(.route-map .poi-label::before) { display: none; }
   :global(.route-map .empty) { padding: 24px; color: var(--muted); }

@@ -374,7 +374,7 @@ def load_pois(e, start):
             if d:
                 day = (d - date.fromisoformat(str(start))).days + 1
             count = p.get('count', 1)
-            approx = 'location approximate' if p.get('source', 'photo') != 'photo' else ''
+            approx = 'location approximate' if 'approximate' in p.get('source', '') else ''
             note = '; '.join(x for x in [p.get('note', ''), f'{count} covers' if count > 1 else '', approx] if x)
             note = note[:1].upper() + note[1:]
             out.append({'layer': layer, 'name': p['town'], 'lat': ll[0], 'lng': ll[1], **({'highlight': True} if p.get('way_up') else {}),

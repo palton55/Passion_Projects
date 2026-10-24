@@ -9,6 +9,8 @@ export interface JapanTopic {
   title: string;
   dates?: string;
   blurb: string;
+  // A short stop in the timeline with no entry of its own (no "coming soon" note).
+  brief?: boolean;
   // Topics with their own section elsewhere on the site link there instead of embedding the posting.
   section?: { href: string; label: string };
   subtopics?: JapanTopic[];
@@ -59,8 +61,10 @@ export const japanTopics: JapanTopic[] = [
     dates: 'March 6 to 24, 2026',
     blurb: 'Back in Japan in March 2026, part of the time with my family: Kanazawa, the Fuji Five Lakes, a week in Tokyo, and a winter road trip around Hokkaido to the drift ice, Cape Soya, and Upopoy.',
     subtopics: [
-      { collection: 'Kanazawa', title: 'Kanazawa', dates: 'March 6 to 8, 2026', blurb: 'Landing in Tokyo and the Hokuriku Shinkansen to Kanazawa for the Tsuzumi Gate, the Asanogawa River, and the Higashi Chaya district, heading back along the Japan Sea coast.' },
+      { collection: 'Arriving in Tokyo', title: 'Tokyo', dates: 'March 6, 2026', blurb: 'Landing at Narita in the afternoon and a first night in Shinjuku.', brief: true },
+      { collection: 'Kanazawa', title: 'Kanazawa', dates: 'March 7 to 8, 2026', blurb: 'The Hokuriku Shinkansen to Kanazawa for the Tsuzumi Gate, the Asanogawa River, and the Higashi Chaya district, heading back along the Japan Sea coast.' },
       { collection: 'Mt. Fuji', title: 'Mt. Fuji', dates: 'March 9 to 10, 2026', blurb: 'A two-day drive to a ryokan on Lake Yamanakako, the Chureito Pagoda, Lake Kawaguchiko, and Fuji-Q Highland.' },
+      { collection: 'Tokyo Days', title: 'Tokyo', dates: 'March 11 to 17, 2026', blurb: 'A week around Tokyo from the Machida and Sagamihara side: back at Hitotsubashi, Shibuya, Setagaya, Ikebukuro, and Tachikawa, ending with a flight north from Haneda.' },
       { collection: 'Hokkaido Road Trip', title: 'Hokkaido Road Trip', dates: 'March 18 to 24, 2026', blurb: 'Four days of winter driving from New Chitose to Abashiri, the drift ice at Monbetsu, Cape Soya, Biei, Furano, and Upopoy, then Sapporo and the trip home.' },
     ],
   },
@@ -68,8 +72,6 @@ export const japanTopics: JapanTopic[] = [
 
 export const slug = (s: string) => s.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
 
-// The topic a sub-trip belongs to, for linking an entry back to its parent section. Entries filed directly under a
-// topic that also has sub-trips (e.g. the Tokyo week in Japan 2026) link back to it too.
+// The topic a sub-trip belongs to, for linking an entry back to its parent section.
 export const parentOf = (collection?: string) =>
-  japanTopics.find((t) => t.subtopics?.some((s) => s.collection === collection))
-  ?? japanTopics.find((t) => t.subtopics && t.collection === collection);
+  japanTopics.find((t) => t.subtopics?.some((s) => s.collection === collection));

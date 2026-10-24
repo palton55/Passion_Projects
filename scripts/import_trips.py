@@ -362,17 +362,24 @@ def pick_days(e, stops, legs, days):
 
 
 def load_pois(e, start):
-    """Extra map points from a geojson file (e.g. manhole covers), each with its day number in the entry."""
+    """Extra map points from a geojson file (e.g. manhole covers), each with its day number in the entry.
+    A point without a date takes the day of the point before it."""
     out = []
     for path, layer in e['pois']:
+        day = None
         for f in json.loads((TRIPS / path).read_text())['features']:
             p, ll = f['properties'], latlng(f['geometry']['coordinates'])
-            d = date.fromisoformat(p['date'])
+            d = date.fromisoformat(p['date']) if p.get('date') else None
+            if d:
+                day = (d - date.fromisoformat(str(start))).days + 1
             count = p.get('count', 1)
-            note = '; '.join(x for x in [p.get('note', ''), f'{count} covers' if count > 1 else ''] if x)
+            approx = 'location approximate' if p.get('source', 'photo') != 'photo' else ''
+            note = '; '.join(x for x in [p.get('note', ''), f'{count} covers' if count > 1 else '', approx] if x)
+            note = note[:1].upper() + note[1:]
             out.append({'layer': layer, 'name': p['town'], 'lat': ll[0], 'lng': ll[1], **({'highlight': True} if p.get('way_up') else {}),
-                        'day': (d - date.fromisoformat(str(start))).days + 1,
-                        'date': d.strftime('%b ') + str(d.day) + (f", {p['time']}" if p.get('time') else ''), **({'note': note} if note else {})})
+                        **({'day': day} if day else {}),
+                        **({'date': d.strftime('%b ') + str(d.day) + (f", {p['time']}" if p.get('time') else '')} if d else {}),
+                        **({'note': note} if note else {})})
     return out
 
 

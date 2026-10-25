@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Build Japan sidequest entries from the processed trip notes.
+"""Build travel sidequest entries from the processed trip notes.
 
 Reads each trip's road-map.md (day-by-day timeline) and stops.geojson (cities and
 route legs) and writes src/content/adventures/<id>.md. Photo counts and notes meant
@@ -94,6 +94,22 @@ ENTRIES = [
                   stops=['Sapporo', 'New Chitose Airport'],
                   blurb='A day around Odori and Tanukikoji in Sapporo, the flight back to Tokyo, and one last afternoon in Ginza before flying out of Narita.'),
          ]),
+    # Arizona 2026 (trips/arizona-2026/road-map.md): an LA round trip, every leg driven by me (Patrick, Oct 25 2026).
+    dict(id='arizona-2026', dir='arizona-2026', days=list(range(1, 12)), region='Arizona', units='mi', title='Arizona Road Trip',
+         titles={1: 'Los Angeles to Phoenix', 2: 'Shooting range and a rodeo in Cave Creek', 3: 'Glendale, then south to Tucson',
+                 4: 'Sentinel Peak and Mount Lemmon', 5: 'Bisbee and Sierra Vista', 6: 'Arizona-Sonora Desert Museum',
+                 7: 'Back to Phoenix', 8: 'Sedona, Oak Creek Canyon and Flagstaff', 9: 'Grand Canyon South Rim',
+                 10: 'Grandview sunrise, Jerome and Prescott', 11: 'Prescott and the drive home'}, collection='Arizona 2026',
+         summary='An eleven-day road trip from Los Angeles that I drove the whole way. I went out on I-10 to Phoenix for a shooting range and a rodeo night in Cave Creek, spent five days in Tucson with Mount Lemmon at sunset, the old copper mine in Bisbee, and the Desert Museum, then headed north to Sedona, Lowell Observatory in Flagstaff, and the Grand Canyon South Rim, camping in the national forest and catching sunrise at Grandview Point before Jerome and Prescott on the way home.',
+         parts=[
+             dict(title='Phoenix and Tucson', days=[1, 2, 3, 4, 5, 6, 7], modes=['drive'],
+                  stops=['Los Angeles', 'Blythe', 'Peoria', 'Cave Creek', 'Glendale', 'Casa Grande', 'Tucson', 'Mount Lemmon',
+                         'Bisbee', 'Sierra Vista', 'Arizona-Sonora Desert Museum'],
+                  blurb='The drive out from Los Angeles on I-10, a few days around Peoria and Phoenix with a rodeo night in Cave Creek, then Tucson: Sentinel Peak, Mount Lemmon at sunset, a day trip to the Queen Mine in Bisbee and lunch in Sierra Vista, and the Arizona-Sonora Desert Museum.'),
+             dict(title='Sedona, Flagstaff and the Grand Canyon', days=[8, 9, 10, 11], modes=['drive'],
+                  stops=['Sedona', 'Flagstaff', 'Williams', 'Grand Canyon South Rim', 'Desert View', 'Jerome', 'Prescott', 'Blythe', 'Indio', 'Los Angeles'],
+                  blurb='Up I-17 to Bell Rock and Oak Creek Canyon in Sedona, stargazing at Lowell Observatory in Flagstaff, and a night in Williams. Then a day along the South Rim from Mather Point to the Desert View Watchtower, a night camping in Kaibab National Forest, sunrise at Grandview Point, and Jerome and Whiskey Row in Prescott before the drive home.'),
+         ]),
 ]
 
 
@@ -106,7 +122,7 @@ def anonymize(text):
 def clean(text):
     """Drop markdown, photo counts, friends' names and notes addressed to Patrick from a road-map line."""
     text = anonymize(text.replace('**', '').replace('*', ''))
-    text = re.sub(r'\((?:inferred[^)]*|rounded|[^)]*, rounded)\)', '', text)
+    text = re.sub(r'\((?:inferred[^)]*|to confirm|rounded|[^)]*, rounded)\)', '', text)
     text = re.sub(r', (?:inferred|rounded)\)', ')', text)
     text = re.sub(r'\s*\(no photos\)', '', text)
     sentences = re.split(r'(?<=[.!?])\s+', text.strip())
@@ -226,6 +242,7 @@ def j(v):
 # Average speeds (km/h) for rough travel-time estimates, and how much longer the real line is than the drawn one.
 SPEED = {'shinkansen': 210, 'express': 85, 'local': 45, 'drive': 65, 'bus': 60, 'ferry': 25}
 DETOUR = {'drive': 1.15, 'bus': 1.15}
+US_SPEED = {'drive': 95}  # mostly interstate
 BUCKETS = [('Morning', 0, 12), ('Afternoon', 12, 17), ('Evening', 17, 24)]
 
 
@@ -239,19 +256,23 @@ def km(coords):
     return total
 
 
-def leg_summary(leg):
-    """'Name (about 515 km, 2 h 30 min)': distance from the drawn line, time from an average speed."""
+def leg_summary(leg, miles=False):
+    """'Name (about 515 km, 2 h 30 min)': distance from the drawn line, time from an average speed.
+    US trips give the distance in miles."""
     name = re.sub(r'\s*\(Day \d+\)', '', leg['name'])
     if leg['mode'] not in SPEED:
         return name + '.'
     dist = km(leg['coords']) * DETOUR.get(leg['mode'], 1.0)
     if dist < 3:
         return name + '.'
-    mins = dist / SPEED[leg['mode']] * 60
+    speed = US_SPEED.get(leg['mode'], SPEED[leg['mode']]) if miles else SPEED[leg['mode']]
+    mins = dist / speed * 60
     mins = round(mins / 5) * 5 if mins < 60 else round(mins / 15) * 15
     t = f'{mins // 60} h {mins % 60} min' if mins >= 60 and mins % 60 else (f'{mins // 60} h' if mins >= 60 else f'{max(mins, 5)} min')
+    if miles:
+        dist /= 1.609
     d = round(dist, -1) if dist >= 30 else round(dist)
-    return f'{name} (about {int(d)} km, {t}).'
+    return f'{name} (about {int(d)} {"miles" if miles else "km"}, {t}).'
 
 
 def bucket_of(time, prev):
@@ -265,7 +286,7 @@ def bucket_of(time, prev):
     return 'Morning' if 'morning' in t else 'Afternoon' if 'afternoon' in t else 'Evening'
 
 
-def consolidate(days, legs):
+def consolidate(days, legs, miles=False):
     """Fold each day's stops into morning, afternoon and evening lines, and list its legs with distance and time."""
     for d in days:
         if not d['events']:
@@ -279,7 +300,7 @@ def consolidate(days, legs):
         day_no = int(d['label'].split()[1]) if re.match(r'Day \d', d['label']) else None
         day_legs = [l for l in legs if l.get('day') == day_no]
         if day_legs:
-            d['route'] = [leg_summary(l) for l in day_legs]
+            d['route'] = [leg_summary(l, miles) for l in day_legs]
     return days
 
 
@@ -413,6 +434,8 @@ def write_entry(e):
         l.pop('date', None)
     if 'days' in e:
         stops, legs, days, dates = pick_days(e, stops, legs, days)
+    for d in days:  # hand-written day titles, where the generated ones read badly
+        d['title'] = e.get('titles', {}).get(int(d['label'].split()[1]) if re.match(r'Day \d', d['label']) else None, d['title'])
     fm = ['---', f'title: {j(e["title"])}', f'summary: {j(e["summary"])}', f'start: {dates[0]}', f'end: {dates[-1]}',
           'category: Travel', f'region: {e.get("region", "Japan")}', f'collection: {j(e["collection"])}',
           f'companions: {j(e.get("companions", []))}', 'draft: true',
@@ -420,7 +443,7 @@ def write_entry(e):
     fm += [f'  - {j(s)}' for s in stops]
     fm.append('legs:')
     fm += [f'  - {j(l)}' for l in legs]
-    consolidate(days, legs)
+    consolidate(days, legs, e.get('units') == 'mi')
     if 'pois' in e:
         fm.append('pois:')
         fm += [f'  - {j(pt)}' for pt in load_pois(e, dates[0])]

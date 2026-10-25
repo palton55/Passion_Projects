@@ -29,7 +29,7 @@ legs:
   - {"name": "Drive, Furano south through the Hidaka hills to Upopoy in Shiraoi, then to the Chitose manhole cover and New Chitose Airport to return the car", "mode": "drive", "coords": [[43.3233, 142.3559], [43.1, 142.3], [42.9171, 142.1849], [42.62, 141.93], [42.63, 141.6], [42.5588, 141.3647], [42.7, 141.55], [42.8461, 141.6198], [42.8971, 141.5858], [42.801, 141.7033], [42.7752, 141.692]], "day": 4}
   - {"name": "Train, New Chitose Airport to Sapporo after returning the car", "mode": "express", "coords": [[42.7752, 141.692], [42.827, 141.651], [42.99, 141.56], [43.0686, 141.3508]], "day": 4}
   - {"name": "Sapporo to New Chitose Airport", "mode": "express", "coords": [[43.0686, 141.3508], [42.99, 141.56], [42.827, 141.651], [42.7752, 141.692]], "day": 6}
-  - {"name": "Flight, New Chitose to Haneda (to confirm)", "mode": "flight", "coords": [[42.7752, 141.692], [38.8, 141.4], [35.5494, 139.7798]], "day": 6}
+  - {"name": "Flight, New Chitose to Haneda", "mode": "flight", "coords": [[42.7752, 141.692], [38.8, 141.4], [35.5494, 139.7798]], "day": 6}
   - {"name": "Haneda to Roppongi and Machida", "mode": "local", "coords": [[35.5494, 139.7798], [35.6652, 139.7121], [35.542, 139.446]], "day": 6}
   - {"name": "Tokyo to Narita Airport (train, to confirm)", "mode": "express", "coords": [[35.542, 139.446], [35.6896, 139.7006], [35.6812, 139.7671], [35.73, 140.1], [35.772, 140.3929]], "day": 7}
 pois:
@@ -107,7 +107,7 @@ timeline:
     events:
       - { time: "Morning", text: "New Chitose Airport." }
       - { time: "Afternoon", text: "Roppongi / Aoyama; Machida." }
-    route: ["Sapporo to New Chitose Airport (about 50 km, 30 min).", "Flight, New Chitose to Haneda (to confirm).", "Haneda to Roppongi and Machida (about 40 km, 55 min)."]
+    route: ["Sapporo to New Chitose Airport (about 50 km, 30 min).", "Flight, New Chitose to Haneda.", "Haneda to Roppongi and Machida (about 40 km, 55 min)."]
   - label: "Day 7"
     date: 2026-03-24
     title: "Yurakucho / Ginza"

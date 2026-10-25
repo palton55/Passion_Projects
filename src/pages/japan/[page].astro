@@ -18,7 +18,7 @@ const photosOf = (e: (typeof entries)[number]) => e.data.photos.length ? e.data.
 const inTopic = (t: JapanTopic) => entries.filter((e) => e.data.collection === t.collection);
 ---
 <Base title={`${topic.title} · Sidequest Resume`} description={topic.blurb}>
-  <p class="crumb"><a href={`${base}/travel/`}>Experience</a> / <a href={`${base}/japan/`}>Japan</a></p>
+  <p class="crumb"><a href={`${base}/travel/`}>Travel</a> / <a href={`${base}/japan/`}>Japan</a></p>
   {[topic].map((t) => (
     <section id={slug(t.collection)}>
       <h1>{t.title}</h1>

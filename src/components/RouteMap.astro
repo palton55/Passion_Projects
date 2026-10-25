@@ -4,7 +4,7 @@
 // Optional `groups` (e.g. years) add toggle buttons; legs and stops then carry `groups: string[]`.
 // Drive legs are photo-GPS waypoints; the browser snaps them to real roads when a router answers.
 // Optional `regions` (GeoJSON, e.g. prefectures visited) and `pois` (points with a `layer` name, e.g. manhole covers)
-// become overlays in the layer control; regions start on, point layers start off unless a point has `highlight`.
+// become overlays in the layer control; regions start on, point layers start off.
 const { stops, legs = [], height = 460, dot = 8, groups = [], lines = true, regions = null, regionsLabel = 'Prefectures visited', pois = [] } = Astro.props;
 const used = new Set(legs.length ? legs.map((l: any) => l.mode) : stops.map((s: any) => s.mode));
 const legend = [
@@ -102,7 +102,6 @@ const legend = [
         .bindPopup(`<strong>${p.name}</strong>${p.date ? `<br>${p.date}` : ''}${p.note ? `<br>${p.note}` : ''}`)
         .bindTooltip(label ? p.name.replace(/ \(.*\)$/, '') : p.name, label ? { permanent: true, direction: dir, offset: [dir === 'left' ? -8 : 8, 0], className: 'poi-label' } : { direction: 'top', offset: [0, -8] })
         .addTo(group as L.LayerGroup);
-      if (p.highlight) (group as L.LayerGroup).addTo(map);
     });
     L.control.layers({ Map: streets, Satellite: satellite }, overlays, { position: 'topright' }).addTo(map);
     legs.forEach((leg: any) => {

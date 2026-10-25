@@ -45,6 +45,7 @@ const yt = d.video?.match(/(?:v=|youtu\.be\/)([\w-]{11})/)?.[1];
         {part.notes.map((n) => <><h3>{n.title}</h3>{n.text.map((t) => <p>{t}</p>)}</>)}
         <RouteMap stops={d.stops.filter((s) => part.stops.includes(s.name))} legs={d.legs.filter((l) => part.modes ? part.modes.includes(l.mode) : l.day !== undefined && part.days.includes(l.day))} pois={d.pois.filter((p) => p.day !== undefined && part.days.includes(p.day) && (!part.modes || part.modes.includes('drive')))} bands={part.modes?.includes('drive') ? d.bands : []} height={400} />
         <Timeline days={d.timeline.filter((t) => part.days.includes(Number(t.label.replace(/\D/g, ''))))} />
+        {part.totals && <div class="totals"><h3>{part.totals.title}</h3><ul>{part.totals.items.map((t) => <li>{t}</li>)}</ul></div>}
       </section>
     ))}
     <div class="story"><Content /></div>
@@ -55,6 +56,9 @@ const yt = d.video?.match(/(?:v=|youtu\.be\/)([\w-]{11})/)?.[1];
   </article>
 </Base>
 <style>
+  .totals { background: var(--surface); border: 1px solid var(--border); border-radius: 12px; padding: 4px 20px 8px; margin: 16px 0 8px; }
+  .totals h3 { margin: 14px 0 6px; }
+  .totals ul { margin: 0 0 8px; padding-left: 18px; }
   article { max-width: 760px; margin: 0 auto; }
   h1 { font-size: clamp(2rem, 5vw, 2.8rem); margin: 4px 0 12px; }
   .meta { color: var(--muted); font-size: .9rem; margin: 0; }

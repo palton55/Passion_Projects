@@ -58,6 +58,7 @@ const adventures = defineCollection({
       modes: z.array(z.string()).optional(), // leg modes on this part's map; without it, legs from `days` are drawn
       stops: z.array(z.string()),         // stop names shown on this part's map
       notes: z.array(z.object({ title: z.string(), text: z.array(z.string()) })).default([]), // short sections above the part's map
+      totals: z.object({ title: z.string(), items: z.array(z.string()) }).optional(), // driving totals after the part's timeline
     })).default([]),
     // Day-by-day timeline. Each day lists events in order; `route` lines say how the day's travel was made.
     timeline: z.array(z.object({

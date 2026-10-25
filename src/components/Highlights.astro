@@ -2,9 +2,11 @@
 // A row of highlight photos near the top of a trip page; the full set stays in the Photos gallery.
 const { photos, count = 8, href } = Astro.props;
 const base = import.meta.env.BASE_URL.replace(/\/$/, '');
-const all = photos as { src: string; caption?: string }[];
-// Spread the picks across the trip rather than taking the first few days.
-const pick = all.length <= count ? all : Array.from({ length: count }, (_, i) => all[Math.round((i * (all.length - 1)) / (count - 1))]);
+const all = photos as { src: string; caption?: string; highlight?: boolean }[];
+// Hand-picked highlights (`highlight: true` in photos.json) win; otherwise spread the picks across the trip.
+const chosen = all.filter((p) => p.highlight);
+const pick = chosen.length ? chosen.slice(0, count)
+  : all.length <= count ? all : Array.from({ length: count }, (_, i) => all[Math.round((i * (all.length - 1)) / (count - 1))]);
 ---
 {pick.length > 0 && (
   <div class="highlights">

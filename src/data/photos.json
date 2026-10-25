@@ -425,68 +425,432 @@
   ],
   "2025-korea-waterbomb": [
     {
+      "src": "photos/2025-korea-waterbomb/17.jpg",
+      "caption": "Landing at Incheon Airport"
+    },
+    {
       "src": "photos/2025-korea-waterbomb/01.jpg",
-      "caption": "Incheon Airport"
+      "caption": "Arriving at Incheon Airport"
+    },
+    {
+      "src": "photos/2025-korea-waterbomb/18.jpg",
+      "caption": "The AREX airport railroad into Seoul"
+    },
+    {
+      "src": "photos/2025-korea-waterbomb/19.jpg",
+      "caption": "My capsule hotel in Euljiro"
+    },
+    {
+      "src": "photos/2025-korea-waterbomb/20.jpg",
+      "caption": "A street corner in central Seoul"
+    },
+    {
+      "src": "photos/2025-korea-waterbomb/21.jpg",
+      "caption": "N Seoul Tower on Namsan"
+    },
+    {
+      "src": "photos/2025-korea-waterbomb/22.jpg",
+      "caption": "The view of Seoul from Namsan"
+    },
+    {
+      "src": "photos/2025-korea-waterbomb/23.jpg",
+      "caption": "The base of N Seoul Tower"
+    },
+    {
+      "src": "photos/2025-korea-waterbomb/24.jpg",
+      "caption": "Seoul spreading out below Namsan"
     },
     {
       "src": "photos/2025-korea-waterbomb/02.jpg",
-      "caption": "Gwanghwamun and Cheonggyecheon"
+      "caption": "Seoul from Namsan at dusk",
+      "highlight": true
+    },
+    {
+      "src": "photos/2025-korea-waterbomb/25.jpg",
+      "caption": "Lanterns inside the main hall at Jogyesa Temple"
+    },
+    {
+      "src": "photos/2025-korea-waterbomb/26.jpg",
+      "caption": "The stone pagoda at Jogyesa Temple"
     },
     {
       "src": "photos/2025-korea-waterbomb/03.jpg",
-      "caption": "Gwanghwamun and Cheonggyecheon"
+      "caption": "Lanterns at Jogyesa Temple"
+    },
+    {
+      "src": "photos/2025-korea-waterbomb/27.jpg",
+      "caption": "The lantern ceiling at Jogyesa Temple",
+      "highlight": true
+    },
+    {
+      "src": "photos/2025-korea-waterbomb/28.jpg",
+      "caption": "The gate of Jogyesa Temple"
+    },
+    {
+      "src": "photos/2025-korea-waterbomb/29.jpg",
+      "caption": "Gwanghwamun Gate at sunset",
+      "highlight": true
+    },
+    {
+      "src": "photos/2025-korea-waterbomb/30.jpg",
+      "caption": "Gwanghwamun Square with Bugaksan behind it"
+    },
+    {
+      "src": "photos/2025-korea-waterbomb/31.jpg",
+      "caption": "The Squid Game doll in Gwanghwamun Square"
     },
     {
       "src": "photos/2025-korea-waterbomb/04.jpg",
-      "caption": "Gwanghwamun and Cheonggyecheon"
+      "caption": "Squid Game figures in Gwanghwamun Square"
+    },
+    {
+      "src": "photos/2025-korea-waterbomb/32.jpg",
+      "caption": "The Squid Game doll at night in Gwanghwamun"
+    },
+    {
+      "src": "photos/2025-korea-waterbomb/33.jpg",
+      "caption": "A Mom's Touch chicken burger"
+    },
+    {
+      "src": "photos/2025-korea-waterbomb/34.jpg",
+      "caption": "Cheonggyecheon at night"
+    },
+    {
+      "src": "photos/2025-korea-waterbomb/35.jpg",
+      "caption": "Banana milk from a Seoul convenience store"
+    },
+    {
+      "src": "photos/2025-korea-waterbomb/36.jpg",
+      "caption": "The DMZ tour bus"
+    },
+    {
+      "src": "photos/2025-korea-waterbomb/37.jpg",
+      "caption": "The visitor center at Imjingak"
+    },
+    {
+      "src": "photos/2025-korea-waterbomb/38.jpg",
+      "caption": "The Bell of Peace at Imjingak"
+    },
+    {
+      "src": "photos/2025-korea-waterbomb/39.jpg",
+      "caption": "The border fence and rice fields at Imjingak"
+    },
+    {
+      "src": "photos/2025-korea-waterbomb/40.jpg",
+      "caption": "The Statues of Peace at Imjingak"
+    },
+    {
+      "src": "photos/2025-korea-waterbomb/41.jpg",
+      "caption": "The Freedom Bridge at Imjingak"
+    },
+    {
+      "src": "photos/2025-korea-waterbomb/42.jpg",
+      "caption": "The Imjingak sign in the DMZ"
+    },
+    {
+      "src": "photos/2025-korea-waterbomb/43.jpg",
+      "caption": "A corn dog at the Imjingak rest area"
     },
     {
       "src": "photos/2025-korea-waterbomb/05.jpg",
-      "caption": "DMZ: Third Tunnel / Dora Observatory area"
+      "caption": "Looking into North Korea from Dora Observatory",
+      "highlight": true
     },
     {
       "src": "photos/2025-korea-waterbomb/06.jpg",
-      "caption": "DMZ: Third Tunnel / Dora Observatory area"
+      "caption": "The terrain model at Dora Observatory in the DMZ"
+    },
+    {
+      "src": "photos/2025-korea-waterbomb/44.jpg",
+      "caption": "The UN and Korean flags at Dora Observatory"
+    },
+    {
+      "src": "photos/2025-korea-waterbomb/45.jpg",
+      "caption": "The sign at Tongilchon in the DMZ"
+    },
+    {
+      "src": "photos/2025-korea-waterbomb/46.jpg",
+      "caption": "A DMZ produce sign at Tongilchon"
     },
     {
       "src": "photos/2025-korea-waterbomb/07.jpg",
-      "caption": "DMZ: Imjingak"
+      "caption": "Rice fields at Tongilchon, the DMZ farming village"
     },
     {
-      "src": "photos/2025-korea-waterbomb/08.jpg",
-      "caption": "Gangnam / COEX"
+      "src": "photos/2025-korea-waterbomb/47.jpg",
+      "caption": "The river model at Odusan Unification Observatory"
+    },
+    {
+      "src": "photos/2025-korea-waterbomb/48.jpg",
+      "caption": "North Korea across the Han and Imjin estuary from Odusan"
+    },
+    {
+      "src": "photos/2025-korea-waterbomb/49.jpg",
+      "caption": "The estuary from Odusan Unification Observatory"
+    },
+    {
+      "src": "photos/2025-korea-waterbomb/50.jpg",
+      "caption": "Odusan Unification Observatory"
+    },
+    {
+      "src": "photos/2025-korea-waterbomb/51.jpg",
+      "caption": "LoL Park, the League of Legends stadium in Jongno",
+      "highlight": true
+    },
+    {
+      "src": "photos/2025-korea-waterbomb/52.jpg",
+      "caption": "Trophy cases at LoL Park"
+    },
+    {
+      "src": "photos/2025-korea-waterbomb/53.jpg",
+      "caption": "The Riot Games sign at LoL Park"
+    },
+    {
+      "src": "photos/2025-korea-waterbomb/54.jpg",
+      "caption": "Champion figures at LoL Park"
+    },
+    {
+      "src": "photos/2025-korea-waterbomb/55.jpg",
+      "caption": "Olive Young in Gangnam"
     },
     {
       "src": "photos/2025-korea-waterbomb/09.jpg",
-      "caption": "Gangnam / COEX"
+      "caption": "The bookshelves of Starfield Library at COEX"
+    },
+    {
+      "src": "photos/2025-korea-waterbomb/08.jpg",
+      "caption": "Starfield Library at COEX",
+      "highlight": true
+    },
+    {
+      "src": "photos/2025-korea-waterbomb/56.jpg",
+      "caption": "A Korean set meal at COEX"
     },
     {
       "src": "photos/2025-korea-waterbomb/10.jpg",
       "caption": "Hongdae at night"
     },
     {
+      "src": "photos/2025-korea-waterbomb/57.jpg",
+      "caption": "Dinner in Hongdae"
+    },
+    {
       "src": "photos/2025-korea-waterbomb/11.jpg",
-      "caption": "Hongdae at night"
+      "caption": "A crossing in Hongdae at night"
+    },
+    {
+      "src": "photos/2025-korea-waterbomb/58.jpg",
+      "caption": "Street dancers in Hongdae"
     },
     {
       "src": "photos/2025-korea-waterbomb/12.jpg",
-      "caption": "Hongdae at night"
+      "caption": "A side street in Hongdae at night"
+    },
+    {
+      "src": "photos/2025-korea-waterbomb/59.jpg",
+      "caption": "The Hongdae crowd on a Friday night"
+    },
+    {
+      "src": "photos/2025-korea-waterbomb/60.jpg",
+      "caption": "At Hongdae at night"
+    },
+    {
+      "src": "photos/2025-korea-waterbomb/61.jpg",
+      "caption": "A club in Hongdae"
+    },
+    {
+      "src": "photos/2025-korea-waterbomb/62.jpg",
+      "caption": "The grounds at Waterbomb"
+    },
+    {
+      "src": "photos/2025-korea-waterbomb/63.jpg",
+      "caption": "Water cannons over the crowd at Waterbomb",
+      "highlight": true
+    },
+    {
+      "src": "photos/2025-korea-waterbomb/64.jpg",
+      "caption": "Water cannons at Waterbomb"
+    },
+    {
+      "src": "photos/2025-korea-waterbomb/65.jpg",
+      "caption": "The water cannons firing at Waterbomb"
     },
     {
       "src": "photos/2025-korea-waterbomb/13.jpg",
-      "caption": "Waterbomb, KINTEX area, Goyang"
+      "caption": "The main stage at Waterbomb"
+    },
+    {
+      "src": "photos/2025-korea-waterbomb/66.jpg",
+      "caption": "Performers on the side stage at Waterbomb"
+    },
+    {
+      "src": "photos/2025-korea-waterbomb/67.jpg",
+      "caption": "At Waterbomb with a friend"
+    },
+    {
+      "src": "photos/2025-korea-waterbomb/68.jpg",
+      "caption": "At Waterbomb with a water gun"
+    },
+    {
+      "src": "photos/2025-korea-waterbomb/69.jpg",
+      "caption": "At Waterbomb on the Waterbomb stand"
+    },
+    {
+      "src": "photos/2025-korea-waterbomb/70.jpg",
+      "caption": "The crowd in front of the main stage at Waterbomb"
+    },
+    {
+      "src": "photos/2025-korea-waterbomb/71.jpg",
+      "caption": "Water guns up at Waterbomb"
+    },
+    {
+      "src": "photos/2025-korea-waterbomb/72.jpg",
+      "caption": "The Waterbomb crowd"
     },
     {
       "src": "photos/2025-korea-waterbomb/14.jpg",
-      "caption": "Waterbomb, KINTEX area, Goyang"
+      "caption": "The crowd at Waterbomb"
+    },
+    {
+      "src": "photos/2025-korea-waterbomb/73.jpg",
+      "caption": "A water cannon on the main stage at Waterbomb"
+    },
+    {
+      "src": "photos/2025-korea-waterbomb/74.jpg",
+      "caption": "Performers on the big screen at Waterbomb"
+    },
+    {
+      "src": "photos/2025-korea-waterbomb/75.jpg",
+      "caption": "Lee Young Ji performing at Waterbomb"
+    },
+    {
+      "src": "photos/2025-korea-waterbomb/76.jpg",
+      "caption": "Lee Young Ji on the big screen at Waterbomb"
+    },
+    {
+      "src": "photos/2025-korea-waterbomb/77.jpg",
+      "caption": "The Sprite booth at Waterbomb"
+    },
+    {
+      "src": "photos/2025-korea-waterbomb/78.jpg",
+      "caption": "The Waterbomb Seoul 2025 sign"
+    },
+    {
+      "src": "photos/2025-korea-waterbomb/79.jpg",
+      "caption": "Free entry in hanbok at Gyeongbokgung Palace"
+    },
+    {
+      "src": "photos/2025-korea-waterbomb/80.jpg",
+      "caption": "Gyeonghoeru Pavilion at Gyeongbokgung Palace",
+      "highlight": true
+    },
+    {
+      "src": "photos/2025-korea-waterbomb/81.jpg",
+      "caption": "At Gyeongbokgung Palace in hanbok, on the steps"
+    },
+    {
+      "src": "photos/2025-korea-waterbomb/82.jpg",
+      "caption": "At a hall of Gyeongbokgung Palace in hanbok"
+    },
+    {
+      "src": "photos/2025-korea-waterbomb/83.jpg",
+      "caption": "At a gate of Gyeongbokgung Palace in hanbok"
     },
     {
       "src": "photos/2025-korea-waterbomb/15.jpg",
-      "caption": "Gyeongbokgung Palace"
+      "caption": "Hyangwonjeong Pavilion at Gyeongbokgung Palace"
+    },
+    {
+      "src": "photos/2025-korea-waterbomb/84.jpg",
+      "caption": "At Gyeongbokgung Palace with a friend"
+    },
+    {
+      "src": "photos/2025-korea-waterbomb/85.jpg",
+      "caption": "At Gyeongbokgung Palace, selfie in hanbok"
+    },
+    {
+      "src": "photos/2025-korea-waterbomb/86.jpg",
+      "caption": "Yongsan Electronics Market"
+    },
+    {
+      "src": "photos/2025-korea-waterbomb/87.jpg",
+      "caption": "Inside Yongsan Electronics Market"
+    },
+    {
+      "src": "photos/2025-korea-waterbomb/88.jpg",
+      "caption": "A taco stand in Yongsan"
+    },
+    {
+      "src": "photos/2025-korea-waterbomb/89.jpg",
+      "caption": "At the Euljiro printing alleys with Cass and Terra"
+    },
+    {
+      "src": "photos/2025-korea-waterbomb/90.jpg",
+      "caption": "Cass and Terra in Euljiro"
+    },
+    {
+      "src": "photos/2025-korea-waterbomb/91.jpg",
+      "caption": "A ramyeon shop in Euljiro"
+    },
+    {
+      "src": "photos/2025-korea-waterbomb/92.jpg",
+      "caption": "A corn dog at Lotte World Mall"
+    },
+    {
+      "src": "photos/2025-korea-waterbomb/93.jpg",
+      "caption": "The Ghibli shop at Lotte World Mall"
+    },
+    {
+      "src": "photos/2025-korea-waterbomb/94.jpg",
+      "caption": "At Lotte World Mall with Pingu"
+    },
+    {
+      "src": "photos/2025-korea-waterbomb/95.jpg",
+      "caption": "Jjajangmyeon at Lotte World Mall"
+    },
+    {
+      "src": "photos/2025-korea-waterbomb/96.jpg",
+      "caption": "Inside Lotte World Mall in Jamsil"
+    },
+    {
+      "src": "photos/2025-korea-waterbomb/97.jpg",
+      "caption": "League of Legends at a PC bang near Dongdaemun"
+    },
+    {
+      "src": "photos/2025-korea-waterbomb/98.jpg",
+      "caption": "A PC bang near Dongdaemun"
     },
     {
       "src": "photos/2025-korea-waterbomb/16.jpg",
-      "caption": "Dongdaemun"
+      "caption": "Overwatch at a PC bang near Dongdaemun"
+    },
+    {
+      "src": "photos/2025-korea-waterbomb/99.jpg",
+      "caption": "Myeongdong"
+    },
+    {
+      "src": "photos/2025-korea-waterbomb/100.jpg",
+      "caption": "Buying a Nintendo Switch 2 in Myeongdong"
+    },
+    {
+      "src": "photos/2025-korea-waterbomb/101.jpg",
+      "caption": "Jjajangmyeon on my last night in Seoul"
+    },
+    {
+      "src": "photos/2025-korea-waterbomb/102.jpg",
+      "caption": "On the AREX at Seoul Station"
+    },
+    {
+      "src": "photos/2025-korea-waterbomb/103.jpg",
+      "caption": "The view from the AREX on the way to Yeongjong Island"
+    },
+    {
+      "src": "photos/2025-korea-waterbomb/104.jpg",
+      "caption": "Incheon Airport"
+    },
+    {
+      "src": "photos/2025-korea-waterbomb/105.jpg",
+      "caption": "A Paris Baguette sandwich before the flight home"
     }
   ],
   "2025-kusatsu-onsen": [

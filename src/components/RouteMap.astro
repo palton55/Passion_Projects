@@ -122,13 +122,29 @@ const legend = [
     if (!legs.length && el.dataset.lines !== 'false') stops.forEach((s: any, i: number) => {
       if (i > 0) L.polyline([[stops[i - 1].lat, stops[i - 1].lng], [s.lat, s.lng]], styles[s.mode] ?? styles.other).addTo(map);
     });
+    const labelled: any[] = [];
     stops.forEach((s: any, i: number) => {
       const marker = L.circleMarker([s.lat, s.lng], { radius: Number(el.dataset.dot || 8), color: '#fff', weight: 1.5, fillColor: '#c2410c', fillOpacity: .95 })
         .bindPopup(`<strong>${s.name}</strong>${s.date ? `<br>${s.date}` : ''}${s.note ? `<br>${s.note}` : ''}`)
         .bindTooltip(s.name, { permanent: stops.length <= 12, direction: 'right', offset: [8, 0], className: 'stop-label' })
         .addTo(map);
       layers.push({ groups: s.groups, layer: marker });
+      if (stops.length <= 12) labelled.push(marker);
     });
+    // Hide a stop label that would overlap an earlier one (stops are listed main cities first); it comes back on zoom or hover.
+    const declutter = () => {
+      const kept: DOMRect[] = [];
+      labelled.forEach((m) => {
+        const t = m.getTooltip()?.getElement();
+        if (!t || !map.hasLayer(m)) return;
+        t.style.visibility = '';
+        const r = t.getBoundingClientRect();
+        if (kept.some((k) => r.left < k.right && r.right > k.left && r.top < k.bottom && r.bottom > k.top)) t.style.visibility = 'hidden';
+        else kept.push(r);
+      });
+    };
+    labelled.forEach((m) => m.on('mouseover', () => { const t = m.getTooltip()?.getElement(); if (t) t.style.visibility = ''; }));
+    map.on('zoomend', declutter);
     // Year or destination toggles: a layer shows while any of its groups is switched on, and the map refits to it.
     const filter = el.previousElementSibling?.classList.contains('map-filter') ? el.previousElementSibling : null;
     if (filter) {
@@ -154,6 +170,7 @@ const legend = [
       allButton.addEventListener('click', () => { buttons.forEach((b) => b.setAttribute('aria-pressed', 'true')); apply(); });
     }
     map.fitBounds(L.latLngBounds(stops.map((s: any) => [s.lat, s.lng])), { padding: [30, 30] });
+    declutter();
   });
 </script>
 <style>

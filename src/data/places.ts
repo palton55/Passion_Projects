@@ -502,22 +502,26 @@ export const placeNotes: PlaceNote[] = [
   },
   // Korea
   {
-    slug: 'seoul', name: 'Seoul', country: 'South Korea', area: 'Seoul', match: ['Seoul', 'Lotte World Tower'],
-    keywords: ['Gwanghwamun', 'Gyeongbokgung', 'Gangnam', 'Hongdae', 'Dongdaemun'],
+    slug: 'seoul', name: 'Seoul', country: 'South Korea', area: 'Seoul',
+    match: ['Seoul', 'Lotte World Tower', 'N Seoul Tower', 'Gyeongbokgung Palace', 'Hongdae', 'COEX', 'Yongsan Electronics Market'],
+    keywords: ['Gwanghwamun', 'Gyeongbokgung', 'Gangnam', 'Hongdae', 'Dongdaemun', 'Namsan', 'N Seoul Tower', 'Jogyesa', 'Cheonggyecheon',
+      'COEX', 'Starfield', 'Lotte World', 'Yongsan', 'Euljiro', 'Myeongdong', 'LoL Park'],
     text: [
       'Seoul is the capital of South Korea, and its metropolitan area is home to about half of the country\'s population. It has been the capital since 1394, when the Joseon dynasty made it the seat of its court.',
-      'Gyeongbokgung, the main royal palace of Joseon, stands behind the Gwanghwamun gate at the head of the city\'s central boulevard, near the Cheonggyecheon, an urban stream restored in 2005 after an elevated highway over it was removed. Elsewhere the city ranges from the commercial towers of Gangnam and the COEX complex to the student nightlife of Hongdae and the markets of Dongdaemun. Lotte World Tower, at 555 meters, is the tallest building in Korea.',
+      'Gyeongbokgung, the main royal palace of Joseon, stands behind the Gwanghwamun gate at the head of the city\'s central boulevard, near the Cheonggyecheon, an urban stream restored in 2005 after an elevated highway over it was removed. Visitors who wear hanbok, the traditional Korean dress, get into the palace for free. Close by is Jogyesa, the head temple of the Jogye Order of Korean Buddhism, whose courtyard and main hall are hung with lanterns. N Seoul Tower stands on Namsan, the mountain in the middle of the city, with views over all of Seoul.',
+      'Elsewhere the city ranges from the commercial towers of Gangnam and the COEX complex, home of the Starfield Library, to the student nightlife and street performers of Hongdae, the electronics market at Yongsan, the old printing alleys of Euljiro, and the shopping streets of Myeongdong and Dongdaemun. LoL Park in Jongno is the home arena of the LCK, the Korean League of Legends league. Lotte World Tower in Jamsil, at 555 meters, is the tallest building in Korea.',
     ],
-    photos: ['2025-korea-waterbomb/02.jpg', '2025-korea-waterbomb/03.jpg', '2025-korea-waterbomb/04.jpg', '2025-korea-waterbomb/15.jpg', '2025-korea-waterbomb/08.jpg', '2025-korea-waterbomb/09.jpg', '2025-korea-waterbomb/10.jpg', '2025-korea-waterbomb/11.jpg', '2025-korea-waterbomb/12.jpg', '2025-korea-waterbomb/16.jpg'],
+    photos: ['2025-korea-waterbomb/21.jpg', '2025-korea-waterbomb/02.jpg', '2025-korea-waterbomb/25.jpg', '2025-korea-waterbomb/27.jpg', '2025-korea-waterbomb/29.jpg', '2025-korea-waterbomb/30.jpg', '2025-korea-waterbomb/31.jpg', '2025-korea-waterbomb/34.jpg', '2025-korea-waterbomb/80.jpg', '2025-korea-waterbomb/15.jpg', '2025-korea-waterbomb/08.jpg', '2025-korea-waterbomb/10.jpg', '2025-korea-waterbomb/58.jpg', '2025-korea-waterbomb/86.jpg', '2025-korea-waterbomb/96.jpg', '2025-korea-waterbomb/99.jpg'],
   },
   {
-    slug: 'dmz', name: 'The Korean Demilitarized Zone', country: 'South Korea', area: 'Gyeonggi', match: ['DMZ'],
-    keywords: ['DMZ'],
+    slug: 'dmz', name: 'The Korean Demilitarized Zone', country: 'South Korea', area: 'Gyeonggi',
+    match: ['DMZ', 'Imjingak', 'Dora Observatory', 'Odusan Unification Observatory'],
+    keywords: ['DMZ', 'Imjingak', 'Dora Observatory', 'Odusan', 'Tongilchon'],
     text: [
       'The Korean Demilitarized Zone is a strip of land about 250 kilometers long and 4 kilometers wide that divides North and South Korea, established by the armistice that ended the fighting of the Korean War in 1953.',
-      'Tours from Seoul visit Imjingak, a park beside the Freedom Bridge; the Third Tunnel, an infiltration tunnel dug from the North and discovered in 1978; and the Dora Observatory, which looks across the border into North Korea.',
+      'Tours from Seoul visit Imjingak, a park beside the Imjin River with the Freedom Bridge, the Bell of Peace, and the end of the old rail line to the North; the Dora Observatory, which looks across the border into North Korea; and Tongilchon, a farming village inside the Civilian Control Line. Odusan Unification Observatory in Paju, where the Han and Imjin rivers meet, looks across the estuary to North Korean villages only a few kilometers away.',
     ],
-    photos: ['2025-korea-waterbomb/05.jpg', '2025-korea-waterbomb/06.jpg', '2025-korea-waterbomb/07.jpg'],
+    photos: ['2025-korea-waterbomb/05.jpg', '2025-korea-waterbomb/06.jpg', '2025-korea-waterbomb/07.jpg', '2025-korea-waterbomb/38.jpg', '2025-korea-waterbomb/39.jpg', '2025-korea-waterbomb/41.jpg', '2025-korea-waterbomb/44.jpg', '2025-korea-waterbomb/45.jpg', '2025-korea-waterbomb/48.jpg', '2025-korea-waterbomb/49.jpg', '2025-korea-waterbomb/50.jpg'],
   },
   {
     slug: 'waterbomb', name: 'Waterbomb, Goyang', country: 'South Korea', area: 'Gyeonggi', match: ['Waterbomb, Goyang'],
@@ -526,6 +530,6 @@ export const placeNotes: PlaceNote[] = [
       'Waterbomb is a summer music festival held in Korea since 2015, at which performers and the audience drench one another with water cannons and water guns. Its Seoul edition draws major K-pop and hip-hop acts.',
       'The 2025 Seoul festival was held at KINTEX in Goyang, the largest exhibition center in Korea, just northwest of Seoul.',
     ],
-    photos: ['2025-korea-waterbomb/13.jpg', '2025-korea-waterbomb/14.jpg'],
+    photos: ['2025-korea-waterbomb/13.jpg', '2025-korea-waterbomb/14.jpg', '2025-korea-waterbomb/62.jpg', '2025-korea-waterbomb/63.jpg', '2025-korea-waterbomb/65.jpg', '2025-korea-waterbomb/70.jpg', '2025-korea-waterbomb/71.jpg', '2025-korea-waterbomb/73.jpg', '2025-korea-waterbomb/75.jpg', '2025-korea-waterbomb/78.jpg'],
   },
 ];

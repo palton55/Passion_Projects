@@ -1,0 +1,55 @@
+---
+// Auto-cycling photo strip on the landing page: one slide per entry with a cover photo, each linking to that entry.
+const { slides } = Astro.props as { slides: { href: string; src: string; title: string; meta?: string }[] };
+---
+{slides.length > 0 && (
+  <div class="carousel" data-carousel aria-roledescription="carousel" aria-label="Highlights">
+    <div class="track">
+      {slides.map((s, i) => (
+        <a class:list={['slide', { active: i === 0 }]} href={s.href} aria-hidden={i === 0 ? 'false' : 'true'} tabindex={i === 0 ? 0 : -1}>
+          <img src={s.src} alt="" loading={i === 0 ? 'eager' : 'lazy'} />
+          <span class="caption">{s.meta && <small>{s.meta}</small>}{s.title}</span>
+        </a>
+      ))}
+    </div>
+    <button class="nav prev" type="button" aria-label="Previous">‹</button>
+    <button class="nav next" type="button" aria-label="Next">›</button>
+    <div class="dots">{slides.map((s, i) => <button type="button" class:list={{ on: i === 0 }} aria-label={`Show ${s.title}`}></button>)}</div>
+  </div>
+)}
+<script>
+  document.querySelectorAll<HTMLElement>('[data-carousel]').forEach((el) => {
+    const slides = [...el.querySelectorAll<HTMLAnchorElement>('.slide')];
+    const dots = [...el.querySelectorAll<HTMLButtonElement>('.dots button')];
+    let i = 0;
+    const show = (n: number) => {
+      i = (n + slides.length) % slides.length;
+      slides.forEach((s, k) => { s.classList.toggle('active', k === i); s.setAttribute('aria-hidden', String(k !== i)); s.tabIndex = k === i ? 0 : -1; });
+      dots.forEach((d, k) => d.classList.toggle('on', k === i));
+    };
+    el.querySelector('.prev')!.addEventListener('click', () => show(i - 1));
+    el.querySelector('.next')!.addEventListener('click', () => show(i + 1));
+    dots.forEach((d, k) => d.addEventListener('click', () => show(k)));
+    // Cycles every 5 seconds, pausing while hovered or focused; stays put for people who prefer reduced motion.
+    if (matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+    let paused = false;
+    ['mouseenter', 'focusin'].forEach((e) => el.addEventListener(e, () => { paused = true; }));
+    ['mouseleave', 'focusout'].forEach((e) => el.addEventListener(e, () => { paused = false; }));
+    setInterval(() => { if (!paused && !document.hidden) show(i + 1); }, 5000);
+  });
+</script>
+<style>
+  .carousel { position: relative; border-radius: 16px; overflow: hidden; background: var(--unvisited); margin: 8px 0 40px; }
+  .track { position: relative; aspect-ratio: 16 / 7; }
+  .slide { position: absolute; inset: 0; opacity: 0; transition: opacity .8s ease; pointer-events: none; color: #fff; text-decoration: none; }
+  .slide.active { opacity: 1; pointer-events: auto; }
+  .slide img { width: 100%; height: 100%; object-fit: cover; display: block; }
+  .caption { position: absolute; left: 0; right: 0; bottom: 0; padding: 48px 24px 20px; background: linear-gradient(transparent, rgba(0, 0, 0, .65)); font-family: var(--font-head); font-size: clamp(1.1rem, 3vw, 1.6rem); font-weight: 600; }
+  .caption small { display: block; font-family: var(--font-body, inherit); font-size: .8rem; font-weight: 500; opacity: .85; text-transform: uppercase; letter-spacing: .05em; }
+  .nav { position: absolute; top: 50%; transform: translateY(-50%); width: 40px; height: 40px; border-radius: 50%; border: 0; background: rgba(0, 0, 0, .35); color: #fff; font-size: 1.6rem; line-height: 1; cursor: pointer; }
+  .prev { left: 12px; } .next { right: 12px; }
+  .dots { position: absolute; right: 20px; bottom: 22px; display: flex; gap: 6px; }
+  .dots button { width: 8px; height: 8px; padding: 0; border-radius: 50%; border: 0; background: rgba(255, 255, 255, .5); cursor: pointer; }
+  .dots button.on { background: #fff; }
+  @media (max-width: 600px) { .track { aspect-ratio: 4 / 3; } .dots { display: none; } .nav { width: 32px; height: 32px; font-size: 1.3rem; } }
+</style>

@@ -33,6 +33,12 @@ const adventures = defineCollection({
       mode: z.enum(['drive', 'train', 'shinkansen', 'express', 'local', 'daytrip', 'bus', 'ferry', 'flight', 'walk', 'other']),
       coords: z.array(z.tuple([z.number(), z.number()])), // [lat, lng]
     })).default([]),
+    // Roads to call out on the map (e.g. a route driven end to end), drawn as wide translucent bands under the route.
+    bands: z.array(z.object({
+      name: z.string(),
+      color: z.string(),
+      coords: z.array(z.tuple([z.number(), z.number()])), // [lat, lng]
+    })).default([]),
     // Optional points shown as a switchable map layer (e.g. manhole covers), off by default.
     pois: z.array(z.object({
       layer: z.string(),
@@ -51,7 +57,7 @@ const adventures = defineCollection({
       days: z.array(z.number()),          // timeline day numbers in this part
       modes: z.array(z.string()).optional(), // leg modes on this part's map; without it, legs from `days` are drawn
       stops: z.array(z.string()),         // stop names shown on this part's map
-      note: z.object({ title: z.string(), text: z.array(z.string()) }).optional(), // a short section above the part's map
+      notes: z.array(z.object({ title: z.string(), text: z.array(z.string()) })).default([]), // short sections above the part's map
     })).default([]),
     // Day-by-day timeline. Each day lists events in order; `route` lines say how the day's travel was made.
     timeline: z.array(z.object({

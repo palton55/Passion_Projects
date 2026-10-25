@@ -5,7 +5,8 @@
 // Drive legs are photo-GPS waypoints; the browser snaps them to real roads when a router answers.
 // Optional `regions` (GeoJSON, e.g. prefectures visited) and `pois` (points with a `layer` name, e.g. manhole covers)
 // become overlays in the layer control; regions and point layers start off.
-const { stops, legs = [], height = 460, dot = 8, groups = [], lines = true, regions = null, regionsLabel = 'Prefectures visited', pois = [] } = Astro.props;
+// `bands` (wide translucent lines for roads called out, e.g. a route driven end to end) start on.
+const { stops, legs = [], height = 460, dot = 8, groups = [], lines = true, regions = null, regionsLabel = 'Prefectures visited', pois = [], bands = [] } = Astro.props;
 const used = new Set(legs.length ? legs.map((l: any) => l.mode) : stops.map((s: any) => s.mode));
 const legend = [
   ['drive', 'Drive'], ['shinkansen', 'Shinkansen'], ['express', 'Limited express'], ['local', 'Local train'], ['daytrip', 'Day trip'], ['bus', 'Bus'], ['ferry', 'Boat / ferry'],
@@ -19,7 +20,7 @@ const legend = [
   </div>
 )}
 <div class="route-map" style={`height: ${height}px`} data-dot={dot} data-stops={JSON.stringify(stops)} data-legs={JSON.stringify(legs)} data-lines={String(lines)}
-  data-regions={regions ? JSON.stringify(regions) : ''} data-regions-label={regionsLabel} data-pois={JSON.stringify(pois)}></div>
+  data-regions={regions ? JSON.stringify(regions) : ''} data-regions-label={regionsLabel} data-pois={JSON.stringify(pois)} data-bands={JSON.stringify(bands)}></div>
 <ul class="legend">{legend.map(([m, label]) => <li class={m}>{label}</li>)}</ul>
 <script>
   import L from 'leaflet';
@@ -85,6 +86,14 @@ const legend = [
       });
       overlays[el.dataset.regionsLabel || 'Regions'] = shaded;
     }
+    // Bands: wide translucent lines under the route for roads worth calling out, shown by default and snapped to roads.
+    const bands = JSON.parse(el.dataset.bands || '[]');
+    if (bands.length) map.createPane('bands').style.zIndex = '390';
+    bands.forEach((b: any) => {
+      const line = L.polyline(b.coords, { color: b.color, weight: 14, opacity: .35, lineCap: 'round', pane: 'bands' }).bindTooltip(b.name, { sticky: true });
+      overlays[b.name] = L.layerGroup([line]).addTo(map);
+      queued(b.coords).then((road) => { if (road) line.setLatLngs(road); });
+    });
     const pois = JSON.parse(el.dataset.pois || '[]');
     // Highlighted points get a label unless a stop already names the town; labels point away from the middle of
     // the map so they stay clear of the route.

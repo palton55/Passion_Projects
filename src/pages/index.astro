@@ -1,11 +1,17 @@
 ---
 import Base from '../layouts/Base.astro';
 import SidequestCard from '../components/SidequestCard.astro';
+import Carousel from '../components/Carousel.astro';
+import covers from '../data/covers.json';
 import { showDrafts } from '../lib/drafts';
 import { getCollection } from 'astro:content';
 const base = import.meta.env.BASE_URL.replace(/\/$/, '');
 const all = (await getCollection('adventures', ({ data }) => !data.draft || showDrafts))
   .sort((a, b) => (b.data.start?.valueOf() ?? 0) - (a.data.start?.valueOf() ?? 0));
+const slides = all.flatMap((e) => {
+  const src = e.data.cover ?? (covers as Record<string, string>)[e.id];
+  return src ? [{ href: `${base}/sidequests/${e.id}/`, src: `${base}/${src}`, title: e.data.title, meta: e.data.start?.getUTCFullYear().toString() }] : [];
+});
 ---
 <Base title="Sidequest Resume">
   <section class="hero">
@@ -13,7 +19,9 @@ const all = (await getCollection('adventures', ({ data }) => !data.draft || show
     <p>A curated record of notable experiences from the past few years, laid out like a resume. It covers travel, training, competition, and photography, with routes, timelines, and photos for each.</p>
     <a class="cta" href={`${base}/travel/`}>Travel</a>
     <a class="cta" href={`${base}/pursuits/`}>Pursuits</a>
+    <a class="cta" href={`${base}/maps/`}>Maps</a>
   </section>
+  <Carousel slides={slides} />
   <h2>Recent sidequests</h2>
   {all.length === 0 && <p class="empty">Entries coming soon.</p>}
   <div class="grid">{all.slice(0, 6).map((entry) => <SidequestCard entry={entry} />)}</div>

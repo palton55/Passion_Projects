@@ -3,18 +3,11 @@ import Base from '../layouts/Base.astro';
 import SidequestCard from '../components/SidequestCard.astro';
 import Tile from '../components/Tile.astro';
 import RouteMap from '../components/RouteMap.astro';
-import { showDrafts } from '../lib/drafts';
-import { getCollection } from 'astro:content';
 import { regions } from '../data/regions';
-const travel = (await getCollection('adventures', ({ data }) => data.category === 'Travel' && (!data.draft || showDrafts)))
-  .sort((a, b) => (b.data.start?.valueOf() ?? 0) - (a.data.start?.valueOf() ?? 0));
+import { tripMap } from '../lib/trip-map';
+// Every trip's stops and routes on one world map, toggled by destination.
+const { travel, legs: allLegs, stops: allStops, areas: areaNames } = await tripMap();
 const regionNames = new Set(regions.flatMap((r) => [r.region].flat()));
-// Every trip's stops and routes on one world map, toggled by destination. Flights are left out.
-const mapped = travel.filter((e) => e.data.stops.length);
-const areaOf = (e: (typeof travel)[number]) => regions.find((r) => [r.region].flat().includes(e.data.region ?? ''))?.name ?? (e.data.region ?? 'Other');
-const allLegs = mapped.flatMap((e) => e.data.legs.filter((l) => l.mode !== 'flight').map((l) => ({ ...l, name: `${e.data.title}: ${l.name}`, groups: [areaOf(e)] })));
-const allStops = mapped.flatMap((e) => e.data.stops.map((s) => ({ ...s, date: e.data.title, groups: [areaOf(e)] })));
-const areaNames = [...new Set(mapped.map(areaOf))];
 const otherTravel = travel.filter((e) => !regionNames.has(e.data.region ?? ''));
 ---
 <Base title="Travel · Sidequest Resume" description="Trips and travel, organized by destination.">

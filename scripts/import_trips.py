@@ -87,7 +87,7 @@ ENTRIES = [
          bands=[('japan-2026/route-238.geojson', 'National Route 238, driven end to end', '#26a69a')], title='Hokkaido Road Trip', collection='Hokkaido Road Trip',
          summary='A winter road trip around Hokkaido from New Chitose: across Tokachi to Abashiri, along the Sea of Okhotsk to the drift ice at Monbetsu, up to Cape Soya, inland to Asahikawa, Biei, and Furano, and down to Upopoy, the National Ainu Museum, followed by a day in Sapporo and the trip home through Tokyo.',
          parts=[
-             dict(title='Hokkaido Road Trip', days=[13, 14, 15, 16], modes=['drive'], notes=['Why this route: the manhole covers', 'National Route 238, end to end'],
+             dict(title='Hokkaido Road Trip', days=[13, 14, 15, 16], modes=['drive'], notes=['Why this route: the manhole covers'],
                   stops=['New Chitose Airport', 'Obihiro', 'Ashoro / Rikubetsu', 'Abashiri', 'Monbetsu', 'Cape Soya', 'Wakkanai', 'Teshio',
                          'Asahikawa', 'Biei / Furano', 'Furano', 'Upopoy, Shiraoi'],
                   blurb='Four days of driving from New Chitose: across Tokachi to Abashiri, along the Sea of Okhotsk to the drift ice at Monbetsu, north to Cape Soya, inland to Asahikawa, Biei, and Furano, and south to Upopoy.'),

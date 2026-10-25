@@ -19,6 +19,8 @@ const section = place.country === 'Japan' ? { href: '/japan/', label: 'Japan' } 
     <h1>{place.name}</h1>
     <p class="meta">{place.area === place.country ? place.country : `${place.area}, ${place.country}`}</p>
     {place.text.map((p) => <p>{p}</p>)}
+    {place.story && <h2>{place.story.title}</h2>}
+    {place.story?.text.map((p) => <p>{p}</p>)}
     <p class="meta">Visited on {place.trips.map((t, i) => <>{i > 0 && ', '}<a href={`${base}/sidequests/${t.id}/`}>{t.title}</a> ({t.year})</>)}</p>
     <h2>Photos</h2>
     <Gallery photos={place.pics} />

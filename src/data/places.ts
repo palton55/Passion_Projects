@@ -10,6 +10,8 @@ export interface PlaceNote {
   // Caption words that pull more gallery photos onto the page; defaults to the place name.
   keywords?: string[];
   text: string[];
+  // My own account of the place, in first person, shown under its own heading after the overview.
+  story?: { title: string; text: string[] };
   photos: string[];
 }
 
@@ -76,6 +78,17 @@ export const placeNotes: PlaceNote[] = [
       'The Okhotsk coast of Hokkaido is the southernmost place in the Northern Hemisphere where sea ice reaches the shore. Drift ice formed off the Amur River arrives from late January and lingers into March, and Lake Saroma, the largest lake in Hokkaido, freezes over behind its sandbar.',
       'Monbetsu is a port town on this coast, known for the icebreaker cruises that run into the ice each winter. The Okhotsk Tokkari Center cares for rescued seals ("tokkari" is the Ainu word for seal), and a giant crab claw monument stands on the waterfront.',
     ],
+    story: {
+      title: 'National Route 238, end to end',
+      text: [
+        "Day 14 was the day I drove all of National Route 238, the road that follows the Sea of Okhotsk for about 320 km from Abashiri to Wakkanai. I'd already been up to Wakkanai the summer before, so this time I wanted the whole northeast coast of Hokkaido in one go, in March, with the drift ice in.",
+        "It starts right in Abashiri. I left the hotel a little after 8 a.m., and within half an hour the road was running between the sea and the lakes: Lake Abashiri, then Lake Notoro near Tokoro, then the long south shore of Lake Saroma, Hokkaido's largest lake, still frozen over and almost impossible to tell apart from the sea beyond it. After Yubetsu the road straightens out along the coast into Monbetsu.",
+        "Monbetsu was the main stop. The drift ice was packed in against the harbor, and I spent most of the morning at Gomachan Land, the seal sanctuary on the waterfront, watching the keepers feed the rescued spotted seals. Just down the road is the giant crab claw sculpture that has become the town's landmark. I made one short loop inland from here to Engaru and Onneyu Onsen for their manhole covers, then picked Route 238 back up on the north side of town.",
+        "North of Monbetsu the road empties out. Okoppe, Omu, Esashi, Hamatonbetsu and Sarufutsu are small fishing towns spaced far apart, and in between it is mostly long, straight road with snowbanks on one side and the ice-covered Sea of Okhotsk on the other. For long stretches the ice reached all the way out to the horizon. There's very little traffic, mostly trucks.",
+        "The road reaches Cape Soya, the northernmost point of Japan, in the late afternoon. On a clear day you can see Sakhalin from the monument. Route 238 then bends west along the Soya coast, and that last stretch into Wakkanai was the best part of the drive, with the sun going down over the sea. The route ends in Wakkanai near the station, and from there I headed south for the night in Teshio.",
+        "Route 238 is highlighted in teal on the Hokkaido Road Trip map.",
+      ],
+    },
     photos: ['japan-2026/06.jpg', 'japan-2026/07.jpg', 'japan-2026/08.jpg', 'japan-2026/09.jpg'],
   },
   {

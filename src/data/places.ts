@@ -4,8 +4,8 @@
 export interface PlaceNote {
   slug: string;
   name: string;
-  country: 'Japan' | 'South Korea';
-  area: string; // prefecture, or province/city in Korea
+  country: 'Japan' | 'South Korea' | 'United States';
+  area: string; // prefecture, province/city in Korea, or "<county>, <state>" in the US
   match: string[];
   // Caption words that pull more gallery photos onto the page; defaults to the place name.
   keywords?: string[];
@@ -399,6 +399,106 @@ export const placeNotes: PlaceNote[] = [
       'Water buffalo carts carry visitors through the lanes, and Kondoi Beach on the western shore is among the most celebrated in the Yaeyama Islands.',
     ],
     photos: ['2025-ishigaki/06.jpg', '2025-ishigaki/07.jpg', '2025-ishigaki/08.jpg', '2025-ishigaki/09.jpg'],
+  },
+  // Arizona, south to north
+  {
+    slug: 'tucson', name: 'Tucson', country: 'United States', area: 'Pima County, Arizona', match: ['Tucson'],
+    keywords: ['Tucson', 'Sentinel Peak'],
+    text: [
+      'Tucson is the second-largest city in Arizona, set in the Sonoran Desert about 60 miles north of the Mexican border and ringed by five mountain ranges. Its history as a Spanish settlement goes back to 1775, when the Presidio San Agust\u00edn del Tucs\u00f3n was built on the Santa Cruz River, and the city is home to the University of Arizona, founded in 1885.',
+      'Sentinel Peak, just west of downtown, is better known as "A" Mountain for the large letter that University of Arizona students first laid out on its slope in 1915. Saguaro National Park protects forests of giant saguaro cactus on both the east and west sides of the city, and in 2015 Tucson became the first city in the United States named a UNESCO City of Gastronomy, largely for its Sonoran Mexican food.',
+    ],
+    photos: ['arizona-2026/09.jpg', 'arizona-2026/06.jpg', 'arizona-2026/08.jpg', 'arizona-2026/07.jpg', 'arizona-2026/23.jpg'],
+  },
+  {
+    slug: 'mount-lemmon', name: 'Mount Lemmon', country: 'United States', area: 'Pima County, Arizona', match: ['Mount Lemmon'],
+    keywords: ['Mount Lemmon', 'Windy Point', 'Santa Catalina'],
+    text: [
+      'Mount Lemmon is the highest peak of the Santa Catalina Mountains north of Tucson, at 9,159 feet. It is named for the botanist Sara Plummer Lemmon, who climbed it in 1881. It is one of the "sky islands" of southern Arizona, mountain ranges high enough to rise from the desert into pine and fir forest.',
+      'The Catalina Highway climbs about 6,000 feet from the edge of Tucson to the top, passing through as many plant zones as a drive from Mexico to Canada. Windy Point Vista, partway up, is a well-known spot for sunsets over the city. Near the summit, the small village of Summerhaven and the Mt. Lemmon Ski Valley, the southernmost ski area in the United States, serve as a summer escape from the desert heat.',
+    ],
+    photos: ['arizona-2026/11.jpg', 'arizona-2026/12.jpg', 'arizona-2026/13.jpg', 'arizona-2026/14.jpg', 'arizona-2026/10.jpg'],
+  },
+  {
+    slug: 'arizona-sonora-desert-museum', name: 'Arizona-Sonora Desert Museum', country: 'United States', area: 'Pima County, Arizona',
+    match: ['Arizona-Sonora Desert Museum'], keywords: ['Desert Museum', 'Gates Pass'],
+    text: [
+      'The Arizona-Sonora Desert Museum, west of Tucson in the Tucson Mountains, is a zoo, botanical garden, natural history museum, and aquarium in one. It opened in 1952. Most of it is outdoors, along paths through the desert, and it shows the animals and plants of the Sonoran Desert in settings built to look like their habitats.',
+      'Its exhibits include black bears and Mexican gray wolves, mountain lions, bighorn sheep, and ocelots, along with an artificial limestone cave and a collection of desert minerals. The usual way in from Tucson is Gates Pass Road, a narrow pass over the Tucson Mountains next to the western district of Saguaro National Park.',
+    ],
+    photos: ['arizona-2026/27.jpg', 'arizona-2026/30.jpg', 'arizona-2026/31.jpg', 'arizona-2026/26.jpg', 'arizona-2026/25.jpg', 'arizona-2026/32.jpg'],
+  },
+  {
+    slug: 'bisbee', name: 'Bisbee', country: 'United States', area: 'Cochise County, Arizona', match: ['Bisbee'],
+    keywords: ['Bisbee'],
+    text: [
+      'Bisbee is an old copper mining town in the Mule Mountains of southeastern Arizona, a few miles from the Mexican border and the seat of Cochise County. It was founded in 1880, and the Copper Queen Mine and its neighbors made it one of the richest mineral sites in the world, producing copper, gold, and silver until large-scale mining ended in 1975.',
+      'The town\'s Victorian and art deco buildings climb the steep canyon sides, linked by long public stairways, and today Bisbee is known as an artists\' town. The Queen Mine Tour takes visitors underground into the old Copper Queen workings, and the Bisbee Mining and Historical Museum, in the 1897 headquarters of the Copper Queen company, is affiliated with the Smithsonian Institution.',
+    ],
+    photos: ['arizona-2026/21.jpg', 'arizona-2026/20.jpg', 'arizona-2026/16.jpg', 'arizona-2026/18.jpg', 'arizona-2026/15.jpg', 'arizona-2026/17.jpg', 'arizona-2026/19.jpg'],
+  },
+  {
+    slug: 'sedona', name: 'Sedona', country: 'United States', area: 'Coconino County, Arizona', match: ['Sedona'],
+    keywords: ['Sedona', 'Oak Creek'],
+    text: [
+      'Sedona is a small city in north central Arizona, surrounded by red sandstone buttes and spires in the Coconino National Forest. It was named in 1902 for Sedona Schnebly, the wife of its first postmaster. The red color comes from iron oxide in layers of sandstone laid down about 270 million years ago.',
+      'The approach from the south on AZ-179 passes Bell Rock and Courthouse Butte at the Village of Oak Creek. North of town, AZ-89A follows Oak Creek Canyon, a narrow gorge about 12 miles long, before climbing switchbacks to the Oak Creek Vista overlook on the edge of the Colorado Plateau and continuing on to Flagstaff.',
+    ],
+    photos: ['arizona-2026/36.jpg', 'arizona-2026/35.jpg', 'arizona-2026/37.jpg', 'arizona-2026/38.jpg', 'arizona-2026/39.jpg', 'arizona-2026/40.jpg', 'arizona-2026/34.jpg'],
+  },
+  {
+    slug: 'flagstaff', name: 'Flagstaff', country: 'United States', area: 'Coconino County, Arizona', match: ['Flagstaff'],
+    keywords: ['Flagstaff', 'Lowell'],
+    text: [
+      'Flagstaff is a mountain city of about 75,000 people at nearly 7,000 feet on the Colorado Plateau, below the San Francisco Peaks, where Humphreys Peak is the highest point in Arizona. It grew up along the railroad in the 1880s and later along Route 66, both of which still run through downtown. It is the seat of Coconino County and home to Northern Arizona University.',
+      'Lowell Observatory was founded on Mars Hill above downtown in 1894 by Percival Lowell, and it was there in 1930 that Clyde Tombaugh discovered Pluto. Partly because of the observatory, Flagstaff became the world\'s first International Dark Sky City in 2001, with lighting rules that keep the night sky dark.',
+    ],
+    photos: ['arizona-2026/45.jpg', 'arizona-2026/44.jpg', 'arizona-2026/41.jpg', 'arizona-2026/42.jpg'],
+  },
+  {
+    slug: 'williams', name: 'Williams', country: 'United States', area: 'Coconino County, Arizona', match: ['Williams'],
+    keywords: ['Williams'],
+    text: [
+      'Williams is a small town on Route 66 west of Flagstaff, at about 6,800 feet in the ponderosa pine forest below Bill Williams Mountain. It calls itself the "Gateway to the Grand Canyon," since the South Rim is about an hour north on AZ-64.',
+      'Williams was the last town on Route 66 to be bypassed by Interstate 40, in 1984, and its downtown still has the motels, diners, and neon signs of the old highway. The Grand Canyon Railway, first opened in 1901, runs from its historic depot to Grand Canyon Village.',
+    ],
+    photos: ['arizona-2026/72.jpg'],
+  },
+  {
+    slug: 'grand-canyon', name: 'Grand Canyon South Rim', country: 'United States', area: 'Coconino County, Arizona',
+    match: ['Grand Canyon South Rim', 'Desert View'], keywords: ['Grand Canyon', 'Grandview', 'Moran Point', 'Desert View', 'Mather Point', 'Kaibab'],
+    text: [
+      'The Grand Canyon was carved by the Colorado River through the Colorado Plateau. It is 277 river miles long, up to 18 miles wide, and more than a mile deep, and the rock in its walls spans nearly two billion years. It became a national park in 1919 and a UNESCO World Heritage Site in 1979.',
+      'The South Rim, at about 7,000 feet, is the side open all year. Mather Point and Yavapai Point near Grand Canyon Village are the first views for most visitors. Desert View Drive runs about 25 miles east past Grandview Point and Moran Point to the Desert View Watchtower, designed by Mary Colter and finished in 1932. Kaibab National Forest surrounds the park on the south and allows free dispersed camping just outside its boundary.',
+    ],
+    photos: ['arizona-2026/68.jpg', 'arizona-2026/48.jpg', 'arizona-2026/51.jpg', 'arizona-2026/52.jpg', 'arizona-2026/54.jpg', 'arizona-2026/61.jpg', 'arizona-2026/65.jpg', 'arizona-2026/57.jpg', 'arizona-2026/71.jpg'],
+  },
+  {
+    slug: 'jerome', name: 'Jerome', country: 'United States', area: 'Yavapai County, Arizona', match: ['Jerome'],
+    keywords: ['Jerome'],
+    text: [
+      'Jerome is a former copper mining town built on the side of Cleopatra Hill on Mingus Mountain, about 5,000 feet up and looking out over the Verde Valley toward Sedona. The United Verde Mine made it one of the largest towns in Arizona in the early 20th century.',
+      'After the last mine closed in 1953, the population fell to around a hundred and Jerome was called the largest ghost town in America. It has since been revived by artists and shop owners, and today it is a tourist town of a few hundred people, reached by the switchbacks of AZ-89A between Prescott and the Verde Valley.',
+    ],
+    photos: ['arizona-2026/74.jpg', 'arizona-2026/75.jpg', 'arizona-2026/76.jpg'],
+  },
+  {
+    slug: 'prescott', name: 'Prescott', country: 'United States', area: 'Yavapai County, Arizona', match: ['Prescott'],
+    keywords: ['Prescott', 'Whiskey Row'],
+    text: [
+      'Prescott, in the pine-covered mountains of central Arizona, was the first capital of the Arizona Territory when it was founded in 1864, and it is the seat of Yavapai County. The town also hosts what it bills as the world\'s oldest rodeo, held since 1888.',
+      'Downtown centers on Courthouse Plaza and the 1916 Yavapai County Courthouse. Facing it along Montezuma Street is Whiskey Row, a block of saloons that was rebuilt after a fire in 1900. Prescott is also home to a campus of Embry-Riddle Aeronautical University, and the granite boulders of the Granite Dells lie just north of town.',
+    ],
+    photos: ['arizona-2026/77.jpg', 'arizona-2026/78.jpg', 'arizona-2026/73.jpg'],
+  },
+  {
+    slug: 'cave-creek', name: 'Cave Creek', country: 'United States', area: 'Maricopa County, Arizona', match: ['Cave Creek'],
+    keywords: ['Cave Creek'],
+    text: [
+      'Cave Creek is a small town in the desert foothills north of Phoenix that started as a mining and ranching settlement in the 1870s. It has kept a Western look, with saloons, steakhouses, and horse trails along its main street.',
+      'The Buffalo Chip Saloon on Cave Creek Road is known for its weekly rodeo nights, with bull riding in an arena behind the bar.',
+    ],
+    photos: ['arizona-2026/04.jpg', 'arizona-2026/05.jpg'],
   },
   // Korea
   {

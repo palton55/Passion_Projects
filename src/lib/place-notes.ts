@@ -11,8 +11,8 @@ export type PlacePage = PlaceNote & { trips: { id: string; title: string; year: 
 const all = Object.values(photoData as Record<string, Photo[]>).flat();
 const bySrc = new Map(all.map((p) => [p.src, p]));
 const photo = (ref: string): Photo => bySrc.get(`photos/${ref}`) ?? { src: `photos/${ref}` };
-// Photos of people (Patrick in a yukata, group shots) stay in their trip galleries only.
-const personal = /yukata|^At /i;
+// Photos of people (Patrick in a yukata, selfies, group shots) stay in their trip galleries only.
+const personal = /yukata|^At |^Me /i;
 
 // The hand-picked photos first, then every other gallery photo whose caption names the place.
 function picsFor(n: PlaceNote): Photo[] {

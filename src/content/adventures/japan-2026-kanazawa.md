@@ -40,4 +40,4 @@ timeline:
     route: ["Hokuriku Shinkansen, Kanazawa back to Tokyo (about 410 km, 2 h).", "Tokyo to Yokohama and Machida (train, to confirm) (about 60 km, 1 h 30 min)."]
 ---
 
-*The full write-up for this sidequest is coming soon.*
+*I'm still writing up the full story of this one, so check back soon.*

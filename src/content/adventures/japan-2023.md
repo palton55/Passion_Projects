@@ -112,4 +112,4 @@ timeline:
     route: ["Limited express Thunderbird (Kosei Line) (about 90 km, 1 h).", "Tokaido Shinkansen (about 450 km, 2 h 15 min).", "Tokyo to Haneda Airport (about 15 km, 20 min)."]
 ---
 
-*The full write-up for this trip is coming soon. It will cover my first impressions of Japan, getting around with beginner Japanese, and the homestay in Tsuruga.*
+*I'm still writing up the full story of this trip. It'll cover my first impressions of Japan, getting around with beginner Japanese, and the homestay in Tsuruga.*

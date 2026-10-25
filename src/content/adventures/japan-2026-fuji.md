@@ -38,4 +38,4 @@ timeline:
     route: ["Lake Yamanakako to the Chureito Pagoda, Lake Kawaguchiko and Fuji-Q Highland, then to Shinjuku to drop off the car (about 130 km, 2 h)."]
 ---
 
-*The full write-up for this sidequest is coming soon.*
+*I'm still writing up the full story of this one, so check back soon.*

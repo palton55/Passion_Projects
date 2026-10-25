@@ -97,4 +97,4 @@ timeline:
     route: ["Tohoku Shinkansen, Morioka to Tokyo (about 480 km, 2 h 15 min)."]
 ---
 
-*The full write-up for this sidequest is coming soon.*
+*I'm still writing up the full story of this one, so check back soon.*

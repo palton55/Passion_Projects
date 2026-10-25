@@ -65,4 +65,4 @@ timeline:
     route: ["Flight, Ishigaki to Haneda."]
 ---
 
-*The full write-up for this sidequest is coming soon.*
+*I'm still writing up the full story of this one, so check back soon.*

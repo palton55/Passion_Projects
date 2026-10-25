@@ -6,4 +6,4 @@ draft: true              # fill in dates, location, dives and photos, then set t
 photos: []
 ---
 
-*The full write-up for this sidequest is coming soon.*
+*I'm still writing up the full story of this one, so check back soon.*

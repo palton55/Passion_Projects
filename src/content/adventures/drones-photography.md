@@ -6,4 +6,4 @@ draft: true              # fill in gear, highlights and a gallery of your best s
 photos: []
 ---
 
-*The full write-up for this sidequest is coming soon.*
+*I'm still writing up the full story of this one, so check back soon.*

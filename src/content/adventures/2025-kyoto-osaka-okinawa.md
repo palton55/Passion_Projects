@@ -105,4 +105,4 @@ timeline:
     route: ["Drive back to Naha Airport (about 70 km, 1 h).", "Flight, Naha to Haneda."]
 ---
 
-*The full write-up for this sidequest is coming soon.*
+*I'm still writing up the full story of this one, so check back soon.*

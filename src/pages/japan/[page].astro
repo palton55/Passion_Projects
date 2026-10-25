@@ -16,6 +16,10 @@ const entries = (await getCollection('adventures', ({ data }) => (data.region ==
   .sort((a, b) => (a.data.start?.valueOf() ?? 0) - (b.data.start?.valueOf() ?? 0));
 const photosOf = (e: (typeof entries)[number]) => e.data.photos.length ? e.data.photos : ((photoData as Record<string, { src: string; caption?: string }[]>)[e.id] ?? []);
 const inTopic = (t: JapanTopic) => entries.filter((e) => e.data.collection === t.collection);
+// Year pages with several trips get one combined map with a filter button per trip, like the Travel map. Flights are left out.
+const yearTrips = (topic.subtopics ?? []).filter((s) => !s.section).map((s) => ({ name: s.title, mapped: inTopic(s).filter((e) => e.data.stops.length) })).filter((t) => t.mapped.length);
+const yearStops = yearTrips.flatMap((t) => t.mapped.flatMap((e) => e.data.stops.map((s) => ({ ...s, date: e.data.title, groups: [t.name] }))));
+const yearLegs = yearTrips.flatMap((t) => t.mapped.flatMap((e) => e.data.legs.filter((l) => l.mode !== 'flight').map((l) => ({ ...l, name: `${e.data.title}: ${l.name}`, groups: [t.name] }))));
 ---
 <Base title={`${topic.title} · Sidequest Resume`} description={topic.blurb}>
   <p class="crumb"><a href={`${base}/travel/`}>Travel</a> / <a href={`${base}/japan/`}>Japan</a></p>
@@ -24,6 +28,12 @@ const inTopic = (t: JapanTopic) => entries.filter((e) => e.data.collection === t
       <h1>{t.title}</h1>
       {t.dates && <p class="meta">{t.dates}</p>}
       <p class="lede">{t.blurb}</p>
+      {yearTrips.length > 1 && (
+        <div class="posting">
+          <RouteMap stops={yearStops} legs={yearLegs} height={520} dot={4} groups={yearTrips.map((y) => y.name)} lines={false} />
+          <p class="meta">Every trip this year on one map. Use the buttons to show one trip at a time.</p>
+        </div>
+      )}
       {inTopic(t).map((e) => (
         <div class="posting">
           <Highlights photos={photosOf(e)} href={`${base}/sidequests/${e.id}/`} />

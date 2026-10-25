@@ -23,7 +23,7 @@ legs:
   - {"name": "Machida to Ikebukuro and back", "mode": "local", "coords": [[35.542, 139.446], [35.62, 139.6], [35.6896, 139.7006], [35.7299, 139.717]], "day": 4}
   - {"name": "Machida to Tachikawa", "mode": "local", "coords": [[35.542, 139.446], [35.62, 139.42], [35.6999, 139.4118]], "day": 5}
   - {"name": "Shibuya, Harajuku and Ebisu, then to Haneda", "mode": "local", "coords": [[35.6627, 139.6671], [35.666, 139.7091], [35.6476, 139.7095], [35.5546, 139.7413], [35.5494, 139.7798]], "day": 7}
-  - {"name": "Flight, Haneda to New Chitose (to confirm)", "mode": "flight", "coords": [[35.5494, 139.7798], [38.8, 141.4], [42.7752, 141.692]], "day": 7}
+  - {"name": "Flight, Haneda to New Chitose", "mode": "flight", "coords": [[35.5494, 139.7798], [38.8, 141.4], [42.7752, 141.692]], "day": 7}
 # Day-by-day timeline, generated from the trip notes by scripts/import_trips.py.
 timeline:
   - label: "Day 1"
@@ -68,7 +68,7 @@ timeline:
     events:
       - { time: "Afternoon", text: "Shibuya; Harajuku / Omotesando; Ebisu." }
       - { time: "Evening", text: "On the way to Haneda." }
-    route: ["Shibuya, Harajuku and Ebisu, then to Haneda (about 20 km, 25 min).", "Flight, Haneda to New Chitose (to confirm)."]
+    route: ["Shibuya, Harajuku and Ebisu, then to Haneda (about 20 km, 25 min).", "Flight, Haneda to New Chitose."]
 ---
 
 *I'm still writing up the full story of this one, so check back soon.*

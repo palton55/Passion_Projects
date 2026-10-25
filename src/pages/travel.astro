@@ -5,16 +5,20 @@ import Tile from '../components/Tile.astro';
 import RouteMap from '../components/RouteMap.astro';
 import { regions } from '../data/regions';
 import { tripMap } from '../lib/trip-map';
+import { getCollection } from 'astro:content';
 // Every trip's stops and routes on one world map, toggled by destination.
 const { travel, legs: allLegs, stops: allStops, areas: areaNames } = await tripMap();
 const regionNames = new Set(regions.flatMap((r) => [r.region].flat()));
+// Destinations without any entries yet (drafts included) are left off until they have one (Patrick, Oct 25 2026).
+const filled = new Set((await getCollection('adventures')).map((e) => e.data.region));
+const shown = regions.filter((r) => [r.region].flat().some((x) => filled.has(x)));
 const otherTravel = travel.filter((e) => !regionNames.has(e.data.region ?? ''));
 ---
 <Base title="Travel · Sidequest Resume" description="Trips and travel, organized by destination.">
   <h1>Travel</h1>
   <p class="lede">Travel and experiences, organized by destination.</p>
   <div class="grid">
-    {regions.map((r) => (
+    {shown.map((r) => (
       <Tile href={r.href ?? `/travel/${r.slug}/`} title={r.name} meta="Travel" blurb={r.blurb} />
     ))}
     {otherTravel.map((entry) => <SidequestCard entry={entry} />)}

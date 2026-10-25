@@ -1392,5 +1392,323 @@
       "src": "photos/japan-2026/18.jpg",
       "caption": "Sapporo TV Tower, Odori Park"
     }
+  ],
+  "arizona-2026": [
+    {
+      "src": "photos/arizona-2026/01.jpg",
+      "caption": "Welcome to Arizona, on I-10 at the Colorado River"
+    },
+    {
+      "src": "photos/arizona-2026/02.jpg",
+      "caption": "Burgers in Peoria"
+    },
+    {
+      "src": "photos/arizona-2026/03.jpg",
+      "caption": "My new cowboy boots"
+    },
+    {
+      "src": "photos/arizona-2026/04.jpg",
+      "caption": "Rodeo night in Cave Creek"
+    },
+    {
+      "src": "photos/arizona-2026/05.jpg",
+      "caption": "Behind the chutes at the Cave Creek rodeo"
+    },
+    {
+      "src": "photos/arizona-2026/06.jpg",
+      "caption": "Downtown Tucson at night"
+    },
+    {
+      "src": "photos/arizona-2026/07.jpg",
+      "caption": "Mexican food in Tucson"
+    },
+    {
+      "src": "photos/arizona-2026/08.jpg",
+      "caption": "The saguaro sign in Tucson"
+    },
+    {
+      "src": "photos/arizona-2026/09.jpg",
+      "caption": "Tucson from Sentinel Peak"
+    },
+    {
+      "src": "photos/arizona-2026/10.jpg",
+      "caption": "An old truck in Summerhaven on Mount Lemmon"
+    },
+    {
+      "src": "photos/arizona-2026/11.jpg",
+      "caption": "Windy Point on Mount Lemmon at sunset"
+    },
+    {
+      "src": "photos/arizona-2026/12.jpg",
+      "caption": "Windy Point Vista, Mount Lemmon"
+    },
+    {
+      "src": "photos/arizona-2026/13.jpg",
+      "caption": "Sunset over the Santa Catalina Mountains"
+    },
+    {
+      "src": "photos/arizona-2026/14.jpg",
+      "caption": "Dusk over Tucson from Mount Lemmon"
+    },
+    {
+      "src": "photos/arizona-2026/15.jpg",
+      "caption": "An old Pepsi-Cola mural in Bisbee"
+    },
+    {
+      "src": "photos/arizona-2026/16.jpg",
+      "caption": "The Cochise County Courthouse in Bisbee"
+    },
+    {
+      "src": "photos/arizona-2026/17.jpg",
+      "caption": "St. Patrick's Church in Bisbee"
+    },
+    {
+      "src": "photos/arizona-2026/18.jpg",
+      "caption": "Copper Queen Library, Bisbee"
+    },
+    {
+      "src": "photos/arizona-2026/19.jpg",
+      "caption": "A painted alley stairway in Bisbee"
+    },
+    {
+      "src": "photos/arizona-2026/20.jpg",
+      "caption": "Bisbee Mining and Historical Museum"
+    },
+    {
+      "src": "photos/arizona-2026/21.jpg",
+      "caption": "Queen Mine Tours, Bisbee"
+    },
+    {
+      "src": "photos/arizona-2026/22.jpg",
+      "caption": "Lunch at Guadalajara in Sierra Vista"
+    },
+    {
+      "src": "photos/arizona-2026/23.jpg",
+      "caption": "Sunset over Tucson"
+    },
+    {
+      "src": "photos/arizona-2026/24.jpg",
+      "caption": "Gates Pass Road"
+    },
+    {
+      "src": "photos/arizona-2026/25.jpg",
+      "caption": "A scorpion under UV light at the Arizona-Sonora Desert Museum"
+    },
+    {
+      "src": "photos/arizona-2026/26.jpg",
+      "caption": "The cave at the Arizona-Sonora Desert Museum"
+    },
+    {
+      "src": "photos/arizona-2026/27.jpg",
+      "caption": "Black bear at the Arizona-Sonora Desert Museum"
+    },
+    {
+      "src": "photos/arizona-2026/28.jpg",
+      "caption": "Black bear at the Arizona-Sonora Desert Museum"
+    },
+    {
+      "src": "photos/arizona-2026/29.jpg",
+      "caption": "Me with the bears at the Desert Museum"
+    },
+    {
+      "src": "photos/arizona-2026/30.jpg",
+      "caption": "Ocelot at the Arizona-Sonora Desert Museum"
+    },
+    {
+      "src": "photos/arizona-2026/31.jpg",
+      "caption": "Bighorn sheep at the Arizona-Sonora Desert Museum"
+    },
+    {
+      "src": "photos/arizona-2026/32.jpg",
+      "caption": "The Tucson Mountains from Gates Pass"
+    },
+    {
+      "src": "photos/arizona-2026/33.jpg",
+      "caption": "Jinya Ramen Bar in Phoenix"
+    },
+    {
+      "src": "photos/arizona-2026/34.jpg",
+      "caption": "Driving AZ-179 into Sedona"
+    },
+    {
+      "src": "photos/arizona-2026/35.jpg",
+      "caption": "Courthouse Butte, Sedona"
+    },
+    {
+      "src": "photos/arizona-2026/36.jpg",
+      "caption": "Bell Rock, Sedona"
+    },
+    {
+      "src": "photos/arizona-2026/37.jpg",
+      "caption": "Red rocks in Sedona"
+    },
+    {
+      "src": "photos/arizona-2026/38.jpg",
+      "caption": "West Sedona"
+    },
+    {
+      "src": "photos/arizona-2026/39.jpg",
+      "caption": "Uptown Sedona"
+    },
+    {
+      "src": "photos/arizona-2026/40.jpg",
+      "caption": "Up Oak Creek Canyon on AZ-89A"
+    },
+    {
+      "src": "photos/arizona-2026/41.jpg",
+      "caption": "Flagstaff"
+    },
+    {
+      "src": "photos/arizona-2026/42.jpg",
+      "caption": "A brewery in downtown Flagstaff"
+    },
+    {
+      "src": "photos/arizona-2026/43.jpg",
+      "caption": "A pint in Flagstaff"
+    },
+    {
+      "src": "photos/arizona-2026/44.jpg",
+      "caption": "Lowell Observatory under red night lights"
+    },
+    {
+      "src": "photos/arizona-2026/45.jpg",
+      "caption": "Lowell Observatory"
+    },
+    {
+      "src": "photos/arizona-2026/46.jpg",
+      "caption": "Grand Canyon National Park"
+    },
+    {
+      "src": "photos/arizona-2026/47.jpg",
+      "caption": "Me at Mather Point"
+    },
+    {
+      "src": "photos/arizona-2026/48.jpg",
+      "caption": "Mather Point, Grand Canyon South Rim"
+    },
+    {
+      "src": "photos/arizona-2026/49.jpg",
+      "caption": "Grand Canyon from the South Rim"
+    },
+    {
+      "src": "photos/arizona-2026/50.jpg",
+      "caption": "Grand Canyon along Desert View Drive"
+    },
+    {
+      "src": "photos/arizona-2026/51.jpg",
+      "caption": "Grandview Point"
+    },
+    {
+      "src": "photos/arizona-2026/52.jpg",
+      "caption": "Moran Point"
+    },
+    {
+      "src": "photos/arizona-2026/53.jpg",
+      "caption": "Feet over the edge at Moran Point"
+    },
+    {
+      "src": "photos/arizona-2026/54.jpg",
+      "caption": "Desert View Watchtower"
+    },
+    {
+      "src": "photos/arizona-2026/55.jpg",
+      "caption": "Desert View, Grand Canyon"
+    },
+    {
+      "src": "photos/arizona-2026/56.jpg",
+      "caption": "The canyon from Desert View"
+    },
+    {
+      "src": "photos/arizona-2026/57.jpg",
+      "caption": "Grandview Lookout Tower in Kaibab National Forest"
+    },
+    {
+      "src": "photos/arizona-2026/58.jpg",
+      "caption": "Climbing the Grandview Lookout Tower"
+    },
+    {
+      "src": "photos/arizona-2026/59.jpg",
+      "caption": "Kaibab National Forest from the lookout tower"
+    },
+    {
+      "src": "photos/arizona-2026/60.jpg",
+      "caption": "Grand Canyon in the late afternoon"
+    },
+    {
+      "src": "photos/arizona-2026/61.jpg",
+      "caption": "Grand Canyon sunset"
+    },
+    {
+      "src": "photos/arizona-2026/62.jpg",
+      "caption": "Grand Canyon sunset"
+    },
+    {
+      "src": "photos/arizona-2026/63.jpg",
+      "caption": "Last light on the Grand Canyon"
+    },
+    {
+      "src": "photos/arizona-2026/64.jpg",
+      "caption": "Last light on the Grand Canyon"
+    },
+    {
+      "src": "photos/arizona-2026/65.jpg",
+      "caption": "Sunrise at Grandview Point"
+    },
+    {
+      "src": "photos/arizona-2026/66.jpg",
+      "caption": "Sunrise at Grandview Point"
+    },
+    {
+      "src": "photos/arizona-2026/67.jpg",
+      "caption": "Sunrise over the Grand Canyon"
+    },
+    {
+      "src": "photos/arizona-2026/68.jpg",
+      "caption": "Morning light at Grandview Point"
+    },
+    {
+      "src": "photos/arizona-2026/69.jpg",
+      "caption": "Morning light on the Grand Canyon"
+    },
+    {
+      "src": "photos/arizona-2026/70.jpg",
+      "caption": "Grandview Point in the morning"
+    },
+    {
+      "src": "photos/arizona-2026/71.jpg",
+      "caption": "Elk by the road near the South Rim"
+    },
+    {
+      "src": "photos/arizona-2026/72.jpg",
+      "caption": "Downtown Williams"
+    },
+    {
+      "src": "photos/arizona-2026/73.jpg",
+      "caption": "Embry-Riddle campus in Prescott"
+    },
+    {
+      "src": "photos/arizona-2026/74.jpg",
+      "caption": "Jerome on the side of Cleopatra Hill"
+    },
+    {
+      "src": "photos/arizona-2026/75.jpg",
+      "caption": "Main Street in Jerome"
+    },
+    {
+      "src": "photos/arizona-2026/76.jpg",
+      "caption": "Live music in a Jerome saloon"
+    },
+    {
+      "src": "photos/arizona-2026/77.jpg",
+      "caption": "Whiskey Row in Prescott"
+    },
+    {
+      "src": "photos/arizona-2026/78.jpg",
+      "caption": "Courthouse Plaza in Prescott"
+    },
+    {
+      "src": "photos/arizona-2026/79.jpg",
+      "caption": "Welcome to California, heading home"
+    }
   ]
 }

@@ -104,11 +104,11 @@ ENTRIES = [
                  10: 'Grandview sunrise, Jerome and Prescott', 11: 'Prescott and the drive home'}, collection='Arizona 2026',
          summary='An eleven-day road trip from Los Angeles that I drove the whole way. I went out on I-10 to Phoenix for a shooting range and a rodeo night at the Buffalo Chip Saloon in Cave Creek, spent five days in Tucson with Mount Lemmon at sunset, the old copper mine in Bisbee, and the Desert Museum, then headed north to Sedona, Lowell Observatory in Flagstaff, and the Grand Canyon South Rim, camping in the national forest and catching sunrise at Grandview Point before Jerome and Prescott on the way home.',
          parts=[
-             dict(title='Phoenix and Tucson', days=[1, 2, 3, 4, 5, 6, 7], modes=['drive'],
+             dict(title='Phoenix and Tucson', days=[1, 2, 3, 4, 5, 6, 7], modes=['drive'], totals='Phoenix and Tucson',
                   stops=['Los Angeles', 'Blythe', 'Peoria', 'Cave Creek', 'Glendale', 'Casa Grande', 'Tucson', 'Mount Lemmon',
                          'Bisbee', 'Sierra Vista', 'Arizona-Sonora Desert Museum'],
                   blurb='The drive out from Los Angeles on I-10, a few days around Peoria and Phoenix with a rodeo night at the Buffalo Chip Saloon in Cave Creek, then Tucson: Sentinel Peak, Mount Lemmon at sunset, a day trip to the Queen Mine in Bisbee and lunch in Sierra Vista, and the Arizona-Sonora Desert Museum.'),
-             dict(title='Sedona, Flagstaff and the Grand Canyon', days=[8, 9, 10, 11], modes=['drive'],
+             dict(title='Sedona, Flagstaff and the Grand Canyon', days=[8, 9, 10, 11], modes=['drive'], totals='Sedona, Flagstaff and the Grand Canyon',
                   stops=['Sedona', 'Flagstaff', 'Williams', 'Grand Canyon South Rim', 'Desert View', 'Jerome', 'Prescott', 'Blythe', 'Indio', 'Los Angeles'],
                   blurb='Up I-17 to Bell Rock and Oak Creek Canyon in Sedona, stargazing at Lowell Observatory in Flagstaff, and a night in Williams. Then a day along the South Rim from Mather Point to the Desert View Watchtower, a night camping in Kaibab National Forest, sunrise at Grandview Point, and Jerome and Whiskey Row in Prescott before the drive home.'),
          ]),
@@ -413,6 +413,12 @@ def section_text(d, heading):
     return [x.strip() for x in m.group(1).split('\n\n') if x.strip() and not x.strip().startswith('![')]
 
 
+def totals_block(d, name):
+    """Bullets under a `**Driving totals, <name>**` line in a trip's road-map.md."""
+    m = re.search(rf'^\*\*Driving totals, {re.escape(name)}\*\*\n\n((?:- .*\n)+)', (TRIPS / d / 'road-map.md').read_text(), re.M)
+    return {'title': f'Driving totals, {name}', 'items': [x[2:].strip() for x in m.group(1).splitlines()]}
+
+
 def write_entry(e):
     # An entry can combine several road-map folders (e.g. two parts of one trip); days are numbered across them.
     stops, legs, dates, days = [], [], [], []
@@ -457,7 +463,12 @@ def write_entry(e):
         fm += [f'  - {j(pt)}' for pt in load_pois(e, dates[0])]
     if 'parts' in e:
         fm.append('parts:')
-        fm += [f'  - {j({**pt, "notes": [{"title": n, "text": section_text(e["dir"], n)} for n in pt["notes"]]} if "notes" in pt else pt)}' for pt in e['parts']]
+        for pt in e['parts']:
+            if 'notes' in pt:
+                pt = {**pt, 'notes': [{'title': n, 'text': section_text(e['dir'], n)} for n in pt['notes']]}
+            if 'totals' in pt:  # driving totals shown at the end of the part
+                pt = {**pt, 'totals': totals_block(e['dir'], pt['totals'])}
+            fm.append(f'  - {j(pt)}')
     fm += timeline_yaml(days)
     # Keep a hand-written story body; only new entries get the placeholder.
     body = "*I'm still writing up the full story of this one, so check back soon.*\n"

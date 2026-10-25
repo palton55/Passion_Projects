@@ -21,12 +21,21 @@ const { slides } = Astro.props as { slides: { href: string; src: string; title: 
   document.querySelectorAll<HTMLElement>('[data-carousel]').forEach((el) => {
     const slides = [...el.querySelectorAll<HTMLAnchorElement>('.slide')];
     const dots = [...el.querySelectorAll<HTMLButtonElement>('.dots button')];
+    // Shuffle on every visit so the strip starts somewhere new each time.
+    for (let k = slides.length - 1; k > 0; k--) {
+      const j = Math.floor(Math.random() * (k + 1));
+      [slides[k], slides[j]] = [slides[j], slides[k]];
+      [dots[k], dots[j]] = [dots[j], dots[k]];
+    }
+    slides.forEach((s) => s.parentElement!.appendChild(s));
+    dots.forEach((d) => d.parentElement!.appendChild(d));
     let i = 0;
     const show = (n: number) => {
       i = (n + slides.length) % slides.length;
       slides.forEach((s, k) => { s.classList.toggle('active', k === i); s.setAttribute('aria-hidden', String(k !== i)); s.tabIndex = k === i ? 0 : -1; });
       dots.forEach((d, k) => d.classList.toggle('on', k === i));
     };
+    show(0);
     el.querySelector('.prev')!.addEventListener('click', () => show(i - 1));
     el.querySelector('.next')!.addEventListener('click', () => show(i + 1));
     dots.forEach((d, k) => d.addEventListener('click', () => show(k)));

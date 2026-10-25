@@ -18,7 +18,7 @@ TRIPS = Path(sys.argv[1] if len(sys.argv) > 1 else '/mnt/project-files/trips')
 OUT = Path(__file__).resolve().parent.parent / 'src/content/adventures'
 KODAIRA = [35.7286, 139.4775]
 MODES = {'car': 'drive', 'bus': 'bus', 'ferry': 'ferry', 'flight': 'flight', 'shinkansen': 'shinkansen',
-         'express': 'express', 'local': 'local'}
+         'express': 'express', 'local': 'local', 'subway': 'train'}
 # Friends are not named on the site (Patrick, Oct 2026).
 FRIENDS = [(r'Michael joined from today, the day after getting back from Fuji\. Days 5 to 9 are the Tokyo tour with him\.',
             'Days 5 to 9 were spent touring Tokyo with friends.'),
@@ -51,7 +51,8 @@ ENTRIES = [
          summary='Ten days in Kansai and Okinawa. I started with Fushimi Inari in Kyoto, then hit Universal Studios Japan, the Kaiyukan aquarium, and Expo 2025 in Osaka, before flying to Okinawa and driving from Cape Maeda and Chatan up to Sesoko and Cape Hedo at the northern tip of the island.'),
     dict(id='2025-korea-waterbomb', dir='2025-study-abroad/05-korea-waterbomb', title='Korea and Waterbomb', collection='Korea and Waterbomb',
          region='South Korea',
-         summary='Eight days in Seoul from Tokyo: Gyeongbokgung Palace and Gwanghwamun, Gangnam, Hongdae, and Dongdaemun, a tour of the DMZ, and the Waterbomb music festival in Goyang.'),
+         summary='Eight days in Seoul in the middle of my study abroad: N Seoul Tower and the lanterns at Jogyesa, a tour of the DMZ out to Dora Observatory and Odusan, LoL Park, Gangnam and Hongdae, the Waterbomb music festival in Goyang, Gyeongbokgung Palace in hanbok, and a lot of Korean food.',
+         pois=[('2025-study-abroad/05-korea-waterbomb/more-stops.geojson', 'More stops')]),
     dict(id='2025-tohoku-hokkaido', dir='2025-study-abroad/06-tohoku-hokkaido', title='Tohoku and Hokkaido', collection='Tohoku and Hokkaido',
          summary='Six days heading north from Tokyo. I rode the Tohoku, Yamagata, and Akita Shinkansen through Yamagata, Sendai, and Morioka up to Hokkaido, drove from Sapporo up the Oronron Line to Cape Soya, the northernmost point of Japan, and back in a single day, and spent two nights in Hakodate with Goryokaku and Onuma Park.',
          # Kept as one entry, with the train journey and the road trip as their own sections (Patrick, Oct 21 2026).
@@ -458,8 +459,15 @@ def write_entry(e):
         fm.append('parts:')
         fm += [f'  - {j({**pt, "notes": [{"title": n, "text": section_text(e["dir"], n)} for n in pt["notes"]]} if "notes" in pt else pt)}' for pt in e['parts']]
     fm += timeline_yaml(days)
-    fm += ['---', '', "*I'm still writing up the full story of this one, so check back soon.*", '']
-    (OUT / f'{e["id"]}.md').write_text('\n'.join(fm))
+    # Keep a hand-written story body; only new entries get the placeholder.
+    body = "*I'm still writing up the full story of this one, so check back soon.*\n"
+    path = OUT / f'{e["id"]}.md'
+    if path.exists():
+        old = path.read_text().split('\n---\n', 1)[1].lstrip('\n')
+        if old.strip() and 'still writing up the full story' not in old:
+            body = old
+    fm += ['---', '', body]
+    path.write_text('\n'.join(fm))
     print(f'{e["id"]}: {len(days)} days, {len(stops)} stops, {len(legs)} legs')
 
 

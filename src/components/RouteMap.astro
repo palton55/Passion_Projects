@@ -4,7 +4,7 @@
 // Optional `groups` (e.g. years) add toggle buttons; legs and stops then carry `groups: string[]`.
 // Drive legs are photo-GPS waypoints; the browser snaps them to real roads when a router answers.
 // Optional `regions` (GeoJSON, e.g. prefectures visited) and `pois` (points with a `layer` name, e.g. manhole covers)
-// become overlays in the layer control; regions start on, point layers start off.
+// become overlays in the layer control; regions and point layers start off.
 const { stops, legs = [], height = 460, dot = 8, groups = [], lines = true, regions = null, regionsLabel = 'Prefectures visited', pois = [] } = Astro.props;
 const used = new Set(legs.length ? legs.map((l: any) => l.mode) : stops.map((s: any) => s.mode));
 const legend = [
@@ -76,7 +76,7 @@ const legend = [
     const layers: { groups?: string[]; layer: L.Layer; host?: L.LayerGroup }[] = [];
     if (el.dataset.regions) {
       map.createPane('regions').style.zIndex = '350'; // under the route lines
-      const shaded = L.layerGroup().addTo(map);
+      const shaded = L.layerGroup();
       JSON.parse(el.dataset.regions).features.forEach((f: any) => {
         const layer = L.geoJSON(f, { style: { color: '#c2410c', weight: 1, fillColor: '#f97316', fillOpacity: .18 }, pane: 'regions' })
           .bindTooltip(`${f.properties.name}${f.properties.note ? ` · ${f.properties.note}` : ''}`, { sticky: true });

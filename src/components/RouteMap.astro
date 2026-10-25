@@ -129,7 +129,7 @@ const legend = [
         .addTo(map);
       layers.push({ groups: s.groups, layer: marker });
     });
-    // Year toggles: a layer shows while any of its groups is switched on.
+    // Year or destination toggles: a layer shows while any of its groups is switched on, and the map refits to it.
     const filter = el.previousElementSibling?.classList.contains('map-filter') ? el.previousElementSibling : null;
     if (filter) {
       const buttons = [...filter.querySelectorAll<HTMLButtonElement>('button[data-group]')];
@@ -143,6 +143,9 @@ const legend = [
           if (show && !h.hasLayer(layer)) h.addLayer(layer);
           if (!show && h.hasLayer(layer)) h.removeLayer(layer);
         });
+        // Zoom to what is left on the map; with nothing selected, keep the current view.
+        const shown = stops.filter((s: any) => !s.groups || s.groups.some((g: string) => on.has(g)));
+        if (shown.length) map.flyToBounds(L.latLngBounds(shown.map((s: any) => [s.lat, s.lng])), { padding: [30, 30], maxZoom: 9, duration: .6 });
       };
       buttons.forEach((b) => b.addEventListener('click', () => {
         b.setAttribute('aria-pressed', String(b.getAttribute('aria-pressed') !== 'true'));

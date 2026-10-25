@@ -1,6 +1,6 @@
 ---
 title: "Arizona Road Trip"
-summary: "An eleven-day road trip from Los Angeles that I drove the whole way. I went out on I-10 to Phoenix for a shooting range and a rodeo night in Cave Creek, spent five days in Tucson with Mount Lemmon at sunset, the old copper mine in Bisbee, and the Desert Museum, then headed north to Sedona, Lowell Observatory in Flagstaff, and the Grand Canyon South Rim, camping in the national forest and catching sunrise at Grandview Point before Jerome and Prescott on the way home."
+summary: "An eleven-day road trip from Los Angeles that I drove the whole way. I went out on I-10 to Phoenix for a shooting range and a rodeo night at the Buffalo Chip Saloon in Cave Creek, spent five days in Tucson with Mount Lemmon at sunset, the old copper mine in Bisbee, and the Desert Museum, then headed north to Sedona, Lowell Observatory in Flagstaff, and the Grand Canyon South Rim, camping in the national forest and catching sunrise at Grandview Point before Jerome and Prescott on the way home."
 start: 2026-07-23
 end: 2026-08-02
 category: Travel
@@ -19,7 +19,7 @@ stops:
   - {"name": "Grand Canyon South Rim", "lat": 36.0589, "lng": -112.109, "date": "Days 9-10"}
   - {"name": "Indio", "lat": 33.7396, "lng": -116.2302, "date": "Day 11"}
   - {"name": "Peoria", "lat": 33.73, "lng": -112.23, "date": "Days 1-3 and 7 · base"}
-  - {"name": "Cave Creek", "lat": 33.8306, "lng": -111.9342, "date": "Day 2 · rodeo night"}
+  - {"name": "Cave Creek", "lat": 33.8306, "lng": -111.9342, "date": "Day 2 · rodeo at the Buffalo Chip"}
   - {"name": "Glendale", "lat": 33.6925, "lng": -112.2031, "date": "Day 3"}
   - {"name": "Casa Grande", "lat": 32.8376, "lng": -111.6863, "date": "Days 3 and 7"}
   - {"name": "Mount Lemmon", "lat": 32.4447, "lng": -110.7602, "date": "Day 4 · Windy Point at sunset"}
@@ -42,7 +42,7 @@ legs:
   - {"name": "Camp to Grandview Point for sunrise, back out through Tusayan and Williams, I-40 to Ash Fork and AZ-89 south to Prescott, then over Mingus Mountain on AZ-89A to Jerome and back to Prescott", "mode": "drive", "coords": [[35.96, -111.96], [35.9981, -111.9878], [36.0143, -112.0657], [36.0478, -112.0938], [35.9872, -112.1231], [35.6, -112.14], [35.25, -112.19], [35.215, -112.48], [35.1882, -112.4687], [34.76, -112.45], [34.614, -112.4508], [34.6377, -112.3357], [34.7, -112.16], [34.7504, -112.1162], [34.7, -112.16], [34.6377, -112.3357], [34.5482, -112.4381]], "day": 10}
   - {"name": "Prescott south on AZ-89 through Yarnell to Wickenburg, US-60 to Quartzsite, then I-10 west through Blythe and Indio home to Los Angeles", "mode": "drive", "coords": [[34.5419, -112.4699], [34.4, -112.62], [34.22, -112.75], [33.97, -112.73], [33.85, -113.08], [33.78, -113.61], [33.66, -114.23], [33.6078, -114.5435], [33.71, -115.4], [33.7396, -116.2302], [33.93, -116.88], [34.06, -117.65], [34.05, -118.24]], "day": 11}
 parts:
-  - {"title": "Phoenix and Tucson", "days": [1, 2, 3, 4, 5, 6, 7], "modes": ["drive"], "stops": ["Los Angeles", "Blythe", "Peoria", "Cave Creek", "Glendale", "Casa Grande", "Tucson", "Mount Lemmon", "Bisbee", "Sierra Vista", "Arizona-Sonora Desert Museum"], "blurb": "The drive out from Los Angeles on I-10, a few days around Peoria and Phoenix with a rodeo night in Cave Creek, then Tucson: Sentinel Peak, Mount Lemmon at sunset, a day trip to the Queen Mine in Bisbee and lunch in Sierra Vista, and the Arizona-Sonora Desert Museum."}
+  - {"title": "Phoenix and Tucson", "days": [1, 2, 3, 4, 5, 6, 7], "modes": ["drive"], "stops": ["Los Angeles", "Blythe", "Peoria", "Cave Creek", "Glendale", "Casa Grande", "Tucson", "Mount Lemmon", "Bisbee", "Sierra Vista", "Arizona-Sonora Desert Museum"], "blurb": "The drive out from Los Angeles on I-10, a few days around Peoria and Phoenix with a rodeo night at the Buffalo Chip Saloon in Cave Creek, then Tucson: Sentinel Peak, Mount Lemmon at sunset, a day trip to the Queen Mine in Bisbee and lunch in Sierra Vista, and the Arizona-Sonora Desert Museum."}
   - {"title": "Sedona, Flagstaff and the Grand Canyon", "days": [8, 9, 10, 11], "modes": ["drive"], "stops": ["Sedona", "Flagstaff", "Williams", "Grand Canyon South Rim", "Desert View", "Jerome", "Prescott", "Blythe", "Indio", "Los Angeles"], "blurb": "Up I-17 to Bell Rock and Oak Creek Canyon in Sedona, stargazing at Lowell Observatory in Flagstaff, and a night in Williams. Then a day along the South Rim from Mather Point to the Desert View Watchtower, a night camping in Kaibab National Forest, sunrise at Grandview Point, and Jerome and Whiskey Row in Prescott before the drive home."}
 # Day-by-day timeline, generated from the trip notes by scripts/import_trips.py.
 timeline:
@@ -56,11 +56,11 @@ timeline:
     route: ["Los Angeles east on I-10 through the Inland Empire and Indio to Blythe, over the Colorado River and on past Quartzsite to Peoria (about 410 miles, 7 h)."]
   - label: "Day 2"
     date: 2026-07-24
-    title: "Shooting range and a rodeo in Cave Creek"
+    title: "Shooting range and the Buffalo Chip rodeo"
     events:
       - { time: "Morning", text: "Shooting range, north Peoria." }
       - { time: "Afternoon", text: "Peoria; Peoria, Arrowhead area, buying cowboy boots." }
-      - { time: "Evening", text: "Cave Creek, rodeo night." }
+      - { time: "Evening", text: "Buffalo Chip Saloon, Cave Creek, rodeo night." }
     route: ["Around Peoria, then out to Cave Creek for the night and back (about 70 miles, 1 h)."]
   - label: "Day 3"
     date: 2026-07-25
@@ -108,7 +108,7 @@ timeline:
     events:
       - { time: "Morning", text: "Williams (night); Tusayan." }
       - { time: "Afternoon", text: "Mather Point, Grand Canyon South Rim; Yavapai Point; Grand Canyon Village; Desert View Drive; Grandview Point; Moran Point; Desert View Watchtower." }
-      - { time: "Evening", text: "Grandview Lookout Tower, Kaibab National Forest; Campsite in Kaibab National Forest, outside the South Rim; Shoshone Point area, at sunset; Back at camp, campfire (night)." }
+      - { time: "Evening", text: "Grandview Lookout Tower, Kaibab National Forest; Campsite in Kaibab National Forest, outside the South Rim; Shoshone Point, at sunset; Back at camp, campfire (night)." }
     route: ["Williams up AZ-64 through Tusayan to the South Rim: Mather Point, Yavapai Point and Grand Canyon Village, then east along Desert View Drive to Grandview Point, Moran Point and the Desert View Watchtower, camp in the national forest, and back out for sunset (about 120 miles, 2 h)."]
   - label: "Day 10"
     date: 2026-08-01

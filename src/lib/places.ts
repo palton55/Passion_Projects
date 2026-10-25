@@ -1,5 +1,6 @@
 // Cities and towns visited in Japan, built from every Japan entry's route stops and
 // grouped by prefecture (point-in-polygon on the simplified prefecture boundaries).
+// US trips are grouped the same way by county, from src/data/us-counties.json (Arizona and its neighbors).
 import fs from 'node:fs';
 import path from 'node:path';
 
@@ -31,6 +32,18 @@ export function prefectureOf(lat: number, lng: number): string {
   return best;
 }
 
+const usGeo = JSON.parse(fs.readFileSync(path.join(process.cwd(), 'src/data/us-counties.json'), 'utf8'));
+const counties: { name: string; state: string; polys: Ring[][] }[] = usGeo.features.map((f: any) => ({
+  name: `${f.properties.county} County`, state: f.properties.state,
+  polys: f.geometry.type === 'Polygon' ? [f.geometry.coordinates] : f.geometry.coordinates,
+}));
+
+// County and state of a US stop, or undefined outside the counties on file.
+export function countyOf(lat: number, lng: number): { area: string; state: string } | undefined {
+  const hit = counties.find((c) => c.polys.some((poly) => inRing(lng, lat, poly[0]) && !poly.slice(1).some((h) => inRing(lng, lat, h))));
+  return hit && { area: hit.name, state: hit.state };
+}
+
 export const areas: [string, string[]][] = [
   ['Hokkaido', ['Hokkaido']],
   ['Tohoku', ['Aomori', 'Iwate', 'Akita', 'Miyagi', 'Yamagata', 'Fukushima']],
@@ -47,15 +60,20 @@ const skip = /airport|^boat trips$/i;
 export const tidy = (n: string) => n.replace(/ \([^)]*\)$/, '').replace(/, then .*$/, '').replace(/: .*$/, '')
   .replace(/ (Station|again)$/i, '').replace(/^Upopoy, /, '').trim();
 
-export type Place = { name: string; lat: number; lng: number; prefecture: string; trips: { id: string; title: string; year: string }[] };
+export type Place = { name: string; lat: number; lng: number; prefecture: string; state?: string; trips: { id: string; title: string; year: string }[] };
 
-export function placesFrom(entries: { id: string; data: any }[]): Place[] {
+// `locate` gives each stop's prefecture (the default) or, for US trips, its county and state.
+type Locate = (lat: number, lng: number) => { area: string; state?: string } | undefined;
+const byPrefecture: Locate = (lat, lng) => ({ area: prefectureOf(lat, lng) });
+
+export function placesFrom(entries: { id: string; data: any }[], locate: Locate = byPrefecture): Place[] {
   const byName = new Map<string, Place>();
   for (const e of entries) for (const s of e.data.stops) {
     if (skip.test(s.name)) continue;
     const name = tidy(s.name);
     const trip = { id: e.id, title: e.data.title, year: String(e.data.start?.getUTCFullYear() ?? '') };
-    const p = byName.get(name) ?? { name, lat: s.lat, lng: s.lng, prefecture: prefectureOf(s.lat, s.lng), trips: [] };
+    const at = byName.has(name) ? undefined : locate(s.lat, s.lng);
+    const p = byName.get(name) ?? { name, lat: s.lat, lng: s.lng, prefecture: at?.area ?? '', state: at?.state, trips: [] };
     if (!p.trips.some((t) => t.id === e.id)) p.trips.push(trip);
     byName.set(name, p);
   }

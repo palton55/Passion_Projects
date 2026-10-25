@@ -11,7 +11,11 @@ export async function getStaticPaths() {
 }
 const { place } = Astro.props as { place: PlacePage };
 const base = import.meta.env.BASE_URL.replace(/\/$/, '');
-const section = place.country === 'Japan' ? { href: '/japan/', label: 'Japan' } : { href: '/korea/', label: 'Korea' };
+// US places link back to their state's travel page ("Pima County, Arizona" -> /travel/arizona/).
+const state = place.area.split(', ').pop() ?? '';
+const section = place.country === 'Japan' ? { href: '/japan/', label: 'Japan' }
+  : place.country === 'United States' ? { href: `/travel/${state.toLowerCase().replace(/ /g, '-')}/`, label: state }
+  : { href: '/korea/', label: 'Korea' };
 ---
 <Base title={`${place.name} · Sidequest Resume`} description={place.text[0]}>
   <article>

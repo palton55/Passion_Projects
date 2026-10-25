@@ -4,6 +4,10 @@ import SidequestCard from '../../components/SidequestCard.astro';
 import { showDrafts } from '../../lib/drafts';
 import { getCollection } from 'astro:content';
 import { regions, type Region } from '../../data/regions';
+import RouteMap from '../../components/RouteMap.astro';
+import PlaceCards from '../../components/PlaceCards.astro';
+import { placesFrom, countyOf } from '../../lib/places';
+import { placePages } from '../../lib/place-notes';
 export function getStaticPaths() {
   return regions.filter((r) => !r.href).map((region) => ({ params: { region: region.slug }, props: { region } }));
 }
@@ -11,6 +15,15 @@ const { region } = Astro.props as { region: Region };
 const base = import.meta.env.BASE_URL.replace(/\/$/, '');
 const entries = (await getCollection('adventures', ({ data }) => [region.region].flat().includes(data.region ?? '') && (!data.draft || showDrafts)))
   .sort((a, b) => (b.data.start?.valueOf() ?? 0) - (a.data.start?.valueOf() ?? 0));
+// US states get Notable Places and a Cities and Towns list by county, as on the Japan page.
+// Places outside the state (e.g. Los Angeles on an Arizona road trip) are left for that state's page.
+const places = placesFrom(entries, countyOf).filter((p) => p.state === region.name);
+const notes = placePages(entries).filter((p) => p.country === 'United States' && p.area.endsWith(`, ${region.name}`));
+const pageOf = new Map(notes.flatMap((n) => n.match.map((m) => [m, n.slug] as const)));
+const years = [...new Set(places.flatMap((p) => p.trips.map((t) => t.year)))].sort();
+const dots = places.map((p) => ({ name: p.name, lat: p.lat, lng: p.lng, date: p.prefecture, note: p.trips.map((t) => t.title).join(', '), groups: [...new Set(p.trips.map((t) => t.year))] }));
+const grouped = [...new Set(places.map((p) => p.prefecture))].sort()
+  .map((county) => ({ county, places: places.filter((p) => p.prefecture === county).sort((a, b) => a.name.localeCompare(b.name)) }));
 ---
 <Base title={`${region.name} · Sidequest Resume`} description={region.blurb}>
   <p class="crumb"><a href={`${base}/travel/`}>Travel</a></p>
@@ -18,6 +31,32 @@ const entries = (await getCollection('adventures', ({ data }) => [region.region]
   <p class="lede">{region.blurb}</p>
   {entries.length === 0 && <p class="meta pending">Entries coming soon.</p>}
   <div class="grid">{entries.map((entry) => <SidequestCard entry={entry} />)}</div>
+  {notes.length > 0 && (
+    <section class="places">
+      <h2>Notable Places</h2>
+      <p class="lede">Short wiki-style write-ups on the main towns and landmarks I've visited, each with my photos from the trip.</p>
+      <PlaceCards places={notes} />
+    </section>
+  )}
+  {places.length > 0 && (
+    <section class="places">
+      <h2>Cities and Towns</h2>
+      <p class="lede">The {places.length} cities, towns, and landmarks I've visited in {region.name}, taken from the stops on each trip's route map. Select a place on the map to see which trips included it.</p>
+      <RouteMap stops={dots} height={480} dot={5} groups={years} lines={false} />
+      <div class="areas">
+        {grouped.map((g) => (
+          <div class="area">
+            <p class="pref-name">{g.county}</p>
+            <ul>
+              {g.places.map((p) => (
+                <li>{pageOf.has(p.name) ? <a href={`${base}/places/${pageOf.get(p.name)}/`}>{p.name}</a> : p.name} {p.trips.map((t) => <a class="yr" href={`${base}/sidequests/${t.id}/`} title={t.title}>{t.year}</a>)}</li>
+              ))}
+            </ul>
+          </div>
+        ))}
+      </div>
+    </section>
+  )}
 </Base>
 <style>
   .crumb { color: var(--muted); font-size: .9rem; margin: 0 0 8px; }
@@ -25,4 +64,11 @@ const entries = (await getCollection('adventures', ({ data }) => [region.region]
   .meta { color: var(--muted); }
   .pending { font-style: italic; }
   .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 20px; margin: 24px 0; }
+  .places { border-top: 1px solid var(--border); margin-top: 40px; }
+  .areas { columns: 3 220px; column-gap: 32px; margin-top: 24px; }
+  .area { break-inside: avoid; margin-bottom: 14px; }
+  .pref-name { margin: 0; font-size: .8rem; font-weight: 600; text-transform: uppercase; letter-spacing: .04em; color: var(--muted); }
+  .area ul { list-style: none; padding: 0; margin: 2px 0 0; }
+  .area li { margin: 2px 0; }
+  .yr { font-size: .75rem; color: var(--muted); margin-left: 4px; }
 </style>

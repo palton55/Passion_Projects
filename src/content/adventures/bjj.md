@@ -6,4 +6,4 @@ draft: true              # fill in when and where you train, milestones and phot
 photos: []
 ---
 
-*The full write-up for this sidequest is coming soon.*
+*I'm still writing up the full story of this one, so check back soon.*

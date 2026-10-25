@@ -117,4 +117,4 @@ timeline:
     route: ["Tokyo to Narita Airport (train, to confirm) (about 90 km, 1 h)."]
 ---
 
-*The full write-up for this sidequest is coming soon.*
+*I'm still writing up the full story of this one, so check back soon.*

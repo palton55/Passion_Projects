@@ -71,4 +71,4 @@ timeline:
     route: ["Shibuya, Harajuku and Ebisu, then to Haneda (about 20 km, 25 min).", "Flight, Haneda to New Chitose (to confirm)."]
 ---
 
-*The full write-up for this sidequest is coming soon.*
+*I'm still writing up the full story of this one, so check back soon.*

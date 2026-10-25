@@ -428,7 +428,7 @@ def write_entry(e):
         fm.append('parts:')
         fm += [f'  - {j({**pt, "note": {"title": pt["note"], "text": section_text(e["dir"], pt["note"])}} if "note" in pt else pt)}' for pt in e['parts']]
     fm += timeline_yaml(days)
-    fm += ['---', '', '*The full write-up for this sidequest is coming soon.*', '']
+    fm += ['---', '', "*I'm still writing up the full story of this one, so check back soon.*", '']
     (OUT / f'{e["id"]}.md').write_text('\n'.join(fm))
     print(f'{e["id"]}: {len(days)} days, {len(stops)} stops, {len(legs)} legs')
 

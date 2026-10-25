@@ -49,4 +49,4 @@ timeline:
     route: ["Himi Line to Amaharashi and back, then to Toyama (about 30 km, 45 min).", "Hokuriku Shinkansen, Toyama to Tokyo (about 360 km, 1 h 45 min)."]
 ---
 
-*The full write-up for this sidequest is coming soon.*
+*I'm still writing up the full story of this one, so check back soon.*

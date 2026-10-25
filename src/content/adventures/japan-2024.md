@@ -80,4 +80,4 @@ timeline:
     route: ["Keisei Skyliner, Nippori to Narita (about 60 km, 40 min)."]
 ---
 
-*The full write-up for this sidequest is coming soon.*
+*I'm still writing up the full story of this one, so check back soon.*

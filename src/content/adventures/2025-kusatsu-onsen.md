@@ -33,4 +33,4 @@ timeline:
     route: ["Highway bus from Kusatsu Onsen back to Ikebukuro (about 170 km, 2 h 45 min)."]
 ---
 
-*The full write-up for this sidequest is coming soon.*
+*I'm still writing up the full story of this one, so check back soon.*

@@ -15,7 +15,7 @@ const section = place.country === 'Japan' ? { href: '/japan/', label: 'Japan' } 
 ---
 <Base title={`${place.name} · Sidequest Resume`} description={place.text[0]}>
   <article>
-    <p class="crumb"><a href={`${base}/travel/`}>Experience</a> / <a href={`${base}${section.href}`}>{section.label}</a></p>
+    <p class="crumb"><a href={`${base}/travel/`}>Travel</a> / <a href={`${base}${section.href}`}>{section.label}</a></p>
     <h1>{place.name}</h1>
     <p class="meta">{place.area === place.country ? place.country : `${place.area}, ${place.country}`}</p>
     {place.text.map((p) => <p>{p}</p>)}

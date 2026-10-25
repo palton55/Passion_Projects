@@ -17,8 +17,8 @@ const allStops = mapped.flatMap((e) => e.data.stops.map((s) => ({ ...s, date: e.
 const areaNames = [...new Set(mapped.map(areaOf))];
 const otherTravel = travel.filter((e) => !regionNames.has(e.data.region ?? ''));
 ---
-<Base title="Experience · Sidequest Resume" description="Travel and experiences, organized by destination.">
-  <h1>Experience</h1>
+<Base title="Travel · Sidequest Resume" description="Trips and travel, organized by destination.">
+  <h1>Travel</h1>
   <p class="lede">Travel and experiences, organized by destination.</p>
   <div class="grid">
     {regions.map((r) => (

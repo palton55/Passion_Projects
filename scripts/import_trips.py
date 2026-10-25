@@ -83,10 +83,11 @@ ENTRIES = [
     dict(id='japan-2026-tokyo', dir='japan-2026', days=list(range(6, 13)), title='Tokyo Days', collection='Tokyo Days',
          summary='A week around Tokyo from the Machida and Sagamihara side: back at Hitotsubashi in Kunitachi, Shibuya, Setagaya, the Chiikawa exhibit and an esports cafe in Ikebukuro, and Tachikawa, ending with a flight north from Haneda.',
          stops=['Machida / Sagamihara', 'Zama', 'Shibuya / Harajuku', 'Setagaya', 'Ikebukuro', 'Tachikawa', 'Ebisu', 'Haneda Airport']),
-    dict(id='japan-2026-hokkaido', dir='japan-2026', days=list(range(13, 20)), pois=[('japan-2026/manholes.geojson', 'Manhole covers')], title='Hokkaido Road Trip', collection='Hokkaido Road Trip',
+    dict(id='japan-2026-hokkaido', dir='japan-2026', days=list(range(13, 20)), pois=[('japan-2026/manholes.geojson', 'Manhole covers')],
+         bands=[('japan-2026/route-238.geojson', 'National Route 238, driven end to end', '#26a69a')], title='Hokkaido Road Trip', collection='Hokkaido Road Trip',
          summary='A winter road trip around Hokkaido from New Chitose: across Tokachi to Abashiri, along the Sea of Okhotsk to the drift ice at Monbetsu, up to Cape Soya, inland to Asahikawa, Biei, and Furano, and down to Upopoy, the National Ainu Museum, followed by a day in Sapporo and the trip home through Tokyo.',
          parts=[
-             dict(title='Hokkaido Road Trip', days=[13, 14, 15, 16], modes=['drive'], note='Why this route: the manhole covers',
+             dict(title='Hokkaido Road Trip', days=[13, 14, 15, 16], modes=['drive'], notes=['Why this route: the manhole covers', 'National Route 238, end to end'],
                   stops=['New Chitose Airport', 'Obihiro', 'Ashoro / Rikubetsu', 'Abashiri', 'Monbetsu', 'Cape Soya', 'Wakkanai', 'Teshio',
                          'Asahikawa', 'Biei / Furano', 'Furano', 'Upopoy, Shiraoi'],
                   blurb='Four days of driving from New Chitose: across Tokachi to Abashiri, along the Sea of Okhotsk to the drift ice at Monbetsu, north to Cape Soya, inland to Asahikawa, Biei, and Furano, and south to Upopoy.'),
@@ -421,12 +422,18 @@ def write_entry(e):
     fm.append('legs:')
     fm += [f'  - {j(l)}' for l in legs]
     consolidate(days, legs)
+    if 'bands' in e:
+        fm.append('bands:')
+        for path, name, color in e['bands']:
+            g = json.loads((TRIPS / path).read_text())
+            g = g['features'][0] if 'features' in g else g
+            fm.append(f'  - {j({"name": name, "color": color, "coords": [latlng(c) for c in g["geometry"]["coordinates"]]})}')
     if 'pois' in e:
         fm.append('pois:')
         fm += [f'  - {j(pt)}' for pt in load_pois(e, dates[0])]
     if 'parts' in e:
         fm.append('parts:')
-        fm += [f'  - {j({**pt, "note": {"title": pt["note"], "text": section_text(e["dir"], pt["note"])}} if "note" in pt else pt)}' for pt in e['parts']]
+        fm += [f'  - {j({**pt, "notes": [{"title": n, "text": section_text(e["dir"], n)} for n in pt["notes"]]} if "notes" in pt else pt)}' for pt in e['parts']]
     fm += timeline_yaml(days)
     fm += ['---', '', "*I'm still writing up the full story of this one, so check back soon.*", '']
     (OUT / f'{e["id"]}.md').write_text('\n'.join(fm))

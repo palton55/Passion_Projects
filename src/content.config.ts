@@ -60,6 +60,8 @@ const adventures = defineCollection({
       notes: z.array(z.object({ title: z.string(), text: z.array(z.string()) })).default([]), // short sections above the part's map
       totals: z.object({ title: z.string(), items: z.array(z.string()) }).optional(), // driving totals after the part's timeline
     })).default([]),
+    // Driving totals for entries without parts, shown after the timeline (parts carry their own `totals`).
+    totals: z.array(z.object({ title: z.string(), items: z.array(z.string()) })).default([]),
     // Day-by-day timeline. Each day lists events in order; `route` lines say how the day's travel was made.
     timeline: z.array(z.object({
       label: z.string(),

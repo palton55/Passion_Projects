@@ -20,6 +20,8 @@ legs:
   - {"name": "Lake Ashi to Manazuru", "mode": "drive", "coords": [[35.2007, 139.0254], [35.2, 139.1], [35.16, 139.14]], "day": 1}
   - {"name": "Manazuru to Fuji-Q Highland and back", "mode": "drive", "coords": [[35.16, 139.14], [35.26, 139.15], [35.3, 138.93], [35.41, 138.87], [35.4871, 138.7808]], "day": 2}
   - {"name": "Manazuru to Gotemba and home", "mode": "drive", "coords": [[35.16, 139.14], [35.2176, 139.1427], [35.27, 139.03], [35.3068, 138.9656], [35.38, 139.1], [35.44, 139.36], [35.7, 139.48]], "day": 3}
+totals:
+  - {"title": "Driving totals, Hakone and Mt. Fuji weekend", "items": ["Distance: about 280 km (estimated from the mapped route)", "Driving days: 3", "Time behind the wheel: roughly 5.5 hours (estimate)", "Longest day: Apr 9, about 110 km", "By day: Apr 7 100 km · Apr 8 70 km · Apr 9 110 km"]}
 # Day-by-day timeline, generated from the trip notes by scripts/import_trips.py.
 timeline:
   - label: "Day 1"

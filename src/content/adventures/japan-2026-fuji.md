@@ -20,6 +20,8 @@ stops:
 legs:
   - {"name": "Drive, Yokohama to Gotemba and Lake Yamanakako", "mode": "drive", "coords": [[35.4658, 139.6223], [35.43, 139.36], [35.37, 139.1], [35.3057, 138.9662], [35.36, 138.92], [35.4282, 138.8507]], "day": 1}
   - {"name": "Lake Yamanakako to the Chureito Pagoda, Lake Kawaguchiko and Fuji-Q Highland, then to Shinjuku to drop off the car", "mode": "drive", "coords": [[35.4282, 138.8507], [35.4996, 138.8001], [35.5232, 138.746], [35.4825, 138.7788], [35.55, 138.95], [35.6097, 138.9408], [35.64, 139.2], [35.66, 139.45], [35.6896, 139.7006]], "day": 2}
+totals:
+  - {"title": "Driving totals, Mt. Fuji drive", "items": ["Distance: about 240 km (estimated from the mapped route)", "Driving days: 2", "Time behind the wheel: roughly 5 hours (estimate)", "Longest day: Mar 10, about 140 km", "By day: Mar 9 100 km · Mar 10 140 km"]}
 # Day-by-day timeline, generated from the trip notes by scripts/import_trips.py.
 timeline:
   - label: "Day 1"

@@ -27,7 +27,7 @@ const otherTravel = travel.filter((e) => !regionNames.has(e.data.region ?? ''));
     <section class="world">
       <h2>All Trips</h2>
       <p class="lede">Every trip's stops and routes on one map. Use the buttons to show or hide each destination, and the switch in the corner for satellite view.</p>
-      <RouteMap stops={allStops} legs={allLegs} height={620} dot={4} groups={areaNames} lines={false} />
+      <RouteMap stops={allStops} legs={allLegs} height={620} dot={4} groups={areaNames} lines={false} global />
     </section>
   )}
 </Base>

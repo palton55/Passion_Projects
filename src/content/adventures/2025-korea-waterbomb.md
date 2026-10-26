@@ -135,7 +135,7 @@ The lineup was a mix of K-pop and hip-hop acts, and one of my highlights was Lee
 
 The day after Waterbomb we rented hanbok, the traditional Korean dress, and went to Gyeongbokgung Palace. Anyone wearing hanbok gets in for free, so the palace grounds were full of people dressed the same way. We walked past Gyeonghoeru Pavilion on its pond and up to Hyangwonjeong at the back of the grounds, and took far too many photos.
 
-In the evening we went to Yongsan Electronics Market, a huge complex of shops selling everything from parts to consoles, and grabbed tacos nearby. We ended the night back in Euljiro, drinking Cass and Terra in the old printing alleys near the hotel and picking out ramyeon from a wall of options.
+In the evening we went to Yongsan Electronics Market, a huge complex of shops selling everything from parts to consoles. Nearby I spotted a neon taco stand, which was funny enough to stop for a photo. We ended the night back in Euljiro, drinking Cass and Terra in the old printing alleys near the hotel and picking out ramyeon from a wall of options.
 
 ### Day 6: Lotte World Mall
 

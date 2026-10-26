@@ -42,6 +42,8 @@ legs:
   - {"name": "Atami and Hatsushima, then Oiso", "mode": "daytrip", "coords": [[35.7286, 139.4775], [35.0426, 139.1707]]}
   - {"name": "Mitsui Outlet Park Iruma again", "mode": "daytrip", "coords": [[35.7286, 139.4775], [35.8107, 139.3789]]}
   - {"name": "Ito, Izu Peninsula (scuba diving)", "mode": "bus", "coords": [[35.7286, 139.4775], [34.8967, 139.1324]]}
+totals:
+  - {"title": "Driving totals, Kanto day trips by car", "items": ["Distance: about 410 km (estimated from the mapped route)", "Driving days: 3", "Time behind the wheel: roughly 8 hours (estimate)", "Longest day: Jun 29, Boso Peninsula, about 210 km", "By day: Jun 29, Boso Peninsula 210 km · Jul 19, Tama River fireworks 20 km · Jul 25, GR86 drive 180 km"]}
 # Day-by-day timeline, generated from the trip notes by scripts/import_trips.py.
 timeline:
   - label: "Day trip"

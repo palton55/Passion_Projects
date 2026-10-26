@@ -6,12 +6,14 @@
 // Optional `regions` (GeoJSON, e.g. prefectures visited) and `pois` (points with a `layer` name, e.g. manhole covers)
 // become overlays in the layer control; regions and point layers start off.
 // `bands` (wide translucent lines for roads called out, e.g. a route driven end to end) start on.
-const { stops, legs = [], height = 460, dot = 8, groups = [], lines = true, regions = null, regionsLabel = 'Prefectures visited', pois = [], bands = [] } = Astro.props;
+// `global` maps (all destinations at once) say "bullet train" instead of "Shinkansen" (Patrick, Oct 2026).
+const { stops, legs: rawLegs = [], global = false, height = 460, dot = 8, groups = [], lines = true, regions = null, regionsLabel = 'Prefectures visited', pois = [], bands = [] } = Astro.props;
+const legs = global ? rawLegs.map((l: any) => ({ ...l, name: l.name?.replace(/Shinkansen/g, 'bullet train') })) : rawLegs;
 const used = new Set(legs.length ? legs.map((l: any) => l.mode) : stops.map((s: any) => s.mode));
 const legend = [
   ['drive', 'Drive'], ['shinkansen', 'Shinkansen'], ['express', 'Limited express'], ['local', 'Local train'], ['daytrip', 'Day trip'], ['bus', 'Bus'], ['ferry', 'Boat / ferry'],
   ['train', 'Getting around town'], ['flight', 'Flight'],
-].filter(([m]) => used.has(m));
+].filter(([m]) => used.has(m)).map(([m, label]) => [m, global && m === 'shinkansen' ? 'Bullet train' : label]);
 ---
 {groups.length > 1 && (
   <div class="map-filter" role="group" aria-label="Filter the map">

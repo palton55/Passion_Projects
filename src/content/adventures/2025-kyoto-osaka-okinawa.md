@@ -34,6 +34,8 @@ legs:
   - {"name": "Drive to Cape Hedo and back via Sesoko", "mode": "drive", "coords": [[26.6, 127.95], [26.63, 127.89], [26.655, 127.878], [26.67, 127.98], [26.7, 128.1], [26.7311, 128.1692], [26.872, 128.2643], [26.7311, 128.1692], [26.7, 128.1], [26.67, 127.98], [26.6498, 127.8577], [26.63, 127.89], [26.6, 127.95]], "day": 9}
   - {"name": "Drive back to Naha Airport", "mode": "drive", "coords": [[26.6, 127.95], [26.5322, 127.9709], [26.45, 127.88], [26.33, 127.8], [26.21, 127.68], [26.2077, 127.6507]], "day": 10}
   - {"name": "Flight, Naha to Haneda", "mode": "flight", "coords": [[26.2047, 127.6531], [31.5, 134.5], [35.5494, 139.7798]], "day": 10}
+totals:
+  - {"title": "Driving totals, Okinawa drives", "items": ["Distance: about 480 km (estimated from the mapped route)", "Driving days: 5", "Time behind the wheel: roughly 9.5 hours (estimate)", "Longest day: Jun 21, about 150 km", "By day: Jun 20 20 km · Jun 21 150 km · Jun 22 100 km · Jun 23 140 km · Jun 24 70 km"]}
 # Day-by-day timeline, generated from the trip notes by scripts/import_trips.py.
 timeline:
   - label: "Day 1"

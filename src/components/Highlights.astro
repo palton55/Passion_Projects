@@ -1,6 +1,7 @@
 ---
 // A row of highlight photos near the top of a trip page; the full set stays in the Photos gallery.
 const { photos, count = 8, href } = Astro.props;
+import { photo } from '../lib/img';
 const base = import.meta.env.BASE_URL.replace(/\/$/, '');
 const all = photos as { src: string; caption?: string; highlight?: boolean }[];
 // Hand-picked highlights (`highlight: true` in photos.json) win; otherwise spread the picks across the trip.
@@ -12,7 +13,7 @@ const pick = chosen.length ? chosen.slice(0, count)
   <div class="highlights">
     {pick.map((p) => (
       <a href={href ?? `${base}/${p.src}`} target={href ? undefined : '_blank'}>
-        <img src={`${base}/${p.src}`} alt={p.caption ?? ''} title={p.caption} loading="lazy" />
+        <img {...photo(p.src, '(max-width: 560px) 50vw, 260px')} alt={p.caption ?? ''} title={p.caption} loading="lazy" decoding="async" />
       </a>
     ))}
   </div>

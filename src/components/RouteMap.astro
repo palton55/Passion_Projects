@@ -2,7 +2,8 @@
 // Road map: stops are the places visited. Optional `legs` draw the real route (e.g. rail lines);
 // without legs, stops are joined in order by straight lines.
 // Optional `groups` (e.g. years) add toggle buttons; legs and stops then carry `groups: string[]`.
-// Drive legs are photo-GPS waypoints; the browser snaps them to real roads when a router answers.
+// Drive legs are photo-GPS waypoints, snapped to real roads at build time (scripts/snap_roads.mjs); a leg the build
+// missed is snapped in the browser when a public router answers.
 // Optional `regions` (GeoJSON, e.g. prefectures visited) and `pois` (points with a `layer` name, e.g. manhole covers)
 // become overlays in the layer control; regions and point layers start off.
 // `bands` (wide translucent lines for roads called out, e.g. a route driven end to end) start on.
@@ -21,12 +22,13 @@ const legend = [
     {groups.map((g: string) => <button type="button" data-group={g} aria-pressed="true">{g}</button>)}
   </div>
 )}
-<div class="route-map" style={`height: ${height}px`} data-dot={dot} data-stops={JSON.stringify(stops)} data-legs={JSON.stringify(legs)} data-lines={String(lines)}
+<div class="route-map" data-base={import.meta.env.BASE_URL.replace(/\/$/, '')} style={`height: ${height}px`} data-dot={dot} data-stops={JSON.stringify(stops)} data-legs={JSON.stringify(legs)} data-lines={String(lines)}
   data-regions={regions ? JSON.stringify(regions) : ''} data-regions-label={regionsLabel} data-pois={JSON.stringify(pois)} data-bands={JSON.stringify(bands)}></div>
 <ul class="legend">{legend.map(([m, label]) => <li class={m}>{label}</li>)}</ul>
 <script>
   import L from 'leaflet';
   import 'leaflet/dist/leaflet.css';
+  import { roadQuery, roadKey } from '../lib/road-key';
   const styles: Record<string, L.PolylineOptions> = {
     drive: { color: '#7c3aed', weight: 4 },
     shinkansen: { color: '#dc2626', weight: 5 },
@@ -40,18 +42,27 @@ const legend = [
     walk: { color: '#16a34a', weight: 3 },
     other: { color: '#6b665e', weight: 3 },
   };
-  // Public OSRM routers, tried in order. Results are cached per browser; on failure the waypoint line stays.
+  // Roads snapped at build time come first. Otherwise public OSRM routers are tried in order and the result is
+  // cached per browser; on failure the waypoint line stays.
   const routers = [
     'https://routing.openstreetmap.de/routed-car/route/v1/driving/',
     'https://router.project-osrm.org/route/v1/driving/',
   ];
-  // One request at a time, to stay polite to the public routers.
+  const base = document.querySelector<HTMLElement>('.route-map')?.dataset.base ?? '';
+  // Asking the public routers goes one request at a time, to stay polite.
   let queue: Promise<unknown> = Promise.resolve();
-  const queued = (coords: [number, number][]) => { const p = queue.then(() => roadRoute(coords)); queue = p.catch(() => null); return p; };
-  async function roadRoute(coords: [number, number][]): Promise<[number, number][] | null> {
-    const pts = coords.filter((c, i) => i === 0 || Math.abs(c[0] - coords[i - 1][0]) + Math.abs(c[1] - coords[i - 1][1]) > 0.002);
-    if (pts.length < 2) return null;
-    const q = pts.map(([lat, lng]) => `${lng.toFixed(5)},${lat.toFixed(5)}`).join(';');
+  async function roadLine(coords: [number, number][]): Promise<[number, number][] | null> {
+    const q = roadQuery(coords);
+    if (!q) return null;
+    try {
+      const res = await fetch(`${base}/roads/${roadKey(q)}.json`);
+      if (res.ok) return await res.json();
+    } catch {}
+    const p = queue.then(() => askRouters(q));
+    queue = p.catch(() => null);
+    return p;
+  }
+  async function askRouters(q: string): Promise<[number, number][] | null> {
     const key = 'road:' + q;
     try { const hit = localStorage.getItem(key); if (hit) return JSON.parse(hit); } catch {}
     for (const r of routers) {
@@ -94,7 +105,7 @@ const legend = [
     bands.forEach((b: any) => {
       const line = L.polyline(b.coords, { color: b.color, weight: 14, opacity: .35, lineCap: 'round', pane: 'bands' }).bindTooltip(b.name, { sticky: true });
       overlays[b.name] = L.layerGroup([line]).addTo(map);
-      queued(b.coords).then((road) => { if (road) line.setLatLngs(road); });
+      roadLine(b.coords).then((road) => { if (road) line.setLatLngs(road); });
     });
     const pois = JSON.parse(el.dataset.pois || '[]');
     // Highlighted points get a label unless a stop already names the town; labels point away from the middle of
@@ -118,7 +129,7 @@ const legend = [
     legs.forEach((leg: any) => {
       const line = L.polyline(leg.coords, styles[leg.mode] ?? styles.other).bindTooltip(leg.name).addTo(map);
       layers.push({ groups: leg.groups, layer: line });
-      if (leg.mode === 'drive') queued(leg.coords).then((road) => { if (road) line.setLatLngs(road); });
+      if (leg.mode === 'drive') roadLine(leg.coords).then((road) => { if (road) line.setLatLngs(road); });
     });
     // Without legs, connect the stops in order with straight lines.
     if (!legs.length && el.dataset.lines !== 'false') stops.forEach((s: any, i: number) => {

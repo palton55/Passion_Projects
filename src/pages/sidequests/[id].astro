@@ -8,6 +8,7 @@ import { showDrafts } from '../../lib/drafts';
 import { getCollection, render } from 'astro:content';
 import { parentOf } from '../../data/japan-topics';
 import photoData from '../../data/photos.json';
+import covers from '../../data/covers.json';
 import { placePages } from '../../lib/place-notes';
 import PlaceCards from '../../components/PlaceCards.astro';
 export async function getStaticPaths() {
@@ -25,7 +26,7 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, '');
 const places = placePages([entry]);
 const yt = d.video?.match(/(?:v=|youtu\.be\/)([\w-]{11})/)?.[1];
 ---
-<Base title={`${d.title} · Sidequest Resume`} description={d.summary}>
+<Base title={`${d.title} · Sidequest Resume`} description={d.summary} image={d.cover ?? (covers as Record<string, string>)[entry.id] ?? photos[0]?.src}>
   <article>
     <p class="meta">{[d.category, d.collection ?? d.region, d.start && `${fmt(d.start)}${d.end ? ` to ${fmt(d.end)}` : ''}`].filter(Boolean).join(' · ')}</p>
     <h1>{d.title}</h1>

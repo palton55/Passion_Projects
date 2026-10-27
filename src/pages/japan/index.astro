@@ -94,4 +94,9 @@ const grouped = areas.map(([area, prefs]) => ({
   .pref ul { list-style: none; padding: 0; margin: 2px 0 0; }
   .pref li { margin: 2px 0; }
   .yr { font-size: .75rem; color: var(--muted); margin-left: 4px; }
+  /* Bigger tap targets on touch screens. */
+  @media (pointer: coarse) {
+    .pref li { margin: 8px 0; }
+    .yr { display: inline-block; padding: 3px 8px; margin-left: 2px; border: 1px solid var(--border); border-radius: 999px; line-height: 1.4; text-decoration: none; }
+  }
 </style>

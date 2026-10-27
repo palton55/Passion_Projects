@@ -2,6 +2,7 @@
 import Base from '../../layouts/Base.astro';
 import SidequestCard from '../../components/SidequestCard.astro';
 import { showDrafts } from '../../lib/drafts';
+import covers from '../../data/covers.json';
 import { getCollection } from 'astro:content';
 import { regions, type Region } from '../../data/regions';
 import RouteMap from '../../components/RouteMap.astro';
@@ -25,7 +26,7 @@ const dots = places.map((p) => ({ name: p.name, lat: p.lat, lng: p.lng, date: p.
 const grouped = [...new Set(places.map((p) => p.prefecture))].sort()
   .map((county) => ({ county, places: places.filter((p) => p.prefecture === county).sort((a, b) => a.name.localeCompare(b.name)) }));
 ---
-<Base title={`${region.name} · Sidequest Resume`} description={region.blurb}>
+<Base title={`${region.name} · Sidequest Resume`} description={region.blurb} image={(covers as Record<string, string>)[entries[0]?.id]}>
   <p class="crumb"><a href={`${base}/travel/`}>Travel</a></p>
   <h1>{region.name}</h1>
   <p class="lede">{region.blurb}</p>
@@ -71,4 +72,9 @@ const grouped = [...new Set(places.map((p) => p.prefecture))].sort()
   .area ul { list-style: none; padding: 0; margin: 2px 0 0; }
   .area li { margin: 2px 0; }
   .yr { font-size: .75rem; color: var(--muted); margin-left: 4px; }
+  /* Bigger tap targets on touch screens. */
+  @media (pointer: coarse) {
+    .pref li { margin: 8px 0; }
+    .yr { display: inline-block; padding: 3px 8px; margin-left: 2px; border: 1px solid var(--border); border-radius: 999px; line-height: 1.4; text-decoration: none; }
+  }
 </style>

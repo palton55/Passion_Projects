@@ -20,6 +20,14 @@ jobs:
           node-version: 22
           cache: npm
       - run: npm ci
+      # Resized photos and snapped roads carry over between builds, so each build only makes what's new.
+      - uses: actions/cache@v4
+        with:
+          path: |
+            public/sized
+            .cache
+          key: site-build-${{ github.run_id }}
+          restore-keys: site-build-
       - name: Build
         run: |
           OWNER="${GITHUB_REPOSITORY_OWNER,,}"
@@ -30,6 +38,7 @@ jobs:
           # Alpha copy with drafts, served at <site>/alpha/
           BASE="${BASE:-}/alpha" PUBLIC_SHOW_DRAFTS=true npx astro build --outDir dist-alpha
           mv dist-alpha dist/alpha
+          node scripts/snap_roads.mjs dist dist/alpha
       - uses: actions/upload-pages-artifact@v3
         with:
           path: dist

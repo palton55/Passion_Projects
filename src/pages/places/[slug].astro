@@ -17,7 +17,7 @@ const section = place.country === 'Japan' ? { href: '/japan/', label: 'Japan' }
   : place.country === 'United States' ? { href: `/travel/${state.toLowerCase().replace(/ /g, '-')}/`, label: state }
   : { href: '/korea/', label: 'Korea' };
 ---
-<Base title={`${place.name} · Sidequest Resume`} description={place.text[0]}>
+<Base title={`${place.name} · Sidequest Resume`} description={place.text[0]} image={place.pics[0]?.src}>
   <article>
     <p class="crumb"><a href={`${base}/travel/`}>Travel</a> / <a href={`${base}${section.href}`}>{section.label}</a></p>
     <h1>{place.name}</h1>

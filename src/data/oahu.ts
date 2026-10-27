@@ -45,6 +45,9 @@ export function areaOf(lat: number, lng: number): string {
   const d = ([, a, b]: [string, number, number]) => (a - lat) ** 2 + ((b - lng) * Math.cos(lat * Math.PI / 180)) ** 2;
   return areas.reduce((best, a) => (d(a) < d(best) ? a : best))[0];
 }
+// Names Google returns in another language for a place.
+const names: Record<string, string> = { 'サイド ストリート イン カパフル': 'Side Street Inn Kapahulu' };
+export const placeName = (p: GmapsPlace) => names[p.name] ?? p.name;
 export function mapsLink(p: GmapsPlace): string {
-  return p.cid ? `https://maps.google.com/?cid=${p.cid}` : `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(`${p.name}, Oahu, HI`)}`;
+  return p.cid ? `https://maps.google.com/?cid=${p.cid}` : `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(`${placeName(p)}, Oahu, HI`)}`;
 }

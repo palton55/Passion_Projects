@@ -1,14 +1,14 @@
 ---
 import Base from '../../../layouts/Base.astro';
 import RouteMap from '../../../components/RouteMap.astro';
-import { oahuSections, areaNames, areaOf, mapsLink, type OahuSection } from '../../../data/oahu';
+import { oahuSections, areaNames, areaOf, mapsLink, placeName, type OahuSection } from '../../../data/oahu';
 export function getStaticPaths() {
   return oahuSections.filter((s) => s.list).map((section) => ({ params: { section: section.slug }, props: { section } }));
 }
 const { section } = Astro.props as { section: OahuSection };
 const base = import.meta.env.BASE_URL.replace(/\/$/, '');
 const list = section.list!;
-const places = list.places.map((p) => ({ ...p, area: areaOf(p.lat, p.lng) }));
+const places = list.places.map((p) => ({ ...p, name: placeName(p), area: areaOf(p.lat, p.lng) }));
 const grouped = areaNames.map((area) => ({ area, places: places.filter((p) => p.area === area).sort((a, b) => a.name.localeCompare(b.name)) }))
   .filter((g) => g.places.length);
 const dots = places.map((p) => ({ name: p.name, lat: p.lat, lng: p.lng, date: p.area, note: p.note, groups: [p.area] }));

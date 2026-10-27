@@ -15,10 +15,12 @@ function coords(x) {
   for (const y of x) { const c = coords(y); if (c) return c; }
   return null;
 }
-// Google's feature id ("0x…:0x…"); its second half is the place's CID, which makes a stable Maps link.
+// Google's feature id, a pair of signed 64-bit numbers as strings; the second, read unsigned, is the place's CID,
+// which makes a stable Maps link.
 function cid(x) {
-  if (typeof x === 'string') { const m = x.match(/^0x[0-9a-f]+:(0x[0-9a-f]+)$/i); return m ? BigInt(m[1]).toString() : null; }
-  if (Array.isArray(x)) for (const y of x) { const c = cid(y); if (c) return c; }
+  if (!Array.isArray(x)) return null;
+  if (x.length === 2 && x.every((v) => typeof v === 'string' && /^-?\d{6,20}$/.test(v))) return BigInt.asUintN(64, BigInt(x[1])).toString();
+  for (const y of x) { const c = cid(y); if (c) return c; }
   return null;
 }
 

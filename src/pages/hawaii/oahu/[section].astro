@@ -1,0 +1,48 @@
+---
+import Base from '../../../layouts/Base.astro';
+import RouteMap from '../../../components/RouteMap.astro';
+import { oahuSections, areaNames, areaOf, mapsLink, type OahuSection } from '../../../data/oahu';
+export function getStaticPaths() {
+  return oahuSections.filter((s) => s.list).map((section) => ({ params: { section: section.slug }, props: { section } }));
+}
+const { section } = Astro.props as { section: OahuSection };
+const base = import.meta.env.BASE_URL.replace(/\/$/, '');
+const list = section.list!;
+const places = list.places.map((p) => ({ ...p, area: areaOf(p.lat, p.lng) }));
+const grouped = areaNames.map((area) => ({ area, places: places.filter((p) => p.area === area).sort((a, b) => a.name.localeCompare(b.name)) }))
+  .filter((g) => g.places.length);
+const dots = places.map((p) => ({ name: p.name, lat: p.lat, lng: p.lng, date: p.area, note: p.note, groups: [p.area] }));
+const synced = new Date(list.synced).toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric', timeZone: 'Pacific/Honolulu' });
+---
+<Base title={`Oahu ${section.name} · Sidequest Resume`} description={section.blurb}>
+  <p class="crumb"><a href={`${base}/travel/`}>Travel</a> / <a href={`${base}/hawaii/`}>Hawaii</a> / <a href={`${base}/hawaii/oahu/`}>Oahu</a></p>
+  <h1>{section.name} on Oahu</h1>
+  <p class="lede">{section.blurb} These are the {places.length} places on my Google Maps list, grouped by part of the island. Select a part of the island to narrow the map, or a pin to see the name.</p>
+  <RouteMap stops={dots} height={520} dot={5} lines={false} groups={grouped.map((g) => g.area)} />
+  <p class="meta">Synced from <a href={section.url}>my Google Maps list</a>, last updated {synced}.</p>
+  <div class="areas">
+    {grouped.map((g) => (
+      <div class="area">
+        <h2>{g.area} <span class="count">{g.places.length}</span></h2>
+        <ul>
+          {g.places.map((p) => (
+            <li><a href={mapsLink(p)} rel="noopener">{p.name}</a>{p.note && <span class="note"> {p.note}</span>}</li>
+          ))}
+        </ul>
+      </div>
+    ))}
+  </div>
+</Base>
+<style>
+  .crumb { color: var(--muted); font-size: .9rem; margin: 0 0 8px; }
+  .lede { font-size: 1.1rem; max-width: 680px; }
+  .meta { color: var(--muted); font-size: .9rem; }
+  .areas { columns: 3 240px; column-gap: 32px; margin-top: 32px; border-top: 1px solid var(--border); padding-top: 8px; }
+  .area { break-inside: avoid; margin-bottom: 18px; }
+  .area h2 { font-size: 1.05rem; margin: 12px 0 4px; }
+  .count { color: var(--muted); font-weight: 400; font-size: .85rem; }
+  .area ul { list-style: none; padding: 0; margin: 0; }
+  .area li { margin: 3px 0; }
+  .note { color: var(--muted); font-size: .9rem; }
+  @media (pointer: coarse) { .area li { margin: 8px 0; } }
+</style>

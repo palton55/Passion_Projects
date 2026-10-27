@@ -3,6 +3,9 @@ on:
   push:
     branches: [main]
   workflow_dispatch:
+  # Daily rebuild at 4am Hawaii time, so edits to the synced Google Maps lists show up (scripts/sync_gmaps.mjs).
+  schedule:
+    - cron: '0 14 * * *'
 permissions:
   contents: read
   pages: write

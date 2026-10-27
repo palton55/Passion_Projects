@@ -1,13 +1,16 @@
 ---
 // Auto-cycling photo strip on the landing page: one slide per entry with a cover photo, each linking to that entry.
+// Photos load only when their slide is next up, so the page downloads one or two photos instead of all of them.
+import { photo } from '../lib/img';
 const { slides } = Astro.props as { slides: { href: string; src: string; title: string; meta?: string }[] };
+const pics = slides.map((s) => photo(s.src, '(max-width: 1072px) 100vw, 1040px'));
 ---
 {slides.length > 0 && (
   <div class="carousel" data-carousel aria-roledescription="carousel" aria-label="Highlights">
     <div class="track">
       {slides.map((s, i) => (
         <a class:list={['slide', { active: i === 0 }]} href={s.href} aria-hidden={i === 0 ? 'false' : 'true'} tabindex={i === 0 ? 0 : -1}>
-          <img src={s.src} alt="" loading={i === 0 ? 'eager' : 'lazy'} />
+          <img data-src={pics[i].src} data-srcset={pics[i].srcset} sizes={pics[i].sizes} width={pics[i].width} height={pics[i].height} alt="" />
           <span class="caption">{s.meta && <small>{s.meta}</small>}{s.title}</span>
         </a>
       ))}
@@ -29,9 +32,17 @@ const { slides } = Astro.props as { slides: { href: string; src: string; title: 
     }
     slides.forEach((s) => s.parentElement!.appendChild(s));
     dots.forEach((d) => d.parentElement!.appendChild(d));
+    const load = (s?: HTMLElement) => {
+      const img = s?.querySelector('img');
+      if (!img || img.src) return;
+      if (img.dataset.srcset) img.srcset = img.dataset.srcset;
+      img.src = img.dataset.src!;
+    };
     let i = 0;
     const show = (n: number) => {
       i = (n + slides.length) % slides.length;
+      load(slides[i]);
+      load(slides[(i + 1) % slides.length]);
       slides.forEach((s, k) => { s.classList.toggle('active', k === i); s.setAttribute('aria-hidden', String(k !== i)); s.tabIndex = k === i ? 0 : -1; });
       dots.forEach((d, k) => d.classList.toggle('on', k === i));
     };

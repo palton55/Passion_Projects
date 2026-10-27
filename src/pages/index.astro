@@ -10,7 +10,7 @@ const all = (await getCollection('adventures', ({ data }) => !data.draft || show
   .sort((a, b) => (b.data.start?.valueOf() ?? 0) - (a.data.start?.valueOf() ?? 0));
 const slides = all.flatMap((e) => {
   const src = e.data.cover ?? (covers as Record<string, string>)[e.id];
-  return src ? [{ href: `${base}/sidequests/${e.id}/`, src: `${base}/${src}`, title: e.data.title, meta: e.data.start?.getUTCFullYear().toString() }] : [];
+  return src ? [{ href: `${base}/sidequests/${e.id}/`, src, title: e.data.title, meta: e.data.start?.getUTCFullYear().toString() }] : [];
 });
 ---
 <Base title="Sidequest Resume">
@@ -30,6 +30,7 @@ const slides = all.flatMap((e) => {
   .hero { padding: 48px 0 32px; max-width: 680px; }
   .hero h1 { font-size: clamp(2.2rem, 6vw, 3.4rem); margin: 0 0 16px; }
   .hero p { color: var(--muted); font-size: 1.1rem; }
+  @media (max-width: 480px) { .hero { padding: 16px 0 24px; } }
   .cta { display: inline-block; margin: 8px 8px 0 0; padding: 10px 18px; border-radius: 999px; background: var(--accent); color: #fff; text-decoration: none; font-weight: 600; }
   .empty { color: var(--muted); }
   .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 20px; }

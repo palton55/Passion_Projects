@@ -3,6 +3,7 @@ import Base from '../../layouts/Base.astro';
 import RouteMap from '../../components/RouteMap.astro';
 import Highlights from '../../components/Highlights.astro';
 import photoData from '../../data/photos.json';
+import covers from '../../data/covers.json';
 import { showDrafts } from '../../lib/drafts';
 import { getCollection } from 'astro:content';
 import { japanTopics, slug, type JapanTopic } from '../../data/japan-topics';
@@ -16,12 +17,14 @@ const entries = (await getCollection('adventures', ({ data }) => (data.region ==
   .sort((a, b) => (a.data.start?.valueOf() ?? 0) - (b.data.start?.valueOf() ?? 0));
 const photosOf = (e: (typeof entries)[number]) => e.data.photos.length ? e.data.photos : ((photoData as Record<string, { src: string; caption?: string }[]>)[e.id] ?? []);
 const inTopic = (t: JapanTopic) => entries.filter((e) => e.data.collection === t.collection);
+// The link-preview photo is the first trip's cover.
+const shareImage = [topic, ...(topic.subtopics ?? [])].flatMap(inTopic).map((e) => e.data.cover ?? (covers as Record<string, string>)[e.id]).find(Boolean);
 // Year pages with several trips get one combined map with a filter button per trip, like the Travel map. Flights are left out.
 const yearTrips = (topic.subtopics ?? []).filter((s) => !s.section).map((s) => ({ name: s.title, mapped: inTopic(s).filter((e) => e.data.stops.length) })).filter((t) => t.mapped.length);
 const yearStops = yearTrips.flatMap((t) => t.mapped.flatMap((e) => e.data.stops.map((s) => ({ ...s, date: e.data.title, groups: [t.name] }))));
 const yearLegs = yearTrips.flatMap((t) => t.mapped.flatMap((e) => e.data.legs.filter((l) => l.mode !== 'flight').map((l) => ({ ...l, name: `${e.data.title}: ${l.name}`, groups: [t.name] }))));
 ---
-<Base title={`${topic.title} · Sidequest Resume`} description={topic.blurb}>
+<Base title={`${topic.title} · Sidequest Resume`} description={topic.blurb} image={shareImage}>
   <p class="crumb"><a href={`${base}/travel/`}>Travel</a> / <a href={`${base}/japan/`}>Japan</a></p>
   {[topic].map((t) => (
     <section id={slug(t.collection)}>

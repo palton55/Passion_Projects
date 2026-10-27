@@ -3,12 +3,14 @@
   "type": "module",
   "private": true,
   "scripts": {
-    "dev": "astro dev",
-    "build": "astro build",
+    "photos": "node scripts/resize_photos.mjs",
+    "dev": "node scripts/resize_photos.mjs && astro dev",
+    "build": "node scripts/resize_photos.mjs && astro build",
     "preview": "astro preview"
   },
   "dependencies": {
     "astro": "7.3.8",
-    "leaflet": "^1.9.4"
+    "leaflet": "^1.9.4",
+    "sharp": "^0.35.5"
   }
 }

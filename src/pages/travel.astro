@@ -6,12 +6,14 @@ import RouteMap from '../components/RouteMap.astro';
 import { regions } from '../data/regions';
 import { tripMap } from '../lib/trip-map';
 import { getCollection } from 'astro:content';
+import { showDrafts } from '../lib/drafts';
 // Every trip's stops and routes on one world map, toggled by destination.
 const { travel, legs: allLegs, stops: allStops, areas: areaNames } = await tripMap();
 const regionNames = new Set(regions.flatMap((r) => [r.region].flat()));
 // Destinations without any entries yet (drafts included) are left off until they have one (Patrick, Oct 25 2026).
+// `listed` pages (Hawaii, Oct 27 2026) show on the alpha until Patrick moves them to the main site.
 const filled = new Set((await getCollection('adventures')).map((e) => e.data.region));
-const shown = regions.filter((r) => r.listed || [r.region].flat().some((x) => filled.has(x)));
+const shown = regions.filter((r) => (r.listed && showDrafts) || [r.region].flat().some((x) => filled.has(x)));
 const otherTravel = travel.filter((e) => !regionNames.has(e.data.region ?? ''));
 ---
 <Base title="Travel · Sidequest Resume" description="Trips and travel, organized by destination.">

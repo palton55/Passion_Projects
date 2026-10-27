@@ -1,0 +1,890 @@
+{
+ "list": "SXHhl6f0Re2ufOOm4fMisA",
+ "title": "Oahu Food Recommendations",
+ "description": "A list of places I recommend for food on Oahu, including restaurants, casual spots, and places to grab a snack or dessert.",
+ "synced": "2026-10-27T05:15:00Z",
+ "places": [
+  {
+   "name": "Chez Kenzo Bar And Grill",
+   "address": "1451 S King St, Honolulu, HI 96814",
+   "lat": 21.297643,
+   "lng": -157.839234,
+   "note": ""
+  },
+  {
+   "name": "Fresh Bites Hawaii",
+   "address": "",
+   "lat": 21.293928,
+   "lng": -157.82589,
+   "note": ""
+  },
+  {
+   "name": "STIX ASIA",
+   "address": "",
+   "lat": 21.279035,
+   "lng": -157.828416,
+   "note": ""
+  },
+  {
+   "name": "Yanagi Sushi",
+   "address": "",
+   "lat": 21.30098,
+   "lng": -157.853954,
+   "note": ""
+  },
+  {
+   "name": "KAHALA MKT. by Foodland",
+   "address": "",
+   "lat": 21.279112,
+   "lng": -157.786866,
+   "note": ""
+  },
+  {
+   "name": "Yakiniku Like",
+   "address": "",
+   "lat": 21.299697,
+   "lng": -157.840072,
+   "note": ""
+  },
+  {
+   "name": "Hokkaido Ramen Santouka",
+   "address": "",
+   "lat": 21.293321,
+   "lng": -157.838916,
+   "note": ""
+  },
+  {
+   "name": "Marukai",
+   "address": "",
+   "lat": 21.333099,
+   "lng": -157.885202,
+   "note": ""
+  },
+  {
+   "name": "Richie's Drive Inn",
+   "address": "",
+   "lat": 21.326374,
+   "lng": -157.869436,
+   "note": ""
+  },
+  {
+   "name": "Maunakea Marketplace",
+   "address": "",
+   "lat": 21.312807,
+   "lng": -157.862712,
+   "note": ""
+  },
+  {
+   "name": "J. Dolans",
+   "address": "",
+   "lat": 21.311085,
+   "lng": -157.860584,
+   "note": ""
+  },
+  {
+   "name": "Lucky Belly",
+   "address": "",
+   "lat": 21.311744,
+   "lng": -157.862375,
+   "note": ""
+  },
+  {
+   "name": "Yours Truly Cocktail Bar",
+   "address": "",
+   "lat": 21.309469,
+   "lng": -157.859858,
+   "note": ""
+  },
+  {
+   "name": "Maguro Brothers Hawaii Chinatown",
+   "address": "",
+   "lat": 21.312978,
+   "lng": -157.862684,
+   "note": ""
+  },
+  {
+   "name": "Onigiri Onibe",
+   "address": "",
+   "lat": 21.307533,
+   "lng": -157.861135,
+   "note": ""
+  },
+  {
+   "name": "Paia FishMarket Kailua",
+   "address": "",
+   "lat": 21.391704,
+   "lng": -157.741175,
+   "note": ""
+  },
+  {
+   "name": "Loco Moco Drive Inn Kapahulu",
+   "address": "",
+   "lat": 21.283492,
+   "lng": -157.814016,
+   "note": ""
+  },
+  {
+   "name": "Pho Kapahulu",
+   "address": "",
+   "lat": 21.2821,
+   "lng": -157.814246,
+   "note": ""
+  },
+  {
+   "name": "Rigo | Spanish italian Restaurant",
+   "address": "",
+   "lat": 21.283794,
+   "lng": -157.813713,
+   "note": ""
+  },
+  {
+   "name": "Jolene's - Airport",
+   "address": "",
+   "lat": 21.333886,
+   "lng": -157.909004,
+   "note": ""
+  },
+  {
+   "name": "Forty Niner Restaurant",
+   "address": "",
+   "lat": 21.379718,
+   "lng": -157.937038,
+   "note": ""
+  },
+  {
+   "name": "Da Seafood Cartel",
+   "address": "",
+   "lat": 21.37868,
+   "lng": -157.936046,
+   "note": ""
+  },
+  {
+   "name": "Fooki",
+   "address": "",
+   "lat": 21.38137,
+   "lng": -157.942624,
+   "note": ""
+  },
+  {
+   "name": "Poke On Da Run Shop",
+   "address": "",
+   "lat": 21.391343,
+   "lng": -157.971074,
+   "note": ""
+  },
+  {
+   "name": "Aunty's Hotpot House",
+   "address": "",
+   "lat": 21.333241,
+   "lng": -158.051114,
+   "note": ""
+  },
+  {
+   "name": "Kountry Style Kitchen Restaurant Ewa Beach",
+   "address": "",
+   "lat": 21.319202,
+   "lng": -158.014977,
+   "note": ""
+  },
+  {
+   "name": "Jolene's - Ewa Beach",
+   "address": "",
+   "lat": 21.326582,
+   "lng": -158.021064,
+   "note": ""
+  },
+  {
+   "name": "E.A.R.L. Kakaako",
+   "address": "",
+   "lat": 21.299221,
+   "lng": -157.861387,
+   "note": ""
+  },
+  {
+   "name": "Lani Sot",
+   "address": "",
+   "lat": 21.297853,
+   "lng": -157.861239,
+   "note": ""
+  },
+  {
+   "name": "Sabrozon Mexican Food Truck",
+   "address": "",
+   "lat": 21.299419,
+   "lng": -157.857263,
+   "note": ""
+  },
+  {
+   "name": "Pattaya Thai",
+   "address": "",
+   "lat": 21.299855,
+   "lng": -157.856967,
+   "note": ""
+  },
+  {
+   "name": "Chengdu Taste | Szechuan",
+   "address": "",
+   "lat": 21.296762,
+   "lng": -157.84227,
+   "note": ""
+  },
+  {
+   "name": "Super Pho Waialae",
+   "address": "",
+   "lat": 21.283575,
+   "lng": -157.800359,
+   "note": ""
+  },
+  {
+   "name": "The Pig and The Lady",
+   "address": "",
+   "lat": 21.28248,
+   "lng": -157.798145,
+   "note": ""
+  },
+  {
+   "name": "Kaimuki Shokudo",
+   "address": "",
+   "lat": 21.282299,
+   "lng": -157.800323,
+   "note": ""
+  },
+  {
+   "name": "King of Thai Boat Noodles",
+   "address": "661 Ke’eaumoku St Suite 103, Honolulu, HI 96814",
+   "lat": 21.294658,
+   "lng": -157.841665,
+   "note": ""
+  },
+  {
+   "name": "Side Street Inn Kapahulu",
+   "address": "614 Kapahulu Ave #100, Honolulu, HI 96815",
+   "lat": 21.280821,
+   "lng": -157.830934,
+   "note": ""
+  },
+  {
+   "name": "Leonard's Malasada Mobile",
+   "address": "",
+   "lat": 21.421867,
+   "lng": -157.804397,
+   "note": ""
+  },
+  {
+   "name": "Kizuna Sushi Bar & Grill",
+   "address": "",
+   "lat": 21.413342,
+   "lng": -157.801025,
+   "note": ""
+  },
+  {
+   "name": "Kaneohe Pancake House",
+   "address": "",
+   "lat": 21.417369,
+   "lng": -157.803024,
+   "note": ""
+  },
+  {
+   "name": "Haleiwa Joe's Haiku Gardens",
+   "address": "",
+   "lat": 21.41434,
+   "lng": -157.815618,
+   "note": ""
+  },
+  {
+   "name": "Chicken In A Barrel BBQ Wahiawa",
+   "address": "",
+   "lat": 21.4936,
+   "lng": -158.028953,
+   "note": ""
+  },
+  {
+   "name": "Maui Mike's Fire-Roasted Chicken",
+   "address": "",
+   "lat": 21.494671,
+   "lng": -158.029002,
+   "note": ""
+  },
+  {
+   "name": "Kahuku Farms",
+   "address": "",
+   "lat": 21.683183,
+   "lng": -157.960342,
+   "note": ""
+  },
+  {
+   "name": "Lei Lei's Bar & Grill",
+   "address": "",
+   "lat": 21.701804,
+   "lng": -157.99594,
+   "note": ""
+  },
+  {
+   "name": "Beach House by Roy Yamaguchi",
+   "address": "",
+   "lat": 21.704857,
+   "lng": -157.997109,
+   "note": ""
+  },
+  {
+   "name": "Foodland Pupukea",
+   "address": "",
+   "lat": 21.648288,
+   "lng": -158.061492,
+   "note": ""
+  },
+  {
+   "name": "Poke for the People",
+   "address": "",
+   "lat": 21.587536,
+   "lng": -158.102891,
+   "note": ""
+  },
+  {
+   "name": "Ray's Kiawe Broiled Chicken",
+   "address": "",
+   "lat": 21.588599,
+   "lng": -158.102803,
+   "note": ""
+  },
+  {
+   "name": "Kua Aina Sandwich Shop",
+   "address": "",
+   "lat": 21.589008,
+   "lng": -158.102703,
+   "note": ""
+  },
+  {
+   "name": "Kono's Northshore - Haleiwa",
+   "address": "",
+   "lat": 21.585596,
+   "lng": -158.103447,
+   "note": ""
+  },
+  {
+   "name": "Over Easy",
+   "address": "",
+   "lat": 21.395081,
+   "lng": -157.743118,
+   "note": ""
+  },
+  {
+   "name": "Ninja Sushi",
+   "address": "",
+   "lat": 21.390339,
+   "lng": -157.739986,
+   "note": ""
+  },
+  {
+   "name": "The Hibachi",
+   "address": "",
+   "lat": 21.393237,
+   "lng": -157.739873,
+   "note": ""
+  },
+  {
+   "name": "Kin Wah Chop Suey",
+   "address": "",
+   "lat": 21.400444,
+   "lng": -157.79989,
+   "note": ""
+  },
+  {
+   "name": "Sam’s store",
+   "address": "",
+   "lat": 21.651027,
+   "lng": -157.928592,
+   "note": ""
+  },
+  {
+   "name": "Da Bald Guy",
+   "address": "",
+   "lat": 21.677778,
+   "lng": -157.949732,
+   "note": ""
+  },
+  {
+   "name": "Seven Brothers",
+   "address": "",
+   "lat": 21.678002,
+   "lng": -157.950204,
+   "note": ""
+  },
+  {
+   "name": "Makahoa Pizza Company",
+   "address": "",
+   "lat": 21.678092,
+   "lng": -157.949304,
+   "note": ""
+  },
+  {
+   "name": "Giovanni's Shrimp Truck",
+   "address": "",
+   "lat": 21.67735,
+   "lng": -157.948704,
+   "note": ""
+  },
+  {
+   "name": "Ono Yo",
+   "address": "",
+   "lat": 21.677149,
+   "lng": -157.948216,
+   "note": ""
+  },
+  {
+   "name": "Got'z Grindz",
+   "address": "",
+   "lat": 21.407748,
+   "lng": -157.799618,
+   "note": ""
+  },
+  {
+   "name": "Mitsuba Delicatessen",
+   "address": "",
+   "lat": 21.330369,
+   "lng": -157.864713,
+   "note": ""
+  },
+  {
+   "name": "Bo’s Kitchen",
+   "address": "",
+   "lat": 21.304717,
+   "lng": -157.850912,
+   "note": ""
+  },
+  {
+   "name": "i-naba Honolulu",
+   "address": "",
+   "lat": 21.297181,
+   "lng": -157.835664,
+   "note": ""
+  },
+  {
+   "name": "Aroma Italia",
+   "address": "",
+   "lat": 21.268819,
+   "lng": -157.813542,
+   "note": ""
+  },
+  {
+   "name": "ALOHA MELT - Waikiki -",
+   "address": "",
+   "lat": 21.280539,
+   "lng": -157.8278,
+   "note": ""
+  },
+  {
+   "name": "Ginza Bairin Tonkatsu",
+   "address": "",
+   "lat": 21.279999,
+   "lng": -157.830948,
+   "note": ""
+  },
+  {
+   "name": "Waiola Shave Ice",
+   "address": "",
+   "lat": 21.292489,
+   "lng": -157.828607,
+   "note": ""
+  },
+  {
+   "name": "Liliha Bakery",
+   "address": "",
+   "lat": 21.324012,
+   "lng": -157.857947,
+   "note": ""
+  },
+  {
+   "name": "Plumeria Beach House",
+   "address": "",
+   "lat": 21.271847,
+   "lng": -157.773625,
+   "note": ""
+  },
+  {
+   "name": "Teddy's Bigger Burgers - Hawaii Kai",
+   "address": "",
+   "lat": 21.27792,
+   "lng": -157.70549,
+   "note": ""
+  },
+  {
+   "name": "HanaPa'a Market",
+   "address": "",
+   "lat": 21.277941,
+   "lng": -157.705393,
+   "note": ""
+  },
+  {
+   "name": "Zippy's Koko Marina",
+   "address": "",
+   "lat": 21.278937,
+   "lng": -157.704557,
+   "note": ""
+  },
+  {
+   "name": "Assaggio Hawaii Kai - Ristorante Italiano",
+   "address": "",
+   "lat": 21.278277,
+   "lng": -157.705085,
+   "note": ""
+  },
+  {
+   "name": "Kona Brewing Hawaii Kai",
+   "address": "",
+   "lat": 21.278064,
+   "lng": -157.705723,
+   "note": ""
+  },
+  {
+   "name": "Hana Sushi",
+   "address": "",
+   "lat": 21.28569,
+   "lng": -157.70728,
+   "note": ""
+  },
+  {
+   "name": "TEX 808 BBQ + Brews Hawaii Kai",
+   "address": "",
+   "lat": 21.284344,
+   "lng": -157.706802,
+   "note": ""
+  },
+  {
+   "name": "The Original Roy's in Hawaii Kai",
+   "address": "",
+   "lat": 21.283285,
+   "lng": -157.714329,
+   "note": ""
+  },
+  {
+   "name": "bb.q Chicken Waikiki",
+   "address": "",
+   "lat": 21.279858,
+   "lng": -157.828616,
+   "note": ""
+  },
+  {
+   "name": "bb.q Chicken Kahala",
+   "address": "",
+   "lat": 21.279039,
+   "lng": -157.787139,
+   "note": ""
+  },
+  {
+   "name": "Sikdorak III",
+   "address": "",
+   "lat": 21.389117,
+   "lng": -157.952148,
+   "note": ""
+  },
+  {
+   "name": "KOROMO katsu & curry bistro",
+   "address": "",
+   "lat": 21.382798,
+   "lng": -157.94018,
+   "note": ""
+  },
+  {
+   "name": "Sik Do Rak",
+   "address": "",
+   "lat": 21.294369,
+   "lng": -157.841392,
+   "note": ""
+  },
+  {
+   "name": "BRUG Bakery Manoa Marketplace",
+   "address": "",
+   "lat": 21.307979,
+   "lng": -157.81075,
+   "note": ""
+  },
+  {
+   "name": "Le Crêpe Café",
+   "address": "",
+   "lat": 21.308377,
+   "lng": -157.810542,
+   "note": ""
+  },
+  {
+   "name": "Morning Glass Coffee",
+   "address": "",
+   "lat": 21.310303,
+   "lng": -157.808861,
+   "note": ""
+  },
+  {
+   "name": "Koko Head Cafe",
+   "address": "",
+   "lat": 21.28163,
+   "lng": -157.799624,
+   "note": ""
+  },
+  {
+   "name": "Foodland Farms Ala Moana",
+   "address": "",
+   "lat": 21.292442,
+   "lng": -157.846729,
+   "note": ""
+  },
+  {
+   "name": "Liliha Bakery Waikiki",
+   "address": "",
+   "lat": 21.27834,
+   "lng": -157.826631,
+   "note": ""
+  },
+  {
+   "name": "Liliha Drive Inn",
+   "address": "",
+   "lat": 21.320294,
+   "lng": -157.862062,
+   "note": ""
+  },
+  {
+   "name": "Highway Inn Kaka'ako",
+   "address": "",
+   "lat": 21.297693,
+   "lng": -157.861478,
+   "note": ""
+  },
+  {
+   "name": "Helena's Hawaiian Food",
+   "address": "",
+   "lat": 21.330919,
+   "lng": -157.865092,
+   "note": ""
+  },
+  {
+   "name": "Shimazu Store",
+   "address": "",
+   "lat": 21.339695,
+   "lng": -158.078283,
+   "note": ""
+  },
+  {
+   "name": "Don Quijote Honolulu",
+   "address": "",
+   "lat": 21.293671,
+   "lng": -157.838818,
+   "note": ""
+  },
+  {
+   "name": "Market Eatery_H Mart",
+   "address": "",
+   "lat": 21.300028,
+   "lng": -157.860378,
+   "note": ""
+  },
+  {
+   "name": "Aloha Beer Company",
+   "address": "",
+   "lat": 21.300903,
+   "lng": -157.856803,
+   "note": ""
+  },
+  {
+   "name": "Kaka'ako Farmers Market",
+   "address": "",
+   "lat": 21.295064,
+   "lng": -157.858888,
+   "note": ""
+  },
+  {
+   "name": "Istanbul Hawai'i",
+   "address": "",
+   "lat": 21.294292,
+   "lng": -157.851992,
+   "note": ""
+  },
+  {
+   "name": "Kamitoku Ramen Ward Center",
+   "address": "",
+   "lat": 21.293159,
+   "lng": -157.850622,
+   "note": ""
+  },
+  {
+   "name": "Oh My Grill- McCully",
+   "address": "",
+   "lat": 21.290137,
+   "lng": -157.832714,
+   "note": ""
+  },
+  {
+   "name": "Curry House Coco Ichibanya",
+   "address": "",
+   "lat": 21.290031,
+   "lng": -157.8326,
+   "note": ""
+  },
+  {
+   "name": "Betty's Burgers Honolulu",
+   "address": "",
+   "lat": 21.292633,
+   "lng": -157.82135,
+   "note": ""
+  },
+  {
+   "name": "Kaiten Sushi Ginza Onodera",
+   "address": "",
+   "lat": 21.291294,
+   "lng": -157.820104,
+   "note": ""
+  },
+  {
+   "name": "Brick Fire Tavern",
+   "address": "",
+   "lat": 21.28419,
+   "lng": -157.802151,
+   "note": ""
+  },
+  {
+   "name": "St. Louis Drive Inn",
+   "address": "",
+   "lat": 21.287665,
+   "lng": -157.809196,
+   "note": ""
+  },
+  {
+   "name": "Sekiya's Restaurant & Delicatessen",
+   "address": "",
+   "lat": 21.287442,
+   "lng": -157.815204,
+   "note": ""
+  },
+  {
+   "name": "Leonard's Bakery",
+   "address": "",
+   "lat": 21.284899,
+   "lng": -157.81335,
+   "note": ""
+  },
+  {
+   "name": "MOOJIGAE korean grill(무지개식당)",
+   "address": "",
+   "lat": 21.28317,
+   "lng": -157.814593,
+   "note": ""
+  },
+  {
+   "name": "Guava Smoked",
+   "address": "",
+   "lat": 21.277978,
+   "lng": -157.813643,
+   "note": ""
+  },
+  {
+   "name": "Rainbow Drive-In",
+   "address": "",
+   "lat": 21.275937,
+   "lng": -157.81456,
+   "note": ""
+  },
+  {
+   "name": "Tonkatsu Tamafuji",
+   "address": "",
+   "lat": 21.275045,
+   "lng": -157.815487,
+   "note": ""
+  },
+  {
+   "name": "Penny's Waikiki Malasadas",
+   "address": "",
+   "lat": 21.278622,
+   "lng": -157.829467,
+   "note": ""
+  },
+  {
+   "name": "Mitsuwa Marketplace",
+   "address": "",
+   "lat": 21.278923,
+   "lng": -157.825904,
+   "note": ""
+  },
+  {
+   "name": "Tanaka of Tokyo Central",
+   "address": "",
+   "lat": 21.279321,
+   "lng": -157.828843,
+   "note": ""
+  },
+  {
+   "name": "Shorefyre Beach Bar + Grill",
+   "address": "",
+   "lat": 21.27583,
+   "lng": -157.824176,
+   "note": ""
+  },
+  {
+   "name": "Appetito Craft Pizza & Wine Bar",
+   "address": "",
+   "lat": 21.278037,
+   "lng": -157.824954,
+   "note": ""
+  },
+  {
+   "name": "Waikiki Brewing Company - Waikiki",
+   "address": "",
+   "lat": 21.285873,
+   "lng": -157.833581,
+   "note": ""
+  },
+  {
+   "name": "Island Country Markets",
+   "address": "",
+   "lat": 21.282071,
+   "lng": -157.829502,
+   "note": ""
+  },
+  {
+   "name": "Musubi Cafe IYASUME",
+   "address": "",
+   "lat": 21.276504,
+   "lng": -157.823735,
+   "note": ""
+  },
+  {
+   "name": "Aloha Steak House",
+   "address": "",
+   "lat": 21.280157,
+   "lng": -157.827314,
+   "note": ""
+  },
+  {
+   "name": "Paia Fish Market Waikiki",
+   "address": "",
+   "lat": 21.279538,
+   "lng": -157.826404,
+   "note": ""
+  },
+  {
+   "name": "Momosan Waikiki",
+   "address": "",
+   "lat": 21.274394,
+   "lng": -157.824054,
+   "note": ""
+  },
+  {
+   "name": "Maui Brewing Co. Waikiki",
+   "address": "",
+   "lat": 21.277878,
+   "lng": -157.827204,
+   "note": ""
+  },
+  {
+   "name": "Ramen Nakamura",
+   "address": "",
+   "lat": 21.281277,
+   "lng": -157.830715,
+   "note": ""
+  },
+  {
+   "name": "Marugame Udon",
+   "address": "",
+   "lat": 21.279653,
+   "lng": -157.825844,
+   "note": ""
+  }
+ ]
+}

@@ -1,0 +1,30 @@
+---
+import Base from '../../layouts/Base.astro';
+import Tile from '../../components/Tile.astro';
+import SidequestCard from '../../components/SidequestCard.astro';
+import { showDrafts } from '../../lib/drafts';
+import { getCollection } from 'astro:content';
+import { regions } from '../../data/regions';
+const region = regions.find((r) => r.slug === 'hawaii')!;
+const base = import.meta.env.BASE_URL.replace(/\/$/, '');
+const entries = (await getCollection('adventures', ({ data }) => data.region === 'Hawaii' && (!data.draft || showDrafts)))
+  .sort((a, b) => (b.data.start?.valueOf() ?? 0) - (a.data.start?.valueOf() ?? 0));
+// Islands with a page so far. Others get a tile once there's something to show.
+const islands = [
+  { href: '/hawaii/oahu/', title: 'Oahu', blurb: 'Where I have lived for four years: my favorite food, beaches, hikes, and day trips around the island.' },
+];
+---
+<Base title="Hawaii · Sidequest Resume" description={region.blurb}>
+  <p class="crumb"><a href={`${base}/travel/`}>Travel</a></p>
+  <h1>Hawaii</h1>
+  <p class="lede">{region.blurb}</p>
+  <div class="grid">
+    {islands.map((i) => <Tile href={i.href} title={i.title} meta="Island" blurb={i.blurb} />)}
+    {entries.map((entry) => <SidequestCard entry={entry} />)}
+  </div>
+</Base>
+<style>
+  .crumb { color: var(--muted); font-size: .9rem; margin: 0 0 8px; }
+  .lede { font-size: 1.1rem; max-width: 680px; }
+  .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 20px; margin: 24px 0; }
+</style>

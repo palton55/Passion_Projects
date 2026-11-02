@@ -4,3 +4,7 @@ dist/
 .DS_Store
 public/sized/
 .cache/
+.env
+.env.*
+*.pem
+*.key

@@ -27,3 +27,7 @@ Drafts show up locally but not on the live site.
 ## Alpha preview
 
 Every deploy also publishes an alpha copy at `/alpha/` that includes draft entries, with a banner at the top and hidden from search engines. Use it to review entries before setting `draft: false`.
+
+## Keeping private things off the site
+
+The site is fully static: there's no server, and nothing it needs is secret (map tiles, routing, fonts and the Google Maps list are all public, keyless endpoints). Before each deploy, `scripts/check_dist.mjs` scans the built site and stops the deploy if it finds an API key or token, a source map, a local file path, or a photo that still carries EXIF/XMP data such as GPS location. If a feature ever needs a real key, keep it in GitHub Actions secrets and use it only at build time or behind a small serverless function, never in page code. `.env` files are git-ignored.

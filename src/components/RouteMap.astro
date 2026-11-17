@@ -8,7 +8,9 @@
 // become overlays in the layer control; regions and point layers start off.
 // `bands` (wide translucent lines for roads called out, e.g. a route driven end to end) start on.
 // `global` maps (all destinations at once) say "bullet train" instead of "Shinkansen" (Patrick, Oct 2026).
-const { stops, legs: rawLegs = [], global = false, height = 460, dot = 8, groups = [], lines = true, regions = null, regionsLabel = 'Prefectures visited', pois = [], bands = [] } = Astro.props;
+// `collapsible` maps (one per part of an entry) start folded behind a "Show map" button on phones (Patrick, Nov 2026).
+// On phones every map is at most 300px tall, and on touch screens one finger scrolls the page while two fingers move the map.
+const { stops, legs: rawLegs = [], global = false, collapsible = false, height = 460, dot = 8, groups = [], lines = true, regions = null, regionsLabel = 'Prefectures visited', pois = [], bands = [] } = Astro.props;
 const legs = global ? rawLegs.map((l: any) => ({ ...l, name: l.name?.replace(/Shinkansen/g, 'bullet train') })) : rawLegs;
 const used = new Set(legs.length ? legs.map((l: any) => l.mode) : stops.map((s: any) => s.mode));
 const legend = [
@@ -16,15 +18,18 @@ const legend = [
   ['train', 'Getting around town'], ['flight', 'Flight'],
 ].filter(([m]) => used.has(m)).map(([m, label]) => [m, global && m === 'shinkansen' ? 'Bullet train' : label]);
 ---
+<div class:list={['map-wrap', { collapsible }]}>
+{collapsible && <button type="button" class="show-map" aria-expanded="false">Show map</button>}
 {groups.length > 1 && (
   <div class="map-filter" role="group" aria-label="Filter the map">
     <button type="button" class="all" aria-pressed="true">All</button>
     {groups.map((g: string) => <button type="button" data-group={g} aria-pressed="true">{g}</button>)}
   </div>
 )}
-<div class="route-map" data-base={import.meta.env.BASE_URL.replace(/\/$/, '')} style={`height: ${height}px`} data-dot={dot} data-stops={JSON.stringify(stops)} data-legs={JSON.stringify(legs)} data-lines={String(lines)}
+<div class="route-map" data-base={import.meta.env.BASE_URL.replace(/\/$/, '')} style={`--h: ${height}px`} data-dot={dot} data-stops={JSON.stringify(stops)} data-legs={JSON.stringify(legs)} data-lines={String(lines)}
   data-regions={regions ? JSON.stringify(regions) : ''} data-regions-label={regionsLabel} data-pois={JSON.stringify(pois)} data-bands={JSON.stringify(bands)}></div>
 <ul class="legend">{legend.map(([m, label]) => <li class={m}>{label}</li>)}</ul>
+</div>
 <script>
   import L from 'leaflet';
   import 'leaflet/dist/leaflet.css';
@@ -82,7 +87,20 @@ const legend = [
     const stops = JSON.parse(el.dataset.stops || '[]');
     const legs = JSON.parse(el.dataset.legs || '[]');
     if (!stops.length) { el.innerHTML = '<p class="empty">Route map coming soon.</p>'; return; }
-    const map = L.map(el, { scrollWheelZoom: false, zoomSnap: 0.25 });
+    // On touch screens one finger scrolls the page; two fingers pinch, which in Leaflet also pans.
+    const touch = matchMedia('(pointer: coarse)').matches;
+    const map = L.map(el, { scrollWheelZoom: false, zoomSnap: 0.25, dragging: !touch });
+    if (touch) {
+      const hint = L.DomUtil.create('div', 'map-hint', el);
+      hint.textContent = 'Use two fingers to move the map';
+      let timer = 0;
+      el.addEventListener('touchmove', (e) => {
+        if (e.touches.length !== 1) return;
+        hint.classList.add('on');
+        clearTimeout(timer);
+        timer = window.setTimeout(() => hint.classList.remove('on'), 1200);
+      }, { passive: true });
+    }
     const streets = L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', { maxZoom: 19, attribution: '© OpenStreetMap contributors' }).addTo(map);
     const satellite = L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}', { maxZoom: 19, attribution: 'Imagery © Esri, Maxar, Earthstar Geographics' });
     const overlays: Record<string, L.Layer> = {};
@@ -187,15 +205,24 @@ const legend = [
   };
   // Each map starts when it comes near the screen, so pages with many maps (Japan year pages) don't build them all
   // at once or fetch tiles nobody scrolls to.
-  const maps = document.querySelectorAll<HTMLElement>('.route-map');
-  if ('IntersectionObserver' in window) {
-    const watch = new IntersectionObserver((seen) => seen.forEach((e) => {
-      if (!e.isIntersecting) return;
-      watch.unobserve(e.target);
-      initMap(e.target as HTMLElement);
-    }), { rootMargin: '400px 0px' });
-    maps.forEach((el) => watch.observe(el));
-  } else maps.forEach(initMap);
+  // A collapsible map on a phone waits for its "Show map" button, so a folded map costs nothing.
+  const phone = matchMedia('(max-width: 600px)').matches;
+  const folded = (el: HTMLElement) => phone && !!el.closest('.map-wrap.collapsible:not(.open)');
+  const maps = [...document.querySelectorAll<HTMLElement>('.route-map')];
+  const watch = 'IntersectionObserver' in window ? new IntersectionObserver((seen) => seen.forEach((e) => {
+    if (!e.isIntersecting) return;
+    watch!.unobserve(e.target);
+    initMap(e.target as HTMLElement);
+  }), { rootMargin: '400px 0px' }) : null;
+  maps.filter((el) => !folded(el)).forEach((el) => (watch ? watch.observe(el) : initMap(el)));
+  document.querySelectorAll<HTMLButtonElement>('.map-wrap.collapsible .show-map').forEach((b) => b.addEventListener('click', () => {
+    const wrap = b.closest('.map-wrap')!;
+    const open = wrap.classList.toggle('open');
+    b.setAttribute('aria-expanded', String(open));
+    b.textContent = open ? 'Hide map' : 'Show map';
+    const el = wrap.querySelector<HTMLElement>('.route-map')!;
+    if (open && !el.classList.contains('leaflet-container')) initMap(el);
+  }));
 </script>
 <style>
   .map-filter { display: flex; flex-wrap: wrap; gap: 8px; margin: 0 0 12px; }
@@ -205,7 +232,15 @@ const legend = [
   :global(.route-map.leaflet-touch .leaflet-bar a) { width: 40px; height: 40px; line-height: 40px; }
   :global(.route-map.leaflet-touch .leaflet-control-layers-toggle) { width: 44px; height: 44px; }
   @media (pointer: coarse) { .map-filter button { min-height: 40px; } }
-  .route-map { border-radius: 14px; border: 1px solid var(--border); background: var(--surface); }
+  .route-map { height: var(--h); border-radius: 14px; border: 1px solid var(--border); background: var(--surface); }
+  .show-map { display: none; }
+  @media (max-width: 600px) {
+    .route-map { height: min(var(--h), 300px); }
+    .show-map { display: inline-flex; align-items: center; min-height: 40px; padding: 6px 16px; font: inherit; font-size: .9rem; border-radius: 999px; border: 1px solid var(--border); background: var(--surface); color: var(--text, inherit); cursor: pointer; margin: 4px 0 12px; }
+    .collapsible:not(.open) > :not(.show-map) { display: none; }
+  }
+  :global(.route-map .map-hint) { position: absolute; inset: 0; z-index: 1000; display: flex; align-items: center; justify-content: center; padding: 16px; text-align: center; background: rgba(0, 0, 0, .45); color: #fff; font-weight: 600; opacity: 0; pointer-events: none; transition: opacity .2s; }
+  :global(.route-map .map-hint.on) { opacity: 1; }
   .legend { display: flex; flex-wrap: wrap; gap: 18px; list-style: none; padding: 0; margin: 8px 0 0; font-size: .85rem; color: var(--muted); }
   .legend li::before { content: ''; display: inline-block; width: 22px; margin-right: 6px; vertical-align: middle; border-top: 3px solid; }
   .legend .drive::before { border-color: #7c3aed; }

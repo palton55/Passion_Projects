@@ -61,7 +61,7 @@ const yt = d.video?.match(/(?:v=|youtu\.be\/)([\w-]{11})/)?.[1];
         <h2>{part.title}</h2>
         {part.blurb && <p>{part.blurb}</p>}
         {part.notes.map((n) => <><h3>{n.title}</h3>{n.text.map((t) => <p>{t}</p>)}</>)}
-        <RouteMap stops={d.stops.filter((s) => part.stops.includes(s.name))} legs={d.legs.filter((l) => part.modes ? part.modes.includes(l.mode) : l.day !== undefined && part.days.includes(l.day))} pois={d.pois.filter((p) => p.day !== undefined && part.days.includes(p.day) && (!part.modes || part.modes.includes('drive')))} bands={part.modes?.includes('drive') ? d.bands : []} height={400} />
+        <RouteMap stops={d.stops.filter((s) => part.stops.includes(s.name))} legs={d.legs.filter((l) => part.modes ? part.modes.includes(l.mode) : l.day !== undefined && part.days.includes(l.day))} pois={d.pois.filter((p) => p.day !== undefined && part.days.includes(p.day) && (!part.modes || part.modes.includes('drive')))} bands={part.modes?.includes('drive') ? d.bands : []} height={400} collapsible />
         <Timeline days={d.timeline.filter((t) => partDays[pi].includes(Number(t.label.replace(/\D/g, ''))))} />
         {part.totals && <div class="totals"><h3>{part.totals.title}</h3><ul>{part.totals.items.map((t) => <li>{t}</li>)}</ul></div>}
       </section>

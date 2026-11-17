@@ -18,7 +18,7 @@ const dots = ready.flatMap((s) => s.list!.places.map((p) => ({ name: placeName(p
   </div>
   {dots.length > 0 && (
     <section class="topic">
-      <h2>Map</h2>
+      <h2>The route</h2>
       <RouteMap stops={dots} height={480} dot={5} lines={false} groups={ready.length > 1 ? ready.map((s) => s.name) : []} />
     </section>
   )}

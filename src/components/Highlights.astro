@@ -10,10 +10,10 @@ const pick = chosen.length ? chosen.slice(0, count)
   : all.length <= count ? all : Array.from({ length: count }, (_, i) => all[Math.round((i * (all.length - 1)) / (count - 1))]);
 ---
 {pick.length > 0 && (
-  <div class="highlights">
+  <div class="highlights" data-lightbox-group={href ? undefined : true}>
     {pick.map((p) => (
-      <a href={href ?? `${base}/${p.src}`} target={href ? undefined : '_blank'}>
-        <img {...photo(p.src, '(max-width: 560px) 50vw, 260px')} alt={p.caption ?? ''} title={p.caption} loading="lazy" decoding="async" />
+      <a href={href ?? `${base}/${p.src}`} data-lightbox={href ? undefined : true} data-caption={p.caption}>
+        <img {...photo(p.src, '(max-width: 560px) 45vw, 260px')} alt={p.caption ?? ''} title={p.caption} loading="lazy" decoding="async" />
       </a>
     ))}
   </div>
@@ -21,5 +21,10 @@ const pick = chosen.length ? chosen.slice(0, count)
 <style>
   .highlights { display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px; margin: 16px 0; }
   .highlights img { width: 100%; aspect-ratio: 1; object-fit: cover; border-radius: 10px; display: block; }
-  @media (max-width: 560px) { .highlights { grid-template-columns: repeat(2, 1fr); } }
+  /* Phones: one swipeable row, so the story starts on the first screen. */
+  @media (max-width: 560px) {
+    .highlights { display: flex; overflow-x: auto; scroll-snap-type: x mandatory; scrollbar-width: none; margin-right: -16px; padding-right: 16px; }
+    .highlights::-webkit-scrollbar { display: none; }
+    .highlights a { flex: 0 0 42%; scroll-snap-align: start; }
+  }
 </style>

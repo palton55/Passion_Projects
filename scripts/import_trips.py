@@ -57,11 +57,11 @@ ENTRIES = [
          summary='Six days heading north from Tokyo. I rode the Tohoku, Yamagata, and Akita Shinkansen through Yamagata, Sendai, and Morioka up to Hokkaido, drove from Sapporo up the Oronron Line to Cape Soya, the northernmost point of Japan, and back in a single day, and spent two nights in Hakodate with Goryokaku and Onuma Park.',
          # Kept as one entry, with the train journey and the road trip as their own sections (Patrick, Oct 21 2026).
          parts=[
-             dict(title='The Train Journey', days=[1, 2, 4, 5, 6], modes=['shinkansen', 'express', 'local'],
+             dict(title='Train Journey', days=[1, 2, 4, 5, 6], modes=['shinkansen', 'express', 'local'],
                   stops=['Omiya', 'Utsunomiya', 'Fukushima', 'Yamagata', 'Sendai', 'Omagari', 'Morioka', 'Aomori',
                          'Shin-Hakodate-Hokuto', 'Sapporo', 'Hakodate', 'Tokyo'],
                   blurb='From Omiya to Hokkaido and back by the Tohoku, Yamagata, Akita, and Hokkaido Shinkansen and the Hokuto limited express. Along the way I stopped in Yamagata, Sendai, and Morioka, and spent two nights in Hakodate.'),
-             dict(title='The Hokkaido Road Trip', days=[3], modes=['drive'], totals='Hokkaido road trip',
+             dict(title='Hokkaido Road Trip', days=[3], modes=['drive'], totals='Hokkaido road trip',
                   stops=['Sapporo Station', 'Obira', 'Enbetsu', 'Wakkanai', 'Cape Soya', 'Nakatombetsu', 'Asahikawa'],
                   blurb='A one-day drive from Sapporo up the Sea of Japan coast on the Oronron Line to Wakkanai and Cape Soya, the northernmost point of Japan. On the way back I cut inland through Nakatombetsu and Asahikawa to Sapporo.'),
          ]),
@@ -88,7 +88,7 @@ ENTRIES = [
          bands=[('japan-2026/route-238.geojson', 'National Route 238, driven end to end', '#26a69a')], title='Hokkaido Road Trip', collection='Hokkaido Road Trip',
          summary='A winter road trip around Hokkaido from New Chitose: across Tokachi to Abashiri, along the Sea of Okhotsk to the drift ice at Monbetsu, up to Cape Soya, inland to Asahikawa, Biei, and Furano, and down to Upopoy, the National Ainu Museum, followed by a day in Sapporo and the trip home through Tokyo.',
          parts=[
-             dict(title='Hokkaido Road Trip', days=[13, 14, 15, 16], modes=['drive'], totals='Hokkaido road trip', notes=['Why this route: the manhole covers'],
+             dict(title='Winter Drive', days=[13, 14, 15, 16], modes=['drive'], totals='Hokkaido road trip', notes=['Why this route: the manhole covers'],
                   stops=['New Chitose Airport', 'Obihiro', 'Ashoro / Rikubetsu', 'Abashiri', 'Monbetsu', 'Cape Soya', 'Wakkanai', 'Teshio',
                          'Asahikawa', 'Biei / Furano', 'Furano', 'Upopoy, Shiraoi'],
                   blurb='Four days of driving from New Chitose, across Tokachi to Abashiri and along the Sea of Okhotsk to the drift ice at Monbetsu. From Cape Soya I headed inland to Asahikawa, Biei, and Furano, then south to Upopoy before returning the car.'),

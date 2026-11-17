@@ -21,15 +21,15 @@ legs:
 timeline:
   - label: "Day 1"
     date: 2025-08-17
-    title: "Naganohara, Kusatsu Onsen"
+    title: "Bus up to Kusatsu Onsen"
     events:
-      - { time: "Morning", text: "Kan-Etsu Expressway near Fujioka; Naganohara; Kusatsu Onsen, Yubatake (night)." }
+      - { time: "Morning", text: "Kan-Etsu Expressway near Fujioka; Naganohara; then Kusatsu Onsen, Yubatake (night)." }
     route: ["Highway bus to Kusatsu Onsen (about 160 km, 2 h 45 min)."]
   - label: "Day 2"
     date: 2025-08-18
-    title: "Naganohara, Ikebukuro"
+    title: "Yanba Dam and back to Ikebukuro"
     events:
-      - { time: "Evening", text: "Naganohara; Ikebukuro." }
+      - { time: "Evening", text: "Naganohara, then Ikebukuro." }
     route: ["Highway bus from Kusatsu Onsen back to Ikebukuro (about 170 km, 2 h 45 min)."]
 ---
 

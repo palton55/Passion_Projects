@@ -31,3 +31,18 @@ export function placePages(entries: { id: string; data: any }[]): PlacePage[] {
     pics: picsFor(n),
   })).filter((p) => p.trips.length);
 }
+
+// "Places on this trip" for one entry, at most `max` of them, leaving out places the trip only starts
+// or ends at (such as Tokyo on a trip out of Tokyo): those whose every stop sits at the start of the
+// first leg or the end of the last one, unless the trip stayed there for several days. Places only seen
+// from a train window don't count.
+export function placesOnTrip(entry: { id: string; data: any }, max = 6): PlacePage[] {
+  const { stops, legs } = entry.data as { stops: { name: string; lat: number; lng: number; date?: string }[]; legs: { coords: number[][] }[] };
+  const ends = legs.length ? [legs[0].coords[0], legs.at(-1)!.coords.at(-1)!] : [];
+  const atEnd = (s: { lat: number; lng: number }) => ends.some(([a, b]) => Math.abs(a - s.lat) < 0.05 && Math.abs(b - s.lng) < 0.05);
+  const found = placePages([entry]);
+  const days = (d = '') => (d.split(' · ')[0].match(/\d+(?:-\d+)?/g) ?? []).reduce((n, r) => { const [a, b = a] = r.split('-').map(Number); return n + b - a + 1; }, 0);
+  const visited = (s: (typeof stops)[number]) => !/from the train/.test(s.date ?? '') && (!atEnd(s) || days(s.date) >= 3);
+  const kept = found.filter((p) => stops.some((s) => p.match.includes(tidy(s.name)) && visited(s)));
+  return (kept.length ? kept : found).slice(0, max);
+}

@@ -29,7 +29,7 @@ ENTRIES = [
     dict(id='japan-2024', dir='japan-2024', title='Return to Tokyo', collection='Japan 2024', companions=['friends'],
          summary='Nine days in Tokyo with friends right after sophomore finals, from Shinjuku and Shibuya to Tokyo Tower and Zojoji Temple, plus a day trip to Fujiyoshida to see Mt. Fuji from Arakurayama Sengen Park and Lake Kawaguchiko.'),
     # One entry with two sections (Patrick, Oct 21 2026): the Shimanami Kaido, then the drive back as the West Japan Road Trip.
-    dict(id='2025-west-japan-road-trip', dir='2025-study-abroad/01-west-japan-road-trip',
+    dict(id='2025-west-japan-road-trip', titles={1: 'Landing in Tokyo', 2: 'Harajuku and Roppongi', 3: 'Across the Shimanami Kaido', 4: 'Fukuyama, Kibitsu Shrine and Kurashiki', 5: 'Himeji, Arima, Nara and Lake Hamana', 6: 'Hakone, Gotemba and Tachikawa'}, dir='2025-study-abroad/01-west-japan-road-trip',
          title='Shimanami Kaido and West Japan Road Trip', collection='Shimanami Kaido and West Japan Road Trip',
          summary='The first week of my study abroad. I took the Tokaido Shinkansen to Osaka and crossed the Shimanami Kaido from Setoda over the Tatara Bridge to Imabari, then spent three days driving back to Tokyo by way of Kurashiki, Himeji Castle, Arima Onsen, Nara, Lake Hamana, and Hakone.',
          parts=[
@@ -41,20 +41,20 @@ ENTRIES = [
                          'Hamamatsu', 'Hakone / Gotemba', 'Tachikawa'],
                   blurb='The drive back to Tokyo from Okayama, starting with Kibitsu Shrine and Kurashiki, then Himeji Castle, Arima Onsen, and Nara. From there I followed the Ise Bay coast, crossed Lake Hamana, and came through Hakone and Gotemba to a hostel near Tachikawa.'),
          ]),
-    dict(id='2025-hakone-fuji', dir='2025-study-abroad/02-hakone-fuji', totals=['Hakone and Mt. Fuji weekend'], title='Hakone and Mt. Fuji', collection='Hakone and Mt. Fuji',
+    dict(id='2025-hakone-fuji', titles={1: 'Lake Ashi, then on to Manazuru', 2: 'A day at Fuji-Q Highland', 3: 'Gotemba outlets and home'}, dir='2025-study-abroad/02-hakone-fuji', totals=['Hakone and Mt. Fuji weekend'], title='Hakone and Mt. Fuji', collection='Hakone and Mt. Fuji',
          summary='A three-day weekend staying in Manazuru on Sagami Bay, with Lake Ashi in Hakone, a day at Fuji-Q Highland at the foot of Mt. Fuji, and some shopping at the Gotemba Premium Outlets.'),
-    dict(id='2025-alpine-route', dir='2025-study-abroad/03-alpine-route', title='Tateyama Kurobe Alpine Route',
+    dict(id='2025-alpine-route', titles={1: 'Up to Matsumoto Castle', 2: 'The Alpine Route and the snow walls', 3: 'Amaharashi Coast and home'}, dir='2025-study-abroad/03-alpine-route', title='Tateyama Kurobe Alpine Route',
          collection='Tateyama Kurobe Alpine Route',
          summary='Three days crossing the Northern Alps: the Azusa limited express to Matsumoto and Shinano-Omachi, the Tateyama Kurobe Alpine Route past Kurobe Dam to the snow walls at Murodo, then the Amaharashi Coast and Toyama before taking the Hokuriku Shinkansen back to Tokyo.'),
-    dict(id='2025-kyoto-osaka-okinawa', dir='2025-study-abroad/04-kyoto-osaka-okinawa', totals=['Okinawa drives'], title='Kyoto, Osaka, and Okinawa',
+    dict(id='2025-kyoto-osaka-okinawa', titles={1: 'A night in Odawara', 2: 'On to Kyoto', 3: 'Kinkaku-ji and Fushimi Inari', 4: 'Osaka and the Kaiyukan aquarium', 5: 'Universal Studios and Expo 2025', 6: 'Flying to Okinawa', 7: 'Cape Maeda and a Sesoko sunset', 8: 'Rycom mall and American Village', 9: 'North to Cape Hedo', 10: 'Flying back to Tokyo'}, dir='2025-study-abroad/04-kyoto-osaka-okinawa', totals=['Okinawa drives'], title='Kyoto, Osaka, and Okinawa',
          collection='Kyoto, Osaka and Okinawa',
          summary='Ten days in Kansai and Okinawa. I started with Fushimi Inari in Kyoto, then hit Universal Studios Japan, the Kaiyukan aquarium, and Expo 2025 in Osaka, before flying to Okinawa and driving from Cape Maeda and Chatan up to Sesoko and Cape Hedo at the northern tip of the island.'),
     dict(id='2025-korea-waterbomb', dir='2025-study-abroad/05-korea-waterbomb', title='Korea and Waterbomb', collection='Korea and Waterbomb',
          region='South Korea',
          summary='Eight days in Seoul in the middle of my study abroad: N Seoul Tower and the lanterns at Jogyesa, a tour of the DMZ out to Dora Observatory and Odusan, LoL Park, Gangnam and Hongdae, the Waterbomb music festival in Goyang, Gyeongbokgung Palace in hanbok, and a lot of Korean food.',
          pois=[('2025-study-abroad/05-korea-waterbomb/more-stops.geojson', 'More stops')]),
-    dict(id='2025-tohoku-hokkaido', dir='2025-study-abroad/06-tohoku-hokkaido', title='Tohoku and Hokkaido', collection='Tohoku and Hokkaido',
-         summary='Six days heading north from Tokyo. I rode the Tohoku, Yamagata, and Akita Shinkansen through Yamagata, Sendai, and Morioka up to Hokkaido, drove from Sapporo up the Oronron Line to Cape Soya, the northernmost point of Japan, and back in a single day, and spent two nights in Hakodate with Goryokaku and Onuma Park.',
+    dict(id='2025-tohoku-hokkaido', titles={1: 'Utsunomiya, Yamagata and Sendai', 2: 'Through Aomori to Sapporo', 3: 'Driving to Cape Soya and back', 4: 'To Hakodate for the night view', 5: 'Onuma Park, then south to Morioka', 6: 'Home to Tokyo'}, dir='2025-study-abroad/06-tohoku-hokkaido', title='Tohoku and Hokkaido', collection='Tohoku and Hokkaido',
+         summary='Six days heading north from Tokyo. I rode the Shinkansen through Yamagata, Sendai, and Morioka to Hokkaido, drove from Sapporo to Cape Soya, the northernmost point of Japan, and back in a single day, and spent two nights in Hakodate.',
          # Kept as one entry, with the train journey and the road trip as their own sections (Patrick, Oct 21 2026).
          parts=[
              dict(title='The Train Journey', days=[1, 2, 4, 5, 6], modes=['shinkansen', 'express', 'local'],
@@ -65,9 +65,9 @@ ENTRIES = [
                   stops=['Sapporo Station', 'Obira', 'Enbetsu', 'Wakkanai', 'Cape Soya', 'Nakatombetsu', 'Asahikawa'],
                   blurb='A one-day drive from Sapporo up the Sea of Japan coast on the Oronron Line to Wakkanai and Cape Soya, the northernmost point of Japan. On the way back I cut inland through Nakatombetsu and Asahikawa to Sapporo.'),
          ]),
-    dict(id='2025-kusatsu-onsen', dir='2025-study-abroad/07-kusatsu-onsen', title='Kusatsu Onsen', collection='Kusatsu Onsen',
+    dict(id='2025-kusatsu-onsen', titles={1: 'Bus up to Kusatsu Onsen', 2: 'Yanba Dam and back to Ikebukuro'}, dir='2025-study-abroad/07-kusatsu-onsen', title='Kusatsu Onsen', collection='Kusatsu Onsen',
          summary='An overnight bus trip from Ikebukuro to Kusatsu Onsen in the mountains of Gunma, one of the best-known hot spring towns in Japan, with the Yubatake at its center and a stop around Yanba Dam in Naganohara.'),
-    dict(id='2025-ishigaki', dir='2025-study-abroad/08-ishigaki', title='Ishigaki and Taketomi', collection='Ishigaki and Taketomi',
+    dict(id='2025-ishigaki', titles={1: 'Flying to Ishigaki', 2: 'Boat trip near Taketomi', 3: 'Driving the west coast to Cape Ogan', 4: 'Boat trip to Kohama and Kuroshima', 5: 'Taketomi Island', 6: 'Flying back to Tokyo'}, dir='2025-study-abroad/08-ishigaki', title='Ishigaki and Taketomi', collection='Ishigaki and Taketomi',
          summary='My last trip of the semester: six days in the Yaeyama Islands, with boat trips past Taketomi, Kohama, and Kuroshima, a drive along the west coast of Ishigaki to Cape Ogan, and a day among the red-tiled houses of Taketomi.'),
     dict(id='2025-kanto-day-trips', dir='2025-study-abroad/kanto-day-trips', totals=['Kanto day trips by car'], title='Kanto Day Trips', collection='Kanto Day Trips',
          summary='Fourteen day trips from Kodaira between April and August 2025 by train, bus, and car, from Asakusa, Yokohama, and Enoshima out to Chichibu, Mt. Takao, Okutama, the Boso Peninsula, Atami, and Ito on the Izu Peninsula.'),
@@ -75,18 +75,18 @@ ENTRIES = [
     # and the Tokyo week as part of the Japan 2026 page itself rather than a sidequest (Patrick, Oct 24 2026). The page runs
     # in order: arriving in Tokyo, Kanazawa, Mt. Fuji, Tokyo, Hokkaido (Patrick, Oct 24 2026). `days` picks
     # each entry's days from the trip, renumbered from 1. Told from Patrick's own perspective, with no companions named.
-    dict(id='japan-2026-kanazawa', dir='japan-2026', days=[2, 3], title='Kanazawa', collection='Kanazawa',
+    dict(id='japan-2026-kanazawa', titles={1: 'Shinkansen to Kanazawa', 2: 'Back to Tokyo along the Japan Sea'}, dir='japan-2026', days=[2, 3], title='Kanazawa', collection='Kanazawa',
          summary='The Hokuriku Shinkansen from Tokyo Station to Kanazawa for the Tsuzumi Gate at Kanazawa Station, the Asanogawa River, and the lantern-lit lanes of the Higashi Chaya district, heading back the next morning along the Japan Sea coast past Toyama and Itoigawa.',
          stops=['Tokyo Station', 'Omiya', 'Kanazawa', 'Toyama', 'Itoigawa / Joetsu', 'Yokohama', 'Machida']),
-    dict(id='japan-2026-fuji', dir='japan-2026', days=[4, 5], totals=['Mt. Fuji drive'], title='Mt. Fuji', collection='Mt. Fuji',
+    dict(id='japan-2026-fuji', titles={1: 'Gotemba and a Yamanakako ryokan', 2: 'Chureito Pagoda and Fuji-Q Highland'}, dir='japan-2026', days=[4, 5], totals=['Mt. Fuji drive'], title='Mt. Fuji', collection='Mt. Fuji',
          summary='A two-day drive from Yokohama to the Gotemba outlets and a night at a ryokan on Lake Yamanakako, then the Chureito Pagoda, Lake Kawaguchiko, and Fuji-Q Highland under Mt. Fuji, dropping the car off in Shinjuku.',
          stops=['Yokohama', 'Gotemba Premium Outlets', 'Lake Yamanakako', 'Chureito Pagoda', 'Lake Kawaguchiko', 'Fuji-Q Highland', 'Shinjuku']),
-    dict(id='japan-2026-tokyo', dir='japan-2026', days=list(range(6, 13)), title='Tokyo Days', collection='Tokyo Days',
+    dict(id='japan-2026-tokyo', titles={1: 'Shibuya and Zama', 2: 'Shibuya and Yoyogi', 3: 'Shimokitazawa and Sangenjaya', 4: 'Ikebukuro and Sunshine City', 5: 'Tachikawa', 6: 'Machida', 7: 'Shibuya, Ebisu and off to Haneda'}, dir='japan-2026', days=list(range(6, 13)), title='Tokyo Days', collection='Tokyo Days',
          summary='A week around Tokyo from the Machida and Sagamihara side: back at Hitotsubashi in Kunitachi, Shibuya, Setagaya, the Chiikawa exhibit and an esports cafe in Ikebukuro, and Tachikawa, ending with a flight north from Haneda.',
          stops=['Machida / Sagamihara', 'Zama', 'Shibuya / Harajuku', 'Setagaya', 'Ikebukuro', 'Tachikawa', 'Ebisu', 'Haneda Airport']),
-    dict(id='japan-2026-hokkaido', dir='japan-2026', days=list(range(13, 20)), pois=[('japan-2026/manholes.geojson', 'Manhole covers')],
+    dict(id='japan-2026-hokkaido', titles={1: 'Across Tokachi to Abashiri', 2: 'Drift ice and Route 238 to Cape Soya', 3: 'Inland to Asahikawa and Furano', 4: 'Upopoy and the drive back', 5: 'A day in Sapporo', 6: 'Back to Tokyo', 7: 'Ginza and the flight home'}, dir='japan-2026', days=list(range(13, 20)), pois=[('japan-2026/manholes.geojson', 'Manhole covers')],
          bands=[('japan-2026/route-238.geojson', 'National Route 238, driven end to end', '#26a69a')], title='Hokkaido Road Trip', collection='Hokkaido Road Trip',
-         summary='A winter road trip around Hokkaido from New Chitose: across Tokachi to Abashiri, along the Sea of Okhotsk to the drift ice at Monbetsu, up to Cape Soya, inland to Asahikawa, Biei, and Furano, and down to Upopoy, the National Ainu Museum, followed by a day in Sapporo and the trip home through Tokyo.',
+         summary='A winter road trip around Hokkaido from New Chitose: across Tokachi to Abashiri, along the Sea of Okhotsk to the drift ice at Monbetsu, up to Cape Soya, then Asahikawa, Biei, and Furano and down to Upopoy, followed by a day in Sapporo.',
          parts=[
              dict(title='Hokkaido Road Trip', days=[13, 14, 15, 16], modes=['drive'], totals='Hokkaido road trip', notes=['Why this route: the manhole covers'],
                   stops=['New Chitose Airport', 'Obihiro', 'Ashoro / Rikubetsu', 'Abashiri', 'Monbetsu', 'Cape Soya', 'Wakkanai', 'Teshio',
@@ -102,7 +102,7 @@ ENTRIES = [
                  4: 'Sentinel Peak and Mount Lemmon', 5: 'Bisbee and Sierra Vista', 6: 'Arizona-Sonora Desert Museum',
                  7: 'Back to Phoenix', 8: 'Sedona, Oak Creek Canyon and Flagstaff', 9: 'Grand Canyon South Rim',
                  10: 'Grandview sunrise, Jerome and Prescott', 11: 'Prescott and the drive home'}, collection='Arizona 2026',
-         summary='An eleven-day road trip from Los Angeles that I drove the whole way. I went out on I-10 to Phoenix for a shooting range and a rodeo night at the Buffalo Chip Saloon in Cave Creek, spent five days in Tucson with Mount Lemmon at sunset, the old copper mine in Bisbee, and the Desert Museum, then headed north to Sedona, Lowell Observatory in Flagstaff, and the Grand Canyon South Rim, camping in the national forest and catching sunrise at Grandview Point before Jerome and Prescott on the way home.',
+         summary='An eleven-day road trip from Los Angeles that I drove the whole way: a rodeo night in Cave Creek near Phoenix, five days in Tucson with Mount Lemmon, Bisbee, and the Desert Museum, then Sedona, Flagstaff, and the Grand Canyon South Rim before Jerome and Prescott on the way home.',
          parts=[
              dict(title='Phoenix and Tucson', days=[1, 2, 3, 4, 5, 6, 7], modes=['drive'], totals='Phoenix and Tucson',
                   stops=['Los Angeles', 'Blythe', 'Peoria', 'Cave Creek', 'Glendale', 'Casa Grande', 'Tucson', 'Mount Lemmon',
@@ -288,6 +288,23 @@ def bucket_of(time, prev):
     return 'Morning' if 'morning' in t else 'Afternoon' if 'afternoon' in t else 'Evening'
 
 
+def sentence(items):
+    """One readable line from a part of the day's stops: 'DMZ: A; DMZ: B; C' becomes 'DMZ: A and B, then C.'"""
+    merged = []
+    for it in items:
+        head, _, rest = it.partition(': ')
+        if rest and merged and merged[-1][0] == head:
+            merged[-1][1].append(rest)
+        else:
+            merged.append((head, [rest]) if rest else (it, []))
+    parts = [f'{h}: {" and ".join(r) if len(r) < 3 else ", ".join(r[:-1]) + " and " + r[-1]}' if r else h for h, r in merged]
+    common = r'(Back|Small|Through|Along|Home|Drive|Car|On|Arrival|Hotel|Local|Limited|Highway|Moved)\b'
+    parts = parts[:1] + [x[:1].lower() + x[1:] if re.match(common, x) else x for x in parts[1:]]
+    sep = '; ' if any(',' in x for x in parts) else ', '
+    text = parts[0] if len(parts) == 1 else sep.join(parts[:-1]) + f'{sep}then ' + parts[-1]
+    return text[:1].upper() + text[1:] + '.'
+
+
 def consolidate(days, legs, miles=False):
     """Fold each day's stops into morning, afternoon and evening lines, and list its legs with distance and time."""
     for d in days:
@@ -296,9 +313,9 @@ def consolidate(days, legs, miles=False):
         groups, prev = {}, None
         for e in d['events']:
             prev = bucket_of(e.get('time'), prev)
-            short = re.split(r'(?<=[a-z)])\.\s', e['text'])[0].rstrip('.')
+            short = re.split(r'(?<!\bMt)(?<!\bSt)(?<=[a-z)])\.\s', e['text'])[0].rstrip('.')
             groups.setdefault(prev, []).append(short)
-        d['events'] = [{'time': n, 'text': '; '.join(groups[n]) + '.'} for n, _, _ in BUCKETS if n in groups]
+        d['events'] = [{'time': n, 'text': sentence(groups[n])} for n, _, _ in BUCKETS if n in groups]
         day_no = int(d['label'].split()[1]) if re.match(r'Day \d', d['label']) else None
         day_legs = [l for l in legs if l.get('day') == day_no]
         if day_legs:

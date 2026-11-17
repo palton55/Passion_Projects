@@ -1,6 +1,6 @@
 ---
 title: "Hokkaido Road Trip"
-summary: "A winter road trip around Hokkaido from New Chitose: across Tokachi to Abashiri, along the Sea of Okhotsk to the drift ice at Monbetsu, up to Cape Soya, inland to Asahikawa, Biei, and Furano, and down to Upopoy, the National Ainu Museum, followed by a day in Sapporo and the trip home through Tokyo."
+summary: "A winter road trip around Hokkaido from New Chitose: across Tokachi to Abashiri, along the Sea of Okhotsk to the drift ice at Monbetsu, up to Cape Soya, then Asahikawa, Biei, and Furano and down to Upopoy, followed by a day in Sapporo."
 start: 2026-03-18
 end: 2026-03-24
 category: Travel
@@ -68,51 +68,51 @@ parts:
 timeline:
   - label: "Day 1"
     date: 2026-03-18
-    title: "Shimukappu, Shintoku, Obihiro"
+    title: "Across Tokachi to Abashiri"
     events:
-      - { time: "Morning", text: "New Chitose Airport, start of the road trip; Shimukappu." }
-      - { time: "Afternoon", text: "Shintoku; Obihiro; Honbetsu / Ashoro; Ashoro." }
-      - { time: "Evening", text: "Rikubetsu; Tsubetsu; Bihoro; Memanbetsu; Abashiri (night)." }
+      - { time: "Morning", text: "New Chitose Airport, start of the road trip; then Shimukappu." }
+      - { time: "Afternoon", text: "Shintoku, Obihiro, Honbetsu / Ashoro, then Ashoro." }
+      - { time: "Evening", text: "Rikubetsu, Tsubetsu, Bihoro, Memanbetsu, then Abashiri (night)." }
     route: ["Drive, New Chitose through Shimukappu, Shintoku and Obihiro, then north through Honbetsu, Ashoro, Rikubetsu, Tsubetsu, Bihoro and Memanbetsu to Abashiri, stopping at each town's manhole cover (about 340 km, 5 h 15 min)."]
   - label: "Day 2"
     date: 2026-03-19
-    title: "Lake Abashiri, Tokoro and Lake Notoro, Lake Saroma"
+    title: "Drift ice and Route 238 to Cape Soya"
     events:
-      - { time: "Morning", text: "Lake Abashiri; Tokoro and Lake Notoro; Lake Saroma; Yubetsu; Monbetsu, drift ice on the Sea of Okhotsk." }
-      - { time: "Afternoon", text: "Monbetsu, north coast; Sarufutsu; Cape Soya, northern tip of Japan; Soya Hills." }
-      - { time: "Evening", text: "Wakkanai; Teshio (night)." }
+      - { time: "Morning", text: "Lake Abashiri; Tokoro and Lake Notoro; Lake Saroma; Yubetsu; then Monbetsu, drift ice on the Sea of Okhotsk." }
+      - { time: "Afternoon", text: "Monbetsu, north coast; Sarufutsu; Cape Soya, northern tip of Japan; then Soya Hills." }
+      - { time: "Evening", text: "Wakkanai, then Teshio (night)." }
     route: ["Drive, Abashiri along the Sea of Okhotsk past Lake Saroma to Yubetsu and the drift ice at Monbetsu, inland to Engaru and Onneyu Onsen and back to the coast, up to Sarufutsu, Cape Soya and Wakkanai, then south through Toyotomi and Horonobe to Teshio (about 550 km, 8 h 30 min)."]
   - label: "Day 3"
     date: 2026-03-20
-    title: "Horonobe to Otoineppu, Otoineppu, Bifuka"
+    title: "Inland to Asahikawa and Furano"
     events:
-      - { time: "Morning", text: "Horonobe to Otoineppu; Otoineppu." }
-      - { time: "Afternoon", text: "Bifuka; Shibetsu; Kenbuchi; Asahikawa, north side; Asahikawa." }
-      - { time: "Evening", text: "Biei; Furano (night)." }
+      - { time: "Morning", text: "Horonobe to Otoineppu, then Otoineppu." }
+      - { time: "Afternoon", text: "Bifuka; Shibetsu; Kenbuchi; Asahikawa, north side; then Asahikawa." }
+      - { time: "Evening", text: "Biei, then Furano (night)." }
     route: ["Drive, Teshio inland through Otoineppu and Bifuka to Shibetsu, Kenbuchi, two covers in Asahikawa, Higashikagura, Biei and Kamifurano, ending in Furano (about 260 km, 4 h)."]
   - label: "Day 4"
     date: 2026-03-21
-    title: "Through the Hidaka hills, Upopoy, Chitose"
+    title: "Upopoy and the drive back"
     events:
-      - { time: "Morning", text: "Through the Hidaka hills; Upopoy, National Ainu Museum, Shiraoi." }
-      - { time: "Afternoon", text: "Chitose; New Chitose Airport, car returned." }
+      - { time: "Morning", text: "Through the Hidaka hills; then Upopoy, National Ainu Museum, Shiraoi." }
+      - { time: "Afternoon", text: "Chitose; then New Chitose Airport, car returned." }
       - { time: "Evening", text: "Sapporo Station (night)." }
     route: ["Drive, Furano south through the Hidaka hills to Upopoy in Shiraoi, then to the Chitose manhole cover and New Chitose Airport to return the car (about 230 km, 3 h 30 min).", "Train, New Chitose Airport to Sapporo after returning the car (about 50 km, 30 min)."]
   - label: "Day 5"
     date: 2026-03-22
-    title: "Odori and Tanukikoji"
+    title: "A day in Sapporo"
     events:
       - { time: "Afternoon", text: "Odori and Tanukikoji, Sapporo." }
   - label: "Day 6"
     date: 2026-03-23
-    title: "Roppongi / Aoyama, Machida"
+    title: "Back to Tokyo"
     events:
       - { time: "Morning", text: "New Chitose Airport." }
-      - { time: "Afternoon", text: "Roppongi / Aoyama; Machida." }
+      - { time: "Afternoon", text: "Roppongi / Aoyama, then Machida." }
     route: ["Sapporo to New Chitose Airport (about 50 km, 30 min).", "Flight, New Chitose to Haneda.", "Haneda to Roppongi and Machida (about 40 km, 55 min)."]
   - label: "Day 7"
     date: 2026-03-24
-    title: "Yurakucho / Ginza"
+    title: "Ginza and the flight home"
     events:
       - { time: "Afternoon", text: "Yurakucho / Ginza." }
       - { time: "Evening", text: "Narita Airport (departure)." }

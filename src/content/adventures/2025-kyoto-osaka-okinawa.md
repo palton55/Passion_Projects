@@ -40,67 +40,67 @@ totals:
 timeline:
   - label: "Day 1"
     date: 2025-06-15
-    title: "Odawara"
+    title: "A night in Odawara"
     events:
-      - { time: "Afternoon", text: "Tokyo Station; Odawara (night)." }
+      - { time: "Afternoon", text: "Tokyo Station, then Odawara (night)." }
     route: ["Tokaido Shinkansen, Tokyo to Odawara (about 70 km, 20 min)."]
   - label: "Day 2"
     date: 2025-06-16
-    title: "Kyoto"
+    title: "On to Kyoto"
     events:
       - { time: "Afternoon", text: "Kyoto Station." }
       - { time: "Evening", text: "Kyoto, hotel area near Shijo." }
     route: ["Tokaido Shinkansen, Odawara to Kyoto (about 360 km, 1 h 45 min)."]
   - label: "Day 3"
     date: 2025-06-17
-    title: "Kinkaku-ji, Fushimi Inari Taisha, Downtown Kyoto"
+    title: "Kinkaku-ji and Fushimi Inari"
     events:
       - { time: "Morning", text: "Kinkaku-ji." }
-      - { time: "Afternoon", text: "Fushimi Inari Taisha; Downtown Kyoto." }
+      - { time: "Afternoon", text: "Fushimi Inari Taisha, then Downtown Kyoto." }
   - label: "Day 4"
     date: 2025-06-18
-    title: "Shin-Osaka, Umeda, Osaka Aquarium Kaiyukan"
+    title: "Osaka and the Kaiyukan aquarium"
     events:
       - { time: "Morning", text: "Shin-Osaka." }
-      - { time: "Afternoon", text: "Umeda (base area); Osaka Aquarium Kaiyukan, Tempozan." }
+      - { time: "Afternoon", text: "Umeda (base area); then Osaka Aquarium Kaiyukan, Tempozan." }
     route: ["Shinkansen, Kyoto to Shin-Osaka (about 40 km, 10 min)."]
   - label: "Day 5"
     date: 2025-06-19
-    title: "Universal Studios Japan, Expo 2025 Osaka"
+    title: "Universal Studios and Expo 2025"
     events:
       - { time: "Morning", text: "Universal Studios Japan." }
       - { time: "Evening", text: "Expo 2025 Osaka, Yumeshima." }
   - label: "Day 6"
     date: 2025-06-20
-    title: "Nanjo, Naha"
+    title: "Flying to Okinawa"
     events:
-      - { time: "Afternoon", text: "Osaka Itami Airport; Naha Airport." }
-      - { time: "Evening", text: "Nanjo; Naha (evening)." }
+      - { time: "Afternoon", text: "Osaka Itami Airport, then Naha Airport." }
+      - { time: "Evening", text: "Nanjo, then Naha (evening)." }
     route: ["Flight, Itami to Naha.", "Drive, Naha Airport to Nanjo and Naha (about 23 km, 20 min)."]
   - label: "Day 7"
     date: 2025-06-21
-    title: "Nago, Cape Maeda, Onna coast"
+    title: "Cape Maeda and a Sesoko sunset"
     events:
-      - { time: "Morning", text: "Nago; Cape Maeda, Onna." }
-      - { time: "Afternoon", text: "Onna coast; Sesoko Beach area, Motobu, at sunset." }
+      - { time: "Morning", text: "Nago; then Cape Maeda, Onna." }
+      - { time: "Afternoon", text: "Onna coast; then Sesoko Beach area, Motobu, at sunset." }
     route: ["Drive north to Nago, then Cape Maeda, Onna and Sesoko Beach (about 150 km, 2 h 15 min)."]
   - label: "Day 8"
     date: 2025-06-22
-    title: "Aeon Mall Okinawa Rycom, American Village"
+    title: "Rycom mall and American Village"
     events:
       - { time: "Afternoon", text: "Aeon Mall Okinawa Rycom, Kitanakagusuku." }
       - { time: "Evening", text: "American Village, Chatan." }
     route: ["Drive to Kitanakagusuku and Chatan and back by expressway (about 100 km, 1 h 30 min)."]
   - label: "Day 9"
     date: 2025-06-23
-    title: "Motobu, Cape Hedo, Sesoko Beach area again at sunset"
+    title: "North to Cape Hedo"
     events:
-      - { time: "Afternoon", text: "Motobu; Cape Hedo." }
+      - { time: "Afternoon", text: "Motobu, then Cape Hedo." }
       - { time: "Evening", text: "Sesoko Beach area again at sunset." }
     route: ["Drive to Cape Hedo and back via Sesoko (about 140 km, 2 h)."]
   - label: "Day 10"
     date: 2025-06-24
-    title: "Travel day"
+    title: "Flying back to Tokyo"
     events:
       - { time: "Morning", text: "Naha Airport." }
       - { time: "Afternoon", text: "Haneda Airport." }

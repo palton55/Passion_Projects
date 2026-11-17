@@ -26,23 +26,23 @@ totals:
 timeline:
   - label: "Day 1"
     date: 2025-04-07
-    title: "Lake Ashi, Manazuru"
+    title: "Lake Ashi, then on to Manazuru"
     events:
       - { time: "Afternoon", text: "Lake Ashi, Hakone." }
       - { time: "Evening", text: "Manazuru (base, two nights)." }
     route: ["Kodaira to Lake Ashi (about 80 km, 1 h 15 min).", "Lake Ashi to Manazuru (about 14 km, 15 min)."]
   - label: "Day 2"
     date: 2025-04-08
-    title: "Fuji-Q Highland"
+    title: "A day at Fuji-Q Highland"
     events:
       - { time: "Afternoon", text: "Fuji-Q Highland." }
       - { time: "Evening", text: "Back in Manazuru." }
     route: ["Manazuru to Fuji-Q Highland and back (about 70 km, 1 h)."]
   - label: "Day 3"
     date: 2025-04-09
-    title: "Hakone / Yugawara hills, Gotemba Premium Outlets"
+    title: "Gotemba outlets and home"
     events:
-      - { time: "Morning", text: "Hakone / Yugawara hills; Gotemba Premium Outlets." }
+      - { time: "Morning", text: "Hakone / Yugawara hills, then Gotemba Premium Outlets." }
       - { time: "Evening", text: "Home in Kodaira." }
     route: ["Manazuru to Gotemba and home (about 110 km, 1 h 45 min)."]
 ---

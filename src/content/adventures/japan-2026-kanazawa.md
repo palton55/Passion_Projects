@@ -25,18 +25,18 @@ legs:
 timeline:
   - label: "Day 1"
     date: 2026-03-07
-    title: "Omiya, Higashi Chaya district"
+    title: "Shinkansen to Kanazawa"
     events:
-      - { time: "Morning", text: "Tokyo Station, Hokuriku Shinkansen; Omiya (from the train); Kanazawa Station area." }
+      - { time: "Morning", text: "Tokyo Station, Hokuriku Shinkansen; Omiya (from the train); then Kanazawa Station area." }
       - { time: "Afternoon", text: "Higashi Chaya district, Kanazawa." }
     route: ["Hokuriku Shinkansen, Tokyo to Kanazawa (about 410 km, 2 h)."]
   - label: "Day 2"
     date: 2026-03-08
-    title: "Kanazawa, Toyama and the Japan Sea coast, Itoigawa and Joetsu"
+    title: "Back to Tokyo along the Japan Sea"
     events:
-      - { time: "Morning", text: "Kanazawa, morning; Toyama and the Japan Sea coast from the Shinkansen; Itoigawa and Joetsu from the Shinkansen; Tokyo Station." }
+      - { time: "Morning", text: "Kanazawa, morning; Toyama and the Japan Sea coast from the Shinkansen; Itoigawa and Joetsu from the Shinkansen; then Tokyo Station." }
       - { time: "Afternoon", text: "Yokohama." }
-      - { time: "Evening", text: "Machida; Yokohama (night)." }
+      - { time: "Evening", text: "Machida, then Yokohama (night)." }
     route: ["Hokuriku Shinkansen, Kanazawa back to Tokyo (about 410 km, 2 h).", "Tokyo to Yokohama and Machida (train, to confirm) (about 60 km, 1 h 30 min)."]
 ---
 

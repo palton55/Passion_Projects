@@ -27,26 +27,26 @@ legs:
 timeline:
   - label: "Day 1"
     date: 2025-08-19
-    title: "Ishigaki town"
+    title: "Flying to Ishigaki"
     events:
       - { time: "Afternoon", text: "Haneda Airport." }
-      - { time: "Evening", text: "New Ishigaki Airport; Ishigaki town." }
+      - { time: "Evening", text: "New Ishigaki Airport, then Ishigaki town." }
     route: ["Flight, Haneda to Ishigaki.", "Airport to Ishigaki town (about 13 km, 10 min)."]
   - label: "Day 2"
     date: 2025-08-20
-    title: "Boat trip south of Ishigaki"
+    title: "Boat trip near Taketomi"
     events:
       - { time: "Morning", text: "Boat trip south of Ishigaki, near Taketomi." }
     route: ["Boat trip from Ishigaki port (about 16 km, 40 min)."]
   - label: "Day 3"
     date: 2025-08-21
-    title: "West coast drive to Cape Ogan, North-west Ishigaki"
+    title: "Driving the west coast to Cape Ogan"
     events:
-      - { time: "Morning", text: "West coast drive to Cape Ogan; North-west Ishigaki." }
+      - { time: "Morning", text: "West coast drive to Cape Ogan, then North-west Ishigaki." }
     route: ["Drive up the west coast (about 50 km, 40 min)."]
   - label: "Day 4"
     date: 2025-08-22
-    title: "Boat trip near Kohama and Kuroshima"
+    title: "Boat trip to Kohama and Kuroshima"
     events:
       - { time: "Morning", text: "Boat trip near Kohama and Kuroshima." }
     route: ["Boat trip toward Kohama and Kuroshima (about 40 km, 1 h 30 min)."]
@@ -58,7 +58,7 @@ timeline:
     route: ["Ferry to Taketomi and back (about 15 km, 35 min)."]
   - label: "Day 6"
     date: 2025-08-24
-    title: "Travel day"
+    title: "Flying back to Tokyo"
     events:
       - { time: "Morning", text: "New Ishigaki Airport." }
       - { time: "Evening", text: "Back in Tokyo." }

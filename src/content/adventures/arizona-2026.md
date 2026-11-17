@@ -1,6 +1,6 @@
 ---
 title: "Arizona Road Trip"
-summary: "An eleven-day road trip from Los Angeles that I drove the whole way. I went out on I-10 to Phoenix for a shooting range and a rodeo night at the Buffalo Chip Saloon in Cave Creek, spent five days in Tucson with Mount Lemmon at sunset, the old copper mine in Bisbee, and the Desert Museum, then headed north to Sedona, Lowell Observatory in Flagstaff, and the Grand Canyon South Rim, camping in the national forest and catching sunrise at Grandview Point before Jerome and Prescott on the way home."
+summary: "An eleven-day road trip from Los Angeles that I drove the whole way: a rodeo night in Cave Creek near Phoenix, five days in Tucson with Mount Lemmon, Bisbee, and the Desert Museum, then Sedona, Flagstaff, and the Grand Canyon South Rim before Jerome and Prescott on the way home."
 start: 2026-07-23
 end: 2026-08-02
 category: Travel
@@ -51,7 +51,7 @@ timeline:
     title: "Los Angeles to Phoenix"
     events:
       - { time: "Morning", text: "Los Angeles, start of the drive." }
-      - { time: "Afternoon", text: "Blythe, crossing the Colorado River into Arizona; I-10 near Quartzsite." }
+      - { time: "Afternoon", text: "Blythe, crossing the Colorado River into Arizona; then I-10 near Quartzsite." }
       - { time: "Evening", text: "Peoria (base)." }
     route: ["Los Angeles east on I-10 through the Inland Empire and Indio to Blythe, over the Colorado River and on past Quartzsite to Peoria (about 410 miles, 7 h)."]
   - label: "Day 2"
@@ -59,71 +59,71 @@ timeline:
     title: "Shooting range and the Buffalo Chip rodeo"
     events:
       - { time: "Morning", text: "Shooting range, north Peoria." }
-      - { time: "Afternoon", text: "Peoria; Peoria, Arrowhead area, buying cowboy boots." }
+      - { time: "Afternoon", text: "Peoria; then Peoria, Arrowhead area, buying cowboy boots." }
       - { time: "Evening", text: "Buffalo Chip Saloon, Cave Creek, rodeo night." }
     route: ["Around Peoria, then out to Cave Creek for the night and back (about 70 miles, 1 h)."]
   - label: "Day 3"
     date: 2026-07-25
     title: "Glendale, then south to Tucson"
     events:
-      - { time: "Evening", text: "Peoria (base); Glendale; Phoenix, heading south on I-17 and I-10; Tucson (base)." }
+      - { time: "Evening", text: "Peoria (base); Glendale; Phoenix, heading south on I-17 and I-10; then Tucson (base)." }
     route: ["Peoria and Glendale, then south through Phoenix on I-17 and I-10 to Tucson (about 150 miles, 2 h 30 min)."]
   - label: "Day 4"
     date: 2026-07-26
     title: "Sentinel Peak and Mount Lemmon"
     events:
-      - { time: "Afternoon", text: "Tucson; Sentinel Peak (\"A\" Mountain), Tucson." }
-      - { time: "Evening", text: "Summerhaven and the Sasquatch sign, Mount Lemmon; Windy Point Vista, Mount Lemmon, at sunset; Back down the Catalina Highway." }
+      - { time: "Afternoon", text: "Tucson; then Sentinel Peak (\"A\" Mountain), Tucson." }
+      - { time: "Evening", text: "Summerhaven and the Sasquatch sign, Mount Lemmon; Windy Point Vista, Mount Lemmon, at sunset; then back down the Catalina Highway." }
     route: ["Tucson, then up the Catalina Highway to Windy Point and Summerhaven on Mount Lemmon and back down (about 70 miles, 1 h)."]
   - label: "Day 5"
     date: 2026-07-27
     title: "Bisbee and Sierra Vista"
     events:
-      - { time: "Morning", text: "I-10 east toward Benson; Bisbee, Mining and Historical Museum and Queen Mine." }
-      - { time: "Afternoon", text: "Sierra Vista, lunch; AZ-90 north past Kartchner Caverns." }
+      - { time: "Morning", text: "I-10 east toward Benson; then Bisbee, Mining and Historical Museum and Queen Mine." }
+      - { time: "Afternoon", text: "Sierra Vista, lunch; then AZ-90 north past Kartchner Caverns." }
       - { time: "Evening", text: "East Tucson." }
     route: ["Day trip southeast: I-10 to Benson, AZ-80 through Tombstone to Bisbee, AZ-92 to Sierra Vista, then AZ-90 north past Kartchner Caverns and back to Tucson (about 210 miles, 3 h 30 min)."]
   - label: "Day 6"
     date: 2026-07-28
     title: "Arizona-Sonora Desert Museum"
     events:
-      - { time: "Afternoon", text: "Gates Pass; Arizona-Sonora Desert Museum: the cave, bears and wolves; Back over Gates Pass." }
+      - { time: "Afternoon", text: "Gates Pass; Arizona-Sonora Desert Museum: the cave, bears and wolves; then back over Gates Pass." }
     route: ["Over Gates Pass to the Arizona-Sonora Desert Museum and back (about 28 miles, 30 min)."]
   - label: "Day 7"
     date: 2026-07-29
     title: "Back to Phoenix"
     events:
-      - { time: "Afternoon", text: "Tucson; Casa Grande, on I-10; Phoenix (night)." }
+      - { time: "Afternoon", text: "Tucson; Casa Grande, on I-10; then Phoenix (night)." }
     route: ["Tucson back up I-10 past Casa Grande to Phoenix (about 150 miles, 2 h 30 min)."]
   - label: "Day 8"
     date: 2026-07-30
     title: "Sedona, Oak Creek Canyon and Flagstaff"
     events:
       - { time: "Afternoon", text: "I-17 north at Cordes Lakes." }
-      - { time: "Evening", text: "Village of Oak Creek; Bell Rock and Courthouse Butte, Sedona; West Sedona; Uptown Sedona; Oak Creek Canyon; Oak Creek Vista; Flagstaff, downtown brewery and Route 66; Lowell Observatory, Flagstaff." }
+      - { time: "Evening", text: "Village of Oak Creek; Bell Rock and Courthouse Butte, Sedona; West Sedona; Uptown Sedona; Oak Creek Canyon; Oak Creek Vista; Flagstaff, downtown brewery and Route 66; then Lowell Observatory, Flagstaff." }
     route: ["North on I-17 to Sedona by AZ-179, up Oak Creek Canyon on AZ-89A to Flagstaff, then west on I-40 to Williams (about 180 miles, 3 h)."]
   - label: "Day 9"
     date: 2026-07-31
     title: "Grand Canyon South Rim"
     events:
-      - { time: "Morning", text: "Williams (night); Tusayan." }
-      - { time: "Afternoon", text: "Mather Point, Grand Canyon South Rim; Yavapai Point; Grand Canyon Village; Desert View Drive; Grandview Point; Moran Point; Desert View Watchtower." }
-      - { time: "Evening", text: "Grandview Lookout Tower, Kaibab National Forest; Campsite in Kaibab National Forest, outside the South Rim; Shoshone Point, at sunset; Back at camp, campfire (night)." }
+      - { time: "Morning", text: "Williams (night), then Tusayan." }
+      - { time: "Afternoon", text: "Mather Point, Grand Canyon South Rim; Yavapai Point; Grand Canyon Village; Desert View Drive; Grandview Point; Moran Point; then Desert View Watchtower." }
+      - { time: "Evening", text: "Grandview Lookout Tower, Kaibab National Forest; Campsite in Kaibab National Forest, outside the South Rim; Shoshone Point, at sunset; then back at camp, campfire (night)." }
     route: ["Williams up AZ-64 through Tusayan to the South Rim: Mather Point, Yavapai Point and Grand Canyon Village, then east along Desert View Drive to Grandview Point, Moran Point and the Desert View Watchtower, camp in the national forest, and back out for sunset (about 120 miles, 2 h)."]
   - label: "Day 10"
     date: 2026-08-01
     title: "Grandview sunrise, Jerome and Prescott"
     events:
-      - { time: "Morning", text: "Grandview Point at sunrise, elk on the road; Williams; AZ-89 south from Ash Fork." }
-      - { time: "Afternoon", text: "Embry-Riddle campus, Prescott; Prescott Valley, lunch at A&W; Jerome." }
+      - { time: "Morning", text: "Grandview Point at sunrise, elk on the road; Williams; then AZ-89 south from Ash Fork." }
+      - { time: "Afternoon", text: "Embry-Riddle campus, Prescott; Prescott Valley, lunch at A&W; then Jerome." }
       - { time: "Evening", text: "Prescott (night)." }
     route: ["Camp to Grandview Point for sunrise, back out through Tusayan and Williams, I-40 to Ash Fork and AZ-89 south to Prescott, then over Mingus Mountain on AZ-89A to Jerome and back to Prescott (about 200 miles, 3 h 15 min)."]
   - label: "Day 11"
     date: 2026-08-02
     title: "Prescott and the drive home"
     events:
-      - { time: "Morning", text: "Downtown Prescott, Courthouse Plaza and Whiskey Row; Blythe, Welcome to California sign." }
-      - { time: "Afternoon", text: "Indio; Los Angeles, home." }
+      - { time: "Morning", text: "Downtown Prescott, Courthouse Plaza and Whiskey Row; then Blythe, Welcome to California sign." }
+      - { time: "Afternoon", text: "Indio; then Los Angeles, home." }
     route: ["Prescott south on AZ-89 through Yarnell to Wickenburg, US-60 to Quartzsite, then I-10 west through Blythe and Indio home to Los Angeles (about 420 miles, 7 h 15 min)."]
 ---
 

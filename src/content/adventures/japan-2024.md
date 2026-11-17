@@ -24,7 +24,7 @@ timeline:
     date: 2024-05-11
     title: "Arrival"
     events:
-      - { time: "Afternoon", text: "Narita Airport; Keisei / Toei Asakusa Line into Tokyo, through to Shinagawa; Hotel area around Gotanda / Osaki." }
+      - { time: "Afternoon", text: "Narita Airport; Keisei / Toei Asakusa Line into Tokyo, through to Shinagawa; then hotel area around Gotanda / Osaki." }
     route: ["Keisei Access Express / Toei Asakusa Line, Narita to Shinagawa (about 60 km, 1 h 30 min)."]
   - label: "Day 2"
     date: 2024-05-12
@@ -36,22 +36,22 @@ timeline:
     date: 2024-05-13
     title: "Shinjuku and Ikebukuro"
     events:
-      - { time: "Afternoon", text: "Shinjuku; Ikebukuro." }
+      - { time: "Afternoon", text: "Shinjuku, then Ikebukuro." }
       - { time: "Evening", text: "Tamachi / Mita, then back to the hotel." }
   - label: "Day 4"
     date: 2024-05-14
     title: "Mt. Fuji day trip"
     events:
-      - { time: "Morning", text: "Busta Shinjuku, then a highway bus to the Fuji Five Lakes; Kawaguchiko Station; Chureito Pagoda, Arakurayama Sengen Park (Fujiyoshida)." }
+      - { time: "Morning", text: "Busta Shinjuku, then a highway bus to the Fuji Five Lakes; Kawaguchiko Station; then Chureito Pagoda, Arakurayama Sengen Park (Fujiyoshida)." }
       - { time: "Afternoon", text: "Lake Kawaguchi north shore, around Oishi Park." }
-      - { time: "Evening", text: "Back at Kawaguchiko Station; Highway bus back to Tokyo, arriving at Shibuya." }
+      - { time: "Evening", text: "Back at Kawaguchiko Station; then highway bus back to Tokyo, arriving at Shibuya." }
     route: ["Highway bus, Shinjuku to Mt. Fuji area (about 100 km, 1 h 45 min).", "Highway bus back to Shibuya (about 100 km, 1 h 45 min)."]
   - label: "Day 5"
     date: 2024-05-15
     title: "Moving to Nakano"
     events:
       - { time: "Morning", text: "Days 5 to 9 were spent touring Tokyo with friends." }
-      - { time: "Afternoon", text: "Ginza; Moved to Nakano." }
+      - { time: "Afternoon", text: "Ginza, then moved to Nakano." }
       - { time: "Evening", text: "Shinjuku at night." }
   - label: "Day 6"
     date: 2024-05-16
@@ -63,8 +63,8 @@ timeline:
     date: 2024-05-17
     title: "Tokyo Tower and Ikebukuro night"
     events:
-      - { time: "Afternoon", text: "Tokyo Tower; Shinagawa waterfront." }
-      - { time: "Evening", text: "Shibuya; Ikebukuro at night." }
+      - { time: "Afternoon", text: "Tokyo Tower, then Shinagawa waterfront." }
+      - { time: "Evening", text: "Shibuya, then Ikebukuro at night." }
   - label: "Day 8"
     date: 2024-05-18
     title: "Ikebukuro all day"
@@ -75,7 +75,7 @@ timeline:
     title: "Last day, fly home"
     events:
       - { time: "Morning", text: "Otemachi / Tokyo Station." }
-      - { time: "Afternoon", text: "Akihabara; Nippori, then the Keisei Skyliner to Narita." }
+      - { time: "Afternoon", text: "Akihabara; then Nippori, then the Keisei Skyliner to Narita." }
       - { time: "Evening", text: "Narita Airport for the flight home." }
     route: ["Keisei Skyliner, Nippori to Narita (about 60 km, 40 min)."]
 ---

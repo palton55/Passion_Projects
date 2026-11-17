@@ -28,26 +28,26 @@ legs:
 timeline:
   - label: "Day 1"
     date: 2026-03-11
-    title: "Shibuya, Zama"
+    title: "Shibuya and Zama"
     events:
       - { time: "Afternoon", text: "Shibuya." }
       - { time: "Evening", text: "Zama." }
     route: ["Tokyo days: Shinjuku, Shibuya, Machida, Sagamihara and Zama by train (about 40 km, 50 min)."]
   - label: "Day 2"
     date: 2026-03-12
-    title: "Sagamihara / Machida area, Shibuya / Yoyogi"
+    title: "Shibuya and Yoyogi"
     events:
       - { time: "Morning", text: "Sagamihara / Machida area." }
       - { time: "Afternoon", text: "Shibuya / Yoyogi." }
   - label: "Day 3"
     date: 2026-03-13
-    title: "Sagamihara / Machida area, Setagaya"
+    title: "Shimokitazawa and Sangenjaya"
     events:
       - { time: "Morning", text: "Sagamihara / Machida area." }
       - { time: "Evening", text: "Setagaya (Sangenjaya / Shimokitazawa)." }
   - label: "Day 4"
     date: 2026-03-14
-    title: "Ikebukuro"
+    title: "Ikebukuro and Sunshine City"
     events:
       - { time: "Afternoon", text: "Ikebukuro, Sunshine City." }
     route: ["Machida to Ikebukuro and back (about 30 km, 45 min)."]
@@ -64,9 +64,9 @@ timeline:
       - { time: "Afternoon", text: "Machida." }
   - label: "Day 7"
     date: 2026-03-17
-    title: "Shibuya, Harajuku / Omotesando, Ebisu"
+    title: "Shibuya, Ebisu and off to Haneda"
     events:
-      - { time: "Afternoon", text: "Shibuya; Harajuku / Omotesando; Ebisu." }
+      - { time: "Afternoon", text: "Shibuya, Harajuku / Omotesando, then Ebisu." }
       - { time: "Evening", text: "On the way to Haneda." }
     route: ["Shibuya, Harajuku and Ebisu, then to Haneda (about 20 km, 25 min).", "Flight, Haneda to New Chitose."]
 ---

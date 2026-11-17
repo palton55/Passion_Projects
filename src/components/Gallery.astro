@@ -4,10 +4,10 @@ import { photo } from '../lib/img';
 const base = import.meta.env.BASE_URL.replace(/\/$/, '');
 ---
 {photos.length > 0 && (
-  <div class="gallery">
+  <div class="gallery" data-lightbox-group>
     {photos.map((p: { src: string; caption?: string }) => (
       <figure>
-        <a href={`${base}/${p.src}`} target="_blank"><img {...photo(p.src, '(max-width: 500px) 100vw, 340px')} alt={p.caption ?? ''} loading="lazy" decoding="async" /></a>
+        <a href={`${base}/${p.src}`} data-lightbox data-caption={p.caption}><img {...photo(p.src, '(max-width: 600px) 50vw, 340px')} alt={p.caption ?? ''} loading="lazy" decoding="async" /></a>
         {p.caption && <figcaption>{p.caption}</figcaption>}
       </figure>
     ))}
@@ -15,7 +15,13 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, '');
 )}
 <style>
   .gallery { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 12px; }
-  figure { margin: 0; }
+  figure { margin: 0; min-width: 0; }
   img { width: 100%; aspect-ratio: 4/3; object-fit: cover; border-radius: 10px; }
   figcaption { font-size: .85rem; color: var(--muted); margin-top: 4px; }
+  /* Phones: two columns, captions cut to one line (the full caption shows in the photo viewer). */
+  @media (max-width: 600px) {
+    .gallery { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 8px; }
+    img { aspect-ratio: 1; border-radius: 8px; }
+    figcaption { font-size: .75rem; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  }
 </style>

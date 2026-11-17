@@ -1,0 +1,76 @@
+---
+// Full-screen photo viewer for links marked `data-lightbox` (Gallery and Highlights). Photos inside the same
+// `data-lightbox-group` page through with swipes, arrow keys, or the side buttons; Escape or a tap on the
+// backdrop closes it. Without JavaScript the links still open the full-size photo.
+---
+<dialog class="lightbox" aria-label="Photo viewer">
+  <figure>
+    <img alt="" />
+    <figcaption></figcaption>
+  </figure>
+  <button type="button" class="lb-close" aria-label="Close">×</button>
+  <button type="button" class="lb-prev" aria-label="Previous photo">‹</button>
+  <button type="button" class="lb-next" aria-label="Next photo">›</button>
+  <p class="lb-count"></p>
+</dialog>
+<script>
+  const dialog = document.querySelector<HTMLDialogElement>('dialog.lightbox')!;
+  const img = dialog.querySelector('img')!;
+  const caption = dialog.querySelector('figcaption')!;
+  const count = dialog.querySelector('.lb-count')!;
+  let links: HTMLAnchorElement[] = [];
+  let i = 0;
+  const show = (n: number) => {
+    i = (n + links.length) % links.length;
+    const a = links[i];
+    const thumb = a.querySelector('img');
+    img.removeAttribute('src');
+    img.srcset = thumb?.srcset ?? '';
+    img.sizes = '100vw';
+    img.src = a.href;
+    img.alt = thumb?.alt ?? '';
+    caption.textContent = a.dataset.caption ?? thumb?.alt ?? '';
+    count.textContent = links.length > 1 ? `${i + 1} / ${links.length}` : '';
+    dialog.classList.toggle('single', links.length < 2);
+  };
+  document.addEventListener('click', (e) => {
+    const a = (e.target as Element).closest<HTMLAnchorElement>('a[data-lightbox]');
+    if (!a || e.metaKey || e.ctrlKey || e.shiftKey) return;
+    e.preventDefault();
+    const group = a.closest('[data-lightbox-group]');
+    links = [...(group ?? document).querySelectorAll<HTMLAnchorElement>('a[data-lightbox]')];
+    show(links.indexOf(a));
+    dialog.showModal();
+  });
+  dialog.querySelector('.lb-close')!.addEventListener('click', () => dialog.close());
+  dialog.querySelector('.lb-prev')!.addEventListener('click', () => show(i - 1));
+  dialog.querySelector('.lb-next')!.addEventListener('click', () => show(i + 1));
+  dialog.addEventListener('click', (e) => { if (e.target === dialog || e.target === dialog.querySelector('figure')) dialog.close(); });
+  dialog.addEventListener('keydown', (e) => {
+    if (e.key === 'ArrowLeft') show(i - 1);
+    if (e.key === 'ArrowRight') show(i + 1);
+  });
+  // Swipe left or right to page; a mostly vertical swipe is ignored.
+  let x0 = 0, y0 = 0;
+  dialog.addEventListener('touchstart', (e) => { x0 = e.touches[0].clientX; y0 = e.touches[0].clientY; }, { passive: true });
+  dialog.addEventListener('touchend', (e) => {
+    const dx = e.changedTouches[0].clientX - x0, dy = e.changedTouches[0].clientY - y0;
+    if (Math.abs(dx) > 50 && Math.abs(dx) > Math.abs(dy) * 1.5) show(dx < 0 ? i + 1 : i - 1);
+  });
+  dialog.addEventListener('close', () => { img.removeAttribute('src'); img.srcset = ''; });
+</script>
+<style>
+  .lightbox { width: 100vw; height: 100dvh; max-width: none; max-height: none; margin: 0; padding: 0; border: 0; background: rgba(0, 0, 0, .92); color: #fff; }
+  .lightbox::backdrop { background: rgba(0, 0, 0, .6); }
+  .lightbox[open] { display: grid; place-items: center; }
+  figure { margin: 0; width: 100%; height: 100%; display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 56px 12px 48px; box-sizing: border-box; }
+  img { max-width: 100%; max-height: 100%; min-height: 0; object-fit: contain; border-radius: 6px; }
+  figcaption { margin-top: 10px; font-size: .95rem; text-align: center; opacity: .9; }
+  button { position: absolute; border: 0; background: rgba(255, 255, 255, .15); color: #fff; width: 44px; height: 44px; border-radius: 50%; font-size: 1.6rem; line-height: 1; cursor: pointer; }
+  .lb-close { top: 12px; right: 12px; }
+  .lb-prev { left: 12px; top: 50%; transform: translateY(-50%); }
+  .lb-next { right: 12px; top: 50%; transform: translateY(-50%); }
+  .single .lb-prev, .single .lb-next { display: none; }
+  .lb-count { position: absolute; top: 12px; left: 16px; margin: 0; font-size: .85rem; opacity: .8; }
+  @media (max-width: 600px) { .lb-prev, .lb-next { top: auto; bottom: 8px; transform: none; } }
+</style>

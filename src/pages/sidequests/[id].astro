@@ -6,16 +6,24 @@ import Highlights from '../../components/Highlights.astro';
 import Timeline from '../../components/Timeline.astro';
 import { showDrafts } from '../../lib/drafts';
 import { getCollection, render } from 'astro:content';
-import { parentOf } from '../../data/japan-topics';
+import { parentOf, japanTopics } from '../../data/japan-topics';
+import { regions } from '../../data/regions';
 import photoData from '../../data/photos.json';
 import covers from '../../data/covers.json';
 import { placesOnTrip } from '../../lib/place-notes';
 import PlaceCards from '../../components/PlaceCards.astro';
 export async function getStaticPaths() {
-  const all = await getCollection('adventures', ({ data }) => !data.draft || showDrafts);
-  return all.map((entry) => ({ params: { id: entry.id }, props: { entry } }));
+  const all = (await getCollection('adventures', ({ data }) => !data.draft || showDrafts))
+    .sort((a, b) => (a.data.start?.valueOf() ?? 0) - (b.data.start?.valueOf() ?? 0));
+  // Previous and next entries in date order, trips with trips and pursuits with pursuits.
+  return all.map((entry) => {
+    const same = all.filter((e) => (e.data.category === 'Travel') === (entry.data.category === 'Travel'));
+    const i = same.indexOf(entry);
+    const link = (e?: (typeof all)[number]) => e && { id: e.id, title: e.data.title };
+    return { params: { id: entry.id }, props: { entry, prev: link(same[i - 1]), next: link(same[i + 1]) } };
+  });
 }
-const { entry } = Astro.props;
+const { entry, prev, next } = Astro.props;
 const { Content } = await render(entry);
 const d = entry.data;
 // Approved photos live in src/data/photos.json so regenerating entries keeps them.
@@ -23,38 +31,54 @@ const photos = d.photos.length ? d.photos : ((photoData as Record<string, { src:
 const fmt = (x: Date) => x.toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric', timeZone: 'UTC' });
 const parent = parentOf(d.collection);
 const base = import.meta.env.BASE_URL.replace(/\/$/, '');
+// The trip this entry belongs to: a parent Japan topic, a top-level Japan year, or the travel region's page.
+const topic = parent ?? japanTopics.find((t) => t.collection === d.collection);
+const region = regions.find((r) => [r.region].flat().includes(d.region ?? ''));
+const home = topic ? { title: topic.title, href: `/japan/${topic.page}/` } : region && d.category === 'Travel' ? { title: region.name, href: region.href ?? `/travel/${region.slug}/` } : undefined;
+const tripLabel = topic?.collection ?? (d.collection !== d.title ? d.collection : undefined);
+// A transition day shared by two parts is told once, in the first part; the maps still cover it in both.
+const shown = new Set<number>();
+const partDays = d.parts.map((part) => part.days.filter((n) => !shown.has(n) && shown.add(n)));
 const places = placesOnTrip(entry);
 const yt = d.video?.match(/(?:v=|youtu\.be\/)([\w-]{11})/)?.[1];
 ---
 <Base title={`${d.title} · Sidequest Resume`} description={d.summary} image={d.cover ?? (covers as Record<string, string>)[entry.id] ?? photos[0]?.src}>
   <article>
-    <p class="meta">{[d.category, d.collection ?? d.region, d.start && `${fmt(d.start)}${d.end ? ` to ${fmt(d.end)}` : ''}`].filter(Boolean).join(' · ')}</p>
+    <p class="meta">{[d.category, d.region !== tripLabel && d.region, tripLabel, d.start && `${fmt(d.start)}${d.end ? ` to ${fmt(d.end)}` : ''}`].filter(Boolean).join(' · ')}</p>
     <h1>{d.title}</h1>
-    <p class="lede">{d.summary}</p>
-    {parent && <p class="meta">Part of <a href={`${base}/japan/${parent.page}/`}>{parent.title}</a></p>}
-    <Highlights photos={photos} />
     {d.companions.length > 0 && <p class="meta">With {d.companions.join(', ')}</p>}
+    <p class="lede">{d.summary}</p>
+    <Highlights photos={photos} />
     {yt && <div class="video"><iframe src={`https://www.youtube-nocookie.com/embed/${yt}`} title={d.title} allowfullscreen loading="lazy"></iframe></div>}
+    <div class="story"><Content /></div>
     {d.stops.length > 0 && <h2>The route</h2>}
     {d.stops.length > 0 && <RouteMap stops={d.stops} legs={d.legs} pois={d.pois} bands={d.bands} />}
     {d.parts.length === 0 && d.timeline.length > 0 && <h2>Timeline</h2>}
     {d.parts.length === 0 && d.timeline.length > 0 && <Timeline days={d.timeline} />}
     {d.parts.length === 0 && d.totals.map((t) => <div class="totals"><h3>{t.title}</h3><ul>{t.items.map((x) => <li>{x}</li>)}</ul></div>)}
-    {d.parts.map((part) => (
+    {d.parts.map((part, pi) => (
       <section class="part">
         <h2>{part.title}</h2>
         {part.blurb && <p>{part.blurb}</p>}
         {part.notes.map((n) => <><h3>{n.title}</h3>{n.text.map((t) => <p>{t}</p>)}</>)}
         <RouteMap stops={d.stops.filter((s) => part.stops.includes(s.name))} legs={d.legs.filter((l) => part.modes ? part.modes.includes(l.mode) : l.day !== undefined && part.days.includes(l.day))} pois={d.pois.filter((p) => p.day !== undefined && part.days.includes(p.day) && (!part.modes || part.modes.includes('drive')))} bands={part.modes?.includes('drive') ? d.bands : []} height={400} />
-        <Timeline days={d.timeline.filter((t) => part.days.includes(Number(t.label.replace(/\D/g, ''))))} />
+        <Timeline days={d.timeline.filter((t) => partDays[pi].includes(Number(t.label.replace(/\D/g, ''))))} />
         {part.totals && <div class="totals"><h3>{part.totals.title}</h3><ul>{part.totals.items.map((t) => <li>{t}</li>)}</ul></div>}
       </section>
     ))}
-    <div class="story"><Content /></div>
     {places.length > 0 && <h2>Places on this trip</h2>}
     <PlaceCards places={places} />
     {photos.length > 0 && <h2>Photos</h2>}
     <Gallery photos={photos} />
+    {(home || prev || next) && (
+      <nav class="entry-nav" aria-label="More entries">
+        {home && <p class="meta">Part of <a href={`${base}${home.href}`}>{home.title}</a></p>}
+        <div class="pn">
+          {prev ? <a href={`${base}/sidequests/${prev.id}/`}><span>Previous</span>{prev.title}</a> : <span />}
+          {next && <a class="next" href={`${base}/sidequests/${next.id}/`}><span>Next</span>{next.title}</a>}
+        </div>
+      </nav>
+    )}
   </article>
 </Base>
 <style>
@@ -67,6 +91,11 @@ const yt = d.video?.match(/(?:v=|youtu\.be\/)([\w-]{11})/)?.[1];
   .lede { font-size: 1.15rem; }
   .video { aspect-ratio: 16/9; margin: 24px 0; }
   .video iframe { width: 100%; height: 100%; border: 0; border-radius: 14px; }
-  .story { margin-top: 32px; }
+  .story { margin-top: 24px; }
+  .entry-nav { border-top: 1px solid var(--border); margin-top: 48px; padding-top: 16px; }
+  .pn { display: flex; justify-content: space-between; gap: 16px; margin-top: 12px; }
+  .pn a { display: flex; flex-direction: column; text-decoration: none; font-weight: 600; max-width: 48%; padding: 6px 0; }
+  .pn a span { color: var(--muted); font-size: .8rem; font-weight: 500; text-transform: uppercase; letter-spacing: .04em; }
+  .pn .next { text-align: right; margin-left: auto; }
   .part { border-top: 1px solid var(--border); margin-top: 40px; }
 </style>

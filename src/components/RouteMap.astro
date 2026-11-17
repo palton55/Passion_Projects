@@ -78,7 +78,7 @@ const legend = [
     }
     return null;
   }
-  document.querySelectorAll<HTMLElement>('.route-map').forEach((el) => {
+  const initMap = (el: HTMLElement) => {
     const stops = JSON.parse(el.dataset.stops || '[]');
     const legs = JSON.parse(el.dataset.legs || '[]');
     if (!stops.length) { el.innerHTML = '<p class="empty">Route map coming soon.</p>'; return; }
@@ -184,12 +184,27 @@ const legend = [
     }
     map.fitBounds(L.latLngBounds(stops.map((s: any) => [s.lat, s.lng])), { padding: [30, 30] });
     declutter();
-  });
+  };
+  // Each map starts when it comes near the screen, so pages with many maps (Japan year pages) don't build them all
+  // at once or fetch tiles nobody scrolls to.
+  const maps = document.querySelectorAll<HTMLElement>('.route-map');
+  if ('IntersectionObserver' in window) {
+    const watch = new IntersectionObserver((seen) => seen.forEach((e) => {
+      if (!e.isIntersecting) return;
+      watch.unobserve(e.target);
+      initMap(e.target as HTMLElement);
+    }), { rootMargin: '400px 0px' });
+    maps.forEach((el) => watch.observe(el));
+  } else maps.forEach(initMap);
 </script>
 <style>
   .map-filter { display: flex; flex-wrap: wrap; gap: 8px; margin: 0 0 12px; }
   .map-filter button { font: inherit; font-size: .9rem; padding: 6px 14px; border-radius: 999px; border: 1px solid var(--border); background: var(--surface); color: var(--muted); cursor: pointer; }
   .map-filter button[aria-pressed="true"] { background: var(--accent); border-color: var(--accent); color: #fff; }
+  /* Leaflet's touch controls are 30px; make them easier to hit. */
+  :global(.route-map.leaflet-touch .leaflet-bar a) { width: 40px; height: 40px; line-height: 40px; }
+  :global(.route-map.leaflet-touch .leaflet-control-layers-toggle) { width: 44px; height: 44px; }
+  @media (pointer: coarse) { .map-filter button { min-height: 40px; } }
   .route-map { border-radius: 14px; border: 1px solid var(--border); background: var(--surface); }
   .legend { display: flex; flex-wrap: wrap; gap: 18px; list-style: none; padding: 0; margin: 8px 0 0; font-size: .85rem; color: var(--muted); }
   .legend li::before { content: ''; display: inline-block; width: 22px; margin-right: 6px; vertical-align: middle; border-top: 3px solid; }

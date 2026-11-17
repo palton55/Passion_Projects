@@ -10,7 +10,7 @@ import { parentOf, japanTopics } from '../../data/japan-topics';
 import { regions } from '../../data/regions';
 import photoData from '../../data/photos.json';
 import covers from '../../data/covers.json';
-import { placePages } from '../../lib/place-notes';
+import { placesOnTrip } from '../../lib/place-notes';
 import PlaceCards from '../../components/PlaceCards.astro';
 export async function getStaticPaths() {
   const all = (await getCollection('adventures', ({ data }) => !data.draft || showDrafts))
@@ -39,7 +39,7 @@ const tripLabel = topic?.collection ?? (d.collection !== d.title ? d.collection 
 // A transition day shared by two parts is told once, in the first part; the maps still cover it in both.
 const shown = new Set<number>();
 const partDays = d.parts.map((part) => part.days.filter((n) => !shown.has(n) && shown.add(n)));
-const places = placePages([entry]);
+const places = placesOnTrip(entry);
 const yt = d.video?.match(/(?:v=|youtu\.be\/)([\w-]{11})/)?.[1];
 ---
 <Base title={`${d.title} · Sidequest Resume`} description={d.summary} image={d.cover ?? (covers as Record<string, string>)[entry.id] ?? photos[0]?.src}>

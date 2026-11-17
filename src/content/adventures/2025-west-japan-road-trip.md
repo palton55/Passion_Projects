@@ -42,42 +42,42 @@ parts:
 timeline:
   - label: "Day 1"
     date: 2025-03-20
-    title: "Ikebukuro"
+    title: "Landing in Tokyo"
     events:
-      - { time: "Evening", text: "Haneda Airport (arrival in Japan); Ikebukuro, first night in Tokyo." }
+      - { time: "Evening", text: "Haneda Airport (arrival in Japan); then Ikebukuro, first night in Tokyo." }
   - label: "Day 2"
     date: 2025-03-21
-    title: "Harajuku / Omotesando, Roppongi"
+    title: "Harajuku and Roppongi"
     events:
       - { time: "Morning", text: "Harajuku / Omotesando." }
       - { time: "Afternoon", text: "Roppongi." }
   - label: "Day 3"
     date: 2025-03-22
-    title: "Shin-Osaka, Setoda, Tatara Bridge area"
+    title: "Across the Shimanami Kaido"
     events:
-      - { time: "Morning", text: "Tokyo Station, Tokaido Shinkansen; Shin-Osaka; Setoda, Ikuchijima (Shimanami Kaido)." }
+      - { time: "Morning", text: "Tokyo Station, Tokaido Shinkansen; Shin-Osaka; then Setoda, Ikuchijima (Shimanami Kaido)." }
       - { time: "Afternoon", text: "Tatara Bridge area (Shimanami Kaido)." }
       - { time: "Evening", text: "Imabari (night)." }
     route: ["Tokaido Shinkansen, Tokyo to Shin-Osaka (about 470 km, 2 h 15 min).", "Drive from Shin-Osaka to the Shimanami Kaido (about 270 km, 4 h 15 min).", "Shimanami Kaido to Imabari (about 40 km, 40 min)."]
   - label: "Day 4"
     date: 2025-03-23
-    title: "Fukuyama, Kibitsu Shrine, Kurashiki Bikan Historical Quarter"
+    title: "Fukuyama, Kibitsu Shrine and Kurashiki"
     events:
       - { time: "Morning", text: "Fukuyama (castle area), end of the Shimanami drive." }
-      - { time: "Afternoon", text: "Okayama Station area, start of the road trip; Kibitsu Shrine." }
-      - { time: "Evening", text: "Kurashiki Bikan Historical Quarter; Okayama (night)." }
+      - { time: "Afternoon", text: "Okayama Station area, start of the road trip; then Kibitsu Shrine." }
+      - { time: "Evening", text: "Kurashiki Bikan Historical Quarter, then Okayama (night)." }
     route: ["Imabari back over the Shimanami Kaido to Fukuyama (about 80 km, 1 h 15 min).", "Sanyo Shinkansen, Fukuyama to Okayama (about 50 km, 15 min).", "Okayama to Kibitsu Shrine and Kurashiki (about 40 km, 35 min)."]
   - label: "Day 5"
     date: 2025-03-24
-    title: "Himeji Castle, Arima Onsen, Nara Park"
+    title: "Himeji, Arima, Nara and Lake Hamana"
     events:
-      - { time: "Morning", text: "Himeji Castle; Arima Onsen." }
-      - { time: "Afternoon", text: "Nara Park; Small mountain village east of Nara, with drone shots; Nagashima Spa Land, Mie (drove past)." }
-      - { time: "Evening", text: "Along the Ise Bay coast, across the bay islands south of Nagoya; Lake Hamana, crossing the bridge; Hamamatsu (night)." }
+      - { time: "Morning", text: "Himeji Castle, then Arima Onsen." }
+      - { time: "Afternoon", text: "Nara Park; small mountain village east of Nara, with drone shots; then Nagashima Spa Land, Mie (drove past)." }
+      - { time: "Evening", text: "Along the Ise Bay coast, across the bay islands south of Nagoya; Lake Hamana, crossing the bridge; then Hamamatsu (night)." }
     route: ["Okayama to Himeji, Arima Onsen and Nara, then east through the Mie mountains to Yokkaichi, along the Ise Bay coast past Nagashima Spa Land and across the bay islands south of Nagoya, then over Lake Hamana to Hamamatsu (about 440 km, 6 h 45 min)."]
   - label: "Day 6"
     date: 2025-03-25
-    title: "Lake Ashi, Gotemba Premium Outlets, Tachikawa area"
+    title: "Hakone, Gotemba and Tachikawa"
     events:
       - { time: "Morning", text: "Lake Ashi, Hakone." }
       - { time: "Afternoon", text: "Gotemba Premium Outlets." }

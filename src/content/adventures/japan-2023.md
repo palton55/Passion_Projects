@@ -1,6 +1,6 @@
 ---
 title: "First Visit to Japan"
-summary: "My first trip to Japan: nine days over freshman spring break with a friend. We started in Tokyo, took the Shinkansen to Osaka and Kyoto, and then headed to Tsuruga on the Sea of Japan coast for a homestay, with a day of skiing at Okuibuki. It was my first real chance to use a year of classroom Japanese."
+summary: "My first trip to Japan: nine days over freshman spring break with a friend. We started in Tokyo, took the Shinkansen to Osaka and Kyoto, then headed to Tsuruga on the Sea of Japan coast for a homestay. It was my first real chance to use a year of classroom Japanese."
 start: 2023-03-11
 end: 2023-03-19
 category: Travel
@@ -48,15 +48,15 @@ timeline:
     date: 2023-03-11
     title: "Arrival in Tokyo"
     events:
-      - { time: "Evening", text: "Haneda Airport; Hotel area near Asakusabashi; Akihabara at night." }
+      - { time: "Evening", text: "Haneda Airport, hotel area near Asakusabashi, then Akihabara at night." }
     route: ["Haneda Airport to central Tokyo (about 15 km, 20 min)."]
   - label: "Day 2"
     date: 2023-03-12
     title: "Tokyo, the big loop"
     events:
-      - { time: "Morning", text: "Shimbashi / Ginza, then Tokyo Station; teamLab Planets, Toyosu." }
-      - { time: "Afternoon", text: "Shinjuku; Ikebukuro (Sunshine City)." }
-      - { time: "Evening", text: "Tokyo Skytree; Asakusa." }
+      - { time: "Morning", text: "Shimbashi / Ginza, then Tokyo Station; then teamLab Planets, Toyosu." }
+      - { time: "Afternoon", text: "Shinjuku, then Ikebukuro (Sunshine City)." }
+      - { time: "Evening", text: "Tokyo Skytree, then Asakusa." }
   - label: "Day 3"
     date: 2023-03-13
     title: "Shibuya day"
@@ -68,8 +68,8 @@ timeline:
     title: "Tokyo to Osaka"
     events:
       - { time: "Morning", text: "Tokaido Shinkansen from Tokyo Station to Shin-Osaka." }
-      - { time: "Afternoon", text: "Arrival in Osaka; Osaka Aquarium Kaiyukan." }
-      - { time: "Evening", text: "Dotonbori / Namba; Tennoji, just south of Shinsekai." }
+      - { time: "Afternoon", text: "Arrival in Osaka, then Osaka Aquarium Kaiyukan." }
+      - { time: "Evening", text: "Dotonbori / Namba; then Tennoji, just south of Shinsekai." }
     route: ["Tokaido Shinkansen (about 480 km, 2 h 15 min)."]
   - label: "Day 5"
     date: 2023-03-15
@@ -82,8 +82,8 @@ timeline:
     date: 2023-03-16
     title: "Kyoto"
     events:
-      - { time: "Morning", text: "Local train from Osaka to Kyoto; Fushimi Inari Taisha." }
-      - { time: "Afternoon", text: "Kawaramachi / Shijo; Kiyomizu-dera; Kyoto Station." }
+      - { time: "Morning", text: "Local train from Osaka to Kyoto, then Fushimi Inari Taisha." }
+      - { time: "Afternoon", text: "Kawaramachi / Shijo, Kiyomizu-dera, then Kyoto Station." }
       - { time: "Evening", text: "Arashiyama at dusk." }
     route: ["Local train, Osaka to Kyoto (about 40 km, 55 min)."]
   - label: "Day 7"
@@ -91,16 +91,16 @@ timeline:
     title: "To the Tsuruga homestay"
     events:
       - { time: "Morning", text: "Limited express Thunderbird direct from Kyoto to Tsuruga, along the west shore of Lake Biwa on the Kosei Line." }
-      - { time: "Afternoon", text: "Arrival in Tsuruga to meet the homestay family; Kehi no Matsubara area; Kehi Jingu." }
+      - { time: "Afternoon", text: "Arrival in Tsuruga to meet the homestay family, Kehi no Matsubara area, then Kehi Jingu." }
       - { time: "Evening", text: "East side of Tsuruga, then back to the homestay." }
     route: ["Limited express Thunderbird (Kosei Line) (about 90 km, 1 h)."]
   - label: "Day 8"
     date: 2023-03-18
     title: "Ski day by car"
     events:
-      - { time: "Morning", text: "Tsuruga town and port; Car trip to go skiing." }
+      - { time: "Morning", text: "Tsuruga town and port, then car trip to go skiing." }
       - { time: "Afternoon", text: "Okuibuki Ski Resort, Maibara (Shiga)." }
-      - { time: "Evening", text: "Drive home down the mountain and north along Lake Biwa; Back at the homestay." }
+      - { time: "Evening", text: "Drive home down the mountain and north along Lake Biwa, then back at the homestay." }
     route: ["Car trip to go skiing (about 100 km, 1 h 30 min)."]
   - label: "Day 9"
     date: 2023-03-19

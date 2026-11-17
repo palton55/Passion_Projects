@@ -1,6 +1,6 @@
 ---
 title: "Tohoku and Hokkaido"
-summary: "Six days heading north from Tokyo. I rode the Tohoku, Yamagata, and Akita Shinkansen through Yamagata, Sendai, and Morioka up to Hokkaido, drove from Sapporo up the Oronron Line to Cape Soya, the northernmost point of Japan, and back in a single day, and spent two nights in Hakodate with Goryokaku and Onuma Park."
+summary: "Six days heading north from Tokyo. I rode the Shinkansen through Yamagata, Sendai, and Morioka to Hokkaido, drove from Sapporo to Cape Soya, the northernmost point of Japan, and back in a single day, and spent two nights in Hakodate."
 start: 2025-08-03
 end: 2025-08-08
 category: Travel
@@ -52,46 +52,46 @@ parts:
 timeline:
   - label: "Day 1"
     date: 2025-08-03
-    title: "Utsunomiya, Yamagata, Sendai Port area"
+    title: "Utsunomiya, Yamagata and Sendai"
     events:
-      - { time: "Morning", text: "Omiya Station, Tohoku Shinkansen; Utsunomiya, walk around town; Yamagata." }
-      - { time: "Afternoon", text: "Fukushima Station; Sendai Port area (Mitsui Outlet Park)." }
-      - { time: "Evening", text: "Sendai Station area; Omagari, Daisen (night)." }
+      - { time: "Morning", text: "Omiya Station, Tohoku Shinkansen; Utsunomiya, walk around town; then Yamagata." }
+      - { time: "Afternoon", text: "Fukushima Station, then Sendai Port area (Mitsui Outlet Park)." }
+      - { time: "Evening", text: "Sendai Station area; then Omagari, Daisen (night)." }
     route: ["Tohoku Shinkansen, Omiya to Fukushima (about 220 km, 1 h).", "Yamagata Shinkansen, Fukushima to Yamagata and back (about 80 km, 20 min).", "Tohoku Shinkansen, Fukushima to Sendai and Morioka (about 230 km, 1 h).", "Akita Shinkansen, Morioka to Omagari (and back on Day 2) (about 70 km, 20 min)."]
   - label: "Day 2"
     date: 2025-08-04
-    title: "Aomori, Shin-Hakodate-Hokuto, Sapporo"
+    title: "Through Aomori to Sapporo"
     events:
-      - { time: "Morning", text: "Morioka Station; Aomori, food stop." }
-      - { time: "Afternoon", text: "Shin-Hakodate-Hokuto; Sapporo (night)." }
+      - { time: "Morning", text: "Morioka Station; then Aomori, food stop." }
+      - { time: "Afternoon", text: "Shin-Hakodate-Hokuto, then Sapporo (night)." }
     route: ["Tohoku and Hokkaido Shinkansen, Morioka to Shin-Hakodate-Hokuto (about 290 km, 1 h 30 min).", "Limited express Hokuto, Shin-Hakodate-Hokuto to Sapporo (about 250 km, 3 h)."]
   - label: "Day 3"
     date: 2025-08-05
-    title: "Obira, Enbetsu, Wakkanai"
+    title: "Driving to Cape Soya and back"
     events:
-      - { time: "Morning", text: "Obira, Oronron Line coast road; Enbetsu." }
-      - { time: "Afternoon", text: "Wakkanai; Cape Soya, northern tip of Japan; Nakatombetsu." }
+      - { time: "Morning", text: "Obira, Oronron Line coast road; then Enbetsu." }
+      - { time: "Afternoon", text: "Wakkanai; Cape Soya, northern tip of Japan; then Nakatombetsu." }
       - { time: "Evening", text: "Asahikawa area (night)." }
     route: ["Drive, Sapporo up the coast to Wakkanai and Cape Soya, then down to Asahikawa (about 610 km, 9 h 30 min)."]
   - label: "Day 4"
     date: 2025-08-06
-    title: "Sapporo, Goryokaku, Mt. Hakodate night view"
+    title: "To Hakodate for the night view"
     events:
       - { time: "Morning", text: "Sapporo." }
-      - { time: "Afternoon", text: "Hakodate Station / morning market area; Goryokaku." }
-      - { time: "Evening", text: "Mt; Hakodate bay area (night)." }
+      - { time: "Afternoon", text: "Hakodate Station / morning market area, then Goryokaku." }
+      - { time: "Evening", text: "Mt. Hakodate night view, then Hakodate bay area (night)." }
     route: ["Drive, Asahikawa back to Sapporo Station to return the car (about 150 km, 2 h 15 min).", "Limited express Hokuto, Sapporo to Hakodate (about 270 km, 3 h 15 min)."]
   - label: "Day 5"
     date: 2025-08-07
-    title: "Onuma Park, Nanae, Hakodate"
+    title: "Onuma Park, then south to Morioka"
     events:
       - { time: "Morning", text: "Onuma Park." }
-      - { time: "Afternoon", text: "Nanae; Hakodate." }
-      - { time: "Evening", text: "Shin-Hakodate-Hokuto; Morioka (night)." }
+      - { time: "Afternoon", text: "Nanae, then Hakodate." }
+      - { time: "Evening", text: "Shin-Hakodate-Hokuto, then Morioka (night)." }
     route: ["Hakodate to Onuma Park and back (train or bus, to confirm) (about 50 km, 1 h).", "Hakodate Liner, Hakodate to Shin-Hakodate-Hokuto (about 16 km, 20 min).", "Hokkaido and Tohoku Shinkansen, Shin-Hakodate-Hokuto to Morioka (about 290 km, 1 h 30 min)."]
   - label: "Day 6"
     date: 2025-08-08
-    title: "Travel day"
+    title: "Home to Tokyo"
     events:
       - { time: "Morning", text: "Tokyo Station." }
     route: ["Tohoku Shinkansen, Morioka to Tokyo (about 480 km, 2 h 15 min)."]

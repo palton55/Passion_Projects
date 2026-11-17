@@ -26,17 +26,17 @@ totals:
 timeline:
   - label: "Day 1"
     date: 2026-03-09
-    title: "Gotemba Premium Outlets, Lake Yamanakako"
+    title: "Gotemba and a Yamanakako ryokan"
     events:
       - { time: "Afternoon", text: "Gotemba Premium Outlets." }
       - { time: "Evening", text: "Lake Yamanakako (night)." }
     route: ["Drive, Yokohama to Gotemba and Lake Yamanakako (about 90 km, 1 h 30 min)."]
   - label: "Day 2"
     date: 2026-03-10
-    title: "Chureito Pagoda, Lake Kawaguchiko, Fuji-Q Highland"
+    title: "Chureito Pagoda and Fuji-Q Highland"
     events:
       - { time: "Morning", text: "Chureito Pagoda." }
-      - { time: "Afternoon", text: "Lake Kawaguchiko; Fuji-Q Highland; Shinjuku, car dropped off (night)." }
+      - { time: "Afternoon", text: "Lake Kawaguchiko; Fuji-Q Highland; then Shinjuku, car dropped off (night)." }
     route: ["Lake Yamanakako to the Chureito Pagoda, Lake Kawaguchiko and Fuji-Q Highland, then to Shinjuku to drop off the car (about 130 km, 2 h)."]
 ---
 
